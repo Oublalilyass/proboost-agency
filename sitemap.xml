@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══════════════════════════════════════════
+       HOMEPAGE (EN) — Primary page
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.proboostagency.com/</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.proboostagency.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.proboostagency.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.proboostagency.com/"/>
+    <image:image>
+      <image:loc>https://www.proboostagency.com/img/og-cover.jpg</image:loc>
+      <image:title>ProBoost Agency — Web Design &amp; Digital Marketing Marrakech Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.proboostagency.com/img/logo-proboost-agency.png</image:loc>
+      <image:title>ProBoost Agency Logo</image:title>
+    </image:image>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       HOMEPAGE (FR) — French alternate
+  ═══════════════════════════════════════════ -->
+  <url>
+    <loc>https://www.proboostagency.com/fr/</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.proboostagency.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.proboostagency.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.proboostagency.com/"/>
+  </url>
+
+  <!-- ═══════════════════════════════════════════
+       SECTIONS (anchor deep-links)
+       Listed for crawlers that follow fragment URLs
+  ═══════════════════════════════════════════ -->
+
+  <!-- About / Manifesto -->
+  <url>
+    <loc>https://www.proboostagency.com/#about</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://plus.unsplash.com/premium_photo-1677087122893-7e156b1aead9?w=900&amp;q=85&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>Marrakech medina — ProBoost digital marketing agency Morocco</image:title>
+    </image:image>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://www.proboostagency.com/#services</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&amp;q=80</image:loc>
+      <image:title>Website creation for tourism businesses in Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1674027001834-719c347d1eca?w=900&amp;q=85</image:loc>
+      <image:title>SEO services for Marrakech tourism businesses</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&amp;q=80</image:loc>
+      <image:title>Direct booking systems for riads and Airbnb in Marrakech</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&amp;q=80</image:loc>
+      <image:title>Social media and Google Ads for tourism brands Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1633533452148-a9657d2c9a5f?w=900&amp;q=85</image:loc>
+      <image:title>Brand identity for hospitality brands in Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&amp;q=80</image:loc>
+      <image:title>Website maintenance and growth for Morocco businesses</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sectors -->
+  <url>
+    <loc>https://www.proboostagency.com/#sectors</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1646580680087-0444cc6ca89e?w=900&amp;q=85</image:loc>
+      <image:title>Travel agency and tour operator website Marrakech Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1624804823268-7d5454caa8c8?w=900&amp;q=85</image:loc>
+      <image:title>Airbnb and riad website Marrakech direct booking</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://plus.unsplash.com/premium_photo-1724707432700-85d31dc4a113?w=900&amp;q=85</image:loc>
+      <image:title>Restaurant and rooftop terrace website Marrakech</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&amp;q=85</image:loc>
+      <image:title>Spa and hammam website Marrakech Morocco</image:title>
+    </image:image>
+  </url>
+
+  <!-- Work / Portfolio -->
+  <url>
+    <loc>https://www.proboostagency.com/#work</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1773681017873-036b5a53e288?w=900&amp;q=85</image:loc>
+      <image:title>Sahara desert tour website design Morocco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1527769814692-b9066e3cbcf2?w=1200&amp;q=80</image:loc>
+      <image:title>Riad direct booking website Marrakech</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&amp;q=80</image:loc>
+      <image:title>Restaurant website and branding Marrakech</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&amp;q=80</image:loc>
+      <image:title>Hammam spa website identity Morocco</image:title>
+    </image:image>
+  </url>
+
+  <!-- Process -->
+  <url>
+    <loc>https://www.proboostagency.com/#process</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Testimonials -->
+  <url>
+    <loc>https://www.proboostagency.com/#testimonials</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Contact / CTA -->
+  <url>
+    <loc>https://www.proboostagency.com/#cta</loc>
+    <lastmod>2025-04-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

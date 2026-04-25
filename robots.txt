@@ -1,0 +1,32 @@
+# ═══════════════════════════════════════════════
+# robots.txt — ProBoost Agency
+# https://www.proboostagency.com/
+# Updated: 2025-04-25
+# ═══════════════════════════════════════════════
+
+# ── All crawlers (default) ───────────────────────
+User-agent: *
+Allow: /
+
+# Block any admin, private or utility paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /*.json$
+Disallow: /search?
+
+# ── Google (main + images + news) ───────────────
+User-agent: Googlebot
+Allow: /
+Allow: /img/
+
+User-agent: Googlebot-Image
+Allow: /img/
+
+# ── Bing ────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+# ── Sitemap location ────────────────────────────
+Sitemap: https://www.proboostagency.com/sitemap.xml
