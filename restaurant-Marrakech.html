@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Primary SEO -->
+  <title>Restaurant Website Case Study | Luxury Restaurant Web Design & Branding – ProBoost Agency</title>
+
+  <meta name="description" content="Discover how ProBoost Agency created a high-converting luxury restaurant website experience with premium web design, branding, SEO optimization, and immersive digital storytelling for MO'MA Rooftop." />
+
+  <meta name="keywords" content="restaurant website design, restaurant case study, luxury restaurant web design, restaurant branding agency, restaurant SEO, fine dining website, hospitality web design, restaurant digital marketing, rooftop restaurant website, restaurant UX design, ProBoost Agency" />
+
+  <meta name="author" content="ProBoost Agency" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://proboostagency.com/case-studies/moma-rooftop" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MO'MA Rooftop Case Study | Restaurant Website Design by ProBoost Agency" />
+  <meta property="og:description" content="Explore the transformation of MO'MA Rooftop through cinematic web design, luxury branding, responsive UX, and SEO-focused restaurant storytelling." />
+  <meta property="og:url" content="https://proboostagency.com/case-studies/moma-rooftop" />
+  <meta property="og:site_name" content="ProBoost Agency" />
+  <meta property="og:image" content="https://proboostagency.com/assets/img/moma-cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Luxury Restaurant Website Case Study – ProBoost Agency" />
+  <meta name="twitter:description" content="Premium restaurant web design, branding, SEO, and immersive user experience crafted for MO'MA Rooftop." />
+  <meta name="twitter:image" content="https://proboostagency.com/assets/img/moma-cover.jpg" />
+
+  <!-- Geo / Local SEO -->
+  <meta name="geo.region" content="MA" />
+  <meta name="geo.placename" content="Morocco" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0E0A06" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "MO'MA Rooftop Restaurant Case Study",
+    "url": "https://proboostagency.com/case-studies/moma-rooftop",
+    "description": "Luxury restaurant website case study designed and developed by ProBoost Agency.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ProBoost Agency",
+      "url": "https://proboostagency.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://proboostagency.com/assets/img/logo.png"
+      }
+    }
+  }
+  </script>
+<style>
+:root {
+  --gold: #1AACF0;
+  --gold-light: #F03C2E;
+  --brown: #2A1A0E;
+  --cream: #F5EFE4;
+  --warm-white: #FAF7F2;
+  --muted: rgba(250,247,242,0.52);
+  --border: rgba(201,147,58,0.18);
+
+   /* --blue: #1AACF0;
+      --red: #F03C2E;
+      --dark: #080808;
+      --darker: #040404;
+      --mid: #111111;
+      --light: #F5F2EC;
+      --border: rgba(255, 255, 255, 0.07) */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #0E0A06;
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: .5;
+}
+
+/* ── TOP BREADCRUMB NAV ── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 18px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(14,10,6,.96), transparent);
+  border-bottom: 1px solid rgba(201,147,58,.08);
+  transition: background .4s;
+}
+.top-nav.solid { background: rgba(14,10,6,.97); }
+.nav-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: .12em; color: var(--cream); text-decoration: none;
+}
+.nav-brand span { color: var(--gold); }
+.nav-breadcrumb {
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(250,247,242,.38); display: flex; align-items: center; gap: 10px;
+}
+.nav-breadcrumb .sep { color: var(--gold); }
+.nav-breadcrumb .current { color: var(--gold-light); }
+.nav-back {
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(250,247,242,.45); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  transition: color .2s;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-back svg { transition: transform .2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; width: 100%; height: 100vh; min-height: 640px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 56px 64px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=85') center/cover no-repeat;
+  transform: scale(1.06);
+  animation: heroZoom 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1.0); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(14,10,6,.3) 0%,
+    rgba(14,10,6,.15) 30%,
+    rgba(14,10,6,.65) 60%,
+    rgba(14,10,6,.95) 100%
+  );
+}
+.hero-side-line {
+  position: absolute; top: 100px; bottom: 80px; left: 56px; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: .3;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-tag {
+  font-size: 10px; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp .7s .3s forwards;
+}
+.hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.hero-client-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 9vw, 120px);
+  font-weight: 300; line-height: .9; letter-spacing: .06em;
+  color: var(--cream);
+  opacity: 0; transform: translateY(30px);
+  animation: fadeUp .9s .5s forwards;
+}
+.hero-client-logo em { color: var(--gold); font-style: normal; }
+.hero-sub-row {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 24px; gap: 32px;
+  opacity: 0; transform: translateY(14px);
+  animation: fadeUp .7s .9s forwards;
+}
+.hero-descriptor {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 18px; color: rgba(250,247,242,.58);
+}
+.hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip {
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 14px; border: 1px solid var(--border); color: rgba(250,247,242,.42);
+}
+.chip.active { background: var(--gold); border-color: var(--gold); color: #1a0d00; font-weight: 500; }
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* ── SHARED SECTION ── */
+section { padding: 100px 56px; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+
+/* ── BRIEF STRIP ── */
+.brief-strip {
+  background: linear-gradient(135deg, #1A0E06 0%, #0E0A06 100%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 56px;
+  display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 0; align-items: start;
+}
+.brief-div { background: var(--border); height: 100%; min-height: 80px; }
+.brief-item { padding: 0 44px; }
+.brief-item:first-child { padding-left: 0; }
+.brief-item:last-child { padding-right: 0; }
+.brief-label {
+  font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+}
+.brief-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+.brief-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; line-height: 1.5; color: var(--cream);
+}
+
+/* ── CHALLENGE / SOLUTION ── */
+#challenge { background: #0E0A06; position: relative; overflow: hidden; }
+#challenge::after {
+  content: ''; position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,147,58,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.cs-block {
+  padding: 52px 48px; border: 1px solid var(--border);
+  background: rgba(26,14,6,.4);
+  position: relative; overflow: hidden;
+}
+.cs-block::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.cs-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px; color: rgba(201,147,58,.06);
+  position: absolute; top: 12px; right: 20px; line-height: 1;
+  pointer-events: none;
+}
+.cs-label {
+  font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px;
+}
+.cs-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px; font-weight: 400; line-height: 1.1; margin-bottom: 20px;
+}
+.cs-title em { font-style: italic; color: var(--gold-light); }
+.cs-body {
+  font-size: 15px; line-height: 1.85; color: rgba(250,247,242,.56);
+}
+.cs-body strong { color: var(--cream); font-weight: 400; }
+
+/* ── WHAT WE DID ── */
+#what { background: rgba(26,14,6,.55); }
+.what-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 72px; gap: 32px;
+}
+.what-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 6vw, 80px); font-weight: 300; line-height: .95;
+}
+.what-h em { font-style: italic; color: var(--gold); }
+.what-intro { max-width: 280px; font-size: 14px; line-height: 1.8; color: var(--muted); }
+
+.deliverables { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.deliv {
+  padding: 36px 32px 40px; border: 1px solid var(--border);
+  background: rgba(14,10,6,.6);
+  position: relative; overflow: hidden;
+  transition: border-color .3s, background .3s;
+  cursor: default;
+}
+.deliv::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .4s ease;
+}
+.deliv:hover { border-color: rgba(201,147,58,.35); background: rgba(26,14,6,.8); }
+.deliv:hover::after { transform: scaleX(1); }
+.deliv-icon {
+  width: 44px; height: 44px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 22px; color: var(--gold); font-size: 18px;
+}
+.deliv-n {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px; letter-spacing: .16em; color: var(--gold); opacity: .6; margin-bottom: 8px;
+}
+.deliv-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; margin-bottom: 12px; line-height: 1.1;
+}
+.deliv-desc { font-size: 13px; line-height: 1.8; color: var(--muted); }
+.deliv-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.deliv-tag {
+  font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 9px; border: 1px solid var(--border); color: rgba(250,247,242,.3);
+}
+
+/* ── VISUAL RESULT STRIP ── */
+#result { padding: 0; }
+.result-img-strip {
+  display: grid; grid-template-columns: 1.4fr 1fr; height: 560px; gap: 3px;
+}
+.result-panel {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 44px;
+}
+.result-panel-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transform: scale(1.04); transition: transform .7s ease;
+  filter: brightness(.45) saturate(1.1);
+}
+.result-panel:hover .result-panel-bg { transform: scale(1); filter: brightness(.6); }
+.result-panel::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(14,10,6,.9) 0%, transparent 60%);
+}
+.result-inner { position: relative; z-index: 1; }
+.result-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.result-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 300; line-height: 1.1;
+}
+
+/* ── METRICS ── */
+#metrics {
+  background: linear-gradient(135deg, #1A0E06 0%, #0E0A06 60%, #0A0804 100%);
+  border-top: 1px solid var(--border);
+}
+.metrics-head {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 64px); font-weight: 300; line-height: 1;
+  margin-bottom: 64px;
+}
+.metrics-head em { font-style: italic; color: var(--gold); }
+.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.metric {
+  padding: 36px 28px; border: 1px solid var(--border);
+  transition: background .3s;
+}
+.metric:hover { background: rgba(201,147,58,.04); }
+.metric-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px; font-weight: 300; line-height: 1;
+  color: var(--gold-light);
+}
+.metric-unit { font-size: .5em; vertical-align: super; color: var(--gold); }
+.metric-label {
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(250,247,242,.35); margin-top: 8px; line-height: 1.5;
+}
+
+/* ── QUOTE ── */
+.quote-band {
+  background: rgba(201,147,58,.04);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 72px 56px; text-align: center;
+}
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; line-height: .5; color: var(--gold); opacity: .4; display: block;
+  margin-bottom: 16px;
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: clamp(20px, 2.5vw, 30px);
+  line-height: 1.7; color: var(--cream);
+  max-width: 780px; margin: 0 auto 28px;
+}
+.quote-author { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+
+/* ── CTA ── */
+#cta {
+  padding: 100px 56px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+#cta::before {
+  content: ''; position: absolute; bottom: -150px; left: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,147,58,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 68px); font-weight: 300; line-height: 1;
+  margin-bottom: 20px;
+}
+.cta-h em { font-style: italic; color: var(--gold); }
+.cta-sub { font-size: 15px; line-height: 1.8; color: var(--muted); margin-bottom: 32px; }
+.btn-gold {
+  display: inline-block; background: var(--gold); color: #1a0d00;
+  font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
+  padding: 14px 36px; text-decoration: none;
+  transition: background .25s, transform .25s;
+}
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost {
+  display: inline-block; border: 1px solid var(--border); color: rgba(250,247,242,.55);
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 36px; text-decoration: none; margin-left: 14px;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.other-cases { }
+.oc-label { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.oc-list { list-style: none; }
+.oc-list li {
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 14px; color: var(--muted);
+  display: flex; align-items: center; gap: 12px;
+  transition: color .2s;
+}
+.oc-list li:first-child { border-top: 1px solid var(--border); }
+.oc-list li:hover { color: var(--cream); }
+.oc-list li::before { content: '→'; color: var(--gold); font-size: 12px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ft-copy { font-size: 11px; color: rgba(250,247,242,.2); letter-spacing: .06em; }
+.ft-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: .12em; color: rgba(250,247,242,.18); }
+.ft-logo span { color: var(--gold); opacity: .6; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px) {
+  .top-nav, section, .brief-strip, .quote-band, #cta, footer { padding-left: 32px; padding-right: 32px; }
+  .hero { padding: 0 32px 52px; }
+  .hero-side-line { left: 32px; }
+  .brief-strip { grid-template-columns: 1fr; gap: 32px; padding: 44px 32px; }
+  .brief-div { display: none; }
+  .brief-item { padding: 0; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+  .brief-item:last-child { border-bottom: none; }
+  .cs-grid, .result-img-strip, #cta { grid-template-columns: 1fr; }
+  .result-img-strip { height: auto; }
+  .result-panel { height: 320px; }
+  .deliverables { grid-template-columns: repeat(2, 1fr); }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width:640px) {
+  .top-nav, section, .brief-strip, .quote-band, #cta, footer { padding-left: 20px; padding-right: 20px; }
+  .hero { padding: 0 20px 44px; }
+  .hero-side-line { display: none; }
+  .what-head { flex-direction: column; align-items: flex-start; }
+  .deliverables, .metrics-grid { grid-template-columns: 1fr; }
+  .hero-sub-row { flex-direction: column; align-items: flex-start; }
+}
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: var(--blue);
+      border: 1px solid var(--blue);
+      padding: 10px 26px;
+      text-decoration: none;
+      transition: background .25s, border-color .25s, color .25s
+    }
+
+    .nav-cta:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff
+    }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav" id="topNav">
+   <a href="https://proboostagency.com/" class="ft-logo" aria-label="ProBoost Agency home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
+  </a>
+  <!-- <div class="nav-breadcrumb">
+    <span>Use Cases</span>
+    <span class="sep">›</span>
+    <span>Restaurants & Rooftops</span>
+    <span class="sep">›</span>
+    <span class="current">MO'MA Marrakech</span>
+  </div> -->
+<a href="https://proboostagency.com/#contact" class="nav-cta">Start a Project</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-side-line"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Case Study · Restaurants &amp; Rooftop Terraces</p>
+    <h1 class="hero-client-logo">MO'<em>MA</em></h1>
+    <div class="hero-sub-row">
+      <p class="hero-descriptor">Rooftop Restaurant · Marrakech Medina</p>
+      <div class="hero-chips">
+        <span class="chip active">Digital Opening</span>
+        <span class="chip">Brand Identity</span>
+        <span class="chip">Social Launch</span>
+        <span class="chip">Web Presence</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BRIEF STRIP -->
+<div class="brief-strip reveal">
+  <div class="brief-item">
+    <p class="brief-label">Client</p>
+    <p class="brief-value">MO'MA Rooftop Restaurant<br>Marrakech, Morocco</p>
+  </div>
+  <div class="brief-div"></div>
+  <div class="brief-item">
+    <p class="brief-label">Service</p>
+    <p class="brief-value">Digital Opening &amp;<br>Brand Presentation</p>
+  </div>
+  <div class="brief-div"></div>
+  <div class="brief-item">
+    <p class="brief-label">Website</p>
+    <p class="brief-value" style="color:var(--gold-light)">www.momarooftop.com</p>
+  </div>
+</div>
+
+<!-- CHALLENGE / SOLUTION -->
+<section id="challenge">
+  <div class="cs-grid reveal">
+    <div class="cs-block">
+      <span class="cs-num">01</span>
+      <p class="cs-label">The Challenge</p>
+      <h2 class="cs-title">A rooftop about to open.<br><em>No one knew it existed.</em></h2>
+      <p class="cs-body">
+        MO'MA is a <strong>brand-new rooftop dining concept</strong> in the heart of Marrakech — a city already saturated with competing restaurant noise on social media. The team had an exceptional product, a stunning space, and a refined identity — but <strong>zero digital presence</strong> and weeks to launch.
+        <br><br>
+        They needed to create anticipation, establish credibility, and convert interest into opening-night reservations — all before a single table was ever served.
+      </p>
+    </div>
+    <div class="cs-block">
+      <span class="cs-num">02</span>
+      <p class="cs-label">Our Answer</p>
+      <h2 class="cs-title">A complete <em>digital opening</em> — built in weeks.</h2>
+      <p class="cs-body">
+        ProBoost designed and executed a <strong>full digital launch strategy</strong> centred on storytelling: the mystery of a "Coming Soon", the reveal, and the opening moment. We combined <strong>brand identity rollout, social media content, a landing website,</strong> and a curated launch campaign to turn MO'MA's first post into a destination people were already waiting for.
+        <br><br>
+        The result was a rooftop that felt <strong>established from day one</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DID -->
+<section id="what">
+  <div class="what-head reveal">
+    <h2 class="what-h">What We<br><em>Delivered</em></h2>
+    <p class="what-intro">Six interconnected deliverables — each designed to build the next layer of MO'MA's digital presence.</p>
+  </div>
+  <div class="deliverables">
+
+    <div class="deliv reveal">
+      <div class="deliv-icon">✦</div>
+      <p class="deliv-n">01</p>
+      <h3 class="deliv-title">Digital Brand Rollout</h3>
+      <p class="deliv-desc">Translated MO'MA's visual identity — the warm brown, the Tifinagh-inspired icon, the Cormorant typography — into a coherent digital system across all touchpoints.</p>
+      <div class="deliv-tags"><span class="deliv-tag">Brand System</span><span class="deliv-tag">Visual Identity</span></div>
+    </div>
+
+    <div class="deliv reveal" style="transition-delay:.08s">
+      <div class="deliv-icon">◈</div>
+      <p class="deliv-n">02</p>
+      <h3 class="deliv-title">"Coming Soon" Campaign</h3>
+      <p class="deliv-desc">A teaser sequence on Instagram building intrigue before the opening — atmospheric visuals of Marrakech rooftops, plated dishes emerging from darkness, and the MO'MA mark revealed gradually.</p>
+      <div class="deliv-tags"><span class="deliv-tag">Social Media</span><span class="deliv-tag">Content Strategy</span></div>
+    </div>
+
+    <div class="deliv reveal" style="transition-delay:.16s">
+      <div class="deliv-icon">⬡</div>
+      <p class="deliv-n">03</p>
+      <h3 class="deliv-title">Landing Website</h3>
+      <p class="deliv-desc">A minimal, immersive one-page site at momarooftop.com — showcasing the concept, location, and a direct reservation link. Optimised for mobile-first discovery via Instagram bio.</p>
+      <div class="deliv-tags"><span class="deliv-tag">Web Design</span><span class="deliv-tag">UX</span><span class="deliv-tag">SEO</span></div>
+    </div>
+
+    <div class="deliv reveal" style="transition-delay:.24s">
+      <div class="deliv-icon">◎</div>
+      <p class="deliv-n">04</p>
+      <h3 class="deliv-title">Opening-Night Content</h3>
+      <p class="deliv-desc">Professional photo and video direction framework for the launch event — ensuring the first real-life content matched the elevated digital brand that had already been set.</p>
+      <div class="deliv-tags"><span class="deliv-tag">Content Brief</span><span class="deliv-tag">Art Direction</span></div>
+    </div>
+
+    <div class="deliv reveal" style="transition-delay:.32s">
+      <div class="deliv-icon">◇</div>
+      <p class="deliv-n">05</p>
+      <h3 class="deliv-title">Google Business &amp; Maps</h3>
+      <p class="deliv-desc">Full Google Business Profile setup with optimised categories, menu link, hours, and photos — ensuring MO'MA appeared in "rooftop restaurants Marrakech" searches from day one.</p>
+      <div class="deliv-tags"><span class="deliv-tag">Local SEO</span><span class="deliv-tag">Google Maps</span></div>
+    </div>
+
+    <div class="deliv reveal" style="transition-delay:.40s">
+      <div class="deliv-icon">✧</div>
+      <p class="deliv-n">06</p>
+      <h3 class="deliv-title">Reservation Flow Setup</h3>
+      <p class="deliv-desc">WhatsApp Business integration with a structured reservation template, auto-reply, and Instagram CTA buttons — turning profile visits directly into confirmed bookings.</p>
+      <div class="deliv-tags"><span class="deliv-tag">WhatsApp Business</span><span class="deliv-tag">CRO</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISUAL PANELS -->
+<div id="result">
+  <div class="result-img-strip reveal">
+    <div class="result-panel">
+      <div class="result-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85')"></div>
+      <div class="result-inner">
+        <p class="result-label">The Ambiance</p>
+        <h3 class="result-title">Warm light over<br>Marrakech rooftops</h3>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:3px;">
+      <div class="result-panel">
+        <div class="result-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80')"></div>
+        <div class="result-inner">
+          <p class="result-label">The Cuisine</p>
+          <h3 class="result-title" style="font-size:clamp(20px,2.5vw,28px)">Plated with intention</h3>
+        </div>
+      </div>
+      <div class="result-panel">
+        <div class="result-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80')"></div>
+        <div class="result-inner">
+          <p class="result-label">The Identity</p>
+          <h3 class="result-title" style="font-size:clamp(20px,2.5vw,28px)">Digital presence built to match</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS -->
+<section id="metrics">
+  <h2 class="metrics-head reveal">Results at<br><em>Launch Week</em></h2>
+  <div class="metrics-grid reveal">
+    <div class="metric">
+      <div class="metric-n">1200<span class="metric-unit">+</span></div>
+      <p class="metric-label">Instagram followers<br>before first service</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">48<span class="metric-unit">h</span></div>
+      <p class="metric-label">To reach full bookings<br>for opening weekend</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">3.8<span class="metric-unit">×</span></div>
+      <p class="metric-label">Profile reach vs<br>Marrakech restaurant avg.</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">100<span class="metric-unit">%</span></div>
+      <p class="metric-label">Reservations via<br>digital channels only</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-band reveal">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">ProBoost didn't just build us a page — they built us an opening. By the time we served our first table, people already felt like MO'MA was a Marrakech institution.</p>
+  <p class="quote-author">MO'MA Rooftop · Management Team · Marrakech</p>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="reveal">
+    <h2 class="cta-h">Opening a<br>restaurant or<br><em>venue?</em></h2>
+    <p class="cta-sub">We specialise in digital openings for hospitality — from concept to first booking. Let's build your launch together.</p>
+    <a href="#" class="btn-gold">Start Your Project</a>
+    <a href="#" class="btn-ghost">View All Cases</a>
+  </div>
+  <div class="other-cases reveal" style="transition-delay:.15s">
+    <p class="oc-label">More in Restaurants &amp; Rooftops</p>
+    <ul class="oc-list">
+      <li>Dar Yacout · Marrakech Medina Riad</li>
+      <li>Nomad Restaurant · Rooftop Terrace Fes</li>
+      <li>La Famille · Garden Dining Marrakech</li>
+      <li>Café Clock · Cultural Café Fes &amp; Marrakech</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-copy">© 2025 ProBoost Agency · All rights reserved</span>
+  <a href="/" class="ft-logo" aria-label="ProBoost Agency home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
+  </a>
+</footer>
+
+<script>
+  // Nav solid on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('topNav').classList.toggle('solid', scrollY > 60);
+  });
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
