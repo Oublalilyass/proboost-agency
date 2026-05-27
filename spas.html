@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spa & Hammam Website Case Study | Luxury Wellness Web Design – ProBoost Agency</title>
+  <meta name="description" content="Discover how ProBoost Agency creates stunning, high-converting websites for Marrakech spas, hammams, and wellness retreats — optimised for English and French traveler searches." />
+  <meta name="keywords" content="spa website design, hammam website, wellness web design, Marrakech spa marketing, luxury spa branding, spa SEO, riad spa website, Morocco wellness digital marketing, ProBoost Agency" />
+  <meta name="author" content="ProBoost Agency" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#080C0A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+:root {
+  --sage:    #1AACF0;;
+  --sage-d:  #F03C2E;
+  --clay:    #080808;
+  --clay-l:  #F03C2E;;
+  --stone:   #F0EAE0;
+  --ink:     #0a0a0a;
+  --ink-mid: #141A16;
+  --ink-2:   #1C2420;
+  --muted:   rgba(240,234,224,.45);
+  --border:  rgba(139,175,142,.14);
+  --border2: rgba(196,149,106,.16);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--stone);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* GRAIN */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 1000; opacity: .55;
+}
+
+/* ── NAV ── */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 20px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(8,12,10,.94), transparent);
+  border-bottom: 1px solid rgba(139,175,142,.07);
+  transition: background .4s;
+}
+.top-nav.solid { background: rgba(8,12,10,.97); }
+.nav-logo img { height: 38px; width: auto; }
+.nav-cta {
+  font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink); background: var(--sage); border: 1px solid var(--sage);
+  padding: 11px 28px; text-decoration: none;
+  transition: background .25s, border-color .25s, color .25s;
+}
+.nav-cta:hover { background: var(--clay); border-color: var(--clay); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; width: 100%; height: 100vh; min-height: 680px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 60px 72px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=85') center/cover no-repeat;
+  transform: scale(1.07);
+  animation: hZoom 22s ease-in-out infinite alternate;
+}
+@keyframes hZoom { from { transform:scale(1.07); } to { transform:scale(1.0); } }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg,
+    rgba(8,12,10,.55) 0%,
+    rgba(8,12,10,.2) 25%,
+    rgba(8,12,10,.6) 60%,
+    rgba(8,12,10,.97) 100%
+  );
+}
+/* Decorative vertical */
+.hero-vline {
+  position: absolute; top: 120px; bottom: 90px; left: 60px; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--sage), transparent);
+  opacity: .28;
+}
+.hero-vline2 {
+  position: absolute; top: 120px; bottom: 90px; right: 60px; width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--sage-d), transparent);
+  opacity: .15;
+}
+
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 10px; letter-spacing: .32em; text-transform: uppercase;
+  color: var(--sage); display: flex; align-items: center; gap: 14px;
+  margin-bottom: 18px;
+  opacity: 0; transform: translateY(10px);
+  animation: fUp .7s .3s forwards;
+}
+.hero-eyebrow::before { content:''; width:32px; height:1px; background:var(--sage); }
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8.5vw, 118px);
+  font-weight: 300; line-height: .92; letter-spacing: .04em;
+  color: var(--stone);
+  opacity: 0; transform: translateY(32px);
+  animation: fUp .9s .5s forwards;
+}
+.hero-h1 em { font-style: italic; color: var(--sage); }
+.hero-h1 .block2 { padding-left: 6vw; display: block; }
+
+.hero-bottom {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-top: 32px; gap: 32px;
+  opacity: 0; transform: translateY(14px);
+  animation: fUp .7s .85s forwards;
+}
+.hero-claim {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: 17px;
+  color: rgba(240,234,224,.52); max-width: 380px; line-height: 1.65;
+}
+.hero-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 13px; border: 1px solid var(--border); color: rgba(240,234,224,.38);
+}
+.chip.hi { background: var(--sage); border-color: var(--sage); color: var(--ink); font-weight: 500; }
+.chip.hi2 { background: transparent; border-color: var(--clay); color: var(--clay); }
+
+@keyframes fUp { to { opacity:1; transform:translateY(0); } }
+
+/* ── SHARED ── */
+section { padding: 100px 60px; }
+.reveal { opacity:0; transform:translateY(28px); transition: opacity .85s ease, transform .85s ease; }
+.reveal.vis { opacity:1; transform:translateY(0); }
+
+/* ── DIVIDER STRIP ── */
+.info-strip {
+  background: var(--ink-mid);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 52px 60px;
+  display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr; align-items: start;
+}
+.is-div { background: var(--border); min-height: 70px; }
+.is-item { padding: 0 36px; }
+.is-item:first-child { padding-left: 0; }
+.is-item:last-child { padding-right: 0; }
+.is-label {
+  font-size: 9px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 9px;
+  display: flex; align-items: center; gap: 9px;
+}
+.is-label::before { content:''; width:16px; height:1px; background:var(--sage); }
+.is-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; line-height: 1.55; color: var(--stone);
+}
+
+/* ── PROBLEM / PROMISE ── */
+#problem { background: var(--ink); position: relative; overflow: hidden; }
+#problem::after {
+  content:''; position:absolute; top:-240px; right:-240px;
+  width:700px; height:700px;
+  background: radial-gradient(circle, rgba(139,175,142,.055) 0%, transparent 68%);
+  pointer-events:none;
+}
+.pp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+.pp-block {
+  padding: 56px 52px; border: 1px solid var(--border);
+  background: rgba(20,26,22,.5);
+  position: relative; overflow: hidden;
+}
+.pp-block::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:3px; background: linear-gradient(to bottom, var(--sage), transparent);
+}
+.pp-n {
+  font-family: 'Cinzel', serif;
+  font-size: 96px; color: rgba(139,175,142,.05);
+  position: absolute; top: 8px; right: 16px; line-height: 1;
+  pointer-events: none;
+}
+.pp-lbl {
+  font-size: 9px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 20px;
+}
+.pp-h {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 400; line-height: 1.1; margin-bottom: 22px;
+}
+.pp-h em { font-style: italic; color: var(--clay-l); }
+.pp-body {
+  font-size: 15px; line-height: 1.9; color: rgba(240,234,224,.5);
+}
+.pp-body strong { color: var(--stone); font-weight: 400; }
+
+/* ── WHY SECTION ── */
+#why { background: rgba(20,26,22,.6); }
+.why-head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: end; margin-bottom: 80px;
+}
+.why-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 5.5vw, 78px); font-weight: 300; line-height: .95;
+}
+.why-h em { font-style: italic; color: var(--sage); }
+.why-intro-col { }
+.why-intro-lbl {
+  font-size: 9px; letter-spacing: .26em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 16px;
+}
+.why-intro { font-size: 14px; line-height: 1.9; color: var(--muted); }
+
+/* Services grid */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.srv {
+  padding: 40px 36px 44px; border: 1px solid var(--border);
+  background: rgba(13,17,15,.7);
+  position: relative; overflow: hidden;
+  transition: border-color .3s, background .3s;
+}
+.srv::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--sage), var(--clay));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .45s ease;
+}
+.srv:hover { border-color: rgba(139,175,142,.3); background: rgba(20,26,22,.9); }
+.srv:hover::after { transform: scaleX(1); }
+.srv-icon {
+  width: 48px; height: 48px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px; color: var(--sage); font-size: 20px;
+}
+.srv-n {
+  font-family: 'Cinzel', serif;
+  font-size: 10px; letter-spacing: .16em; color: var(--sage); opacity: .55; margin-bottom: 10px;
+}
+.srv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px; font-weight: 400; margin-bottom: 13px; line-height: 1.15;
+}
+.srv-desc { font-size: 13px; line-height: 1.85; color: var(--muted); }
+.srv-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+.srv-tag {
+  font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 10px; border: 1px solid var(--border); color: rgba(240,234,224,.28);
+}
+
+/* ── VISUAL MOSAIC ── */
+#mosaic { padding: 0; }
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 600px; gap: 3px;
+}
+.mosaic-panel {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 36px 38px;
+}
+.mosaic-panel.tall { grid-row: 1 / 3; }
+.m-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transform: scale(1.05); transition: transform .75s ease;
+  filter: brightness(.4) saturate(1.2);
+}
+.mosaic-panel:hover .m-bg { transform: scale(1); filter: brightness(.56) saturate(1.1); }
+.mosaic-panel::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(8,12,10,.92) 0%, transparent 55%);
+}
+.m-inner { position: relative; z-index: 1; }
+.m-lbl {
+  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+.m-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 36px); font-weight: 300; line-height: 1.1;
+}
+
+/* ── SEARCH VISIBILITY SECTION ── */
+#search {
+  background: linear-gradient(135deg, #111815 0%, var(--ink) 60%, #0A0D0B 100%);
+  border-top: 1px solid var(--border);
+}
+.search-inner {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 100px; align-items: center;
+}
+.search-left { }
+.search-eyebrow {
+  font-size: 9px; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.search-eyebrow::before { content:''; width:24px; height:1px; background:var(--sage); }
+.search-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 58px); font-weight: 300; line-height: 1.05;
+  margin-bottom: 24px;
+}
+.search-h em { font-style: italic; color: var(--sage); }
+.search-body { font-size: 15px; line-height: 1.9; color: var(--muted); }
+
+/* Keyword pills */
+.keyword-cloud {
+  display: flex; flex-direction: column; gap: 14px;
+}
+.kw-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.kw {
+  font-size: 12px; letter-spacing: .06em;
+  padding: 9px 18px; border: 1px solid var(--border);
+  color: rgba(240,234,224,.52);
+  transition: border-color .3s, color .3s, background .3s;
+  cursor: default;
+}
+.kw:hover { border-color: var(--sage); color: var(--sage); }
+.kw.hi { border-color: var(--sage); color: var(--sage); background: rgba(139,175,142,.07); }
+.kw.hi2 { border-color: var(--clay); color: var(--clay); background: rgba(196,149,106,.06); }
+.kw-meta { font-size: 10px; letter-spacing: .1em; color: rgba(240,234,224,.2); margin-top: 6px; }
+
+/* Lang toggles */
+.lang-row {
+  display: flex; gap: 10px; margin-top: 24px;
+}
+.lang-pill {
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 7px 20px; border: 1px solid var(--border);
+  color: var(--muted);
+}
+.lang-pill.active { background: var(--sage); border-color: var(--sage); color: var(--ink); }
+
+/* ── METRICS ── */
+#metrics {
+  background: var(--ink-2);
+  border-top: 1px solid var(--border);
+}
+.m-head {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4.5vw, 60px); font-weight: 300; line-height: 1;
+  margin-bottom: 64px;
+}
+.m-head em { font-style: italic; color: var(--sage); }
+.metrics-g { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.metric {
+  padding: 38px 30px; border: 1px solid var(--border);
+  transition: background .3s;
+}
+.metric:hover { background: rgba(139,175,142,.04); }
+.metric-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 60px; font-weight: 300; line-height: 1;
+  color: var(--clay-l);
+}
+.metric-u { font-size: .48em; vertical-align: super; color: var(--sage); }
+.metric-l {
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(240,234,224,.3); margin-top: 10px; line-height: 1.55;
+}
+
+/* ── TESTIMONIAL ── */
+.quote-band {
+  background: rgba(139,175,142,.04);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 80px 60px; text-align: center;
+}
+.q-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px; line-height: .4; color: var(--sage); opacity: .3;
+  display: block; margin-bottom: 20px;
+}
+.q-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-size: clamp(19px, 2.4vw, 28px);
+  line-height: 1.75; color: var(--stone); max-width: 820px; margin: 0 auto 30px;
+}
+.q-by { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); }
+
+/* ── CTA ── */
+#cta {
+  padding: 100px 60px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;
+  position: relative; overflow: hidden;
+}
+#cta::before {
+  content:''; position:absolute; bottom:-160px; right:-160px;
+  width:560px; height:560px;
+  background: radial-gradient(circle, rgba(139,175,142,.07) 0%, transparent 68%);
+  pointer-events:none;
+}
+.cta-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.8vw, 64px); font-weight: 300; line-height: 1.0;
+  margin-bottom: 20px;
+}
+.cta-h em { font-style: italic; color: var(--sage); }
+.cta-sub { font-size: 15px; line-height: 1.85; color: var(--muted); margin-bottom: 36px; }
+.btn-sage {
+  display: inline-block; background: var(--sage); color: var(--ink);
+  font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+  padding: 14px 38px; text-decoration: none;
+  transition: background .25s, transform .2s;
+}
+.btn-sage:hover { background: var(--clay); transform: translateY(-2px); }
+.btn-ghost {
+  display: inline-block; border: 1px solid var(--border); color: rgba(240,234,224,.5);
+  font-size: 10px; letter-spacing: .15em; text-transform: uppercase;
+  padding: 14px 38px; text-decoration: none; margin-left: 14px;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--sage); color: var(--sage); }
+
+/* Other cases */
+.oc-lbl { font-size: 9px; letter-spacing: .24em; text-transform: uppercase; color: var(--sage); margin-bottom: 20px; }
+.oc-list { list-style: none; }
+.oc-list li {
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 14px; color: var(--muted);
+  display: flex; align-items: center; gap: 14px;
+  transition: color .22s;
+}
+.oc-list li:first-child { border-top: 1px solid var(--border); }
+.oc-list li:hover { color: var(--stone); }
+.oc-list li::before { content:'→'; color: var(--sage); font-size: 11px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.ft-copy { font-size: 11px; color: rgba(240,234,224,.18); letter-spacing: .06em; }
+.ft-logo img { height: 36px; width: auto; opacity: .35; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px) {
+  .top-nav, section, .info-strip, .quote-band, #cta, footer { padding-left: 32px; padding-right: 32px; }
+  .hero { padding: 0 32px 56px; }
+  .hero-vline { left:32px; } .hero-vline2 { right:32px; }
+  .info-strip { grid-template-columns:1fr; gap:28px; }
+  .is-div { display:none; }
+  .is-item { padding:0; border-bottom:1px solid var(--border); padding-bottom:22px; }
+  .is-item:last-child { border-bottom:none; }
+  .pp-grid, .why-head, .search-inner, #cta { grid-template-columns:1fr; }
+  .mosaic-grid { grid-template-columns:1fr; grid-template-rows:auto; height:auto; }
+  .mosaic-panel.tall { grid-row:auto; }
+  .mosaic-panel { height:280px; }
+  .services { grid-template-columns:repeat(2,1fr); }
+  .metrics-g { grid-template-columns:repeat(2,1fr); }
+  .why-head { gap:40px; }
+  .search-inner { gap:52px; }
+}
+@media(max-width:640px) {
+  .top-nav, section, .info-strip, .quote-band, #cta, footer { padding-left:20px; padding-right:20px; }
+  .hero { padding:0 20px 44px; }
+  .hero-vline, .hero-vline2 { display:none; }
+  .hero-bottom { flex-direction:column; align-items:flex-start; }
+  .services, .metrics-g { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav" id="topNav">
+  <a href="https://proboostagency.com/" class="nav-logo" aria-label="ProBoost Agency">
+    <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Cinzel,serif;font-size:16px;letter-spacing:.16em;color:#F0EAE0\'>PRO<span style=\'color:#8BAF8E\'>BOOST</span></span>'">
+  </a>
+  <a href="https://proboostagency.com/#contact" class="nav-cta">Start a Project</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-vline"></div>
+  <div class="hero-vline2"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Use Case · Spas, Hammams &amp; Wellness</p>
+    <h1 class="hero-h1">
+      Luxury<em> Wellness</em>
+      <span class="block2">Deserves a<br>Luxury <em>Presence.</em></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-claim">Be the first Marrakech spa they find — with a website as restorative as your space, discovered in English and French.</p>
+      <div class="hero-chips">
+        <span class="chip hi">Bilingual SEO</span>
+        <span class="chip hi2">Hammam &amp; Spa</span>
+        <span class="chip">Booking Flows</span>
+        <span class="chip">Brand Identity</span>
+        <span class="chip">Traveler Search</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip reveal">
+  <div class="is-item">
+    <p class="is-label">Sector</p>
+    <p class="is-val">Spas, Hammams<br>&amp; Wellness Retreats</p>
+  </div>
+  <div class="is-div"></div>
+  <div class="is-item">
+    <p class="is-label">Markets Targeted</p>
+    <p class="is-val">French &amp; English<br>Speaking Travellers</p>
+  </div>
+  <div class="is-div"></div>
+  <div class="is-item">
+    <p class="is-label">Typical Timeline</p>
+    <p class="is-val">2–4 Weeks<br>to Full Launch</p>
+  </div>
+  <div class="is-div"></div>
+  <div class="is-item">
+    <p class="is-label">Core Deliverable</p>
+    <p class="is-val" style="color:var(--clay-l)">Bookings through<br>Digital Channels Only</p>
+  </div>
+</div>
+
+<!-- PROBLEM / PROMISE -->
+<section id="problem">
+  <div class="pp-grid reveal">
+    <div class="pp-block">
+      <span class="pp-n">01</span>
+      <p class="pp-lbl">The Reality</p>
+      <h2 class="pp-h">Your space is extraordinary.<br><em>But travellers can't find it.</em></h2>
+      <p class="pp-body">
+        Marrakech has hundreds of spas, riads with hammams, and wellness retreats. When a visitor searches <strong>"best hammam in Marrakech"</strong> or <strong>"spa near medina Marrakech"</strong> from their hotel, your name may not appear at all — while less exceptional competitors rank above you.
+        <br><br>
+        Most wellness spaces in Morocco rely on word-of-mouth and fragile referral chains. <strong>The travellers who would love your space most never find it</strong> — they book whoever shows up on page one.
+      </p>
+    </div>
+    <div class="pp-block">
+      <span class="pp-n">02</span>
+      <p class="pp-lbl">Our Approach</p>
+      <h2 class="pp-h">A digital sanctuary — <em>built to be discovered.</em></h2>
+      <p class="pp-body">
+        ProBoost creates <strong>immersive wellness websites</strong> designed around one goal: converting curious travellers into confirmed bookings — in their language, at the right moment.
+        <br><br>
+        We combine <strong>bilingual SEO (EN/FR), cinematic visual design, seamless booking integration,</strong> and a Google presence strategy so your spa ranks exactly where your ideal guests are searching. Your digital space becomes as <strong>serene and inviting as the experience itself.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DELIVER -->
+<section id="why">
+  <div class="why-head reveal">
+    <h2 class="why-h">What We<br><em>Build</em><br>For You</h2>
+    <div class="why-intro-col">
+      <p class="why-intro-lbl">Six pillars</p>
+      <p class="why-intro">Every deliverable is engineered around the way wellness travellers search, decide, and book — turning your digital presence into a quiet, constant source of new guests.</p>
+    </div>
+  </div>
+  <div class="services">
+
+    <div class="srv reveal">
+      <div class="srv-icon">✦</div>
+      <p class="srv-n">01</p>
+      <h3 class="srv-title">Immersive Website Design</h3>
+      <p class="srv-desc">A cinematic, mobile-first website that captures the sensory atmosphere of your space — warm textures, atmospheric photography, calming typography — and guides every visitor toward booking.</p>
+      <div class="srv-tags"><span class="srv-tag">Web Design</span><span class="srv-tag">UX</span><span class="srv-tag">Mobile-first</span></div>
+    </div>
+
+    <div class="srv reveal" style="transition-delay:.07s">
+      <div class="srv-icon">◎</div>
+      <p class="srv-n">02</p>
+      <h3 class="srv-title">Bilingual SEO (EN / FR)</h3>
+      <p class="srv-desc">Full on-page and local SEO in both English and French — targeting the exact queries your ideal guests type: "spa Marrakech medina", "hammam traditionnel Marrakech", "best wellness retreat Morocco".</p>
+      <div class="srv-tags"><span class="srv-tag">SEO</span><span class="srv-tag">French</span><span class="srv-tag">English</span><span class="srv-tag">Local Search</span></div>
+    </div>
+
+    <div class="srv reveal" style="transition-delay:.14s">
+      <div class="srv-icon">◈</div>
+      <p class="srv-n">03</p>
+      <h3 class="srv-title">Google Maps Dominance</h3>
+      <p class="srv-desc">Complete Google Business Profile optimisation — categories, service menus, multilingual descriptions, curated photo sets — so you appear at the top of map searches the moment travellers arrive in the city.</p>
+      <div class="srv-tags"><span class="srv-tag">Google Maps</span><span class="srv-tag">GMB</span><span class="srv-tag">Local SEO</span></div>
+    </div>
+
+    <div class="srv reveal" style="transition-delay:.21s">
+      <div class="srv-icon">⬡</div>
+      <p class="srv-n">04</p>
+      <h3 class="srv-title">Booking Flow Integration</h3>
+      <p class="srv-desc">Frictionless reservation pathways — WhatsApp Business with structured templates, direct-book buttons for each treatment, and Instagram CTA integration — so interest never goes cold.</p>
+      <div class="srv-tags"><span class="srv-tag">WhatsApp Business</span><span class="srv-tag">CRO</span><span class="srv-tag">Booking</span></div>
+    </div>
+
+    <div class="srv reveal" style="transition-delay:.28s">
+      <div class="srv-icon">◇</div>
+      <p class="srv-n">05</p>
+      <h3 class="srv-title">Brand Identity for Wellness</h3>
+      <p class="srv-desc">If needed, we craft or refine a visual identity — palette, typography, iconography — that communicates luxury, authenticity, and calm in a single glance, across every digital surface.</p>
+      <div class="srv-tags"><span class="srv-tag">Visual Identity</span><span class="srv-tag">Brand System</span></div>
+    </div>
+
+    <div class="srv reveal" style="transition-delay:.35s">
+      <div class="srv-icon">✧</div>
+      <p class="srv-n">06</p>
+      <h3 class="srv-title">Social Presence &amp; Content</h3>
+      <p class="srv-desc">Instagram strategy tailored to wellness aesthetics — treatment reels, ritual storytelling, guest experience content — designed to grow a following of genuinely interested travellers.</p>
+      <div class="srv-tags"><span class="srv-tag">Instagram</span><span class="srv-tag">Content Strategy</span><span class="srv-tag">Reels</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISUAL MOSAIC -->
+<div id="mosaic">
+  <div class="mosaic-grid reveal">
+    <div class="mosaic-panel tall">
+      <div class="m-bg" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=85')"></div>
+      <div class="m-inner">
+        <p class="m-lbl">The Experience</p>
+        <h3 class="m-title">Serenity captured<br>in every pixel</h3>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-rows:1fr 1fr;gap:3px;">
+      <div class="mosaic-panel">
+        <div class="m-bg" style="background-image:url('https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80')"></div>
+        <div class="m-inner">
+          <p class="m-lbl">The Ritual</p>
+          <h3 class="m-title" style="font-size:clamp(18px,2.3vw,26px)">Ancient hammam traditions</h3>
+        </div>
+      </div>
+      <div class="mosaic-panel">
+        <div class="m-bg" style="background-image:url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&q=80')"></div>
+        <div class="m-inner">
+          <p class="m-lbl">The Digital Space</p>
+          <h3 class="m-title" style="font-size:clamp(18px,2.3vw,26px)">A presence built to rank &amp; convert</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH VISIBILITY -->
+<section id="search">
+  <div class="search-inner">
+    <div class="reveal">
+      <p class="search-eyebrow">Search Visibility Strategy</p>
+      <h2 class="search-h">Found in English.<br>Found in <em>French.</em><br>Found first.</h2>
+      <p class="search-body">We map every search query your ideal guests use — from the airport lounge to the riad lobby — and build your website to own those results. Bilingual content, structured data, and local signals that tell Google exactly who you are and where you are.</p>
+      <div class="lang-row">
+        <span class="lang-pill active">English</span>
+        <span class="lang-pill active">Français</span>
+        <span class="lang-pill" style="opacity:.35">العربية</span>
+      </div>
+    </div>
+    <div class="keyword-cloud reveal" style="transition-delay:.15s">
+      <div class="kw-row">
+        <span class="kw hi">best spa Marrakech</span>
+        <span class="kw">hammam medina</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw">spa near riad</span>
+        <span class="kw hi2">meilleur hammam Marrakech</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw hi">luxury wellness retreat Morocco</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw hi2">soin corps Marrakech</span>
+        <span class="kw">traditional hammam</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw">spa booking Marrakech</span>
+        <span class="kw hi">day spa medina</span>
+      </div>
+      <p class="kw-meta">↑ Representative keywords tracked and optimised across both languages</p>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics">
+  <h2 class="m-head reveal">What <em>Results</em><br>Look Like</h2>
+  <div class="metrics-g reveal">
+    <div class="metric">
+      <div class="metric-n">3×<span class="metric-u"></span></div>
+      <p class="metric-l">More organic traffic<br>within 60 days</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">72<span class="metric-u">%</span></div>
+      <p class="metric-l">Of bookings via<br>digital channels</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">Top<span class="metric-u" style="font-size:.35em; vertical-align:middle"> 3</span></div>
+      <p class="metric-l">Google Maps position<br>for key local searches</p>
+    </div>
+    <div class="metric">
+      <div class="metric-n">2<span class="metric-u">wk</span></div>
+      <p class="metric-l">Average time from<br>brief to live website</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="quote-band reveal">
+  <span class="q-mark">"</span>
+  <p class="q-text">Before ProBoost, we relied entirely on hotel concierges for referrals. Now we have guests from London and Paris who found us on Google — in French. Our calendar has never been fuller.</p>
+  <p class="q-by">Riad Wellness Spa · Marrakech Medina · Client Review</p>
+</div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="reveal">
+    <h2 class="cta-h">Your spa<br>deserves to be<br><em>discovered.</em></h2>
+    <p class="cta-sub">We specialise in digital presence for Moroccan wellness spaces — from hammams to luxury day spas. Let's build something as refined as what you offer.</p>
+    <a href="https://proboostagency.com/#contact" class="btn-sage">Start Your Project</a>
+    <a href="https://proboostagency.com/case-studies" class="btn-ghost">View All Cases</a>
+  </div>
+  <div class="reveal" style="transition-delay:.15s">
+    <p class="oc-lbl">More in Wellness &amp; Hospitality</p>
+    <ul class="oc-list">
+      <li>Les Bains de Marrakech · Traditional Hammam &amp; Spa</li>
+      <li>Anantara Spa · Luxury Hotel Wellness</li>
+      <li>Dar Rhizlane · Riad Spa &amp; Treatments</li>
+      <li>Atlas Wellness Retreat · Mountain Escape</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-copy">© 2025 ProBoost Agency · All rights reserved</span>
+  <a href="https://proboostagency.com/" class="ft-logo" aria-label="ProBoost Agency">
+    <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family:Cinzel,serif;font-size:14px;letter-spacing:.14em;color:rgba(240,234,224,.3)\'>PRO<span style=\'color:#8BAF8E\'>BOOST</span></span>'">
+  </a>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('topNav').classList.toggle('solid', scrollY > 60);
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
