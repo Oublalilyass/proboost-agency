@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Riad & Hotel Finder for Marrakech 2026 | Find Your Perfect Stay</title>
+<meta name="description" content="Find the best riads and hotels in Marrakech instantly. Filter by budget, area, amenities & trip type. Trusted recommendations for the Medina, Gueliz, Palmeraie & more.">
+<meta property="og:title" content="Best Riad & Hotel Finder for Marrakech 2026">
+<meta property="og:description" content="Find the best riads and hotels in Marrakech instantly. Filter by budget, area & trip type.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.png" sizes="any">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Marrakech Riad & Hotel Finder",
+  "description": "Interactive tool to find the best riads and hotels in Marrakech based on budget, area, amenities, and trip type.",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the best area to stay in Marrakech?", "acceptedAnswer": { "@type": "Answer", "text": "The Medina (old city) offers the most authentic experience with traditional riads near Jemaa el-Fna. Gueliz is the modern district ideal for business travelers. Palmeraie suits luxury seekers wanting space and pools." } },
+    { "@type": "Question", "name": "What is the difference between a riad and a hotel in Marrakech?", "acceptedAnswer": { "@type": "Answer", "text": "A riad is a traditional Moroccan house built around an interior courtyard or garden. They offer intimate, boutique experiences with 5–20 rooms. Hotels tend to be larger with more amenities like restaurants, spas, and conference facilities." } },
+    { "@type": "Question", "name": "When is the best time to visit Marrakech?", "acceptedAnswer": { "@type": "Answer", "text": "March–May and September–November offer the most pleasant temperatures (20–28°C). Summer (June–August) is very hot. December–February is mild but cooler evenings." } },
+    { "@type": "Question", "name": "How much does a riad in Marrakech cost per night?", "acceptedAnswer": { "@type": "Answer", "text": "Budget riads start from €40–80/night. Mid-range options run €80–200/night. Luxury riads and 5-star hotels range from €200–800+/night depending on season." } },
+    { "@type": "Question", "name": "Do riads in Marrakech have pools?", "acceptedAnswer": { "@type": "Answer", "text": "Many riads have small plunge pools or heated dip pools in the courtyard. Larger riads and boutique hotels in Palmeraie often have full swimming pools. Filter by 'pool' in our tool to find them." } },
+    { "@type": "Question", "name": "Is Marrakech safe for solo travelers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Marrakech is generally safe for solo travelers. Staying in the Medina gives you walkable access to key sights. Use our 'solo' trip type filter to find properties well-rated for solo visitors." } }
+  ]
+}
+</script>
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --blue:   #1AACF0;
+  --red:    #F03C2E;
+  --dark:   #080808;
+  --darker: #040404;
+  --mid:    #111111;
+  --light:  #F5F2EC;
+  --border: rgba(255,255,255,0.07);
+  --blue-dim: rgba(26,172,240,0.12);
+  --blue-glow: rgba(26,172,240,0.25);
+  --text-muted: rgba(245,242,236,0.45);
+  --text-mid: rgba(245,242,236,0.7);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--darker);
+  color: var(--light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+img { max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(4,4,4,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem; font-weight: 800;
+  color: var(--light);
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { color: var(--text-mid); font-size: 0.875rem; transition: color .2s; }
+.nav-links a:hover { color: var(--light); }
+.nav-cta {
+  background: var(--blue);
+  color: var(--darker) !important;
+  font-weight: 600; font-size: 0.8rem !important;
+  padding: 8px 18px; border-radius: 100px;
+  transition: opacity .2s !important;
+}
+.nav-cta:hover { opacity: 0.85; color: var(--darker) !important; }
+.nav-hamburger { display: none; background: none; border: none; color: var(--light); font-size: 1.5rem; }
+
+/* ── HERO ── */
+.hero {
+  max-width: 900px; margin: 0 auto;
+  padding: 80px 24px 56px;
+  text-align: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--blue-dim);
+  border: 1px solid rgba(26,172,240,0.2);
+  color: var(--blue); font-size: 0.75rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 28px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.hero-eyebrow::before { content: '✦'; }
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 20px;
+}
+.hero h1 em { color: var(--blue); font-style: normal; }
+.hero-sub {
+  color: var(--text-mid); font-size: 1.1rem;
+  max-width: 600px; margin: 0 auto 40px;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 40px;
+  flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat strong {
+  display: block;
+  font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800;
+  color: var(--blue);
+}
+.hero-stat span { font-size: 0.8rem; color: var(--text-muted); }
+
+/* ── SECTION WRAPPER ── */
+.section { padding: 64px 24px; }
+.section-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800; line-height: 1.15; margin-bottom: 8px;
+}
+.section-sub { color: var(--text-mid); font-size: 0.95rem; margin-bottom: 40px; }
+
+/* ── FILTER AREA ── */
+#finder { background: var(--dark); }
+.finder-inner { max-width: 1200px; margin: 0 auto; }
+
+.filters-wrap {
+  background: var(--mid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 32px;
+}
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.filter-row:last-child { margin-bottom: 0; }
+.filter-group label {
+  display: block;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.filter-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.pill {
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: transparent; color: var(--text-mid);
+  font-size: 0.78rem; font-weight: 500;
+  cursor: pointer; transition: all .18s;
+  white-space: nowrap;
+}
+.pill:hover { border-color: rgba(26,172,240,0.4); color: var(--light); }
+.pill.active {
+  background: var(--blue-dim);
+  border-color: rgba(26,172,240,0.5);
+  color: var(--blue);
+}
+.pill.pill-multi.active {
+  background: var(--blue-dim);
+  border-color: rgba(26,172,240,0.5);
+  color: var(--blue);
+}
+
+/* amenity pills row */
+.amenity-pills {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+
+/* filter footer */
+.filter-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap; gap: 12px;
+}
+.btn-reset {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-muted); padding: 9px 20px;
+  border-radius: 100px; font-size: 0.82rem;
+  transition: all .18s;
+}
+.btn-reset:hover { border-color: rgba(255,255,255,0.2); color: var(--light); }
+.btn-find {
+  background: var(--blue); color: var(--darker);
+  font-weight: 700; font-size: 0.9rem;
+  padding: 10px 28px; border-radius: 100px;
+  border: none; transition: opacity .18s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-find:hover { opacity: 0.85; }
+.result-count-label { color: var(--text-muted); font-size: 0.82rem; }
+.result-count-label strong { color: var(--light); }
+
+/* ── SORT BAR ── */
+.sort-bar {
+  display: flex; align-items: center; gap: 8px;
+  flex-wrap: wrap; margin-bottom: 24px;
+}
+.sort-label { font-size: 0.78rem; color: var(--text-muted); margin-right: 4px; white-space: nowrap; }
+
+/* ── RESULTS GRID ── */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* ── PROPERTY CARD ── */
+.property-card {
+  background: var(--mid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  cursor: pointer;
+  position: relative;
+}
+.property-card:hover {
+  border-color: rgba(26,172,240,0.3);
+  transform: translateY(-2px);
+}
+.property-card.hidden { display: none; }
+
+.card-thumb {
+  height: 180px;
+  background: var(--dark);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.card-thumb-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+.card-thumb-icon {
+  position: relative; z-index: 1;
+  font-size: 3rem; opacity: 0.2;
+}
+.card-thumb-gradient {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: linear-gradient(to top, var(--mid), transparent);
+  z-index: 2;
+}
+
+/* badges */
+.card-badges {
+  position: absolute; top: 12px; left: 12px;
+  display: flex; gap: 6px; flex-wrap: wrap;
+  z-index: 3;
+}
+.badge {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
+}
+.badge-blue { background: var(--blue); color: var(--darker); }
+.badge-gold { background: #C9A84C; color: var(--darker); }
+.badge-green { background: #2ECC71; color: var(--darker); }
+.badge-red { background: var(--red); color: #fff; }
+
+/* match score */
+.match-score {
+  position: absolute; top: 12px; right: 12px; z-index: 3;
+  background: rgba(4,4,4,0.8);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  border-radius: 100px; padding: 4px 10px;
+  font-size: 0.72rem; font-weight: 700;
+  display: flex; align-items: center; gap: 5px;
+}
+.match-score.high { color: #2ECC71; border-color: rgba(46,204,113,0.3); }
+.match-score.mid { color: var(--blue); border-color: rgba(26,172,240,0.3); }
+.match-score.low { color: var(--text-muted); }
+
+.card-body { padding: 18px; }
+.card-meta {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px; flex-wrap: wrap;
+}
+.card-type { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.card-area {
+  font-size: 0.72rem; color: var(--text-mid);
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px; border-radius: 100px;
+  display: flex; align-items: center; gap: 4px;
+}
+.card-area::before { content: '📍'; font-size: 0.65rem; }
+.card-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem; font-weight: 800;
+  margin-bottom: 6px; line-height: 1.2;
+}
+.card-desc { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 14px; line-height: 1.5; }
+
+.card-amenities {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  margin-bottom: 14px;
+}
+.amenity-tag {
+  font-size: 0.7rem; color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 3px 9px; border-radius: 100px;
+}
+
+.card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 14px; border-top: 1px solid var(--border);
+}
+.card-price strong {
+  font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800;
+  color: var(--light);
+}
+.card-price span { font-size: 0.72rem; color: var(--text-muted); }
+.btn-card {
+  background: var(--blue); color: var(--darker);
+  font-size: 0.78rem; font-weight: 700;
+  padding: 7px 16px; border-radius: 100px;
+  border: none; transition: opacity .18s;
+}
+.btn-card:hover { opacity: 0.85; }
+
+.card-match-reason {
+  margin-top: 10px; margin-bottom: 4px;
+  font-size: 0.75rem; color: var(--blue);
+  display: flex; align-items: flex-start; gap: 6px;
+}
+.card-match-reason::before { content: '✦'; flex-shrink: 0; margin-top: 1px; }
+
+/* ── NO RESULTS ── */
+.no-results {
+  text-align: center; padding: 80px 24px;
+  grid-column: 1 / -1;
+}
+.no-results h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 10px; }
+.no-results p { color: var(--text-muted); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(4,4,4,0.92);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none; transition: opacity .22s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--mid);
+  border: 1px solid rgba(26,172,240,0.15);
+  border-radius: 16px;
+  max-width: 640px; width: 100%;
+  max-height: 90vh; overflow-y: auto;
+  transform: translateY(12px); transition: transform .22s;
+}
+.modal-overlay.active .modal { transform: translateY(0); }
+
+.modal-header {
+  padding: 24px 24px 0;
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.modal-close {
+  background: rgba(255,255,255,0.06); border: none;
+  color: var(--light); width: 32px; height: 32px;
+  border-radius: 50%; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background .18s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.12); }
+.modal-body { padding: 20px 24px 28px; }
+.modal-name { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+.modal-sub { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 20px; }
+
+.modal-score-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.score-chip {
+  flex: 1; min-width: 100px;
+  background: var(--dark); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px;
+  text-align: center;
+}
+.score-chip strong {
+  display: block; font-family: 'Syne', sans-serif;
+  font-size: 1.4rem; font-weight: 800; color: var(--blue);
+}
+.score-chip span { font-size: 0.7rem; color: var(--text-muted); }
+
+.modal-section { margin-bottom: 20px; }
+.modal-section-title {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 10px;
+}
+.pro-con-list { display: flex; flex-direction: column; gap: 6px; }
+.pro-con-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.85rem; color: var(--text-mid);
+}
+.pro-con-item .icon { flex-shrink: 0; margin-top: 1px; }
+.pro-con-item.pro .icon { color: #2ECC71; }
+.pro-con-item.con .icon { color: var(--red); }
+
+.modal-footer {
+  display: flex; gap: 10px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.btn-book {
+  flex: 1; background: var(--blue); color: var(--darker);
+  font-weight: 700; font-size: 0.9rem;
+  padding: 12px; border-radius: 100px;
+  border: none; transition: opacity .18s;
+}
+.btn-book:hover { opacity: 0.85; }
+.btn-save {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--light); font-size: 0.85rem; font-weight: 600;
+  padding: 12px 20px; border-radius: 100px;
+  transition: all .18s;
+}
+.btn-save:hover { background: rgba(255,255,255,0.1); }
+
+/* ── FAQ ── */
+#faq { background: var(--dark); border-top: 1px solid var(--border); }
+.faq-inner { max-width: 720px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; gap: 16px;
+  font-size: 0.95rem; font-weight: 600; color: var(--light);
+  background: none; border: none; text-align: left; width: 100%; padding: 0;
+}
+.faq-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border: 1px solid var(--border); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--blue); transition: transform .2s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  font-size: 0.875rem; color: var(--text-mid);
+  padding-top: 12px; line-height: 1.65;
+  display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ── INTERNAL LINKS ── */
+.links-section { background: var(--mid); border-top: 1px solid var(--border); }
+.links-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.link-card {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  transition: border-color .18s;
+}
+.link-card:hover { border-color: rgba(26,172,240,0.25); }
+.link-card-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.link-card-title { font-size: 0.88rem; font-weight: 600; color: var(--light); margin-bottom: 4px; }
+.link-card-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--darker);
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-muted); font-size: 0.8rem;
+}
+footer a { color: var(--text-muted); }
+footer strong { color: var(--light); }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 64px; left: 0; right: 0;
+    background: var(--darker); border-bottom: 1px solid var(--border);
+    padding: 20px 24px; gap: 16px; z-index: 99;
+  }
+  .nav-hamburger { display: block; }
+  .nav-cta { display: none; }
+  .hero { padding: 48px 20px 40px; }
+  .hero-stats { gap: 24px; }
+  .filter-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .results-grid { grid-template-columns: 1fr; }
+  .sort-bar { gap: 6px; }
+  .filters-wrap { padding: 18px; }
+  .modal { max-height: 85vh; }
+}
+@media (max-width: 480px) {
+  .filter-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; }
+  .modal-score-row { flex-direction: column; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.property-card { animation: fadeIn .25s ease both; }
+
+/* scroll bar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--darker); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#finder">Find a Stay</a>
+    <a href="#faq">FAQ</a>
+    <a href="#links">Explore Marrakech</a>
+    <a href="#finder" class="nav-cta">Find My Riad →</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">Marrakech · 2026 Recommendations</div>
+  <h1>Find Your Perfect <em>Riad or Hotel</em> in Marrakech</h1>
+  <p class="hero-sub">Filter by budget, neighborhood, amenities & trip type to discover the best stays — from authentic Medina riads to luxury Palmeraie resorts.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>12+</strong><span>Curated properties</span></div>
+    <div class="hero-stat"><strong>7</strong><span>Neighborhoods</span></div>
+    <div class="hero-stat"><strong>10+</strong><span>Filter options</span></div>
+    <div class="hero-stat"><strong>Free</strong><span>No sign-up needed</span></div>
+  </div>
+</header>
+
+<!-- FINDER TOOL -->
+<section class="section" id="finder">
+  <div class="finder-inner">
+    <div class="section-label">Interactive Tool</div>
+    <h2 class="section-title">Narrow Your Search</h2>
+    <p class="section-sub">Select what matters to you — results update instantly.</p>
+
+    <div class="filters-wrap">
+      <!-- Budget -->
+      <div class="filter-row">
+        <div class="filter-group" style="grid-column: 1 / -1;">
+          <label>Budget per Night</label>
+          <div class="filter-pills" id="filter-budget" data-type="single">
+            <button class="pill active" data-val="all">Any budget</button>
+            <button class="pill" data-val="budget">Budget · &lt;€80</button>
+            <button class="pill" data-val="midrange">Mid-range · €80–200</button>
+            <button class="pill" data-val="luxury">Luxury · €200+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Area & Trip Type -->
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>Neighborhood</label>
+          <div class="filter-pills" id="filter-area" data-type="single">
+            <button class="pill active" data-val="all">Anywhere</button>
+            <button class="pill" data-val="medina">Medina</button>
+            <button class="pill" data-val="gueliz">Gueliz</button>
+            <button class="pill" data-val="hivernage">Hivernage</button>
+            <button class="pill" data-val="kasbah">Kasbah</button>
+            <button class="pill" data-val="palmeraie">Palmeraie</button>
+            <button class="pill" data-val="jemaa">Near Jemaa el-Fna</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Trip Type</label>
+          <div class="filter-pills" id="filter-trip" data-type="single">
+            <button class="pill active" data-val="all">Any</button>
+            <button class="pill" data-val="couples">Couples</button>
+            <button class="pill" data-val="family">Family</button>
+            <button class="pill" data-val="solo">Solo</button>
+            <button class="pill" data-val="business">Business</button>
+            <button class="pill" data-val="group">Group</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Style & Special -->
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>Style</label>
+          <div class="filter-pills" id="filter-style" data-type="single">
+            <button class="pill active" data-val="all">All styles</button>
+            <button class="pill" data-val="traditional">Traditional riad</button>
+            <button class="pill" data-val="boutique">Boutique hotel</button>
+            <button class="pill" data-val="luxury-riad">Luxury riad</button>
+            <button class="pill" data-val="modern">Modern hotel</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <label>Special Needs</label>
+          <div class="filter-pills" id="filter-special" data-type="single">
+            <button class="pill active" data-val="all">None</button>
+            <button class="pill" data-val="kid-friendly">Kid-friendly</button>
+            <button class="pill" data-val="adults-only">Adults-only</button>
+            <button class="pill" data-val="quiet">Quiet</button>
+            <button class="pill" data-val="central">Central location</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenities (multi) -->
+      <div class="filter-row">
+        <div class="filter-group" style="grid-column: 1 / -1;">
+          <label>Must-have Amenities <span style="color:var(--text-muted); font-weight:400; font-size:0.68rem;">(select multiple)</span></label>
+          <div class="amenity-pills" id="filter-amenities" data-type="multi">
+            <button class="pill pill-multi" data-val="rooftop">🏙 Rooftop</button>
+            <button class="pill pill-multi" data-val="pool">🏊 Pool</button>
+            <button class="pill pill-multi" data-val="spa">💆 Spa</button>
+            <button class="pill pill-multi" data-val="hammam">♨️ Hammam</button>
+            <button class="pill pill-multi" data-val="breakfast">🥐 Breakfast</button>
+            <button class="pill pill-multi" data-val="ac">❄️ A/C</button>
+            <button class="pill pill-multi" data-val="terrace">🌿 Terrace</button>
+            <button class="pill pill-multi" data-val="airport">🚖 Airport transfer</button>
+            <button class="pill pill-multi" data-val="parking">🅿️ Parking</button>
+            <button class="pill pill-multi" data-val="wifi">📶 Wi-Fi</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-footer">
+        <span class="result-count-label">Showing <strong id="resultCount">12</strong> properties</span>
+        <div style="display:flex; gap:10px;">
+          <button class="btn-reset" id="btnReset">Reset filters</button>
+          <button class="btn-find" id="btnFind">✦ Find My Stay</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sort bar -->
+    <div class="sort-bar">
+      <span class="sort-label">Sort by:</span>
+      <button class="pill active" id="sort-match" data-sort="match">Best match</button>
+      <button class="pill" id="sort-price-asc" data-sort="price-asc">Lowest price</button>
+      <button class="pill" id="sort-price-desc" data-sort="price-desc">Highest rated</button>
+      <button class="pill" id="sort-family" data-sort="family">Best for families</button>
+      <button class="pill" id="sort-luxury" data-sort="luxury">Top luxury</button>
+      <button class="pill" id="sort-rooftop" data-sort="rooftop">Rooftop / Pool</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results-grid" id="resultsGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="faq-inner">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Everything You Need to Know</h2>
+    <p class="section-sub">Answers for first-time visitors and seasoned Marrakech travelers.</p>
+
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section class="section links-section" id="links">
+  <div style="max-width:1000px; margin:0 auto;">
+    <div class="section-label">Explore More</div>
+    <h2 class="section-title" style="margin-bottom:28px;">Plan Your Marrakech Trip</h2>
+    <div class="links-grid">
+      <a href="#" class="link-card">
+        <div class="link-card-icon">🗺️</div>
+        <div class="link-card-title">3-Day Marrakech Itinerary</div>
+        <div class="link-card-sub">The perfect 72-hour plan for first-timers</div>
+      </a>
+      <a href="#" class="link-card">
+        <div class="link-card-icon">✨</div>
+        <div class="link-card-title">Best Things to Do in Marrakech</div>
+        <div class="link-card-sub">Souks, palaces, gardens & more</div>
+      </a>
+      <a href="#" class="link-card">
+        <div class="link-card-icon">🚗</div>
+        <div class="link-card-title">Marrakech Airport Transfer Guide</div>
+        <div class="link-card-sub">Options from RAK to the Medina</div>
+      </a>
+      <a href="#" class="link-card">
+        <div class="link-card-icon">🍽️</div>
+        <div class="link-card-title">Best Restaurants in Marrakech</div>
+        <div class="link-card-sub">From street food to fine dining</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="margin-bottom:12px;">🕌 <strong>MarrakechStays</strong> — Curated recommendations for the Red City</div>
+  <div>Helping travelers find authentic riads and hotels in Marrakech since 2022. Not affiliated with any booking platform.</div>
+  <div style="margin-top:12px;"><a href="#">Privacy</a> · <a href="#">About</a> · <a href="#">Contact</a></div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="card-badges" style="position:static; margin-bottom:8px;" id="modalBadges"></div>
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-sub" id="modalSub"></div>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-score-row" id="modalScores"></div>
+      <div class="modal-section">
+        <div class="modal-section-title">Summary</div>
+        <p style="font-size:0.875rem; color:var(--text-mid); line-height:1.65;" id="modalSummary"></p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Pros & Cons</div>
+        <div class="pro-con-list" id="modalProCon"></div>
+      </div>
+      <div class="modal-section" id="modalInfoRow" style="display:grid; grid-template-columns:1fr 1fr; gap:12px;"></div>
+      <div class="modal-section">
+        <div class="modal-section-title">Top Amenities</div>
+        <div class="card-amenities" id="modalAmenities"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-book" id="modalBook">Check Availability →</button>
+        <button class="btn-save" id="modalSave">♡ Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════
+   DATASET — Replace with real data later
+   To extend: add objects following this schema
+   ══════════════════════════════════════════════ */
+const PROPERTIES = [
+  {
+    id: 1,
+    name: "Riad Dar Zitoun",
+    type: "traditional",
+    area: "medina",
+    areaLabel: "Medina",
+    budget: "midrange",
+    priceRange: "€95–140",
+    priceNum: 95,
+    tripTypes: ["couples","solo"],
+    amenities: ["rooftop","hammam","breakfast","wifi","ac"],
+    special: ["quiet","central"],
+    badges: [{ text:"Best Value", cls:"badge-green" }],
+    bestFor: "Couples seeking authenticity",
+    rating: 9.2,
+    matchScore: 0,
+    summary: "A beautifully restored 19th-century riad tucked in a quiet alley of the Medina. Zellige tilework, cedar wood ceilings, and a fragrant orange tree courtyard create an unforgettable Moroccan atmosphere.",
+    pros: ["Stunning authentic architecture","Personal service (only 6 rooms)","Outstanding Moroccan breakfast included"],
+    cons: ["No swimming pool","Parking not available"],
+    bestTime: "October–April for comfortable temperatures",
+    neighborhood: "Northern Medina, 8 min walk to Jemaa el-Fna",
+    icon: "🕌"
+  },
+  {
+    id: 2,
+    name: "La Sultana Marrakech",
+    type: "luxury-riad",
+    area: "kasbah",
+    areaLabel: "Kasbah",
+    budget: "luxury",
+    priceRange: "€320–580",
+    priceNum: 320,
+    tripTypes: ["couples","solo","business"],
+    amenities: ["rooftop","pool","spa","hammam","breakfast","wifi","ac","airport","terrace"],
+    special: ["adults-only","quiet"],
+    badges: [{ text:"Top Luxury", cls:"badge-gold" }],
+    bestFor: "Luxury couples & discerning travelers",
+    rating: 9.6,
+    matchScore: 0,
+    summary: "An extraordinary five-riad complex in the historic Kasbah district, meticulously restored with 28 suites. Rooftop pool overlooking the Koutoubia, acclaimed spa, and Michelin-caliber dining.",
+    pros: ["Rooftop pool with Koutoubia views","World-class hammam & spa","Attentive butler service"],
+    cons: ["Premium pricing","Short walk to Jemaa el-Fna (15 min)"],
+    bestTime: "Year-round — best value in June/July",
+    neighborhood: "Kasbah district, 15 min walk to main square",
+    icon: "👑"
+  },
+  {
+    id: 3,
+    name: "Riad Yasmine",
+    type: "boutique",
+    area: "jemaa",
+    areaLabel: "Near Jemaa el-Fna",
+    budget: "budget",
+    priceRange: "€45–75",
+    priceNum: 45,
+    tripTypes: ["solo","couples","group"],
+    amenities: ["rooftop","breakfast","wifi","ac"],
+    special: ["central","quiet"],
+    badges: [{ text:"Best Location", cls:"badge-blue" }],
+    bestFor: "Budget-conscious solo travelers",
+    rating: 8.7,
+    matchScore: 0,
+    summary: "A charming, affordable riad just 3 minutes from Jemaa el-Fna. Bright rooms, a small rooftop terrace with medina views, and warm family hospitality make it the best-value stay in the old city.",
+    pros: ["Unbeatable central location","Excellent rooftop views","Warm family atmosphere"],
+    cons: ["Small rooms","No pool or hammam"],
+    bestTime: "Any time — great year-round value",
+    neighborhood: "Steps from Jemaa el-Fna, central Medina",
+    icon: "🌸"
+  },
+  {
+    id: 4,
+    name: "Four Seasons Marrakech",
+    type: "modern",
+    area: "hivernage",
+    areaLabel: "Hivernage",
+    budget: "luxury",
+    priceRange: "€450–900",
+    priceNum: 450,
+    tripTypes: ["couples","family","business"],
+    amenities: ["pool","spa","hammam","breakfast","wifi","ac","airport","parking","terrace"],
+    special: ["kid-friendly","central"],
+    badges: [{ text:"Best for Families", cls:"badge-green" }, { text:"5 Star", cls:"badge-gold" }],
+    bestFor: "Luxury families & business travelers",
+    rating: 9.5,
+    matchScore: 0,
+    summary: "Marrakech's flagship luxury property set in lush gardens. Three pools, a world-class spa, dedicated kids' club, and spacious villas make this the top choice for upscale family holidays.",
+    pros: ["Three swimming pools","Dedicated children's club","Spacious garden grounds"],
+    cons: ["Very expensive","Modern hotel feel — less authentic"],
+    bestTime: "Winter (Nov–Mar) for the best rates",
+    neighborhood: "Hivernage, 10 min walk to Medina",
+    icon: "⭐"
+  },
+  {
+    id: 5,
+    name: "Riad El Fenn",
+    type: "luxury-riad",
+    area: "medina",
+    areaLabel: "Medina",
+    budget: "luxury",
+    priceRange: "€280–520",
+    priceNum: 280,
+    tripTypes: ["couples","solo","group"],
+    amenities: ["rooftop","pool","spa","hammam","breakfast","wifi","ac","terrace"],
+    special: ["adults-only","central","quiet"],
+    badges: [{ text:"Best Rooftop", cls:"badge-blue" }],
+    bestFor: "Design-conscious couples & creatives",
+    rating: 9.4,
+    matchScore: 0,
+    summary: "A darling of design publications, Riad El Fenn is a contemporary-meets-traditional masterpiece across four interconnected riads. An eclectic art collection, rooftop bar, and plunge pool make it iconic.",
+    pros: ["Iconic rooftop bar & pool","Stunning art & design","Excellent cocktail program"],
+    cons: ["Can feel buzzy — not for those seeking silence","Premium pricing"],
+    bestTime: "March–May and September–October",
+    neighborhood: "Central Medina, 5 min from Jemaa el-Fna",
+    icon: "🎨"
+  },
+  {
+    id: 6,
+    name: "Palais Namaskar",
+    type: "modern",
+    area: "palmeraie",
+    areaLabel: "Palmeraie",
+    budget: "luxury",
+    priceRange: "€550–1200",
+    priceNum: 550,
+    tripTypes: ["couples","business"],
+    amenities: ["pool","spa","hammam","breakfast","wifi","ac","airport","parking","terrace"],
+    special: ["adults-only","quiet"],
+    badges: [{ text:"Top Luxury", cls:"badge-gold" }, { text:"Best Pool", cls:"badge-blue" }],
+    bestFor: "Ultimate luxury & seclusion",
+    rating: 9.7,
+    matchScore: 0,
+    summary: "An adults-only Relais & Châteaux retreat in the Palmeraie palm grove. Private pool villas, a Sisley spa, and a serene lake-side setting make it arguably Marrakech's most romantic address.",
+    pros: ["Private pool villas available","Absolute seclusion & tranquility","Award-winning spa"],
+    cons: ["Remote — taxi required to reach Medina","Ultra-premium pricing"],
+    bestTime: "October–April for ideal pool weather",
+    neighborhood: "Palmeraie palm grove, 20 min from city center",
+    icon: "🌴"
+  },
+  {
+    id: 7,
+    name: "Riad Dar Anika",
+    type: "traditional",
+    area: "medina",
+    areaLabel: "Medina",
+    budget: "midrange",
+    priceRange: "€110–180",
+    priceNum: 110,
+    tripTypes: ["family","couples","group"],
+    amenities: ["rooftop","hammam","breakfast","wifi","ac","terrace"],
+    special: ["kid-friendly","central"],
+    badges: [{ text:"Best for Families", cls:"badge-green" }],
+    bestFor: "Families & small groups",
+    rating: 9.0,
+    matchScore: 0,
+    summary: "A spacious family-run riad with large interconnected rooms perfect for families. The generous rooftop terrace, kids' welcome amenities, and central Medina location make it a top family pick.",
+    pros: ["Family rooms available","Kids welcome with special menu","Large communal terrace"],
+    cons: ["No swimming pool","Can be noisy during busy periods"],
+    bestTime: "Spring and autumn school holidays",
+    neighborhood: "Central Medina, 7 min to Jemaa el-Fna",
+    icon: "👨‍👩‍👧"
+  },
+  {
+    id: 8,
+    name: "Hotel Sofitel Marrakech",
+    type: "modern",
+    area: "hivernage",
+    areaLabel: "Hivernage",
+    budget: "luxury",
+    priceRange: "€180–350",
+    priceNum: 180,
+    tripTypes: ["business","couples","family"],
+    amenities: ["pool","spa","hammam","breakfast","wifi","ac","airport","parking"],
+    special: ["central","kid-friendly"],
+    badges: [{ text:"Best for Business", cls:"badge-blue" }],
+    bestFor: "Business travelers & conferences",
+    rating: 8.9,
+    matchScore: 0,
+    summary: "A grand 5-star hotel in the upscale Hivernage district. Two pools, an excellent French restaurant, and full conference facilities make it the top choice for business travelers in Marrakech.",
+    pros: ["Excellent conference facilities","Large outdoor pool","Central but away from Medina noise"],
+    cons: ["Less authentic atmosphere","Hivernage lacks Medina character"],
+    bestTime: "Year-round — popular for conferences in autumn",
+    neighborhood: "Hivernage, 15 min walk to Medina",
+    icon: "🏨"
+  },
+  {
+    id: 9,
+    name: "Riad Kniza",
+    type: "luxury-riad",
+    area: "medina",
+    areaLabel: "Medina",
+    budget: "luxury",
+    priceRange: "€220–380",
+    priceNum: 220,
+    tripTypes: ["couples","solo"],
+    amenities: ["rooftop","pool","hammam","breakfast","wifi","ac","terrace"],
+    special: ["adults-only","quiet","central"],
+    badges: [],
+    bestFor: "Antique-lovers & culture seekers",
+    rating: 9.3,
+    matchScore: 0,
+    summary: "A collector's paradise — this intimate 11-room riad houses the owner's antique collection spanning Moroccan history. Expert guides, private plunge pool, and exceptional service.",
+    pros: ["Extraordinary antique collection","Excellent in-house chef","Intimate & personal atmosphere"],
+    cons: ["Small plunge pool only","Adults-only — not for families"],
+    bestTime: "Any time — closed August",
+    neighborhood: "Northern Medina, quiet residential alley",
+    icon: "🏺"
+  },
+  {
+    id: 10,
+    name: "Fellah Hotel",
+    type: "boutique",
+    area: "palmeraie",
+    areaLabel: "Palmeraie",
+    budget: "midrange",
+    priceRange: "€130–220",
+    priceNum: 130,
+    tripTypes: ["couples","solo","group"],
+    amenities: ["pool","spa","breakfast","wifi","ac","parking","terrace"],
+    special: ["quiet","adults-only"],
+    badges: [{ text:"Hidden Gem", cls:"badge-blue" }],
+    bestFor: "Creative travelers & artists",
+    rating: 9.1,
+    matchScore: 0,
+    summary: "A creative retreat in the Palmeraie with an arts residency program, organic garden restaurant, and two pools. Beloved by writers, artists, and those escaping city noise.",
+    pros: ["Unique arts & culture program","Organic farm-to-table restaurant","Peaceful palm grove setting"],
+    cons: ["20 min from Medina by taxi","No hammam on site"],
+    bestTime: "October–May — cooler and ideal for garden dining",
+    neighborhood: "Palmeraie palm grove, 20 min from Medina",
+    icon: "🎭"
+  },
+  {
+    id: 11,
+    name: "Riad Joya",
+    type: "traditional",
+    area: "kasbah",
+    areaLabel: "Kasbah",
+    budget: "budget",
+    priceRange: "€55–90",
+    priceNum: 55,
+    tripTypes: ["solo","couples"],
+    amenities: ["rooftop","hammam","breakfast","wifi","ac"],
+    special: ["quiet","central"],
+    badges: [],
+    bestFor: "Backpackers & budget solo travelers",
+    rating: 8.5,
+    matchScore: 0,
+    summary: "An affordable, welcoming riad in the quieter Kasbah district. Run by a French-Moroccan couple, it offers genuine hospitality, a cozy hammam, and rooftop breakfast with Kasbah views.",
+    pros: ["Authentic local experience","Excellent value breakfast","Quiet neighborhood"],
+    cons: ["Basic rooms","10 min walk to main sights"],
+    bestTime: "Year-round — cheapest in summer",
+    neighborhood: "Kasbah district, near Saadian Tombs",
+    icon: "🧳"
+  },
+  {
+    id: 12,
+    name: "Domaine de la Roseraie",
+    type: "boutique",
+    area: "palmeraie",
+    areaLabel: "Palmeraie",
+    budget: "midrange",
+    priceRange: "€140–260",
+    priceNum: 140,
+    tripTypes: ["family","couples","group"],
+    amenities: ["pool","hammam","breakfast","wifi","ac","parking","airport","terrace"],
+    special: ["kid-friendly","quiet"],
+    badges: [{ text:"Best for Families", cls:"badge-green" }],
+    bestFor: "Families wanting space & nature",
+    rating: 9.0,
+    matchScore: 0,
+    summary: "Set in a rose garden estate on the edge of the Palmeraie, this sprawling property offers large family bungalows, a big outdoor pool, horse stables, and peaceful nature trails.",
+    pros: ["Large outdoor pool","Horse riding available","Spacious family bungalows"],
+    cons: ["Far from Medina (25 min drive)","Restaurant is average"],
+    bestTime: "Spring (March–May) when roses bloom",
+    neighborhood: "Palmeraie estate, 25 min from Medina",
+    icon: "🌹"
+  }
+];
+
+/* ══════════════════════════════════════════════
+   FAQ DATA
+   ══════════════════════════════════════════════ */
+const FAQS = [
+  { q: "What is the best area to stay in Marrakech?", a: "The Medina (old city) offers the most authentic experience, with traditional riads steps from Jemaa el-Fna, the souks, and historic monuments. Gueliz is Marrakech's modern district — great for restaurants and shopping, less touristy. Hivernage suits business travelers needing large hotel facilities. The Palmeraie is perfect for luxury seekers who want space, privacy, and pools away from city noise." },
+  { q: "What's the difference between a riad and a hotel?", a: "A riad is a traditional Moroccan townhouse built around a central courtyard or garden. They're typically intimate, with 5–20 rooms, and offer a boutique, personal experience deeply tied to Moroccan culture. Hotels tend to be larger, with more amenities like conference rooms, restaurants, and full-size pools. Both can be luxurious — it depends on the experience you want." },
+  { q: "When is the best time to visit Marrakech?", a: "March–May and September–November are ideal, with temperatures between 20–28°C and low humidity. Summer (June–August) is very hot (35–42°C) but you'll find the lowest hotel prices. December–February is mild (15–22°C daytime) with cooler nights — great for Medina exploration. Avoid Ramadan if you're planning restaurant dining, though it offers a unique cultural experience." },
+  { q: "How much does a riad in Marrakech cost per night?", a: "Budget riads start from €40–80/night for basic but charming accommodation. Mid-range riads run €80–200/night with en-suite bathrooms, hammams, and rooftop terraces. Luxury riads and 5-star hotels range from €200–1000+/night depending on the season and property. Our filter tool above lets you narrow searches by budget category." },
+  { q: "Do riads in Marrakech have swimming pools?", a: "Many mid-range and luxury riads have small courtyard plunge pools or heated dip pools. These are typically 2–4m long — perfect for cooling down, not lap swimming. Full-size pools are more common at larger properties in the Palmeraie and Hivernage. Use the 'Pool' filter in our tool to find properties with pools in your preferred area and budget." },
+  { q: "Is it easy to get from Marrakech Airport to a riad in the Medina?", a: "Yes. Marrakech Menara Airport (RAK) is about 5km from the Medina. Official taxis cost approximately €8–12 and take 15–20 minutes. Most riads offer pre-booked airport transfers for €15–25 — recommended for first-timers as the Medina's narrow streets can be confusing. Filter by 'Airport transfer' in our tool to find properties offering this service." }
+];
+
+/* ══════════════════════════════════════════════
+   STATE
+   ══════════════════════════════════════════════ */
+let state = {
+  budget: "all",
+  area: "all",
+  trip: "all",
+  style: "all",
+  special: "all",
+  amenities: [],
+  sort: "match"
+};
+
+/* ══════════════════════════════════════════════
+   SCORING
+   ══════════════════════════════════════════════ */
+function scoreProperty(p) {
+  let score = 60; // base
+  if (state.budget !== "all" && p.budget === state.budget) score += 15;
+  else if (state.budget !== "all" && p.budget !== state.budget) score -= 40;
+  if (state.area !== "all" && p.area === state.area) score += 15;
+  else if (state.area !== "all" && p.area !== state.area) score -= 30;
+  if (state.trip !== "all" && p.tripTypes.includes(state.trip)) score += 10;
+  else if (state.trip !== "all") score -= 10;
+  if (state.style !== "all" && p.type === state.style) score += 10;
+  else if (state.style !== "all") score -= 5;
+  if (state.special !== "all" && p.special.includes(state.special)) score += 10;
+  state.amenities.forEach(a => {
+    if (p.amenities.includes(a)) score += 5;
+    else score -= 8;
+  });
+  return Math.max(0, Math.min(100, score));
+}
+
+function matchReason(p) {
+  const reasons = [];
+  if (state.budget !== "all" && p.budget === state.budget) reasons.push("matches your budget");
+  if (state.area !== "all" && p.area === state.area) reasons.push(`located in ${p.areaLabel}`);
+  if (state.trip !== "all" && p.tripTypes.includes(state.trip)) reasons.push(`great for ${state.trip} trips`);
+  if (state.amenities.length > 0) {
+    const matched = state.amenities.filter(a => p.amenities.includes(a));
+    if (matched.length > 0) reasons.push(`has ${matched.join(", ")}`);
+  }
+  return reasons.length > 0 ? reasons.slice(0,2).join(" · ") : "Solid all-round choice";
+}
+
+/* ══════════════════════════════════════════════
+   FILTER & RENDER
+   ══════════════════════════════════════════════ */
+const amenityLabels = {
+  rooftop:"Rooftop", pool:"Pool", spa:"Spa", hammam:"Hammam",
+  breakfast:"Breakfast", ac:"A/C", terrace:"Terrace",
+  airport:"Airport transfer", parking:"Parking", wifi:"Wi-Fi"
+};
+
+function isVisible(p) {
+  if (state.budget !== "all" && p.budget !== state.budget) return false;
+  if (state.area !== "all" && p.area !== state.area) return false;
+  if (state.trip !== "all" && !p.tripTypes.includes(state.trip)) return false;
+  if (state.style !== "all" && p.type !== state.style) return false;
+  if (state.special !== "all" && !p.special.includes(state.special)) return false;
+  if (state.amenities.length > 0 && !state.amenities.every(a => p.amenities.includes(a))) return false;
+  return true;
+}
+
+function sortProperties(list) {
+  const s = state.sort;
+  const sorted = [...list];
+  if (s === "match") sorted.sort((a,b) => b.matchScore - a.matchScore);
+  else if (s === "price-asc") sorted.sort((a,b) => a.priceNum - b.priceNum);
+  else if (s === "price-desc") sorted.sort((a,b) => b.rating - a.rating);
+  else if (s === "family") sorted.sort((a,b) => {
+    const af = a.tripTypes.includes("family") ? 1 : 0;
+    const bf = b.tripTypes.includes("family") ? 1 : 0;
+    return bf - af || b.rating - a.rating;
+  });
+  else if (s === "luxury") sorted.sort((a,b) => {
+    const al = a.budget === "luxury" ? 1 : 0;
+    const bl = b.budget === "luxury" ? 1 : 0;
+    return bl - al || b.rating - a.rating;
+  });
+  else if (s === "rooftop") sorted.sort((a,b) => {
+    const ar = (a.amenities.includes("rooftop") || a.amenities.includes("pool")) ? 1 : 0;
+    const br = (b.amenities.includes("rooftop") || b.amenities.includes("pool")) ? 1 : 0;
+    return br - ar || b.rating - a.rating;
+  });
+  return sorted;
+}
+
+function renderCards() {
+  PROPERTIES.forEach(p => p.matchScore = scoreProperty(p));
+  const visible = PROPERTIES.filter(isVisible);
+  const sorted = sortProperties(visible);
+  const grid = document.getElementById("resultsGrid");
+  grid.innerHTML = "";
+
+  document.getElementById("resultCount").textContent = sorted.length;
+
+  if (sorted.length === 0) {
+    grid.innerHTML = `<div class="no-results"><div style="font-size:3rem; margin-bottom:16px;">🕌</div><h3>No exact matches</h3><p>Try broadening your filters — fewer amenities or a wider budget range.</p></div>`;
+    return;
+  }
+
+  sorted.forEach((p, i) => {
+    const score = p.matchScore;
+    const scoreClass = score >= 80 ? "high" : score >= 60 ? "mid" : "low";
+    const scoreLabel = score >= 80 ? `${score}% match` : score >= 60 ? `${score}% match` : `${score}% match`;
+    const reason = matchReason(p);
+
+    const badgesHTML = p.badges.map(b => `<span class="badge ${b.cls}">${b.text}</span>`).join("");
+    const amenitiesHTML = p.amenities.slice(0,5).map(a => `<span class="amenity-tag">${amenityLabels[a]||a}</span>`).join("");
+
+    const card = document.createElement("div");
+    card.className = "property-card";
+    card.style.animationDelay = `${i * 0.04}s`;
+    card.dataset.id = p.id;
+    card.innerHTML = `
+      <div class="card-thumb">
+        <div class="card-thumb-bg"></div>
+        <div class="card-thumb-icon">${p.icon}</div>
+        <div class="card-thumb-gradient"></div>
+        <div class="card-badges">${badgesHTML}</div>
+        <div class="match-score ${scoreClass}">✦ ${scoreLabel}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-type">${p.type.replace("-"," ")}</span>
+          <span class="card-area">${p.areaLabel}</span>
+        </div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.summary.substring(0,110)}…</div>
+        <div class="card-amenities">${amenitiesHTML}</div>
+        <div class="card-match-reason">${reason}</div>
+        <div class="card-footer">
+          <div class="card-price">
+            <strong>${p.priceRange}</strong>
+            <span>/ night</span>
+          </div>
+          <button class="btn-card">View details</button>
+        </div>
+      </div>`;
+    card.addEventListener("click", () => openModal(p.id));
+    grid.appendChild(card);
+  });
+}
+
+/* ══════════════════════════════════════════════
+   MODAL
+   ══════════════════════════════════════════════ */
+function openModal(id) {
+  const p = PROPERTIES.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById("modalName").textContent = p.name;
+  document.getElementById("modalSub").textContent = `${p.type.replace("-"," ")} · ${p.areaLabel} · ${p.priceRange}/night`;
+  document.getElementById("modalBadges").innerHTML = p.badges.map(b=>`<span class="badge ${b.cls}">${b.text}</span>`).join("") || "";
+  document.getElementById("modalSummary").textContent = p.summary;
+  document.getElementById("modalScores").innerHTML = `
+    <div class="score-chip"><strong>${p.rating}</strong><span>Rating</span></div>
+    <div class="score-chip"><strong>${p.priceRange}</strong><span>Per night</span></div>
+    <div class="score-chip"><strong>${p.matchScore}%</strong><span>Your match</span></div>`;
+  document.getElementById("modalProCon").innerHTML = [
+    ...p.pros.map(x=>`<div class="pro-con-item pro"><span class="icon">✓</span>${x}</div>`),
+    ...p.cons.map(x=>`<div class="pro-con-item con"><span class="icon">✗</span>${x}</div>`)
+  ].join("");
+  document.getElementById("modalInfoRow").innerHTML = `
+    <div style="background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:14px;">
+      <div style="font-size:0.7rem;color:var(--blue);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">Best Time</div>
+      <div style="font-size:0.82rem;color:var(--text-mid);">${p.bestTime}</div>
+    </div>
+    <div style="background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:14px;">
+      <div style="font-size:0.7rem;color:var(--blue);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">Location</div>
+      <div style="font-size:0.82rem;color:var(--text-mid);">${p.neighborhood}</div>
+    </div>`;
+  document.getElementById("modalAmenities").innerHTML = p.amenities.map(a=>`<span class="amenity-tag">${amenityLabels[a]||a}</span>`).join("");
+  document.getElementById("modalOverlay").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  document.getElementById("modalOverlay").classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("modalClose").addEventListener("click", closeModal);
+document.getElementById("modalOverlay").addEventListener("click", e => { if (e.target === e.currentTarget) closeModal(); });
+document.getElementById("modalSave").addEventListener("click", function() {
+  this.textContent = this.textContent.includes("♡") ? "♥ Saved!" : "♡ Save";
+});
+document.getElementById("modalBook").addEventListener("click", () => {
+  window.open("https://www.booking.com/searchresults.html?ss=Marrakech", "_blank");
+});
+
+/* ══════════════════════════════════════════════
+   FILTER INTERACTIONS
+   ══════════════════════════════════════════════ */
+function initFilters() {
+  document.querySelectorAll("[data-type='single']").forEach(group => {
+    group.querySelectorAll(".pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        group.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filterId = group.id.replace("filter-","");
+        state[filterId] = btn.dataset.val;
+        renderCards();
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-type='multi'] .pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const val = btn.dataset.val;
+      state.amenities = state.amenities.includes(val)
+        ? state.amenities.filter(a => a !== val)
+        : [...state.amenities, val];
+      renderCards();
+    });
+  });
+}
+
+function initSort() {
+  document.querySelectorAll(".sort-bar .pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".sort-bar .pill").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.sort = btn.dataset.sort;
+      renderCards();
+    });
+  });
+}
+
+document.getElementById("btnReset").addEventListener("click", () => {
+  state = { budget:"all", area:"all", trip:"all", style:"all", special:"all", amenities:[], sort:"match" };
+  document.querySelectorAll("[data-type='single'] .pill").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.val === "all");
+  });
+  document.querySelectorAll("[data-type='multi'] .pill").forEach(btn => btn.classList.remove("active"));
+  document.querySelectorAll(".sort-bar .pill").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.sort === "match");
+  });
+  renderCards();
+});
+
+document.getElementById("btnFind").addEventListener("click", () => {
+  document.getElementById("resultsGrid").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+/* ══════════════════════════════════════════════
+   FAQ
+   ══════════════════════════════════════════════ */
+function renderFAQ() {
+  const list = document.getElementById("faqList");
+  list.innerHTML = FAQS.map((f, i) => `
+    <div class="faq-item" id="faq-${i}">
+      <button class="faq-q" onclick="toggleFAQ(${i})" aria-expanded="false">
+        ${f.q}
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">${f.a}</div>
+    </div>`).join("");
+}
+
+function toggleFAQ(i) {
+  const item = document.getElementById(`faq-${i}`);
+  const isOpen = item.classList.contains("open");
+  document.querySelectorAll(".faq-item.open").forEach(x => x.classList.remove("open"));
+  if (!isOpen) item.classList.add("open");
+}
+
+/* ══════════════════════════════════════════════
+   NAV
+   ══════════════════════════════════════════════ */
+document.getElementById("hamburger").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+
+/* ══════════════════════════════════════════════
+   INIT
+   ══════════════════════════════════════════════ */
+initFilters();
+initSort();
+renderFAQ();
+renderCards();
+</script>
+</body>
+</html>
