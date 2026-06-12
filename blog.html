@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Resources — ProBoost Agency Marrakech</title>
+  <meta name="description" content="Insights, tools, and guides for tourism businesses in Morocco. From Airbnb calculators to Marrakech travel guides — by ProBoost Agency." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="icon" href="img/favicon.png" sizes="any">
+
+  <style>
+    :root {
+      --blue: #1AACF0;
+      --red: #F03C2E;
+      --dark: #080808;
+      --darker: #040404;
+      --mid: #111111;
+      --light: #F5F2EC;
+      --border: rgba(255,255,255,0.07)
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:linear-gradient(160deg,#080808 0%,#0d1a2e 35%,#040f1e 65%,#080808 100%);
+      background-attachment:fixed;
+      color:var(--light);
+      font-family:'DM Sans',sans-serif;
+      font-weight:300;
+      overflow-x:hidden;
+      cursor:none
+    }
+    /* CURSOR */
+    .cur{position:fixed;width:10px;height:10px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s,background .3s;mix-blend-mode:screen;will-change:left,top}
+    .cur-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(26,172,240,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s;will-change:left,top}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:linear-gradient(90deg,rgba(8,8,8,.95),rgba(13,26,46,.95));border-bottom:1px solid var(--border);box-shadow:0 2px 32px rgba(0,0,0,.9);transition:padding .35s ease}
+    nav.scrolled{padding:14px 56px;border-bottom-color:var(--blue)}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.1em;color:var(--light);text-decoration:none}
+    .nav-logo span{color:var(--blue)}
+    .nav-links{display:flex;gap:40px;list-style:none}
+    .nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:12px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;transition:color .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+    .nav-links a:hover{color:#fff}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--blue);border:1px solid var(--blue);padding:10px 26px;text-decoration:none;transition:background .25s,border-color .25s}
+    .nav-cta:hover{background:var(--red);border-color:var(--red)}
+    .hbg{display:none;flex-direction:column;justify-content:center;gap:6px;background:none;border:none;padding:6px;cursor:none;width:36px;height:36px;position:relative;z-index:1000}
+    .hbg span{width:24px;height:1.5px;background:var(--light);display:block;transition:transform .3s ease,opacity .3s ease;transform-origin:center}
+    .hbg.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .hbg.open span:nth-child(2){transform:translateY(-7.5px) rotate(-45deg)}
+
+    /* HERO */
+    .blog-hero{
+      position:relative;
+      padding:160px 56px 80px;
+      overflow:hidden;
+      border-bottom:1px solid var(--border)
+    }
+    .blog-hero::before{
+      content:'';
+      position:absolute;
+      top:-100px;right:-100px;
+      width:700px;height:700px;
+      background:radial-gradient(circle,rgba(26,172,240,.07) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .blog-hero::after{
+      content:'';
+      position:absolute;
+      bottom:-100px;left:-100px;
+      width:500px;height:500px;
+      background:radial-gradient(circle,rgba(240,60,46,.05) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .blog-hero-grid{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(254,167,114,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(254,167,114,.03) 1px,transparent 1px);
+      background-size:90px 90px;opacity:.5
+    }
+    .blog-eyebrow{
+      font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);
+      display:flex;align-items:center;gap:14px;margin-bottom:20px;
+      opacity:0;transform:translateY(14px);animation:up .7s .2s forwards
+    }
+    .blog-eyebrow::before{content:'';width:36px;height:1px;background:var(--blue)}
+    .blog-hero-h{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(52px,8vw,120px);
+      line-height:.92;letter-spacing:-.01em;
+      max-width:900px;
+      opacity:0;transform:translateY(30px);animation:up .9s .35s forwards
+    }
+    .blog-hero-h .bl{color:var(--blue)}
+    .blog-hero-h .it{font-family:'Playfair Display',serif;font-style:italic;font-size:.82em}
+    .blog-hero-sub{
+      max-width:480px;font-size:16px;line-height:1.8;
+      color:rgba(245,242,236,.55);margin-top:24px;
+      opacity:0;transform:translateY(14px);animation:up .7s .6s forwards
+    }
+    .blog-hero-sub strong{color:var(--light);font-weight:500}
+    /* filter pills */
+    .filter-row{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;
+      opacity:0;transform:translateY(10px);animation:up .6s .8s forwards
+    }
+    .filter-btn{
+      font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+      padding:8px 20px;border:1px solid var(--border);
+      color:rgba(245,242,236,.45);background:none;
+      cursor:none;transition:border-color .25s,color .25s,background .25s
+    }
+    .filter-btn:hover,.filter-btn.active{
+      border-color:var(--blue);color:var(--light);background:rgba(26,172,240,.08)
+    }
+    .filter-btn.active{border-color:var(--blue);color:var(--blue)}
+
+    @keyframes up{to{opacity:1;transform:translateY(0)}}
+
+    /* MARQUEE */
+    .mq-wrap{background:rgba(17,17,17,0.55);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden}
+    .mq-track{display:flex;width:max-content;animation:mq 28s linear infinite}
+    .mq-wrap:hover .mq-track{animation-play-state:paused}
+    .mq-item{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.14em;padding:0 40px;color:rgba(245,242,236,.28);display:flex;align-items:center;gap:40px}
+    .mq-item .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+    .mq-item.hi{color:var(--light)}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* FEATURED POST */
+    .featured-section{padding:80px 56px 0}
+    .sec-label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-bottom:40px;display:flex;align-items:center;gap:14px}
+    .sec-label::after{content:'';width:48px;height:1px;background:var(--blue)}
+
+    .featured-card{
+      display:grid;grid-template-columns:1fr 1fr;gap:3px;
+      border:1px solid var(--border);overflow:hidden;
+      transition:border-color .3s
+    }
+    .featured-card:hover{border-color:rgba(26,172,240,.25)}
+    .featured-img-wrap{position:relative;overflow:hidden;height:480px}
+    .featured-img-wrap img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(.75);transition:filter .6s,transform .6s}
+    .featured-card:hover .featured-img-wrap img{filter:grayscale(0%) brightness(.9);transform:scale(1.04)}
+    .featured-badge{
+      position:absolute;top:24px;left:24px;
+      background:var(--blue);
+      font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+      padding:6px 14px;color:#fff;font-weight:500
+    }
+    .featured-body{
+      padding:52px 48px;display:flex;flex-direction:column;justify-content:center;
+      background:rgba(8,8,8,.7)
+    }
+    .post-category{
+      font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--red);margin-bottom:16px;
+      display:flex;align-items:center;gap:10px
+    }
+    .post-category::before{content:'';width:24px;height:1px;background:var(--red)}
+    .featured-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(36px,4vw,58px);line-height:1;
+      margin-bottom:20px
+    }
+    .featured-title a{color:inherit;text-decoration:none;transition:color .25s}
+    .featured-title a:hover{color:var(--blue)}
+    .featured-desc{
+      font-size:15px;line-height:1.8;
+      color:rgba(245,242,236,.55);margin-bottom:32px
+    }
+    .post-meta{
+      display:flex;align-items:center;gap:20px;
+      font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      color:rgba(245,242,236,.3);margin-bottom:28px
+    }
+    .post-meta span{display:flex;align-items:center;gap:6px}
+    .read-link{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--blue);text-decoration:none;
+      transition:gap .25s
+    }
+    .read-link:hover{gap:16px}
+    .read-link svg{transition:transform .25s}
+    .read-link:hover svg{transform:translateX(4px)}
+
+    /* GRID */
+    .posts-section{padding:56px 56px 120px}
+    .posts-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:3px
+    }
+
+    .post-card{
+      background:rgba(8,8,8,.7);
+      border:1px solid var(--border);
+      overflow:hidden;
+      position:relative;
+      transition:transform .4s,border-color .3s;
+      cursor:none;
+      display:flex;flex-direction:column
+    }
+    .post-card::before{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--blue),var(--red));
+      transform:scaleX(0);transform-origin:left;transition:transform .4s ease;z-index:1
+    }
+    .post-card:hover{transform:translateY(-5px);border-color:rgba(26,172,240,.2)}
+    .post-card:hover::before{transform:scaleX(1)}
+
+    .post-img{width:100%;height:200px;object-fit:cover;display:block;filter:grayscale(25%) brightness(.75);transition:filter .5s,transform .5s}
+    .post-card:hover .post-img{filter:grayscale(0%) brightness(.9);transform:scale(1.03)}
+
+    .post-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column}
+    .post-tag{
+      display:inline-block;
+      font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+      padding:4px 10px;border:1px solid var(--border);
+      color:rgba(245,242,236,.38);margin-bottom:14px
+    }
+    .post-tag.blue{border-color:rgba(26,172,240,.35);color:var(--blue)}
+    .post-tag.red{border-color:rgba(240,60,46,.35);color:var(--red)}
+
+    .post-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:24px;line-height:1.1;
+      margin-bottom:10px
+    }
+    .post-title a{color:inherit;text-decoration:none;transition:color .2s}
+    .post-title a:hover{color:var(--blue)}
+    .post-excerpt{
+      font-size:13px;line-height:1.8;
+      color:rgba(245,242,236,.45);
+      flex:1;margin-bottom:20px
+    }
+    .post-foot{
+      display:flex;align-items:center;justify-content:space-between;
+      border-top:1px solid var(--border);padding-top:16px;
+      font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+      color:rgba(245,242,236,.28)
+    }
+    .post-foot a{
+      color:var(--blue);text-decoration:none;
+      display:flex;align-items:center;gap:6px;
+      transition:gap .2s;font-size:10px;letter-spacing:.12em
+    }
+    .post-foot a:hover{gap:10px}
+
+    /* TOOL CARDS (wider cards for calculator/tool pages) */
+    .tools-section{
+      padding:0 56px 80px;
+      border-top:1px solid var(--border)
+    }
+    .tools-intro{
+      padding:64px 0 48px;
+      display:flex;align-items:flex-end;justify-content:space-between;gap:40px
+    }
+    .tools-h{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(40px,5vw,72px);line-height:.95
+    }
+    .tools-h em{font-family:'Playfair Display',serif;font-style:italic;color:var(--blue);font-size:.85em}
+    .tools-sub{max-width:300px;font-size:14px;line-height:1.75;color:rgba(245,242,236,.45)}
+
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:3px
+    }
+    .tool-card{
+      display:flex;gap:32px;align-items:flex-start;
+      padding:36px 36px;
+      border:1px solid var(--border);
+      background:rgba(8,8,8,.6);
+      transition:border-color .3s,background .3s;
+      text-decoration:none;color:inherit;
+      cursor:none;position:relative;overflow:hidden
+    }
+    .tool-card::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--blue),var(--red));
+      transform:scaleX(0);transform-origin:left;transition:transform .4s
+    }
+    .tool-card:hover{border-color:rgba(26,172,240,.2);background:rgba(26,172,240,.03)}
+    .tool-card:hover::after{transform:scaleX(1)}
+    .tool-icon{
+      width:52px;height:52px;flex-shrink:0;
+      background:rgba(26,172,240,.1);
+      border:1px solid rgba(26,172,240,.2);
+      display:flex;align-items:center;justify-content:center;
+      font-size:22px
+    }
+    .tool-body{}
+    .tool-label{
+      font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--blue);margin-bottom:8px
+    }
+    .tool-name{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:22px;line-height:1.05;margin-bottom:8px
+    }
+    .tool-desc{
+      font-size:13px;line-height:1.7;
+      color:rgba(245,242,236,.45)
+    }
+    .tool-arrow{
+      margin-top:14px;
+      font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--blue);
+      display:flex;align-items:center;gap:6px;
+      opacity:0;transform:translateX(-6px);
+      transition:opacity .3s,transform .3s
+    }
+    .tool-card:hover .tool-arrow{opacity:1;transform:translateX(0)}
+
+    /* CTA STRIP */
+    .blog-cta{
+      margin:0 56px 80px;
+      padding:64px 56px;
+      background:rgba(8,8,8,.6);
+      border:1px solid var(--border);
+      position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:space-between;gap:40px
+    }
+    .blog-cta::before{
+      content:'';position:absolute;top:-80px;right:-80px;
+      width:400px;height:400px;
+      background:radial-gradient(circle,rgba(26,172,240,.08) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .cta-text{}
+    .cta-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+    .cta-head{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,56px);line-height:.95;margin-bottom:12px}
+    .cta-body{font-size:14px;line-height:1.75;color:rgba(245,242,236,.48);max-width:420px}
+    .cta-btns{display:flex;align-items:center;gap:20px;flex-shrink:0}
+    .btn-p{background:var(--blue);color:#fff;padding:15px 40px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:transform .3s,background .3s}
+    .btn-p:hover{background:var(--red);transform:translateY(-2px)}
+    .btn-g{color:#fff;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;opacity:.5;display:flex;align-items:center;gap:10px;transition:opacity .3s;white-space:nowrap}
+    .btn-g:hover{opacity:1}
+
+    /* FOOTER */
+    footer{background:rgba(4,4,4,.75);padding:80px 56px 44px;border-top:1px solid var(--border)}
+    .ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:72px}
+    .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.1em;display:block;margin-bottom:14px;text-decoration:none;color:var(--light)}
+    .ft-logo span{color:var(--blue)}
+    .ft-tag{font-size:14px;line-height:1.7;color:rgba(245,242,236,.38);max-width:240px;margin-bottom:28px}
+    .ft-soc{display:flex;gap:12px}
+    .soc-a{width:34px;height:34px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--light);text-decoration:none;transition:border-color .3s,color .3s}
+    .soc-a:hover{border-color:var(--blue);color:var(--blue)}
+    .ft-col-t{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,242,236,.35);margin-bottom:20px}
+    .ft-links{list-style:none}
+    .ft-links li{margin-bottom:10px}
+    .ft-links a{color:rgba(245,242,236,.55);text-decoration:none;font-size:13.5px;transition:color .2s}
+    .ft-links a:hover{color:var(--light)}
+    .ft-bot{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--border)}
+    .ft-copy{font-size:11px;color:rgba(245,242,236,.22);letter-spacing:.05em}
+    .ft-url{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.12em;color:rgba(245,242,236,.18)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+    .reveal.vis{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:1100px){
+      nav{padding:20px 32px}
+      nav.scrolled{padding:14px 32px}
+      .nav-links,.nav-cta{display:none}
+      .hbg{display:flex}
+      .blog-hero,.featured-section,.posts-section,.tools-section,.blog-cta{padding-left:32px;padding-right:32px}
+      .blog-cta{margin-left:32px;margin-right:32px}
+      .featured-card{grid-template-columns:1fr}
+      .featured-img-wrap{height:320px}
+      .posts-grid{grid-template-columns:repeat(2,1fr)}
+      .tools-grid{grid-template-columns:1fr}
+      .tools-intro{flex-direction:column;gap:16px}
+      .ft-top{grid-template-columns:1fr 1fr;gap:36px}
+      .blog-cta{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:640px){
+      nav{padding:16px 20px}
+      .blog-hero,.featured-section,.posts-section,.tools-section{padding-left:20px;padding-right:20px}
+      .blog-cta{margin:0 20px 60px;padding:40px 28px}
+      .posts-grid{grid-template-columns:1fr}
+      .filter-row{gap:7px}
+      .filter-btn{font-size:10px;padding:7px 14px}
+      .ft-top{grid-template-columns:1fr}
+      .blog-hero{padding-top:120px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- NAV -->
+<nav id="nav">
+   <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a>
+  <ul class="nav-links">
+    <li><a href="https://proboostagency.com/#about">About</a></li>
+    <li><a href="https://proboostagency.com/#services">Services</a></li>
+    <li><a href="https://proboostagency.com/#sectors">Sectors</a></li>
+    <li><a href="https://proboostagency.com/blog.html" style="color:#fff">Blog</a></li>
+  </ul>
+  <a href="https://proboostagency.com/#cta" class="nav-cta">Start a Project</a>
+  <button class="hbg" id="hbg" aria-label="Menu">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-grid"></div>
+  <p class="blog-eyebrow">Insights & Resources</p>
+  <h1 class="blog-hero-h">
+    Ideas That<br><span class="bl">Grow</span> Morocco's<br><span class="it">Tourism</span> Economy
+  </h1>
+  <p class="blog-hero-sub">
+    Free tools, travel guides, and digital strategy insights for <strong>riads, tour operators, restaurants and Airbnb hosts</strong> across Morocco.
+  </p>
+  <div class="filter-row">
+    <button class="filter-btn active" data-filter="all">All Posts</button>
+    <button class="filter-btn" data-filter="tools">Free Tools</button>
+    <button class="filter-btn" data-filter="travel">Travel Guides</button>
+    <button class="filter-btn" data-filter="strategy">Strategy</button>
+    <button class="filter-btn" data-filter="sectors">Sectors</button>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <div class="mq-item hi">Marrakech Travel Guides<span class="dot"></span></div>
+    <div class="mq-item">Free Airbnb Calculators<span class="dot"></span></div>
+    <div class="mq-item hi">Direct Booking Tools<span class="dot"></span></div>
+    <div class="mq-item">SEO Audit Resources<span class="dot"></span></div>
+    <div class="mq-item hi">Restaurant Marketing<span class="dot"></span></div>
+    <div class="mq-item">Google Maps Ranking<span class="dot"></span></div>
+    <div class="mq-item hi">Morocco Tourism Insights<span class="dot"></span></div>
+    <div class="mq-item">Spa & Wellness Tips<span class="dot"></span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="mq-item hi">Marrakech Travel Guides<span class="dot"></span></div>
+    <div class="mq-item">Free Airbnb Calculators<span class="dot"></span></div>
+    <div class="mq-item hi">Direct Booking Tools<span class="dot"></span></div>
+    <div class="mq-item">SEO Audit Resources<span class="dot"></span></div>
+    <div class="mq-item hi">Restaurant Marketing<span class="dot"></span></div>
+    <div class="mq-item">Google Maps Ranking<span class="dot"></span></div>
+    <div class="mq-item hi">Morocco Tourism Insights<span class="dot"></span></div>
+    <div class="mq-item">Spa & Wellness Tips<span class="dot"></span></div>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section class="featured-section reveal">
+  <p class="sec-label">Featured</p>
+  <div class="featured-card">
+    <div class="featured-img-wrap">
+      <div class="featured-badge">Featured Guide</div>
+      <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1600&q=85" alt="Best places to visit Marrakech 2026" loading="lazy" />
+    </div>
+    <div class="featured-body">
+      <p class="post-category">Travel Guide</p>
+      <h2 class="featured-title">
+        <a href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html">
+          Best Places to Visit in Marrakech — 2026 Complete Guide
+        </a>
+      </h2>
+      <p class="featured-desc">
+        From Jemaa el-Fnaa to the Agafay Desert — your definitive guide to Morocco's most captivating city, written for luxury seekers, digital nomads, and first-time visitors alike.
+      </p>
+      <div class="post-meta">
+        <span>
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          8 min read
+        </span>
+        <span>Travel · Marrakech</span>
+      </div>
+      <a href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html" class="read-link">
+        Read the guide
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN POST GRID -->
+<section class="posts-section">
+  <p class="sec-label">Latest Articles</p>
+  <div class="posts-grid" id="postsGrid">
+
+    <!-- 3-day itinerary -->
+    <article class="post-card reveal" data-category="travel">
+      <img class="post-img" src="https://images.unsplash.com/photo-1585211969224-3e992986159d?w=600&q=75" alt="3 days in Marrakech itinerary" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag blue">Travel Guide</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/3-days-marrakech-itinerary.html">The Perfect 3-Day Marrakech Itinerary</a></h3>
+        <p class="post-excerpt">Medina mornings, Majorelle afternoons, rooftop dinners. The exact day-by-day plan to make the most of three days in the Red City.</p>
+        <div class="post-foot">
+          <span>5 min read</span>
+          <a href="https://proboostagency.com/3-days-marrakech-itinerary.html">Read <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Restaurants -->
+    <article class="post-card reveal" data-category="sectors">
+      <img class="post-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75" alt="Restaurant digital marketing Marrakech" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag red">Restaurants</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/restaurant-Marrakech.html">How Marrakech Restaurants Win Online in 2026</a></h3>
+        <p class="post-excerpt">Google Maps, TripAdvisor, Instagram — the three channels every Marrakech restaurant must master to fill tables with international visitors.</p>
+        <div class="post-foot">
+          <span>6 min read</span>
+          <a href="https://proboostagency.com/restaurant-Marrakech.html">Read <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Spas -->
+    <article class="post-card reveal" data-category="sectors">
+      <img class="post-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=75" alt="Spa marketing Marrakech hammam" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag">Wellness</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/spas.html">Spas & Hammams: Growing Your Bookings in Marrakech</a></h3>
+        <p class="post-excerpt">How Marrakech spas and hammams can attract international wellness travelers with the right digital presence, SEO, and booking flow.</p>
+        <div class="post-foot">
+          <span>5 min read</span>
+          <a href="https://proboostagency.com/spas.html">Read <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sahara Trail case study -->
+    <article class="post-card reveal" data-category="strategy">
+      <img class="post-img" src="https://images.unsplash.com/photo-1773681017873-036b5a53e288?w=600&q=75" alt="Sahara trail tour operator case study Morocco" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag blue">Case Study</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/usecase-saharatrail.html">Case Study: How Sahara Trail Tripled Online Bookings</a></h3>
+        <p class="post-excerpt">A deep dive into how we rebuilt a Moroccan desert tour operator's web presence — from zero SEO to page-one Google rankings in under 90 days.</p>
+        <div class="post-foot">
+          <span>7 min read</span>
+          <a href="https://proboostagency.com/usecase-saharatrail.html">Read <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Direct booking savings -->
+    <article class="post-card reveal" data-category="strategy">
+      <img class="post-img" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=75" alt="Direct booking savings for riads Airbnb" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag red">Strategy</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/Direct-booking-savings-calculator.html">How Much Are Airbnb Commissions Really Costing You?</a></h3>
+        <p class="post-excerpt">Most hosts don't realise how much they lose to OTA fees each year. Use our calculator to see what direct bookings could save your property.</p>
+        <div class="post-foot">
+          <span>4 min read + tool</span>
+          <a href="https://proboostagency.com/Direct-booking-savings-calculator.html">Read <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Airbnb calculator Maroc FR -->
+    <article class="post-card reveal" data-category="tools">
+      <img class="post-img" src="https://images.unsplash.com/photo-1527769814692-b9066e3cbcf2?w=600&q=75" alt="Calculateur Airbnb Maroc" loading="lazy" />
+      <div class="post-body">
+        <span class="post-tag blue">Outil Gratuit · FR</span>
+        <h3 class="post-title"><a href="https://proboostagency.com/Airbnb-calculateur-maroc.html">Calculateur Airbnb Maroc — Estimez vos Revenus</a></h3>
+        <p class="post-excerpt">Estimez vos revenus potentiels sur Airbnb au Maroc avec notre calculateur gratuit. Comparez les tarifs par ville, saison et type de logement.</p>
+        <div class="post-foot">
+          <span>Outil interactif</span>
+          <a href="https://proboostagency.com/Airbnb-calculateur-maroc.html">Utiliser <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FREE TOOLS SECTION -->
+<section class="tools-section reveal">
+  <div class="tools-intro">
+    <div>
+      <h2 class="tools-h">Free <em>Tools</em><br>for Morocco</h2>
+    </div>
+    <p class="tools-sub">Interactive calculators and checkers built specifically for Marrakech's tourism businesses. No signup required.</p>
+  </div>
+  <div class="tools-grid">
+
+    <a href="https://proboostagency.com/Airbnb-calculator-marrakech.html" class="tool-card">
+      <div class="tool-icon">📊</div>
+      <div class="tool-body">
+        <p class="tool-label">Free Tool</p>
+        <p class="tool-name">Airbnb Revenue Calculator — Marrakech</p>
+        <p class="tool-desc">Estimate your annual Airbnb earnings based on real Marrakech occupancy data, seasonal trends and your property type.</p>
+        <p class="tool-arrow">Try calculator <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+    <a href="https://proboostagency.com/Direct-booking-savings-calculator.html" class="tool-card">
+      <div class="tool-icon">💰</div>
+      <div class="tool-body">
+        <p class="tool-label">Free Tool</p>
+        <p class="tool-name">Direct Booking Savings Calculator</p>
+        <p class="tool-desc">See exactly how much you could save by converting OTA bookings to direct. Works for riads, villas and Airbnb listings.</p>
+        <p class="tool-arrow">Try calculator <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+    <a href="https://proboostagency.com/google-maps-ranking-checker-marrakech.html" class="tool-card">
+      <div class="tool-icon">📍</div>
+      <div class="tool-body">
+        <p class="tool-label">Free Tool</p>
+        <p class="tool-name">Google Maps Ranking Checker — Marrakech</p>
+        <p class="tool-desc">Check where your business ranks on Google Maps for key tourism searches in Marrakech — and see how to climb higher.</p>
+        <p class="tool-arrow">Check ranking <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+    <a href="https://proboostagency.com/seo-audit-tool.html" class="tool-card">
+      <div class="tool-icon">🔍</div>
+      <div class="tool-body">
+        <p class="tool-label">Free Tool</p>
+        <p class="tool-name">SEO Audit Tool for Morocco Businesses</p>
+        <p class="tool-desc">Instant SEO analysis for your Moroccan tourism website. Find technical issues, keyword gaps and quick wins in seconds.</p>
+        <p class="tool-arrow">Run audit <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+    <a href="https://proboostagency.com/Airbnb-calculateur-maroc.html" class="tool-card">
+      <div class="tool-icon">🇲🇦</div>
+      <div class="tool-body">
+        <p class="tool-label">Outil Gratuit · Français</p>
+        <p class="tool-name">Calculateur Airbnb — Tout le Maroc</p>
+        <p class="tool-desc">Estimez vos revenus Airbnb dans toutes les villes du Maroc : Marrakech, Agadir, Casablanca, Essaouira et plus.</p>
+        <p class="tool-arrow">Utiliser l'outil <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+    <a href="https://proboostagency.com/" class="tool-card">
+      <div class="tool-icon">🚀</div>
+      <div class="tool-body">
+        <p class="tool-label">Agency</p>
+        <p class="tool-name">Get a High-Performance Tourism Website</p>
+        <p class="tool-desc">See the full range of web design and digital marketing services ProBoost offers for Morocco's tourism businesses.</p>
+        <p class="tool-arrow">Explore services <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="blog-cta reveal">
+  <div class="cta-text">
+    <p class="cta-kicker">Work with ProBoost</p>
+    <h2 class="cta-head">Ready to Grow<br>Your Bookings?</h2>
+    <p class="cta-body">From a new website to a full SEO strategy — we help Morocco's tourism businesses get found, get booked, and get growing.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="https://proboostagency.com/#cta" class="btn-p">Start a Project</a>
+    <a href="https://wa.me/212767013525" class="btn-g">
+      WhatsApp Us
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+     <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a>
+      <p class="ft-tag">Web design & digital marketing for Morocco's tourism economy. Based in Marrakech.</p>
+      <div class="ft-soc">
+        <a href="#" class="soc-a" aria-label="Instagram">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="soc-a" aria-label="Facebook">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://wa.me/212767013525" class="soc-a" aria-label="WhatsApp">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-col-t">Articles</p>
+      <ul class="ft-links">
+        <li><a href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html">Marrakech Travel Guide</a></li>
+        <li><a href="https://proboostagency.com/3-days-marrakech-itinerary.html">3-Day Itinerary</a></li>
+        <li><a href="https://proboostagency.com/restaurant-Marrakech.html">Restaurants</a></li>
+        <li><a href="https://proboostagency.com/spas.html">Spas & Hammams</a></li>
+        <li><a href="https://proboostagency.com/usecase-saharatrail.html">Case Study</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ft-col-t">Free Tools</p>
+      <ul class="ft-links">
+        <li><a href="https://proboostagency.com/Airbnb-calculator-marrakech.html">Airbnb Calculator</a></li>
+        <li><a href="https://proboostagency.com/Direct-booking-savings-calculator.html">Booking Savings</a></li>
+        <li><a href="https://proboostagency.com/google-maps-ranking-checker-marrakech.html">Maps Ranking</a></li>
+        <li><a href="https://proboostagency.com/seo-audit-tool.html">SEO Audit</a></li>
+        <li><a href="https://proboostagency.com/Airbnb-calculateur-maroc.html">Calculateur Maroc</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ft-col-t">Agency</p>
+      <ul class="ft-links">
+        <li><a href="https://proboostagency.com/#about">About</a></li>
+        <li><a href="https://proboostagency.com/#services">Services</a></li>
+        <li><a href="https://proboostagency.com/#sectors">Sectors</a></li>
+        <li><a href="https://proboostagency.com/#cta">Contact</a></li>
+        <li><a href="https://wa.me/212767013525">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-copy">© 2026 ProBoost Agency — All rights reserved · Marrakech, Morocco</p>
+    <p class="ft-url">PROBOOSTAGENCY.COM</p>
+  </div>
+</footer>
+
+<script>
+  // Cursor
+  const cur = document.getElementById('cur');
+  const ring = document.getElementById('curRing');
+  let rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top = e.clientY + 'px';
+    rx += (e.clientX - rx) * .12;
+    ry += (e.clientY - ry) * .12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+  });
+  (function raf(){
+    rx += (parseFloat(cur.style.left||0) - rx) * .12;
+    ry += (parseFloat(cur.style.top||0) - ry) * .12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(raf);
+  })();
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Filter
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#postsGrid .post-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        const show = f === 'all' || c.dataset.category === f;
+        c.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // Mobile menu (hamburger)
+  const hbg = document.getElementById('hbg');
+  hbg.addEventListener('click', () => hbg.classList.toggle('open'));
+</script>
+</body>
+</html>
