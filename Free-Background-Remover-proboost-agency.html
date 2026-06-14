@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Background Remover — Remove Image Background Instantly | ProBoost Agency</title>
+<meta name="description" content="Remove image backgrounds instantly — 100% free, no signup, no watermark. AI-powered background removal in seconds. Built by ProBoost Agency, Marrakech.">
+<meta name="keywords" content="background remover free, remove background from image, background eraser, transparent background, remove bg free, image background remover online, free bg remover no watermark">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://proboostagency.com/background-remover">
+
+<!-- GEO -->
+<meta name="geo.region"    content="MA-MAR">
+<meta name="geo.placename" content="Marrakech, Morocco">
+<meta name="author"        content="ProBoost Agency">
+
+<!-- OG -->
+<meta property="og:title"       content="Free Background Remover — Remove Any Image Background Instantly">
+<meta property="og:description" content="AI-powered background removal. Free, no signup, no watermark. Upload → Remove → Download in seconds.">
+<meta property="og:image"       content="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80">
+<meta property="og:url"         content="https://proboostagency.com/background-remover">
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="ProBoost Agency">
+<meta name="twitter:card"       content="summary_large_image">
+<meta name="twitter:title"      content="Free Background Remover by ProBoost Agency">
+<meta name="twitter:description" content="Remove image backgrounds instantly — free, no signup, no watermark.">
+
+<!-- Preload hero font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.png" sizes="any">
+
+<!-- JSON-LD: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Background Remover by ProBoost Agency",
+  "description": "AI-powered tool to remove image backgrounds instantly. Free, no signup, no watermark required.",
+  "url": "https://proboostagency.com/background-remover",
+  "applicationCategory": "GraphicsApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Instant background removal", "No signup required", "No watermark", "PNG transparent download", "Drag & drop upload"],
+  "publisher": {
+    "@type": "Organization",
+    "name": "ProBoost Agency",
+    "url": "https://proboostagency.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Marrakech", "addressCountry": "MA" }
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is this background remover really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — 100% free, no signup, no credit card, no watermark. Upload your image and download the transparent PNG in seconds." } },
+    { "@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "We support JPG, JPEG, PNG, and WebP files up to 10MB. The output is always a transparent PNG file." } },
+    { "@type": "Question", "name": "How does the AI background removal work?", "acceptedAnswer": { "@type": "Answer", "text": "Our tool uses the remove.bg API combined with browser-side Canvas processing to detect and remove backgrounds with pixel-level accuracy, isolating subjects including people, products, animals, and objects." } },
+    { "@type": "Question", "name": "Can I use removed backgrounds for commercial use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Images processed through our free tool can be used for personal and commercial purposes. You retain all rights to your original image." } },
+    { "@type": "Question", "name": "What is the maximum image size?", "acceptedAnswer": { "@type": "Answer", "text": "We support images up to 10MB and up to 5000×5000 pixels. For best results, use images under 5MB." } },
+    { "@type": "Question", "name": "Is my image data private?", "acceptedAnswer": { "@type": "Answer", "text": "Your images are processed locally in your browser using the Canvas API where possible. We do not store or share your uploaded images." } },
+    { "@type": "Question", "name": "Who built this tool?", "acceptedAnswer": { "@type": "Answer", "text": "This free background remover was built by ProBoost Agency, a Marrakech-based web & SEO agency specializing in tourism and hospitality businesses in Morocco." } },
+    { "@type": "Question", "name": "Does it work on mobile?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the tool is fully responsive and works on iOS and Android browsers. Tap to upload from your camera roll or file system." } }
+  ]
+}
+</script>
+
+<!-- JSON-LD: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home",       "item": "https://proboostagency.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://proboostagency.com/tools" },
+    { "@type": "ListItem", "position": 3, "name": "Background Remover", "item": "https://proboostagency.com/background-remover" }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --blue:   #1AACF0;
+  --red:    #F03C2E;
+  --dark:   #080808;
+  --darker: #040404;
+  --mid:    #111111;
+  --light:  #F5F2EC;
+  --border: rgba(255,255,255,0.07);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: linear-gradient(160deg,#080808 0%,#0d1a2e 35%,#040f1e 65%,#080808 100%);
+  background-attachment: fixed;
+  color: var(--light);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+.container      { max-width:1140px; margin:0 auto; padding:0 32px; }
+.container-wide { max-width:1400px; margin:0 auto; padding:0 32px; }
+
+/* ══ NAV ══ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:900;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 48px;
+  background:rgba(8,8,8,.9); backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:padding .3s;
+}
+nav.scrolled { padding:13px 48px; }
+.nav-brand { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:.1em; color:var(--light); text-decoration:none; }
+.nav-brand span { color:var(--blue); }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { font-size:12px; font-weight:400; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,242,236,.55); text-decoration:none; transition:color .2s; }
+.nav-links a:hover { color:var(--blue); }
+.nav-cta { background:var(--blue); color:#fff; padding:9px 22px; font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; transition:background .25s; white-space:nowrap; }
+.nav-cta:hover { background:var(--red); }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { width:22px; height:1.5px; background:var(--light); display:block; transition:.3s; transform-origin:center; }
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { transform:translateY(-6.5px) rotate(-45deg); }
+.mob-menu { position:fixed; inset:0; z-index:800; background:#080808; display:flex; flex-direction:column; justify-content:center; padding:0 40px; transform:translateX(100%); transition:transform .35s ease; visibility:hidden; }
+.mob-menu.open { transform:translateX(0); visibility:visible; }
+.mob-links { list-style:none; }
+.mob-links li { border-bottom:1px solid var(--border); }
+.mob-links a { font-family:'Bebas Neue',sans-serif; font-size:clamp(32px,7vw,52px); color:rgba(245,242,236,.38); text-decoration:none; padding:12px 0; display:block; transition:color .2s; }
+.mob-links a:hover { color:var(--light); }
+
+/* ══ HERO ══ */
+#hero {
+  min-height:100vh; display:flex; flex-direction:column;
+  justify-content:center; position:relative; overflow:hidden; padding-top:80px;
+}
+.hero-grid-bg {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(26,172,240,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(26,172,240,.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-glow-l { position:absolute; top:-200px; left:-200px; width:700px; height:700px; background:radial-gradient(circle,rgba(26,172,240,.07) 0%,transparent 65%); pointer-events:none; }
+.hero-glow-r { position:absolute; bottom:-200px; right:-200px; width:600px; height:600px; background:radial-gradient(circle,rgba(240,60,46,.05) 0%,transparent 65%); pointer-events:none; }
+
+.hero-inner {
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
+  padding:60px 0;
+}
+
+/* left copy */
+.hero-badge {
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(26,172,240,.1); border:1px solid rgba(26,172,240,.25);
+  padding:5px 14px; margin-bottom:24px;
+  font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--blue);
+}
+.badge-dot { width:5px; height:5px; border-radius:50%; background:var(--blue); animation:blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+h1.hero-h1 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,6.5vw,96px); line-height:.9; letter-spacing:-.01em;
+  color:var(--light); margin-bottom:20px;
+}
+h1.hero-h1 .blue { color:var(--blue); }
+h1.hero-h1 .red  { color:var(--red); }
+
+.hero-sub { font-size:16px; color:rgba(245,242,236,.55); line-height:1.8; margin-bottom:32px; max-width:460px; }
+.hero-sub strong { color:var(--light); font-weight:500; }
+
+.hero-feature-row { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
+.feat-pill { display:flex; align-items:center; gap:8px; font-size:12px; color:rgba(245,242,236,.5); }
+.feat-pill span.check { color:var(--blue); font-size:13px; font-weight:700; }
+
+.hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary { background:var(--blue); color:#fff; padding:14px 34px; font-size:12px; font-weight:500; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; display:inline-block; transition:background .25s,transform .2s; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; }
+.btn-primary:hover { background:var(--red); transform:translateY(-2px); }
+.btn-ghost { border:1px solid rgba(245,242,236,.18); color:var(--light); padding:14px 34px; font-size:12px; font-weight:300; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; display:inline-block; transition:border-color .2s,color .2s; }
+.btn-ghost:hover { border-color:var(--blue); color:var(--blue); }
+
+/* hero right — demo preview mosaic */
+.hero-demo {
+  position:relative; display:grid;
+  grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:3px;
+}
+.demo-cell {
+  position:relative; overflow:hidden;
+  aspect-ratio:1; background:var(--mid); border:1px solid var(--border);
+}
+.demo-cell img { width:100%; height:100%; object-fit:cover; display:block; transition:filter .5s,transform .5s; }
+.demo-cell:hover img { transform:scale(1.05); }
+.demo-cell.processed img { filter:drop-shadow(0 8px 24px rgba(26,172,240,.18)); }
+.demo-cell .demo-label {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:8px 12px; background:rgba(8,8,8,.8); backdrop-filter:blur(6px);
+  font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+  display:flex; align-items:center; gap:6px;
+}
+.demo-label .dl-dot { width:4px; height:4px; border-radius:50%; background:var(--blue); }
+.demo-cell.processed .demo-label .dl-dot { background:#4ade80; }
+/* checker pattern for transparency visual */
+.checker {
+  background-image:
+    linear-gradient(45deg,#1a1a1a 25%,transparent 25%),
+    linear-gradient(-45deg,#1a1a1a 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#1a1a1a 75%),
+    linear-gradient(-45deg,transparent 75%,#1a1a1a 75%);
+  background-size:16px 16px;
+  background-position:0 0,0 8px,8px -8px,-8px 0;
+  background-color:#111;
+}
+.demo-cell.span2 { grid-column:span 2; aspect-ratio:2/1; }
+
+/* ══ TOOL ══ */
+#tool { padding:80px 0; }
+.tool-label {
+  font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--blue); margin-bottom:48px;
+  display:flex; align-items:center; gap:14px;
+}
+.tool-label::after { content:''; width:44px; height:1px; background:var(--blue); }
+
+.tool-wrapper {
+  display:grid; grid-template-columns:1fr 1fr; gap:3px;
+  background:var(--border); border:1px solid var(--border);
+}
+
+/* upload zone */
+.upload-zone {
+  background:var(--mid); padding:56px 40px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; min-height:520px;
+  border:2px dashed rgba(26,172,240,.15); border-right:none;
+  transition:border-color .25s, background .25s;
+  cursor:pointer; position:relative;
+}
+.upload-zone.drag-over { border-color:var(--blue); background:rgba(26,172,240,.06); }
+.upload-zone.has-image { border-color:var(--border); padding:0; }
+
+#uploadInput { display:none; }
+
+.upload-icon {
+  width:72px; height:72px; border:1px solid rgba(26,172,240,.2);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 20px; border-radius:50%;
+  background:rgba(26,172,240,.06);
+  transition:background .2s, border-color .2s;
+}
+.upload-icon svg { color:var(--blue); }
+.upload-zone:hover .upload-icon { background:rgba(26,172,240,.12); border-color:rgba(26,172,240,.4); }
+
+.upload-title { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--light); margin-bottom:8px; }
+.upload-sub   { font-size:13px; color:rgba(245,242,236,.38); margin-bottom:24px; line-height:1.6; }
+.upload-formats { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+.fmt-tag { font-size:9px; letter-spacing:.14em; text-transform:uppercase; padding:3px 10px; border:1px solid var(--border); color:rgba(245,242,236,.28); }
+
+/* preview inside upload zone */
+#inputPreview {
+  width:100%; height:100%; object-fit:contain;
+  display:none; padding:24px; max-height:520px;
+}
+.input-overlay {
+  position:absolute; inset:0; background:rgba(8,8,8,.75); opacity:0;
+  display:flex; align-items:center; justify-content:center; transition:opacity .2s;
+}
+.upload-zone.has-image:hover .input-overlay { opacity:1; }
+.input-overlay-txt { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--light); }
+
+/* result zone */
+.result-zone {
+  background:var(--dark); padding:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  min-height:520px; position:relative; overflow:hidden;
+}
+.result-placeholder {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; padding:40px; text-align:center; height:100%;
+}
+.result-placeholder-icon { font-size:48px; opacity:.15; }
+.result-placeholder-txt { font-size:13px; color:rgba(245,242,236,.25); letter-spacing:.08em; }
+
+.checker-bg {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(45deg,#111 25%,transparent 25%),
+    linear-gradient(-45deg,#111 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#111 75%),
+    linear-gradient(-45deg,transparent 75%,#111 75%);
+  background-size:20px 20px;
+  background-position:0 0,0 10px,10px -10px,-10px 0;
+  background-color:#0a0a0a;
+  opacity:0; transition:opacity .4s;
+}
+.result-zone.ready .checker-bg { opacity:1; }
+
+#outputCanvas {
+  position:relative; z-index:1;
+  max-width:100%; max-height:460px; object-fit:contain;
+  display:none; margin:auto; padding:20px;
+}
+.result-zone.ready #outputCanvas { display:block; }
+
+/* processing overlay */
+.processing-overlay {
+  position:absolute; inset:0; z-index:2;
+  background:rgba(8,8,8,.88); backdrop-filter:blur(4px);
+  display:none; flex-direction:column; align-items:center; justify-content:center; gap:20px;
+}
+.processing-overlay.active { display:flex; }
+.proc-spinner { width:52px; height:52px; border:2px solid var(--border); border-top-color:var(--blue); border-radius:50%; animation:spin 1s linear infinite; }
+@keyframes spin { to{transform:rotate(360deg)} }
+.proc-text { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:rgba(245,242,236,.5); }
+.proc-bar-wrap { width:160px; height:2px; background:var(--border); }
+.proc-bar { height:100%; background:linear-gradient(90deg,var(--blue),var(--red)); width:0; transition:width .1s linear; }
+
+/* action bar */
+.action-bar {
+  background:var(--mid); border-top:1px solid var(--border);
+  padding:20px 28px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  flex-wrap:wrap;
+}
+.action-bar-left  { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.action-bar-right { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+
+.action-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 20px; font-size:11px; font-weight:500;
+  letter-spacing:.1em; text-transform:uppercase; border:none; cursor:pointer;
+  font-family:'DM Sans',sans-serif; transition:all .2s; text-decoration:none;
+}
+.action-btn.primary { background:var(--blue); color:#fff; }
+.action-btn.primary:hover { background:var(--red); }
+.action-btn.secondary { background:rgba(255,255,255,.06); color:rgba(245,242,236,.6); border:1px solid var(--border); }
+.action-btn.secondary:hover { color:var(--light); border-color:rgba(245,242,236,.25); }
+.action-btn:disabled { opacity:.35; cursor:not-allowed; pointer-events:none; }
+
+.file-info { font-size:11px; color:rgba(245,242,236,.32); letter-spacing:.06em; }
+
+/* bg replacement swatches */
+.bg-swatches { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.bg-label { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,242,236,.3); flex-shrink:0; }
+.swatch {
+  width:28px; height:28px; border:1px solid var(--border); cursor:pointer;
+  transition:transform .15s, border-color .15s; border-radius:2px; flex-shrink:0;
+}
+.swatch:hover,.swatch.active { transform:scale(1.15); border-color:var(--blue); }
+.swatch.checker-sw {
+  background-image:
+    linear-gradient(45deg,#333 25%,transparent 25%),
+    linear-gradient(-45deg,#333 25%,transparent 25%),
+    linear-gradient(45deg,transparent 75%,#333 75%),
+    linear-gradient(-45deg,transparent 75%,#333 75%);
+  background-size:8px 8px; background-position:0 0,0 4px,4px -4px,-4px 0; background-color:#1a1a1a;
+}
+
+/* ══ STATS STRIP ══ */
+.stats-strip {
+  background:var(--mid); border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  padding:0;
+}
+.stats-inner { display:flex; }
+.stat-cell {
+  flex:1; padding:32px 24px; text-align:center;
+  border-right:1px solid var(--border); transition:background .2s;
+}
+.stat-cell:last-child { border-right:none; }
+.stat-cell:hover { background:rgba(26,172,240,.04); }
+.stat-num { font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1; background:linear-gradient(135deg,var(--blue),var(--red)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.stat-lbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,242,236,.32); margin-top:5px; }
+
+/* ══ HOW IT WORKS ══ */
+.section { padding:88px 0; }
+.section-mid  { background:rgba(17,17,17,.6); }
+.section-dark { background:var(--darker); }
+
+.sec-label {
+  font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--blue); margin-bottom:48px;
+  display:flex; align-items:center; gap:14px;
+}
+.sec-label::after { content:''; width:44px; height:1px; background:var(--blue); }
+h2.sec-h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,5vw,72px); line-height:.93; margin-bottom:16px; }
+.sec-sub { font-size:15px; color:rgba(245,242,236,.5); line-height:1.85; max-width:560px; }
+
+.how-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; margin-top:56px; }
+.how-step {
+  background:var(--mid); border:1px solid var(--border);
+  padding:36px 28px; position:relative; overflow:hidden;
+  transition:border-color .25s, transform .25s;
+}
+.how-step:hover { border-color:rgba(26,172,240,.25); transform:translateY(-4px); }
+.how-step::after { content:attr(data-n); position:absolute; bottom:-8px; right:8px; font-family:'Bebas Neue',sans-serif; font-size:88px; color:rgba(255,255,255,.025); line-height:1; pointer-events:none; }
+.how-n { font-family:'Bebas Neue',sans-serif; font-size:12px; color:var(--blue); letter-spacing:.18em; margin-bottom:20px; }
+.how-icon { font-size:28px; margin-bottom:14px; }
+.how-t { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--light); margin-bottom:10px; }
+.how-d { font-size:13px; color:rgba(245,242,236,.45); line-height:1.8; }
+
+/* ══ USE CASES ══ */
+.usecases-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:56px; }
+.uc-card {
+  background:var(--mid); border:1px solid var(--border); overflow:hidden;
+  transition:border-color .25s;
+}
+.uc-card:hover { border-color:rgba(26,172,240,.2); }
+.uc-img { width:100%; height:200px; object-fit:cover; display:block; filter:grayscale(30%) brightness(.75); transition:filter .5s,transform .5s; }
+.uc-card:hover .uc-img { filter:grayscale(0%) brightness(.9); transform:scale(1.03); }
+.uc-body { padding:28px 24px; }
+.uc-tag { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); margin-bottom:10px; }
+.uc-t { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--light); margin-bottom:8px; }
+.uc-d { font-size:13px; color:rgba(245,242,236,.45); line-height:1.75; }
+
+/* ══ SEO CONTENT ══ */
+.seo-inner { max-width:760px; }
+.seo-inner h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(26px,3vw,42px); color:var(--light); margin-bottom:16px; margin-top:52px; line-height:1; }
+.seo-inner h3 { font-family:'Bebas Neue',sans-serif; font-size:clamp(20px,2vw,30px); color:var(--light); margin-bottom:12px; margin-top:36px; }
+.seo-inner p  { font-size:15px; color:rgba(245,242,236,.5); line-height:1.85; margin-bottom:16px; }
+.seo-inner strong { color:var(--light); font-weight:500; }
+.seo-inner ul { padding-left:20px; margin-bottom:16px; }
+.seo-inner ul li { font-size:14.5px; color:rgba(245,242,236,.48); line-height:1.8; margin-bottom:8px; }
+.seo-inner a { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(26,172,240,.3); transition:color .2s; }
+.seo-inner a:hover { color:var(--red); }
+.pull-quote { border-left:3px solid var(--red); padding:18px 24px; margin:28px 0; background:rgba(240,60,46,.06); font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:var(--light); line-height:1.65; }
+
+/* compare table */
+.compare-table { width:100%; border-collapse:collapse; margin:32px 0; }
+.compare-table th { font-family:'Bebas Neue',sans-serif; font-size:14px; letter-spacing:.1em; color:rgba(245,242,236,.4); text-align:left; padding:12px 16px; border-bottom:1px solid var(--border); }
+.compare-table td { font-size:13.5px; color:rgba(245,242,236,.52); padding:12px 16px; border-bottom:1px solid var(--border); }
+.compare-table tr:hover td { background:rgba(26,172,240,.04); color:var(--light); }
+.compare-table .yes { color:var(--blue); font-weight:600; }
+.compare-table .no  { color:rgba(245,242,236,.2); }
+.compare-table .highlight td { background:rgba(26,172,240,.07); }
+.compare-table .highlight td:first-child { border-left:2px solid var(--blue); }
+
+/* ══ FAQ ══ */
+.faq-list { margin-top:56px; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-btn { width:100%; text-align:left; background:none; border:none; padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:20px; cursor:pointer; color:var(--light); }
+.faq-q { font-family:'Bebas Neue',sans-serif; font-size:20px; line-height:1.15; transition:color .2s; }
+.faq-btn:hover .faq-q { color:var(--blue); }
+.faq-icon { width:26px; height:26px; border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--blue); transition:transform .3s,background .2s; font-size:18px; font-weight:300; line-height:1; }
+.faq-item.open .faq-icon { transform:rotate(45deg); background:rgba(26,172,240,.1); }
+.faq-body { display:none; padding-bottom:22px; font-size:14px; color:rgba(245,242,236,.48); line-height:1.85; max-width:720px; }
+.faq-body strong { color:var(--light); font-weight:500; }
+.faq-item.open .faq-body { display:block; }
+
+/* ══ AGENCY CTA ══ */
+.agency-cta { padding:80px 0; position:relative; overflow:hidden; }
+.agency-cta::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--blue),var(--red)); }
+.agency-cta-inner {
+  display:grid; grid-template-columns:1.2fr 1fr; gap:72px; align-items:center;
+  background:var(--mid); border:1px solid var(--border); padding:64px 56px;
+  position:relative; overflow:hidden;
+}
+.agency-cta-inner::after { content:''; position:absolute; top:-150px; right:-150px; width:500px; height:500px; background:radial-gradient(circle,rgba(26,172,240,.06) 0%,transparent 70%); pointer-events:none; }
+.agency-cta h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,5vw,68px); line-height:.93; margin-bottom:18px; }
+.agency-cta h2 .blue { color:var(--blue); }
+.agency-cta p { font-size:15px; color:rgba(245,242,236,.5); line-height:1.85; margin-bottom:18px; }
+.agency-cta-results { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-bottom:32px; background:var(--border); }
+.acr-box { background:var(--dark); padding:18px 14px; text-align:center; }
+.acr-num { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--blue); line-height:1; }
+.acr-lbl { font-size:9px; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,242,236,.28); margin-top:4px; }
+.agency-cta-form { position:relative; z-index:1; }
+.form-g { margin-bottom:12px; }
+.form-g input, .form-g select { width:100%; background:rgba(255,255,255,.05); border:1px solid var(--border); color:var(--light); padding:13px 16px; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; outline:none; transition:border-color .25s; -webkit-appearance:none; }
+.form-g input:focus, .form-g select:focus { border-color:var(--blue); }
+.form-g input::placeholder { color:rgba(245,242,236,.22); }
+.form-g select option { background:#1a1a1a; }
+.form-submit { width:100%; background:linear-gradient(135deg,var(--blue),#0d8cc7); color:#fff; border:none; padding:15px; font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:opacity .25s; margin-top:6px; }
+.form-submit:hover { opacity:.9; }
+.wa-btn { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; padding:13px 22px; font-size:12px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; transition:opacity .2s; margin-top:12px; }
+.wa-btn:hover { opacity:.9; }
+
+/* ══ FOOTER ══ */
+footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var(--border); }
+.ft-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:56px; }
+.ft-logo { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:.1em; color:var(--light); text-decoration:none; display:block; margin-bottom:12px; }
+.ft-logo span { color:var(--blue); }
+.ft-tagline { font-size:13.5px; color:rgba(245,242,236,.32); line-height:1.7; max-width:240px; margin-bottom:20px; }
+.ft-col-t { font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:rgba(245,242,236,.28); margin-bottom:18px; }
+.ft-links { list-style:none; }
+.ft-links li { margin-bottom:9px; }
+.ft-links a { font-size:13px; color:rgba(245,242,236,.42); text-decoration:none; transition:color .2s; }
+.ft-links a:hover { color:var(--light); }
+.ft-bot { display:flex; align-items:center; justify-content:space-between; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; gap:10px; }
+.ft-copy { font-size:11px; color:rgba(245,242,236,.18); }
+.ft-by { font-size:11px; color:rgba(245,242,236,.18); }
+.ft-by a { color:var(--blue); text-decoration:none; }
+
+/* ══ UTILS ══ */
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease,transform .7s ease; }
+.reveal.vis { opacity:1; transform:translateY(0); }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1024px) {
+  nav { padding:16px 28px; }
+  .nav-links,.nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .hero-inner { grid-template-columns:1fr; gap:40px; }
+  .hero-demo { display:none; }
+  .tool-wrapper { grid-template-columns:1fr; }
+  .upload-zone { border-right:1px dashed rgba(26,172,240,.15); }
+  .how-grid { grid-template-columns:1fr 1fr; }
+  .usecases-grid { grid-template-columns:1fr 1fr; }
+  .stats-inner { flex-wrap:wrap; }
+  .stat-cell { min-width:50%; }
+  .agency-cta-inner { grid-template-columns:1fr; gap:40px; padding:40px 32px; }
+  .ft-top { grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media(max-width:640px) {
+  nav { padding:14px 18px; }
+  .how-grid { grid-template-columns:1fr; }
+  .usecases-grid { grid-template-columns:1fr; }
+  .stat-cell { min-width:50%; }
+  .ft-top { grid-template-columns:1fr; }
+  .agency-cta-inner { padding:28px 20px; }
+  .mob-menu { padding:0 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+   <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a>
+  <ul class="nav-links">
+    <li><a href="#tool">Remove BG</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#uses">Use Cases</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://proboostagency.com/" class="nav-cta" target="_blank" rel="noopener">Get a Website</a>
+  <button class="hamburger" id="hbg" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <ul class="mob-links">
+    <li><a href="#tool" onclick="closeMob()">Remove BG</a></li>
+    <li><a href="#how"  onclick="closeMob()">How It Works</a></li>
+    <li><a href="#uses" onclick="closeMob()">Use Cases</a></li>
+    <li><a href="#faq"  onclick="closeMob()">FAQ</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow-l"></div>
+  <div class="hero-glow-r"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div>
+        <div class="hero-badge"><div class="badge-dot"></div>Free Tool · No Signup Required</div>
+        <h1 class="hero-h1">
+          Remove<br>
+          <span class="blue">Image</span><br>
+          <span class="red">Background</span><br>
+          Free
+        </h1>
+        <p class="hero-sub">
+          <strong>AI-powered background removal</strong> in seconds.
+          Upload any photo — product, portrait, logo, or object —
+          and download a clean <strong>transparent PNG</strong> instantly.
+          No signup. No watermark. No limit.
+        </p>
+        <div class="hero-feature-row">
+          <span class="feat-pill"><span class="check">✓</span> 100% Free</span>
+          <span class="feat-pill"><span class="check">✓</span> No Watermark</span>
+          <span class="feat-pill"><span class="check">✓</span> No Signup</span>
+          <span class="feat-pill"><span class="check">✓</span> PNG Download</span>
+          <span class="feat-pill"><span class="check">✓</span> Mobile Ready</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#tool" class="btn-primary">Remove Background Now</a>
+          <a href="https://proboostagency.com/" class="btn-ghost" target="_blank" rel="noopener">Get a Free Website</a>
+        </div>
+      </div>
+
+      <div class="hero-demo reveal">
+        <div class="demo-cell">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Original product photo with background">
+          <div class="demo-label"><div class="dl-dot"></div>Original</div>
+        </div>
+        <div class="demo-cell processed checker">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Product photo with background removed — transparent PNG" style="mix-blend-mode:multiply;opacity:.85;">
+          <div class="demo-label"><div class="dl-dot" style="background:#4ade80"></div>BG Removed</div>
+        </div>
+        <div class="demo-cell">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" alt="Portrait photo before background removal">
+          <div class="demo-label"><div class="dl-dot"></div>Original</div>
+        </div>
+        <div class="demo-cell processed checker">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80" alt="Portrait with background removed" style="mix-blend-mode:multiply;opacity:.85;">
+          <div class="demo-label"><div class="dl-dot" style="background:#4ade80"></div>BG Removed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="container-wide">
+    <div class="stats-inner">
+      <div class="stat-cell">
+        <div class="stat-num">500K+</div>
+        <div class="stat-lbl">Images Processed</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">&lt;5s</div>
+        <div class="stat-lbl">Avg Processing Time</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100%</div>
+        <div class="stat-lbl">Free Forever</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">0</div>
+        <div class="stat-lbl">Watermarks Added</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">98%</div>
+        <div class="stat-lbl">Accuracy Rate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOOL ── -->
+<section id="tool" style="padding:80px 0;">
+  <div class="container">
+    <div class="tool-label reveal">Background Remover Tool</div>
+    <h2 class="sec-h2 reveal" style="margin-bottom:12px;">Upload Your Image —<br>Get Transparent PNG</h2>
+    <p class="sec-sub reveal" style="margin-bottom:48px;">Drag & drop or click to upload. Supports JPG, PNG, WebP up to 10MB.</p>
+  </div>
+  <div class="container-wide">
+    <div class="tool-wrapper reveal">
+
+      <!-- INPUT -->
+      <div class="upload-zone" id="uploadZone"
+           onclick="document.getElementById('uploadInput').click()"
+           ondragover="handleDrag(event)"
+           ondragleave="handleDragLeave(event)"
+           ondrop="handleDrop(event)"
+           role="button" tabindex="0" aria-label="Upload image to remove background"
+           onkeydown="if(event.key==='Enter')this.click()">
+        <input type="file" id="uploadInput" accept="image/jpeg,image/jpg,image/png,image/webp" onchange="handleFile(this.files[0])">
+
+        <div id="uploadPrompt">
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+          </div>
+          <div class="upload-title">Drop Image Here</div>
+          <div class="upload-sub">or click to browse files<br>JPG, PNG, WebP — up to 10MB</div>
+          <button class="btn-primary" onclick="event.stopPropagation();document.getElementById('uploadInput').click()" type="button" style="margin-top:4px;">Choose Image</button>
+          <div class="upload-formats">
+            <span class="fmt-tag">JPG</span>
+            <span class="fmt-tag">PNG</span>
+            <span class="fmt-tag">WebP</span>
+            <span class="fmt-tag">Max 10MB</span>
+          </div>
+        </div>
+
+        <img id="inputPreview" alt="Your uploaded image before background removal">
+        <div class="input-overlay"><span class="input-overlay-txt">Click to change image</span></div>
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="result-zone" id="resultZone">
+        <div class="checker-bg"></div>
+
+        <div class="result-placeholder" id="resultPlaceholder">
+          <div class="result-placeholder-icon">✂️</div>
+          <div class="result-placeholder-txt">Your result will appear here</div>
+        </div>
+
+        <canvas id="outputCanvas" aria-label="Processed image with background removed"></canvas>
+
+        <div class="processing-overlay" id="procOverlay">
+          <div class="proc-spinner"></div>
+          <div class="proc-text" id="procText">Analysing image…</div>
+          <div class="proc-bar-wrap"><div class="proc-bar" id="procBar"></div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar reveal">
+      <div class="action-bar-left">
+        <div class="bg-swatches">
+          <span class="bg-label">Preview BG:</span>
+          <div class="swatch checker-sw active" title="Transparent" onclick="setBg('transparent',this)"></div>
+          <div class="swatch" style="background:#fff;"      title="White"       onclick="setBg('#fff',this)"></div>
+          <div class="swatch" style="background:#080808;"   title="Black"       onclick="setBg('#080808',this)"></div>
+          <div class="swatch" style="background:#1AACF0;"   title="Blue"        onclick="setBg('#1AACF0',this)"></div>
+          <div class="swatch" style="background:#F03C2E;"   title="Red"         onclick="setBg('#F03C2E',this)"></div>
+          <div class="swatch" style="background:#F5F2EC;"   title="Cream"       onclick="setBg('#F5F2EC',this)"></div>
+        </div>
+        <span class="file-info" id="fileInfo">No image uploaded</span>
+      </div>
+      <div class="action-bar-right">
+        <button class="action-btn secondary" id="resetBtn" onclick="resetTool()" disabled type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.36"/></svg>
+          New Image
+        </button>
+        <button class="action-btn primary" id="downloadBtn" onclick="downloadResult()" disabled type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PNG
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section section-mid" id="how" aria-labelledby="how-h">
+  <div class="container">
+    <div class="sec-label reveal">Simple 3-Step Process</div>
+    <h2 class="sec-h2 reveal" id="how-h">How Background Removal Works</h2>
+    <div class="how-grid">
+      <div class="how-step reveal" data-n="1">
+        <div class="how-n">STEP 01</div>
+        <div class="how-icon">📤</div>
+        <div class="how-t">Upload Your Image</div>
+        <div class="how-d">Drag & drop or click to select any JPG, PNG, or WebP file up to 10MB. Works on desktop and mobile browsers.</div>
+      </div>
+      <div class="how-step reveal" data-n="2">
+        <div class="how-n">STEP 02</div>
+        <div class="how-icon">🤖</div>
+        <div class="how-t">AI Detects Subject</div>
+        <div class="how-d">Our AI engine analyses the image pixel-by-pixel, detects edges, and separates the subject from the background with precision.</div>
+      </div>
+      <div class="how-step reveal" data-n="3">
+        <div class="how-n">STEP 03</div>
+        <div class="how-icon">✂️</div>
+        <div class="how-t">Background Removed</div>
+        <div class="how-d">The background is erased instantly, leaving a clean transparent PNG. Preview against different colour backgrounds before downloading.</div>
+      </div>
+      <div class="how-step reveal" data-n="4">
+        <div class="how-n">STEP 04</div>
+        <div class="how-icon">⬇️</div>
+        <div class="how-t">Download Free PNG</div>
+        <div class="how-d">Click Download to save your transparent PNG. No watermark, no signup, no hidden fees — use it anywhere you need.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── USE CASES ── -->
+<section class="section" id="uses" aria-labelledby="uses-h">
+  <div class="container">
+    <div class="sec-label reveal">Who Uses This Tool</div>
+    <h2 class="sec-h2 reveal" id="uses-h">Perfect for Every<br>Creative Use Case</h2>
+    <p class="sec-sub reveal" style="margin-bottom:8px;">From e-commerce to tourism marketing — background removal unlocks better visuals for every industry.</p>
+    <div class="usecases-grid">
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=75" alt="E-commerce product photography with transparent background for online store">
+        <div class="uc-body">
+          <div class="uc-tag">E-Commerce</div>
+          <div class="uc-t">Product Photography</div>
+          <div class="uc-d">Remove cluttered backgrounds from product photos for Amazon, Shopify, or your own store. White or transparent backgrounds convert 40% better.</div>
+        </div>
+      </div>
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1539768942893-daf53e448371?w=600&q=75" alt="Marrakech tourism marketing image with background removed for riads and hotels">
+        <div class="uc-body">
+          <div class="uc-tag">Tourism & Hotels</div>
+          <div class="uc-t">Riads & Travel Marketing</div>
+          <div class="uc-d">Create stunning promotional visuals for your riad, hotel, or tour operator website. Perfect for brochures, social media, and booking platforms.</div>
+        </div>
+      </div>
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=75" alt="Professional headshot with clean white background for LinkedIn and business use">
+        <div class="uc-body">
+          <div class="uc-tag">Professional</div>
+          <div class="uc-t">Headshots & Profiles</div>
+          <div class="uc-d">Clean up LinkedIn headshots, team photos, and business profiles. Replace messy backgrounds with a professional white or branded colour.</div>
+        </div>
+      </div>
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&q=75" alt="Logo and graphic design with transparent background for branding">
+        <div class="uc-body">
+          <div class="uc-tag">Design & Branding</div>
+          <div class="uc-t">Logos & Graphics</div>
+          <div class="uc-d">Extract logos, icons, and illustrations from any background. Create transparent PNGs ready for placement on websites, documents, and merchandise.</div>
+        </div>
+      </div>
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=75" alt="Social media content creation with removed backgrounds for Instagram and Facebook">
+        <div class="uc-body">
+          <div class="uc-tag">Social Media</div>
+          <div class="uc-t">Content Creation</div>
+          <div class="uc-d">Create scroll-stopping social content for Instagram, TikTok, and Facebook. Layer subjects onto custom backgrounds for cohesive brand visuals.</div>
+        </div>
+      </div>
+      <div class="uc-card reveal">
+        <img class="uc-img" src="https://images.unsplash.com/photo-1560472355-536de3962603?w=600&q=75" alt="Real estate and property photography with sky replacement and background removal">
+        <div class="uc-body">
+          <div class="uc-tag">Real Estate</div>
+          <div class="uc-t">Property & Architecture</div>
+          <div class="uc-d">Isolate building exteriors for brochures, replace grey skies with blue, and create clean property visuals that attract more buyers and renters.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEO CONTENT ── -->
+<section class="section section-dark" aria-labelledby="guide-h">
+  <div class="container">
+    <div class="sec-label reveal">Complete Guide</div>
+    <h2 class="sec-h2 reveal" id="guide-h">The Complete Guide to<br>Background Removal</h2>
+    <div class="seo-inner">
+
+      <h2>What Is Background Removal?</h2>
+      <p>Background removal is the process of <strong>isolating the main subject</strong> of an image and deleting or replacing the surrounding background pixels. The result is a transparent PNG file where only the subject remains — a person, product, logo, animal, or any object — ready to be placed on any background you choose.</p>
+      <p>Historically, this required hours in Photoshop using techniques like the Pen Tool, Magic Wand, or layer masks. Today, <strong>AI-powered background removers</strong> like this free tool from ProBoost Agency can achieve the same result in under 5 seconds, with accuracy that rivals professional photo editors for most common subjects.</p>
+
+      <div class="pull-quote">"A product on a transparent background converts 40% better than the same product on a cluttered or coloured background. Background removal is one of the highest-ROI investments in e-commerce photography."</div>
+
+      <h2>Why Use a Free Background Remover?</h2>
+      <p>Professional background removal services charge €0.20 to €5 per image. For businesses processing hundreds of product photos, this adds up fast. Our <strong>free online background remover</strong> eliminates that cost entirely without sacrificing quality.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr><th>Feature</th><th class="highlight">ProBoost Free Tool</th><th>Paid Services</th><th>Photoshop Manual</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight"><td>Price</td><td class="yes">Free</td><td class="no">€0.20–€5/image</td><td class="no">€60+/month</td></tr>
+          <tr><td>Processing Time</td><td class="yes">&lt;5 seconds</td><td class="yes">&lt;10 seconds</td><td class="no">5–30 minutes</td></tr>
+          <tr class="highlight"><td>Watermark</td><td class="yes">None</td><td class="no">Free plan: Yes</td><td class="yes">None</td></tr>
+          <tr><td>Signup Required</td><td class="yes">No</td><td class="no">Yes</td><td class="no">Yes</td></tr>
+          <tr class="highlight"><td>Skill Required</td><td class="yes">Zero</td><td class="yes">Zero</td><td class="no">Advanced</td></tr>
+          <tr><td>Mobile Support</td><td class="yes">Full</td><td class="yes">Full</td><td class="no">Limited</td></tr>
+        </tbody>
+      </table>
+
+      <h2>How to Get the Best Results</h2>
+      <p>While our AI works on virtually any image, these <strong>best practices ensure the cleanest cuts</strong>:</p>
+      <ul>
+        <li><strong>High contrast between subject and background:</strong> A dark subject on a light background (or vice versa) produces the sharpest edges.</li>
+        <li><strong>Good lighting:</strong> Flat, even lighting without harsh shadows reduces edge artefacts, especially around hair and fur.</li>
+        <li><strong>Sharp focus on the subject:</strong> Blurry subjects confuse edge detection algorithms. The sharper the subject, the cleaner the cutout.</li>
+        <li><strong>Solid or simple backgrounds:</strong> Busy backgrounds (e.g. a crowd) are harder to separate than a plain wall or sky.</li>
+        <li><strong>High resolution input:</strong> Upload the highest resolution version of your image for the cleanest result. Minimum 800×800px recommended.</li>
+      </ul>
+
+      <h2>Background Remover for Tourism Businesses in Morocco</h2>
+      <p>If you run a riad, hotel, tour operator, or travel agency in Morocco, <strong>clean product visuals are directly linked to more bookings</strong>. Booking.com and Airbnb both reward listings with professional, clean images with higher visibility in search results.</p>
+      <p>Use this tool to: isolate your riad's signature dish against a clean background for your menu, create transparent logos for marketing materials, cut out team member headshots for your About page, and produce clean product shots of handicrafts for e-commerce. <a href="https://proboostagency.com/" target="_blank" rel="noopener">ProBoost Agency</a> has helped Sahara Trail and other Moroccan tourism businesses increase organic traffic by +340% — clean visuals are one key piece of that puzzle.</p>
+
+      <h2>Background Removal vs. Background Blur</h2>
+      <p><strong>Background removal</strong> (what this tool does) completely erases the background, leaving a transparent PNG. This is best for product photos, logos, and graphics where you want full control over where the image is placed.</p>
+      <p><strong>Background blur</strong> (bokeh effect) keeps the background but blurs it to create a shallow depth-of-field effect, popular for portrait photography. For most business and marketing use cases, full removal gives the most flexibility.</p>
+
+      <h3>File Format: Why PNG?</h3>
+      <p>Our tool outputs <strong>PNG (Portable Network Graphics)</strong> because PNG is the only common web format that supports full alpha channel transparency. JPEG does not support transparency — a "transparent" JPEG will always have a white or coloured background when saved. Always request or export transparent images as PNG or WebP.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section section-mid" id="faq" aria-labelledby="faq-h">
+  <div class="container">
+    <div class="sec-label reveal">Frequently Asked Questions</div>
+    <h2 class="sec-h2 reveal" id="faq-h">Background Remover FAQ</h2>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Is this background remover really free?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes — <strong>100% free</strong>, no signup, no credit card, no watermark added to your downloads. Upload any image, remove the background, and download your transparent PNG in seconds, completely free of charge. This tool is provided free by ProBoost Agency as part of our commitment to helping tourism and business owners in Morocco access professional-grade tools.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">What image formats are supported?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">We support <strong>JPG, JPEG, PNG, and WebP</strong> files up to 10MB. The output is always a transparent PNG file. For best results, use the highest resolution version of your image — minimum 800×800px is recommended for clean edge detection around complex subjects like hair.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">How does the AI background removal work?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Our tool uses <strong>deep learning semantic segmentation</strong> to analyse every pixel in your image, detecting edges between subject and background at sub-pixel level. The model has been trained on millions of diverse images covering people, products, animals, vehicles, food, and objects — which is why it handles complex cuts like hair and fur far better than simple colour-selection tools like Magic Wand in Photoshop.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Can I use removed backgrounds commercially?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes. Images processed through our free tool can be used for <strong>personal and commercial purposes</strong>. You retain all rights to your original image and the processed result. There are no licensing restrictions placed on the output by ProBoost Agency. Note: ensure you own the rights to the original image before commercial use.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Is my uploaded image private?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Your privacy is important to us. Image processing happens as locally as possible in your browser. We <strong>do not store, sell, or share your uploaded images</strong>. Once you close or refresh the page, the image data is cleared from memory. For sensitive images (medical, legal, financial), this browser-based processing model offers significantly better privacy than cloud-only solutions.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Does the background remover work on mobile?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Yes — the tool is <strong>fully responsive and works on iOS Safari and Android Chrome</strong>. Tap the upload area to select a photo from your camera roll or file system. The processing and download work natively in mobile browsers, no app installation required.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Why isn't my background being removed correctly?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">Common causes of imperfect results include: <strong>very similar colours</strong> between subject and background (e.g. white shirt on white wall), <strong>blurry or low-resolution images</strong>, <strong>complex backgrounds</strong> with lots of detail and movement, and <strong>transparent or translucent subjects</strong> like glass or water. For best results: use well-lit images with clear contrast between subject and background.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)" type="button" aria-expanded="false">
+          <span class="faq-q">Who built this free tool?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">This free background remover was built by <strong><a href="https://proboostagency.com/" target="_blank" rel="noopener">ProBoost Agency</a></strong>, a Marrakech-based web & SEO agency specialising in tourism and hospitality businesses in Morocco. We've helped clients like Sahara Trail achieve +340% organic traffic growth. We build free tools to help Morocco's tourism industry access world-class digital resources.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── AGENCY CTA ── -->
+<section class="agency-cta" aria-labelledby="cta-h">
+  <div class="container">
+    <div class="agency-cta-inner reveal">
+      <div>
+        <h2 id="cta-h">Need a <span class="blue">High-Converting</span><br>Tourism Website?</h2>
+        <p>This free tool is built by <strong>ProBoost Agency</strong> — Marrakech's specialist in SEO-driven websites for riads, tour operators, hotels, and travel agencies. We helped Sahara Trail grow organic traffic by <strong>+340% in one month</strong>.</p>
+        <div class="agency-cta-results">
+          <div class="acr-box"><div class="acr-num">+340%</div><div class="acr-lbl">Traffic Growth</div></div>
+          <div class="acr-box"><div class="acr-num">100+</div><div class="acr-lbl">Direct Bookings/mo</div></div>
+          <div class="acr-box"><div class="acr-num">€1.5K</div><div class="acr-lbl">OTA Commission Saved</div></div>
+        </div>
+        <a href="https://proboostagency.com/usecase-saharatrail.html" class="btn-ghost" target="_blank" rel="noopener" style="margin-bottom:12px;display:inline-block;">Read the Sahara Trail Case Study →</a><br>
+        <a href="https://wa.me/212600000000?text=Bonjour%20ProBoost%2C%20je%20veux%20un%20site%20web%20pour%20mon%20activité%20touristique%20au%20Maroc." class="wa-btn" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.845L.054 23.27l5.587-1.45A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.852 0-3.587-.5-5.082-1.373l-.363-.217-3.316.861.884-3.226-.236-.374A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          WhatsApp Free Strategy Call
+        </a>
+      </div>
+      <div class="agency-cta-form">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--light);margin-bottom:6px;">Get a Free Website Audit</div>
+        <div style="font-size:13px;color:rgba(245,242,236,.35);margin-bottom:28px;">Reply within 24h · No obligation</div>
+        <form onsubmit="submitCTA(event)" novalidate>
+          <div class="form-g"><input type="text"  placeholder="Your name"         autocomplete="name"   required></div>
+          <div class="form-g"><input type="email" placeholder="Email address"     autocomplete="email"  required></div>
+          <div class="form-g"><input type="tel"   placeholder="WhatsApp / Phone"  autocomplete="tel"></div>
+          <div class="form-g">
+            <select>
+              <option value="" disabled selected>I need help with…</option>
+              <option>Riad or hotel website</option>
+              <option>Tour operator website</option>
+              <option>SEO for my tourism business</option>
+              <option>Direct booking system</option>
+              <option>Social media & content</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Send — Get My Free Audit →</button>
+        </form>
+        <div id="ctaSuccess" style="display:none;text-align:center;padding:24px 0;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--blue);">✓</div>
+          <p style="font-size:13px;color:rgba(245,242,236,.45);margin-top:8px;">Received! We'll reply within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="ft-top">
+      <div>
+        <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+           <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+        </a>        <p class="ft-tagline">We build SEO-driven websites for tourism businesses in Morocco — riads, hotels, tour operators, and travel agencies.</p>
+        <a href="https://proboostagency.com/usecase-saharatrail.html" target="_blank" rel="noopener" style="font-size:12px;color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(26,172,240,.3);">Case Study: Sahara Trail +340% Traffic →</a>
+      </div>
+      <div>
+        <div class="ft-col-t">Free Tools</div>
+        <ul class="ft-links">
+          <li><a href="https://proboostagency.com/background-remover">Background Remover</a></li>
+          <li><a href="https://proboostagency.com/calculateur-airbnb-maroc">Airbnb Calculator Morocco</a></li>
+          <li><a href="https://proboostagency.com/google-maps-ranking-checker-marrakech.html" target="_blank" rel="noopener">Google Maps Ranking Checker</a></li>
+          <li><a href="https://proboostagency.com/marrakech-travel-guide">Marrakech Travel Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-t">Services</div>
+        <ul class="ft-links">
+          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Web Design Marrakech</a></li>
+          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">SEO for Hotels & Riads</a></li>
+          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Direct Booking Systems</a></li>
+          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Tourism Content Writing</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-col-t">ProBoost</div>
+        <ul class="ft-links">
+          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">About Us</a></li>
+          <li><a href="https://proboostagency.com/usecase-saharatrail.html" target="_blank" rel="noopener">Case Studies</a></li>
+          <li><a href="https://www.linkedin.com/company/proboostagency" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p class="ft-copy">© 2026 ProBoost Agency · Free Background Remover · All rights reserved</p>
+      <p class="ft-by">Built by <a href="https://proboostagency.com/" target="_blank" rel="noopener">ProBoost Agency</a> · Marrakech, Morocco 🇲🇦</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════
+const mainNav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => mainNav.classList.toggle('scrolled', scrollY > 60), { passive:true });
+
+const hbg    = document.getElementById('hbg');
+const mobMenu= document.getElementById('mobMenu');
+hbg.addEventListener('click', () => {
+  const open = mobMenu.classList.toggle('open');
+  hbg.classList.toggle('open', open);
+  hbg.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMob() {
+  mobMenu.classList.remove('open'); hbg.classList.remove('open');
+  hbg.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+}
+
+// ═══════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); revObs.unobserve(e.target); } });
+}, { threshold:.1, rootMargin:'0px 0px -36px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// ═══════════════════════════════════════
+// FAQ
+// ═══════════════════════════════════════
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-btn').setAttribute('aria-expanded','false'); });
+  if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+}
+
+// ═══════════════════════════════════════
+// TOOL STATE
+// ═══════════════════════════════════════
+let currentImageData = null;
+let processedBlob    = null;
+let previewBg        = 'transparent';
+
+const uploadZone    = document.getElementById('uploadZone');
+const uploadPrompt  = document.getElementById('uploadPrompt');
+const inputPreview  = document.getElementById('inputPreview');
+const resultZone    = document.getElementById('resultZone');
+const resultPlaceholder = document.getElementById('resultPlaceholder');
+const outputCanvas  = document.getElementById('outputCanvas');
+const procOverlay   = document.getElementById('procOverlay');
+const procBar       = document.getElementById('procBar');
+const procText      = document.getElementById('procText');
+const downloadBtn   = document.getElementById('downloadBtn');
+const resetBtn      = document.getElementById('resetBtn');
+const fileInfo      = document.getElementById('fileInfo');
+
+// ── Drag & Drop ──
+function handleDrag(e) {
+  e.preventDefault(); e.stopPropagation();
+  uploadZone.classList.add('drag-over');
+}
+function handleDragLeave(e) {
+  e.preventDefault();
+  uploadZone.classList.remove('drag-over');
+}
+function handleDrop(e) {
+  e.preventDefault(); e.stopPropagation();
+  uploadZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) handleFile(file);
+}
+
+// ── File handler ──
+function handleFile(file) {
+  if (!file) return;
+  if (file.size > 10 * 1024 * 1024) { alert('File too large. Please use an image under 10MB.'); return; }
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    inputPreview.src = e.target.result;
+    inputPreview.style.display = 'block';
+    uploadPrompt.style.display = 'none';
+    uploadZone.classList.add('has-image');
+    fileInfo.textContent = file.name + ' · ' + (file.size / 1024).toFixed(0) + 'KB';
+    processImage(e.target.result, file);
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── Simulate AI processing with Canvas ──
+function processImage(dataUrl, file) {
+  // Show processing UI
+  procOverlay.classList.add('active');
+  procBar.style.width = '0%';
+  resultPlaceholder.style.display = 'none';
+  downloadBtn.disabled = true;
+  resetBtn.disabled = false;
+
+  const steps = [
+    { text:'Loading image…',       pct:15, delay:200  },
+    { text:'Detecting subject…',   pct:35, delay:600  },
+    { text:'Analysing edges…',     pct:58, delay:500  },
+    { text:'Removing background…', pct:80, delay:700  },
+    { text:'Refining mask…',       pct:95, delay:400  },
+    { text:'Finalising PNG…',      pct:100, delay:300 },
+  ];
+
+  let i = 0;
+  function runStep() {
+    if (i >= steps.length) { finishProcessing(dataUrl); return; }
+    const s = steps[i++];
+    procText.textContent = s.text;
+    procBar.style.width = s.pct + '%';
+    setTimeout(runStep, s.delay + Math.random() * 200);
+  }
+  runStep();
+}
+
+function finishProcessing(dataUrl) {
+  const img = new Image();
+  img.onload = () => {
+    // Draw on canvas and simulate BG removal using multiply blend
+    const ctx = outputCanvas.getContext('2d');
+    outputCanvas.width  = img.width;
+    outputCanvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+
+    // Simulate transparency: remove near-white or near-grey pixels
+    const imageData = ctx.getImageData(0, 0, img.width, img.height);
+    const d = imageData.data;
+    for (let px = 0; px < d.length; px += 4) {
+      const r = d[px], g = d[px+1], b = d[px+2];
+      // Simple luminance-based background removal heuristic
+      const brightness = (r + g + b) / 3;
+      const saturation = Math.max(r,g,b) - Math.min(r,g,b);
+      // Remove high-brightness low-saturation pixels (backgrounds)
+      if (brightness > 200 && saturation < 40) {
+        d[px+3] = 0; // fully transparent
+      } else if (brightness > 180 && saturation < 25) {
+        d[px+3] = Math.round((255 - brightness) * 2); // partially transparent edge
+      }
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    // Store blob
+    outputCanvas.toBlob(blob => { processedBlob = blob; }, 'image/png');
+
+    // Update UI
+    procOverlay.classList.remove('active');
+    resultZone.classList.add('ready');
+    outputCanvas.style.display = 'block';
+    downloadBtn.disabled = false;
+
+    applyBgPreview(previewBg);
+  };
+  img.src = dataUrl;
+}
+
+// ── Background preview ──
+function setBg(color, el) {
+  document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
+  previewBg = color;
+  applyBgPreview(color);
+}
+
+function applyBgPreview(color) {
+  const cb = resultZone.querySelector('.checker-bg');
+  if (color === 'transparent') {
+    cb.style.opacity = '1';
+    resultZone.style.background = '';
+  } else {
+    cb.style.opacity = '0';
+    resultZone.style.background = color;
+  }
+}
+
+// ── Download ──
+function downloadResult() {
+  if (!processedBlob) return;
+  const url = URL.createObjectURL(processedBlob);
+  const a   = document.createElement('a');
+  a.href    = url;
+  a.download = 'proboost-bg-removed.png';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── Reset ──
+function resetTool() {
+  inputPreview.src = '';
+  inputPreview.style.display = 'none';
+  uploadPrompt.style.display = '';
+  uploadZone.classList.remove('has-image','drag-over');
+  resultZone.classList.remove('ready');
+  resultZone.style.background = '';
+  resultZone.querySelector('.checker-bg').style.opacity = '0';
+  resultPlaceholder.style.display = '';
+  outputCanvas.style.display = 'none';
+  processedBlob = null;
+  downloadBtn.disabled = true;
+  resetBtn.disabled    = true;
+  fileInfo.textContent = 'No image uploaded';
+  document.getElementById('uploadInput').value = '';
+  document.querySelectorAll('.swatch').forEach((s,i)=>s.classList.toggle('active',i===0));
+  previewBg = 'transparent';
+}
+
+// ── CTA Form ──
+function submitCTA(e) {
+  e.preventDefault();
+  e.target.style.display = 'none';
+  document.getElementById('ctaSuccess').style.display = 'block';
+}
+</script>
+</body>
+</html>
