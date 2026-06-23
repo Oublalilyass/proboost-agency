@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Cost Calculator — Get an Instant Quote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:   #1AACF0;
+  --red:    #F03C2E;
+  --dark:   #080808;
+  --darker: #040404;
+  --mid:    #111111;
+  --light:  #F5F2EC;
+  --border: rgba(255,255,255,0.07);
+  --text-muted: rgba(245,242,236,0.45);
+  --text-dim: rgba(245,242,236,0.7);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--darker);
+  color: var(--light);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { opacity: 0.8; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(4,4,4,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: var(--text-dim); font-size: 13px; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--light); }
+.nav-cta {
+  background: var(--blue); color: #000 !important;
+  padding: 8px 18px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .88; }
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--mid);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; height: 36px;
+  display: flex; align-items: center;
+}
+.ticker-inner {
+  display: flex; gap: 60px;
+  animation: ticker 28s linear infinite;
+  white-space: nowrap;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  font-size: 12px; font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: .5px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+.ticker-item b { color: var(--blue); }
+
+/* ── HERO ── */
+.hero {
+  padding: 90px 32px 80px;
+  max-width: 960px; margin: 0 auto; text-align: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(26,172,240,.1); border: 1px solid rgba(26,172,240,.25);
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--blue); text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 28px;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: block; }
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+h1 em { font-style: normal; color: var(--blue); }
+.hero-sub {
+  font-size: 17px; color: var(--text-dim);
+  max-width: 580px; margin: 0 auto 40px;
+  line-height: 1.65;
+}
+.hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--blue); color: #000;
+  padding: 13px 28px; border-radius: 8px;
+  font-size: 14px; font-weight: 700;
+  border: none; cursor: pointer;
+  transition: transform .15s, opacity .15s;
+}
+.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 13px 28px; border-radius: 8px;
+  font-size: 14px; font-weight: 500;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,.25); color: var(--light); }
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  max-width: 900px; margin: 60px auto 0;
+}
+.stat-cell {
+  padding: 28px 24px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 30px; font-weight: 800;
+  color: var(--light); display: block;
+}
+.stat-val span { color: var(--blue); }
+.stat-label {
+  font-size: 11px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .8px; margin-top: 4px; display: block;
+}
+
+/* ── SECTION ── */
+.section { padding: 80px 32px; max-width: 1100px; margin: 0 auto; }
+.section-eyebrow {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--blue); margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -1px; margin-bottom: 16px;
+}
+.section-title em { font-style: normal; color: var(--blue); }
+.section-sub {
+  font-size: 15px; color: var(--text-dim);
+  max-width: 540px; line-height: 1.65; margin-bottom: 50px;
+}
+
+/* ── CALCULATOR ── */
+#calculator {
+  background: var(--mid);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 32px;
+}
+.calc-inner { max-width: 1100px; margin: 0 auto; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+
+/* left panel */
+.calc-panel {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+}
+.calc-panel-title {
+  font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); margin-bottom: 28px;
+  border-bottom: 1px solid var(--border); padding-bottom: 14px;
+}
+
+.field-group { margin-bottom: 28px; }
+.field-label {
+  display: block;
+  font-size: 12px; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: .8px; margin-bottom: 10px;
+}
+.chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 8px 14px; border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all .15s;
+}
+.chip:hover { border-color: rgba(26,172,240,.4); color: var(--light); }
+.chip.active {
+  background: rgba(26,172,240,.12);
+  border-color: rgba(26,172,240,.5);
+  color: var(--blue);
+}
+.chip.active-red {
+  background: rgba(240,60,46,.1);
+  border-color: rgba(240,60,46,.4);
+  color: var(--red);
+}
+
+.toggle-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.toggle-row:last-child { border-bottom: none; }
+.toggle-info { flex: 1; }
+.toggle-name { font-size: 14px; font-weight: 500; color: var(--light); }
+.toggle-desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.toggle-price { font-size: 13px; font-weight: 600; color: var(--blue); margin: 0 16px; }
+.toggle-switch {
+  position: relative; width: 42px; height: 22px;
+  cursor: pointer;
+}
+.toggle-switch input { display: none; }
+.toggle-track {
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,.08);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  transition: background .2s;
+}
+.toggle-switch input:checked + .toggle-track { background: rgba(26,172,240,.25); border-color: rgba(26,172,240,.5); }
+.toggle-thumb {
+  position: absolute;
+  width: 16px; height: 16px;
+  background: rgba(255,255,255,.3);
+  border-radius: 50%; top: 3px; left: 3px;
+  transition: transform .2s, background .2s;
+  pointer-events: none;
+}
+.toggle-switch input:checked ~ .toggle-thumb { transform: translateX(20px); background: var(--blue); }
+
+/* right panel — results */
+.result-panel {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+  display: flex; flex-direction: column;
+}
+.result-header {
+  font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 28px;
+}
+.result-price-block { text-align: center; padding: 32px 0; }
+.result-price-label {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); margin-bottom: 8px;
+}
+.result-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 58px; font-weight: 800;
+  letter-spacing: -3px; line-height: 1;
+  color: var(--light);
+}
+.result-price span { color: var(--blue); }
+.result-range {
+  font-size: 13px; color: var(--text-muted);
+  margin-top: 8px;
+}
+.result-divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+.breakdown-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 8px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.breakdown-row:last-child { border-bottom: none; }
+.breakdown-key { color: var(--text-dim); }
+.breakdown-val { font-weight: 600; color: var(--light); }
+.breakdown-val.zero { color: var(--text-muted); }
+.result-tip {
+  background: rgba(26,172,240,.06);
+  border: 1px solid rgba(26,172,240,.15);
+  border-radius: 8px; padding: 14px 16px;
+  font-size: 12px; color: var(--text-dim);
+  line-height: 1.6; margin-top: 20px;
+}
+.result-tip strong { color: var(--blue); }
+
+/* ── TIMELINE ── */
+.timeline { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; margin-top: 50px; }
+.tl-item {
+  background: var(--mid);
+  border: 1px solid var(--border);
+  padding: 30px 24px;
+}
+.tl-item:first-child { border-radius: 12px 0 0 12px; }
+.tl-item:last-child { border-radius: 0 12px 12px 0; }
+.tl-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px; font-weight: 800;
+  color: rgba(26,172,240,.2);
+  line-height: 1; margin-bottom: 14px;
+}
+.tl-title {
+  font-size: 15px; font-weight: 700;
+  color: var(--light); margin-bottom: 8px;
+}
+.tl-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* ── EXAMPLES ── */
+.examples-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.example-card {
+  background: var(--mid);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px;
+  transition: border-color .2s;
+}
+.example-card:hover { border-color: rgba(26,172,240,.3); }
+.ex-type {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--blue); margin-bottom: 12px;
+}
+.ex-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800;
+  letter-spacing: -.5px; margin-bottom: 10px;
+}
+.ex-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+.ex-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.ex-row { display: flex; justify-content: space-between; font-size: 12px; }
+.ex-row span { color: var(--text-muted); }
+.ex-row b { color: var(--light); }
+.ex-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800; color: var(--blue);
+}
+.ex-save { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+/* ── LEAD FORM ── */
+#lead {
+  padding: 80px 32px;
+  background: var(--mid);
+  border-top: 1px solid var(--border);
+}
+.lead-inner { max-width: 640px; margin: 0 auto; }
+.lead-form {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 40px;
+  margin-top: 40px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+label {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .8px;
+  color: var(--text-muted);
+}
+input, select, textarea {
+  background: var(--mid);
+  border: 1px solid var(--border);
+  color: var(--light);
+  padding: 11px 14px; border-radius: 7px;
+  font-size: 14px; font-family: inherit;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(26,172,240,.4);
+}
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+select option { background: var(--mid); }
+textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%; padding: 15px;
+  background: var(--blue); color: #000;
+  font-size: 15px; font-weight: 700;
+  border: none; border-radius: 8px;
+  cursor: pointer; margin-top: 8px;
+  transition: opacity .2s, transform .15s;
+  font-family: inherit;
+}
+.form-submit:hover { opacity: .88; transform: translateY(-1px); }
+.form-note {
+  font-size: 11px; color: var(--text-muted);
+  text-align: center; margin-top: 12px;
+}
+.success-msg {
+  display: none;
+  background: rgba(26,172,240,.1);
+  border: 1px solid rgba(26,172,240,.3);
+  border-radius: 8px; padding: 20px;
+  text-align: center; margin-top: 16px;
+}
+.success-msg .icon { font-size: 28px; margin-bottom: 8px; }
+.success-msg p { font-size: 14px; color: var(--text-dim); }
+.success-msg strong { color: var(--blue); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--darker);
+  border-top: 1px solid var(--border);
+  padding: 50px 32px 32px;
+}
+.footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+.footer-brand-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800; margin-bottom: 12px;
+}
+.footer-brand-name span { color: var(--blue); }
+.footer-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; max-width: 280px; }
+.footer-col h4 {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { font-size: 13px; color: var(--text-dim); transition: color .2s; }
+.footer-col ul a:hover { color: var(--light); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px; margin-top: 40px;
+  font-size: 12px; color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .calc-grid { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: repeat(2,1fr); }
+  .examples-grid { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr; }
+  .tl-item:first-child { border-radius: 12px 12px 0 0; }
+  .tl-item:last-child { border-radius: 0 0 12px 12px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .hero { padding: 60px 20px 50px; }
+  .form-row { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: repeat(2,1fr); }
+  .stat-cell { padding: 20px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="https://proboostagency.com/" class="ft-logo" aria-label="ProBoost Agency home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#lead" class="nav-cta">Get Free Quote</a></li>
+  </ul>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">🌐 Website Estimator <b>2026</b></span>
+    <span class="ticker-item">⚡ Instant Pricing</span>
+    <span class="ticker-item">🏪 E-commerce Ready</span>
+    <span class="ticker-item">🌍 Multilingual Sites</span>
+    <span class="ticker-item">📅 Booking Systems</span>
+    <span class="ticker-item">📊 Lead Capture Tools</span>
+    <span class="ticker-item">🌐 Website Estimator <b>2026</b></span>
+    <span class="ticker-item">⚡ Instant Pricing</span>
+    <span class="ticker-item">🏪 E-commerce Ready</span>
+    <span class="ticker-item">🌍 Multilingual Sites</span>
+    <span class="ticker-item">📅 Booking Systems</span>
+    <span class="ticker-item">📊 Lead Capture Tools</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Free Tool · No Sign-Up Required</div>
+  <h1>How Much Does Your<br><em>Website Cost?</em></h1>
+  <p class="hero-sub">Select your business type, features, and pages — get an instant price estimate for a professional website, tailored to your needs.</p>
+  <div class="hero-actions">
+    <a href="#calculator" class="btn-primary">Calculate My Website Cost →</a>
+    <a href="#examples" class="btn-outline">See Real Examples</a>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <span class="stat-val"><span>500</span>+</span>
+      <span class="stat-label">Sites quoted</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-val">30<span>s</span></span>
+      <span class="stat-label">Instant result</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-val"><span>€</span>0</span>
+      <span class="stat-label">Cost to estimate</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-val">8<span>+</span></span>
+      <span class="stat-label">Business types</span>
+    </div>
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div class="calc-inner">
+    <div style="text-align:center; margin-bottom: 50px;">
+      <div class="section-eyebrow">Free Calculator</div>
+      <h2 class="section-title" style="margin:0 auto 12px;">Website Cost <em>Estimator</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">Select your options below and watch your price update in real time.</p>
+    </div>
+
+    <div class="calc-grid">
+      <!-- LEFT -->
+      <div class="calc-panel">
+        <div class="calc-panel-title">Configure Your Website</div>
+
+        <!-- Business Type -->
+        <div class="field-group">
+          <span class="field-label">Business Type</span>
+          <div class="chip-grid" id="bizChips">
+            <button class="chip active" data-val="riad" onclick="select(this,'biz')">🏨 Riad / Guesthouse</button>
+            <button class="chip" data-val="hotel" onclick="select(this,'biz')">🏩 Boutique Hotel</button>
+            <button class="chip" data-val="restaurant" onclick="select(this,'biz')">🍽️ Restaurant / Café</button>
+            <button class="chip" data-val="retail" onclick="select(this,'biz')">🛍️ Retail / Fashion</button>
+            <button class="chip" data-val="tour" onclick="select(this,'biz')">🗺️ Tour Operator</button>
+            <button class="chip" data-val="wellness" onclick="select(this,'biz')">🧘 Spa / Wellness</button>
+            <button class="chip" data-val="clinic" onclick="select(this,'biz')">🏥 Clinic / Medical</button>
+            <button class="chip" data-val="corporate" onclick="select(this,'biz')">💼 Corporate / Agency</button>
+          </div>
+        </div>
+
+        <!-- Pages -->
+        <div class="field-group">
+          <span class="field-label">Number of Pages</span>
+          <div class="chip-grid" id="pageChips">
+            <button class="chip" data-val="1" onclick="select(this,'pages')">1–3 pages</button>
+            <button class="chip active" data-val="2" onclick="select(this,'pages')">4–8 pages</button>
+            <button class="chip" data-val="3" onclick="select(this,'pages')">9–15 pages</button>
+            <button class="chip" data-val="4" onclick="select(this,'pages')">16–30 pages</button>
+            <button class="chip" data-val="5" onclick="select(this,'pages')">30+ pages</button>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="field-group">
+          <span class="field-label">Number of Languages</span>
+          <div class="chip-grid" id="langChips">
+            <button class="chip active" data-val="1" onclick="select(this,'lang')">1 language</button>
+            <button class="chip" data-val="2" onclick="select(this,'lang')">2 languages</button>
+            <button class="chip" data-val="3" onclick="select(this,'lang')">3 languages</button>
+            <button class="chip" data-val="4" onclick="select(this,'lang')">4+ languages</button>
+          </div>
+        </div>
+
+        <!-- Add-ons -->
+        <div class="field-group">
+          <span class="field-label">Features & Add-ons</span>
+          <div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">Booking System</div>
+                <div class="toggle-desc">Online reservations, calendar, confirmation emails</div>
+              </div>
+              <div class="toggle-price">+€800</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-booking" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">E-commerce / Online Store</div>
+                <div class="toggle-desc">Product catalog, cart, payments, orders</div>
+              </div>
+              <div class="toggle-price">+€1,400</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-ecom" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">Blog / Content System</div>
+                <div class="toggle-desc">CMS, articles, categories, SEO meta fields</div>
+              </div>
+              <div class="toggle-price">+€400</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-blog" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">SEO Optimization Package</div>
+                <div class="toggle-desc">On-page SEO, sitemap, structured data, speed</div>
+              </div>
+              <div class="toggle-price">+€600</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-seo" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">Lead Capture & CRM Integration</div>
+                <div class="toggle-desc">Forms, email lists, contact pipeline</div>
+              </div>
+              <div class="toggle-price">+€350</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-crm" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-name">Custom Photography / Video</div>
+                <div class="toggle-desc">Professional photo shoot + editing for the site</div>
+              </div>
+              <div class="toggle-price">+€900</div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="tog-photo" onchange="calc()">
+                <div class="toggle-track"></div>
+                <div class="toggle-thumb"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Results -->
+      <div class="result-panel">
+        <div class="result-header">Your Website Cost Estimate</div>
+
+        <div class="result-price-block">
+          <div class="result-price-label">Estimated Investment</div>
+          <div class="result-price"><span id="priceDisplay">€2,400</span></div>
+          <div class="result-range" id="rangeDisplay">Typical range: €2,000 – €2,800</div>
+        </div>
+
+        <hr class="result-divider">
+
+        <div id="breakdownList">
+          <div class="breakdown-row">
+            <span class="breakdown-key">Base website (business type)</span>
+            <span class="breakdown-val" id="br-base">€1,200</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Pages</span>
+            <span class="breakdown-val" id="br-pages">€600</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Languages</span>
+            <span class="breakdown-val" id="br-langs">€0</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Booking system</span>
+            <span class="breakdown-val zero" id="br-booking">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">E-commerce</span>
+            <span class="breakdown-val zero" id="br-ecom">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Blog / CMS</span>
+            <span class="breakdown-val zero" id="br-blog">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">SEO package</span>
+            <span class="breakdown-val zero" id="br-seo">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Lead capture / CRM</span>
+            <span class="breakdown-val zero" id="br-crm">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-key">Photography / video</span>
+            <span class="breakdown-val zero" id="br-photo">—</span>
+          </div>
+        </div>
+
+        <div class="result-tip" id="resultTip">
+          💡 <strong>Pro tip:</strong> Adding an online booking system typically pays for itself in under 2 months by reducing no-shows and manual admin.
+        </div>
+
+        <a href="#lead" class="btn-primary" style="text-align:center; display:block; margin-top:24px; text-decoration:none;">
+          Get My Detailed Quote →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section">
+  <div class="section-eyebrow">The Process</div>
+  <h2 class="section-title">From Estimate to<br><em>Live Website</em></h2>
+  <p class="section-sub">A clear 3-step process so you always know exactly where things stand.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-num">01</div>
+      <div class="tl-title">Get Your Estimate</div>
+      <div class="tl-desc">Use the calculator above to configure your website and receive an instant price range — no obligation, no email required.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">02</div>
+      <div class="tl-title">Free Consultation Call</div>
+      <div class="tl-desc">We review your estimate together, answer questions, and finalize scope. You'll receive a written proposal within 24 hours.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-num">03</div>
+      <div class="tl-title">Build & Launch</div>
+      <div class="tl-desc">Our team builds your site to spec, reviews it with you, and handles the full launch — including hosting, DNS, and speed testing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES -->
+<section id="examples" style="padding: 0 32px 80px; max-width: 1100px; margin: 0 auto;">
+  <div class="section-eyebrow">Real-World Scenarios</div>
+  <h2 class="section-title">Example <em>Website Packages</em></h2>
+  <p class="section-sub">Three common website types with typical configurations and costs.</p>
+
+  <div class="examples-grid">
+    <div class="example-card">
+      <div class="ex-type">Hospitality · Medina</div>
+      <div class="ex-name">Riad Website</div>
+      <div class="ex-desc">A traditional guesthouse in Marrakech needing a multilingual site with direct booking to reduce Booking.com fees.</div>
+      <div class="ex-meta">
+        <div class="ex-row"><span>Pages</span><b>6 pages</b></div>
+        <div class="ex-row"><span>Languages</span><b>French + English</b></div>
+        <div class="ex-row"><span>Features</span><b>Booking + SEO</b></div>
+      </div>
+      <div class="ex-price">€3,400</div>
+      <div class="ex-save">Saves ~€9,000/yr in OTA commissions</div>
+    </div>
+    <div class="example-card">
+      <div class="ex-type">Retail · Fashion</div>
+      <div class="ex-name">Online Boutique</div>
+      <div class="ex-desc">A local fashion brand needing a full e-commerce store with inventory management, payments, and social integration.</div>
+      <div class="ex-meta">
+        <div class="ex-row"><span>Pages</span><b>12 pages</b></div>
+        <div class="ex-row"><span>Languages</span><b>Arabic + French</b></div>
+        <div class="ex-row"><span>Features</span><b>E-commerce + Blog</b></div>
+      </div>
+      <div class="ex-price">€4,800</div>
+      <div class="ex-save">Replaces marketplace commission of 15%+</div>
+    </div>
+    <div class="example-card">
+      <div class="ex-type">Experiences · Tourism</div>
+      <div class="ex-name">Tour Operator</div>
+      <div class="ex-desc">A desert tour company in Marrakech needing a booking-enabled site to replace GetYourGuide's 25% commission.</div>
+      <div class="ex-meta">
+        <div class="ex-row"><span>Pages</span><b>8 pages</b></div>
+        <div class="ex-row"><span>Languages</span><b>EN + FR + ES</b></div>
+        <div class="ex-row"><span>Features</span><b>Booking + SEO + CRM</b></div>
+      </div>
+      <div class="ex-price">€4,100</div>
+      <div class="ex-save">Saves ~€22,000/yr at 90 bookings/month</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section id="lead">
+  <div class="lead-inner">
+    <div style="text-align:center;">
+      <div class="section-eyebrow">Get Your Quote</div>
+      <h2 class="section-title" style="margin:0 auto 12px;">Stop Guessing.<br><em>Get a Real Number.</em></h2>
+      <p class="section-sub" style="margin:0 auto;">Tell us about your project and we'll send a detailed proposal within 24 hours — free, no obligation.</p>
+    </div>
+
+    <div class="lead-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" placeholder="Youssef" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="El Idrissi">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="you@business.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" placeholder="+212 6XX XXX XXX">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="biztype">Business Type *</label>
+          <select id="biztype">
+            <option value="">Select your business…</option>
+            <option>Riad / Guesthouse</option>
+            <option>Boutique Hotel</option>
+            <option>Restaurant / Café</option>
+            <option>Retail / Fashion</option>
+            <option>Tour Operator</option>
+            <option>Spa / Wellness</option>
+            <option>Clinic / Medical</option>
+            <option>Corporate / Agency</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Budget Range</label>
+          <select id="budget">
+            <option value="">Select a range…</option>
+            <option>Under €1,500</option>
+            <option>€1,500 – €3,000</option>
+            <option>€3,000 – €6,000</option>
+            <option>€6,000+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="notes">Tell us about your project</label>
+          <textarea id="notes" placeholder="What kind of site do you need? Any special features? Existing website?"></textarea>
+        </div>
+      </div>
+
+      <button class="form-submit" onclick="submitForm()">
+        Get My Free Quote →
+      </button>
+      <p class="form-note">🔒 Your information is private. No spam, ever.</p>
+
+      <div class="success-msg" id="successMsg">
+        <div class="icon">✅</div>
+        <p><strong>Message received!</strong><br>We'll review your details and send a full proposal within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+         <a href="https://proboostagency.com/" class="ft-logo" aria-label="ProBoost Agency home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
+  </a>
+      <p class="footer-desc">An instant website pricing tool built for businesses who want transparent, honest estimates — before committing to any agency.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="#">Website Cost</a></li>
+        <li><a href="#">E-commerce Cost</a></li>
+        <li><a href="#">SEO ROI</a></li>
+        <li><a href="#">Booking Savings</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Website Design</a></li>
+        <li><a href="#">Booking Systems</a></li>
+        <li><a href="#">SEO Packages</a></li>
+        <li><a href="#">E-commerce</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 WebCost Calculator · All rights reserved
+  </div>
+</footer>
+
+<script>
+// ── STATE ──
+const state = {
+  biz: 'riad',
+  pages: '2',
+  lang: '1',
+  booking: false, ecom: false, blog: false, seo: false, crm: false, photo: false
+};
+
+// ── BASE COSTS ──
+const bizBase = {
+  riad: 1200, hotel: 1600, restaurant: 1100, retail: 1300,
+  tour: 1150, wellness: 1200, clinic: 1400, corporate: 1500
+};
+const pageCost   = { '1': 300,  '2': 600,  '3': 950,  '4': 1400, '5': 2000 };
+const langCost   = { '1': 0,    '2': 350,  '3': 650,  '4': 900  };
+const addons     = { booking: 800, ecom: 1400, blog: 400, seo: 600, crm: 350, photo: 900 };
+
+const tips = {
+  riad:    '💡 <strong>Riad tip:</strong> A multilingual direct booking site typically replaces 40–60% of OTA traffic within 6 months.',
+  hotel:   '💡 <strong>Hotel tip:</strong> A direct booking engine on your site pays for itself in the first 3–4 direct reservations.',
+  restaurant: '💡 <strong>Restaurant tip:</strong> An online reservation system can reduce no-shows by up to 35%.',
+  retail:  '💡 <strong>Retail tip:</strong> E-commerce replaces marketplace commission of 15–20% on every order, forever.',
+  tour:    '💡 <strong>Tour tip:</strong> Going direct from GetYourGuide saves you 25% commission — often €20,000+ per year.',
+  wellness:'💡 <strong>Wellness tip:</strong> Online booking + pre-payment cuts ghost appointments by 80%.',
+  clinic:  '💡 <strong>Clinic tip:</strong> Patient portals with booking increase appointment fill rates significantly.',
+  corporate:'💡 <strong>Agency tip:</strong> A fast, well-optimized site generates 3–5× more inbound leads than a slow one.'
+};
+
+function select(el, group) {
+  document.querySelectorAll(`#${group}Chips .chip`).forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  state[group] = el.dataset.val;
+  calc();
+}
+
+function fmt(n) { return '€' + n.toLocaleString('en'); }
+function bval(v) { return v > 0 ? fmt(v) : '—'; }
+
+function calc() {
+  state.booking = document.getElementById('tog-booking').checked;
+  state.ecom    = document.getElementById('tog-ecom').checked;
+  state.blog    = document.getElementById('tog-blog').checked;
+  state.seo     = document.getElementById('tog-seo').checked;
+  state.crm     = document.getElementById('tog-crm').checked;
+  state.photo   = document.getElementById('tog-photo').checked;
+
+  const base   = bizBase[state.biz] || 1200;
+  const pages  = pageCost[state.pages] || 600;
+  const langs  = langCost[state.lang] || 0;
+  const bk     = state.booking ? addons.booking : 0;
+  const ec     = state.ecom    ? addons.ecom    : 0;
+  const bl     = state.blog    ? addons.blog    : 0;
+  const se     = state.seo     ? addons.seo     : 0;
+  const cr     = state.crm     ? addons.crm     : 0;
+  const ph     = state.photo   ? addons.photo   : 0;
+
+  const total = base + pages + langs + bk + ec + bl + se + cr + ph;
+  const low   = Math.round(total * 0.88 / 100) * 100;
+  const high  = Math.round(total * 1.15 / 100) * 100;
+
+  document.getElementById('priceDisplay').textContent = fmt(total);
+  document.getElementById('rangeDisplay').textContent = `Typical range: ${fmt(low)} – ${fmt(high)}`;
+
+  document.getElementById('br-base').textContent = fmt(base);
+  document.getElementById('br-pages').textContent = fmt(pages);
+  document.getElementById('br-langs').textContent = bval(langs);
+  document.getElementById('br-booking').textContent = bval(bk);
+  document.getElementById('br-ecom').textContent = bval(ec);
+  document.getElementById('br-blog').textContent = bval(bl);
+  document.getElementById('br-seo').textContent = bval(se);
+  document.getElementById('br-crm').textContent = bval(cr);
+  document.getElementById('br-photo').textContent = bval(ph);
+
+  ['br-langs','br-booking','br-ecom','br-blog','br-seo','br-crm','br-photo'].forEach(id => {
+    const el = document.getElementById(id);
+    el.className = el.textContent === '—' ? 'breakdown-val zero' : 'breakdown-val';
+  });
+
+  document.getElementById('resultTip').innerHTML = tips[state.biz] || tips.riad;
+}
+
+function submitForm() {
+  const name  = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const btype = document.getElementById('biztype').value;
+
+  if (!name || !email) {
+    alert('Please enter your name and email address.');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  document.getElementById('successMsg').style.display = 'block';
+  document.querySelector('.form-submit').disabled = true;
+  document.querySelector('.form-submit').textContent = '✓ Submitted';
+  document.querySelector('.form-submit').style.opacity = '.6';
+}
+
+// init
+calc();
+</script>
+</body>
+</html>
