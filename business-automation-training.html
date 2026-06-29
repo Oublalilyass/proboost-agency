@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- FR SEO -->
+  <title id="page-title">Formation Automatisation IA | ProBoost Agency</title>
+  <meta name="description" id="page-desc" content="Apprenez à automatiser votre entreprise avec l'IA, ChatGPT, Claude, n8n, Make et Zapier. Formation pratique pour entrepreneurs, Airbnb et PME." />
+  <meta name="keywords" content="formation automatisation, IA, ChatGPT, n8n, Make, Zapier, entrepreneur, Airbnb, automatisation entreprise" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://proboostagency.com/formation-automation-business.html" />
+  <link rel="icon" href="img/favicon.png" sizes="any">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ProBoost Agency" />
+  <meta property="og:title" content="Formation Automatisation IA | ProBoost Agency" />
+  <meta property="og:description" content="Apprenez à automatiser votre entreprise avec l'IA, ChatGPT, Claude, n8n, Make et Zapier." />
+  <meta property="og:url" content="https://proboostagency.com/formation-automation-business.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "ProBoost Agency",
+        "url": "https://proboostagency.com",
+        "logo": "https://proboostagency.com/img/logo-proboost-agency.png",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service" }
+      },
+      {
+        "@type": "Course",
+        "name": "Formation Automatisation IA",
+        "description": "Apprenez à automatiser votre entreprise avec l'IA, ChatGPT, Claude, n8n, Make et Zapier.",
+        "provider": { "@type": "Organization", "name": "ProBoost Agency" },
+        "offers": { "@type": "Offer", "price": "4900", "priceCurrency": "MAD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Faut-il savoir coder ?", "acceptedAnswer": { "@type": "Answer", "text": "Non, aucune compétence en programmation n'est requise." } },
+          { "@type": "Question", "name": "Les débutants peuvent-ils rejoindre ?", "acceptedAnswer": { "@type": "Answer", "text": "Absolument. La formation est conçue pour tous les niveaux." } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://proboostagency.com" },
+          { "@type": "ListItem", "position": 2, "name": "Formation Automatisation", "item": "https://proboostagency.com/formation-automation-business.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ==============================
+       TOKENS & RESET
+    ============================== */
+  :root {
+  /* Background */
+  --c-bg: #060B14;
+  --c-surface: #0E1625;
+  --c-card: #172235;
+
+  /* Borders */
+  --c-border: rgba(29, 161, 242, 0.10);
+  --c-border-hover: rgba(29, 161, 242, 0.25);
+
+  /* Typography */
+  --c-text: #F8FAFC;
+  --c-muted: #A3AEC2;
+
+  /* Brand Colors */
+  --c-accent: #1DA1F2;      /* ProBoost Blue */
+  --c-accent2: #FF4A4A;     /* ProBoost Red */
+  --c-accent3: #4FC3F7;     /* Light Blue */
+
+  /* Gradients */
+  --grad-primary: linear-gradient(
+      135deg,
+      #1DA1F2 0%,
+      #48B8F7 40%,
+      #FF4A4A 100%
+  );
+
+  --grad-secondary: linear-gradient(
+      135deg,
+      #FF4A4A 0%,
+      #FF6B6B 100%
+  );
+
+  --grad-hero: linear-gradient(
+      135deg,
+      #061320 0%,
+      #0E2745 55%,
+      #153D66 100%
+  );
+
+  --grad-glow: radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      rgba(29,161,242,.30) 0%,
+      rgba(255,74,74,.12) 40%,
+      transparent 70%
+  );
+
+  /* Shadows */
+  --shadow-card:
+      0 1px 3px rgba(0,0,0,.35),
+      0 10px 30px rgba(0,0,0,.28);
+
+  --shadow-glow:
+      0 0 40px rgba(29,161,242,.22);
+
+  /* Radius */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xl: 24px;
+
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Navbar */
+  --nav-h: 72px;
+}
+    [data-theme="light"] {
+      --c-bg: #f8f8fc;
+      --c-surface: #ffffff;
+      --c-card: #ffffff;
+      --c-border: rgba(0,0,0,0.08);
+      --c-border-hover: rgba(124,58,237,0.3);
+      --c-text: #0f0f1a;
+      --c-muted: #555577;
+      --grad-hero: linear-gradient(135deg, #ede9fe 0%, #cffafe 100%);
+      --grad-glow: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,58,237,0.15) 0%, transparent 60%);
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: var(--font-body);
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; }
+    ::selection { background: rgba(124,58,237,0.35); }
+
+    /* ==============================
+       LOADING SCREEN
+    ============================== */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--c-bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-ring {
+      width: 48px; height: 48px;
+      border: 3px solid var(--c-border);
+      border-top-color: var(--c-accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ==============================
+       NAV
+    ============================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      padding: 0 24px;
+      transition: background 0.3s, border-bottom 0.3s, backdrop-filter 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(6,6,10,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--c-border);
+    }
+    [data-theme="light"] nav.scrolled { background: rgba(248,248,252,0.85); }
+    .nav-inner {
+      max-width: 1200px; width: 100%; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--grad-primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; color: #fff;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 7px 14px; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500; color: var(--c-muted);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--c-text); background: var(--c-border); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .lang-switcher {
+      display: flex; gap: 4px; padding: 4px;
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: 10px;
+    }
+    .lang-btn {
+      padding: 5px 12px; border-radius: 7px; border: none;
+      background: transparent; color: var(--c-muted);
+      font-size: 0.8rem; font-weight: 600; transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--grad-primary); color: #fff; }
+    .theme-btn {
+      width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--c-border);
+      background: var(--c-card); color: var(--c-muted);
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .theme-btn:hover { color: var(--c-text); border-color: var(--c-border-hover); }
+    .btn-nav-cta {
+      padding: 8px 18px; border-radius: 10px; border: none;
+      background: var(--grad-primary); color: #fff;
+      font-size: 0.85rem; font-weight: 600;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 6px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--c-text); border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+      background: var(--grad-hero);
+    }
+    .hero-particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .particle {
+      position: absolute; border-radius: 50%;
+      background: rgba(124,58,237,0.5);
+      animation: float-p linear infinite;
+    }
+    @keyframes float-p {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(-20px) scale(1); opacity: 0; }
+    }
+    .hero-glow {
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: var(--grad-glow); pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 50px;
+      background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3);
+      font-size: 0.82rem; font-weight: 600; color: #a78bfa; margin-bottom: 28px;
+      animation: fadeInDown 0.6s ease both;
+    }
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #7c3aed; animation: pulse 1.5s ease infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
+      animation: fadeInUp 0.7s ease 0.1s both;
+    }
+    .hero h1 .grad-text {
+      background: var(--grad-primary); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      max-width: 600px; margin: 20px auto 0;
+      font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.7);
+      animation: fadeInUp 0.7s ease 0.2s both;
+    }
+    [data-theme="light"] .hero-sub { color: var(--c-muted); }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      margin-top: 36px;
+      animation: fadeInUp 0.7s ease 0.3s both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 12px; border: none;
+      background: var(--grad-primary); color: #fff;
+      font-size: 1rem; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,58,237,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 12px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      color: var(--c-text); font-size: 1rem; font-weight: 600;
+      backdrop-filter: blur(10px);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    [data-theme="light"] .btn-secondary { background: rgba(0,0,0,0.04); border-color: var(--c-border); }
+
+    /* ==============================
+       STATS BAR
+    ============================== */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--c-border);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-xl); overflow: hidden;
+      margin: 60px auto 0; max-width: 900px;
+    }
+    .stat-item {
+      background: var(--c-card); padding: 28px 24px; text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em;
+      background: var(--grad-primary); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .stat-label { font-size: 0.82rem; color: var(--c-muted); margin-top: 4px; }
+
+    /* ==============================
+       SECTIONS WRAPPER
+    ============================== */
+    main { position: relative; z-index: 1; }
+    .section { padding: 100px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--c-accent); margin-bottom: 14px;
+    }
+    .section-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--c-accent); border-radius: 2px; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-desc { color: var(--c-muted); max-width: 560px; font-size: 1.05rem; }
+    .section-header { margin-bottom: 60px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-eyebrow { justify-content: center; }
+    .section-header.center .section-desc { margin: 0 auto; }
+
+    /* ==============================
+       WHY AUTOMATE – CARDS
+    ============================== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .why-card {
+      background: var(--c-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .why-card:hover {
+      border-color: var(--c-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
+    .why-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 18px;
+    }
+    .why-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .why-card p { font-size: 0.9rem; color: var(--c-muted); }
+
+    /* ==============================
+       TIMELINE / CURRICULUM
+    ============================== */
+    .timeline {
+      position: relative;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px; background: var(--c-border); transform: translateX(-50%);
+    }
+    .tl-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 24px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .tl-card:hover {
+      border-color: rgba(124,58,237,0.35);
+      transform: translateY(-3px); box-shadow: var(--shadow-card);
+    }
+    .tl-card:nth-child(odd) { margin-right: 32px; }
+    .tl-card:nth-child(even) { margin-left: 32px; }
+    .tl-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--grad-primary); color: #fff;
+      font-size: 0.72rem; font-weight: 700; margin-bottom: 12px;
+    }
+    .tl-card h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .tl-card ul { list-style: none; }
+    .tl-card ul li {
+      font-size: 0.85rem; color: var(--c-muted); padding: 3px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .tl-card ul li::before { content: '→'; color: var(--c-accent); font-size: 0.75rem; }
+
+    /* ==============================
+       AUDIENCE GRID
+    ============================== */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .aud-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 22px 16px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .aud-card:hover { border-color: var(--c-border-hover); transform: translateY(-3px); }
+    .aud-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .aud-card span { font-size: 0.85rem; font-weight: 600; }
+
+    /* ==============================
+       EXAMPLES GRID
+    ============================== */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .ex-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 28px 24px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .ex-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--grad-primary); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .ex-card:hover::before { transform: scaleX(1); }
+    .ex-card:hover { border-color: var(--c-border-hover); transform: translateY(-4px); box-shadow: var(--shadow-card); }
+    .ex-tag {
+      display: inline-block; padding: 4px 12px; border-radius: 50px;
+      background: rgba(124,58,237,0.12); color: #a78bfa;
+      font-size: 0.75rem; font-weight: 600; margin-bottom: 14px;
+    }
+    .ex-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+    .ex-card p { font-size: 0.88rem; color: var(--c-muted); }
+    .ex-result {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--c-border);
+      font-size: 0.82rem; font-weight: 600; color: #10b981;
+    }
+
+    /* ==============================
+       TOOLS GRID
+    ============================== */
+    .tools-track-wrap {
+      overflow: hidden; position: relative;
+    }
+    .tools-track-wrap::before,
+    .tools-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+    }
+    .tools-track-wrap::before { left: 0; background: linear-gradient(90deg, var(--c-bg), transparent); }
+    .tools-track-wrap::after { right: 0; background: linear-gradient(-90deg, var(--c-bg), transparent); }
+    .tools-track {
+      display: flex; gap: 14px;
+      animation: scroll-track 30s linear infinite;
+      width: max-content;
+    }
+    .tools-track:hover { animation-play-state: paused; }
+    @keyframes scroll-track {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .tool-pill {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 20px; border-radius: 50px;
+      background: var(--c-card); border: 1px solid var(--c-border);
+      font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+      transition: border-color 0.2s;
+    }
+    .tool-pill:hover { border-color: var(--c-border-hover); }
+    .tool-pill .ti { font-size: 1rem; }
+
+    /* ==============================
+       WHY PROBOOST
+    ============================== */
+    .why-pb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .pb-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 28px 24px;
+      display: flex; gap: 18px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .pb-card:hover { border-color: var(--c-border-hover); transform: translateY(-3px); }
+    .pb-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px;
+      background: rgba(124,58,237,0.12); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--c-accent);
+    }
+    .pb-card h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .pb-card p { font-size: 0.85rem; color: var(--c-muted); }
+
+    /* ==============================
+       FORMAT GRID
+    ============================== */
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .fmt-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 24px 16px; text-align: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .fmt-card:hover { border-color: rgba(6,182,212,0.35); transform: translateY(-3px); }
+    .fmt-icon { font-size: 1.6rem; margin-bottom: 10px; color: var(--c-accent2); }
+    .fmt-card span { font-size: 0.88rem; font-weight: 600; }
+
+    /* ==============================
+       PRICING
+    ============================== */
+    .pricing-wrap { max-width: 480px; margin: 0 auto; }
+    .pricing-card {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius-xl); padding: 40px 36px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad-primary);
+    }
+    .pricing-badge {
+      display: inline-block; padding: 5px 14px; border-radius: 50px;
+      background: rgba(124,58,237,0.12); color: #a78bfa;
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .pricing-name {
+      font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; margin-bottom: 6px;
+    }
+    .pricing-sub { font-size: 0.88rem; color: var(--c-muted); margin-bottom: 28px; }
+    .pricing-price {
+      font-family: var(--font-display); font-size: 3.2rem; font-weight: 900; letter-spacing: -0.04em;
+    }
+    .pricing-price span { font-size: 1.1rem; font-weight: 600; color: var(--c-muted); vertical-align: super; margin-right: 6px; }
+    .pricing-currency { font-size: 1rem; font-weight: 600; color: var(--c-muted); }
+    .pricing-from { font-size: 0.82rem; color: var(--c-muted); margin-bottom: 28px; }
+    .pricing-features { list-style: none; margin: 24px 0; text-align: left; }
+    .pricing-features li {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid var(--c-border);
+      font-size: 0.9rem;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features li i { color: #10b981; font-size: 0.85rem; }
+    .pricing-note { font-size: 0.8rem; color: var(--c-muted); margin-top: 16px; }
+
+    /* ==============================
+       FAQ
+    ============================== */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--c-card); border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; gap: 16px;
+      background: none; border: none; color: var(--c-text);
+      font-size: 0.95rem; font-weight: 600; text-align: left;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(255,255,255,0.02); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--c-border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--c-muted); transition: transform 0.3s, background 0.3s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--c-accent); border-color: var(--c-accent); color: #fff; }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      padding: 0 24px; font-size: 0.9rem; color: var(--c-muted); line-height: 1.7;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ==============================
+       FINAL CTA
+    ============================== */
+    .final-cta {
+      padding: 120px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.08) 100%);
+      border-top: 1px solid var(--c-border);
+      position: relative; overflow: hidden;
+    }
+    .final-cta-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+    .final-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px;
+    }
+    .final-cta p { font-size: 1.1rem; color: var(--c-muted); margin-bottom: 36px; }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: var(--c-surface); border-top: 1px solid var(--c-border);
+      padding: 64px 24px 32px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand p { font-size: 0.88rem; color: var(--c-muted); margin-top: 14px; max-width: 260px; line-height: 1.7; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: var(--c-card); border: 1px solid var(--c-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: var(--c-muted);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .social-btn:hover { color: var(--c-text); border-color: var(--c-border-hover); }
+    .footer-col h4 {
+      font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--c-muted); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.88rem; color: var(--c-muted); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--c-text); }
+    .footer-bottom {
+      border-top: 1px solid var(--c-border); padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      font-size: 0.8rem; color: var(--c-muted);
+    }
+    .footer-bottom a { color: var(--c-muted); transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--c-text); }
+    .wa-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 50px;
+      background: #25d366; color: #fff;
+      font-size: 0.85rem; font-weight: 700;
+      transition: opacity 0.2s;
+    }
+    .wa-cta:hover { opacity: 0.9; }
+
+    /* ==============================
+       FLOATING CTA + BACK TO TOP
+    ============================== */
+    #floating-cta {
+      position: fixed; bottom: 24px; right: 24px; z-index: 90;
+      display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.4s, transform 0.4s;
+      pointer-events: none;
+    }
+    #floating-cta.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .float-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 50px; border: none;
+      background: var(--grad-primary); color: #fff;
+      font-size: 0.85rem; font-weight: 700;
+      box-shadow: 0 4px 24px rgba(124,58,237,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .float-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(124,58,237,0.5); }
+    #back-top {
+      width: 42px; height: 42px; border-radius: 50%; border: none;
+      background: var(--c-card); border: 1px solid var(--c-border); color: var(--c-muted);
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+      cursor: pointer; transition: color 0.2s, border-color 0.2s;
+    }
+    #back-top:hover { color: var(--c-text); border-color: var(--c-border-hover); }
+
+    /* ==============================
+       ANIMATIONS
+    ============================== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+    @media (max-width: 900px) {
+      .nav-links, .btn-nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .timeline { grid-template-columns: 1fr; }
+      .timeline::before { display: none; }
+      .tl-card:nth-child(odd), .tl-card:nth-child(even) { margin: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .section { padding: 72px 16px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; border-radius: var(--radius); }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .format-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    /* Mobile nav */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; top: var(--nav-h); z-index: 99;
+      background: var(--c-bg); backdrop-filter: blur(20px);
+      padding: 24px; flex-direction: column; gap: 8px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 14px 18px; border-radius: 12px; font-size: 1rem; font-weight: 500;
+      color: var(--c-muted); transition: background 0.2s, color 0.2s;
+    }
+    .mobile-menu a:hover { background: var(--c-card); color: var(--c-text); }
+    .mobile-menu .btn-primary { text-align: center; margin-top: 12px; border-radius: 12px; padding: 14px; }
+
+    /* Gradient text utility */
+    .grad-text {
+      background: var(--grad-primary); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .accent2 { color: var(--c-accent2); }
+    .accent3 { color: var(--c-accent3); }
+  </style>
+</head>
+<body>
+<!-- Loader -->
+<div id="loader" role="status" aria-label="Chargement">
+  <div class="loader-ring"></div>
+</div>
+
+<!-- =================== NAV =================== -->
+<nav id="main-nav" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+     <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="160" height="40">
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#pourquoi" data-i18n="nav_why">Pourquoi</a></li>
+      <li><a href="#programme" data-i18n="nav_prog">Programme</a></li>
+      <li><a href="#outils" data-i18n="nav_tools">Outils</a></li>
+      <li><a href="#tarifs" data-i18n="nav_price">Tarifs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Langue">
+        <button class="lang-btn active" data-lang="fr" onclick="switchLang('fr')">FR</button>
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      </div>
+      <button class="theme-btn" id="theme-toggle" aria-label="Basculer le thème" title="Toggle dark/light mode">
+        <i class="fa-solid fa-moon" id="theme-icon"></i>
+      </button>
+      <a href="#contact" class="btn-nav-cta" data-i18n="nav_cta">Appel gratuit</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu mobile">
+  <a href="#pourquoi" onclick="closeMobileMenu()" data-i18n="nav_why">Pourquoi</a>
+  <a href="#programme" onclick="closeMobileMenu()" data-i18n="nav_prog">Programme</a>
+  <a href="#outils" onclick="closeMobileMenu()" data-i18n="nav_tools">Outils</a>
+  <a href="#tarifs" onclick="closeMobileMenu()" data-i18n="nav_price">Tarifs</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#contact" class="btn-primary" onclick="closeMobileMenu()" data-i18n="nav_cta">Appel gratuit</a>
+</div>
+
+<main>
+<!-- =================== HERO =================== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-particles" id="particles" aria-hidden="true"></div>
+
+  <div class="hero-badge" aria-label="Nouveau">
+    <span class="dot"></span>
+    <span data-i18n="hero_badge">Formation disponible maintenant</span>
+  </div>
+
+  <h1 id="hero-h1">
+    <span data-i18n="hero_h1a">Automatisez votre entreprise</span><br />
+    <span class="grad-text" data-i18n="hero_h1b">grâce à l'IA</span>
+  </h1>
+
+  <p class="hero-sub" data-i18n="hero_sub">
+    Apprenez à créer des automatisations intelligentes pour gagner du temps, augmenter votre chiffre d'affaires et éliminer les tâches répétitives.
+  </p>
+
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+      <span data-i18n="hero_cta1">Réserver un appel gratuit</span>
+    </a>
+    <a href="#programme" class="btn-secondary">
+      <span data-i18n="hero_cta2">Voir le programme</span>
+      <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar reveal" role="list">
+    <div class="stat-item" role="listitem">
+      <div class="stat-num" data-count="100" data-suffix="+">0</div>
+      <div class="stat-label" data-i18n="stat1">Heures économisées / mois</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num" data-count="150" data-suffix="+">0</div>
+      <div class="stat-label" data-i18n="stat2">Entrepreneurs accompagnés</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num" data-count="300" data-suffix="+">0</div>
+      <div class="stat-label" data-i18n="stat3">Automatisations créées</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-num" data-count="4" data-suffix="x">0</div>
+      <div class="stat-label" data-i18n="stat4">ROI moyen constaté</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY AUTOMATE =================== -->
+<section class="section" id="pourquoi" aria-labelledby="why-title">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow" data-i18n="why_eyebrow">Pourquoi automatiser</div>
+      <h2 class="section-title reveal" id="why-title">
+        <span data-i18n="why_title1">Arrêtez de perdre</span><br />
+        <span class="grad-text" data-i18n="why_title2">du temps sur des tâches répétitives</span>
+      </h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="why_desc">L'automatisation n'est plus réservée aux grandes entreprises. Avec les bons outils, n'importe quel entrepreneur peut gagner des heures chaque semaine.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon" style="background:rgba(124,58,237,0.12);color:#a78bfa;"><i class="fa-solid fa-clock"></i></div>
+        <h3 data-i18n="why1_t">Arrêtez de perdre du temps</h3>
+        <p data-i18n="why1_p">Déléguez les emails, les relances, la facturation et les rapports à des automatisations intelligentes.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon" style="background:rgba(6,182,212,0.12);color:#06b6d4;"><i class="fa-solid fa-rocket"></i></div>
+        <h3 data-i18n="why2_t">Travaillez plus vite</h3>
+        <p data-i18n="why2_p">Réduisez de 80% le temps consacré aux tâches manuelles. Concentrez-vous sur la croissance de votre business.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="fa-solid fa-chart-line"></i></div>
+        <h3 data-i18n="why3_t">Scalez sans embaucher</h3>
+        <p data-i18n="why3_p">Gérez 10× plus de clients et de projets avec les mêmes ressources humaines. Votre croissance ne dépend plus de votre équipe.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="fa-solid fa-star"></i></div>
+        <h3 data-i18n="why4_t">Améliorez l'expérience client</h3>
+        <p data-i18n="why4_p">Répondez instantanément, envoyez les bonnes informations au bon moment. Vos clients seront époustouflés.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CURRICULUM =================== -->
+<section class="section" id="programme" style="background:var(--c-surface);" aria-labelledby="prog-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="prog_eyebrow">Programme complet</div>
+      <h2 class="section-title reveal" id="prog-title" data-i18n="prog_title">Ce que vous apprendrez</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="prog_desc">12 modules complets, des cas pratiques réels et des templates prêts à l'emploi.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-card reveal">
+        <div class="tl-num">01</div>
+        <h3 data-i18n="m1_t">Introduction à l'IA</h3>
+        <ul><li data-i18n="m1_1">Comprendre l'IA générative</li><li data-i18n="m1_2">Cas d'usage business</li><li data-i18n="m1_3">Mindset automatisation</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">02</div>
+        <h3 data-i18n="m2_t">Les grands modèles IA</h3>
+        <ul><li>ChatGPT</li><li>Claude</li><li>Gemini</li><li data-i18n="m2_1">Prompting avancé</li></ul>
+      </div>
+      <div class="tl-card reveal">
+        <div class="tl-num">03</div>
+        <h3>n8n</h3>
+        <ul><li data-i18n="m3_1">Workflows no-code</li><li data-i18n="m3_2">Connexions API</li><li data-i18n="m3_3">Automatisations complexes</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">04</div>
+        <h3>Make.com</h3>
+        <ul><li data-i18n="m4_1">Scénarios avancés</li><li data-i18n="m4_2">Intégrations SaaS</li><li data-i18n="m4_3">Gestion d'erreurs</li></ul>
+      </div>
+      <div class="tl-card reveal">
+        <div class="tl-num">05</div>
+        <h3>Zapier</h3>
+        <ul><li data-i18n="m5_1">Automatisations rapides</li><li data-i18n="m5_2">Multi-step Zaps</li><li data-i18n="m5_3">Filtres et conditions</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">06</div>
+        <h3 data-i18n="m6_t">WhatsApp Automation</h3>
+        <ul><li data-i18n="m6_1">Chatbot WhatsApp</li><li data-i18n="m6_2">Réponses automatiques</li><li data-i18n="m6_3">Qualification leads</li></ul>
+      </div>
+      <div class="tl-card reveal">
+        <div class="tl-num">07</div>
+        <h3 data-i18n="m7_t">CRM Automation</h3>
+        <ul><li>HubSpot / Pipedrive</li><li data-i18n="m7_1">Suivi automatique</li><li data-i18n="m7_2">Pipelines intelligents</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">08</div>
+        <h3 data-i18n="m8_t">Email Automation</h3>
+        <ul><li data-i18n="m8_1">Séquences d'emails</li><li data-i18n="m8_2">Newsletters automatiques</li><li data-i18n="m8_3">Segmentation</li></ul>
+      </div>
+      <div class="tl-card reveal">
+        <div class="tl-num">09</div>
+        <h3 data-i18n="m9_t">Lead Generation</h3>
+        <ul><li data-i18n="m9_1">Capture automatique</li><li data-i18n="m9_2">Qualification IA</li><li data-i18n="m9_3">Nurturing automatisé</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">10</div>
+        <h3 data-i18n="m10_t">SEO Automation</h3>
+        <ul><li data-i18n="m10_1">Génération de contenu IA</li><li data-i18n="m10_2">Rapports automatiques</li><li data-i18n="m10_3">Monitoring</li></ul>
+      </div>
+      <div class="tl-card reveal" style="border-color:rgba(124,58,237,0.3);">
+        <div class="tl-num">11</div>
+        <h3 data-i18n="m11_t">Airbnb Automation ⭐</h3>
+        <ul><li data-i18n="m11_1">Messages voyageurs auto</li><li data-i18n="m11_2">Gestion des avis</li><li data-i18n="m11_3">Alertes prix</li><li data-i18n="m11_4">Workflows nettoyage</li></ul>
+      </div>
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-num">12</div>
+        <h3 data-i18n="m12_t">Votre assistant IA</h3>
+        <ul><li data-i18n="m12_1">Créer votre propre GPT</li><li data-i18n="m12_2">Base de connaissances</li><li data-i18n="m12_3">Déploiement</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHO IS IT FOR =================== -->
+<section class="section" id="audience" aria-labelledby="aud-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="aud_eyebrow">Pour qui</div>
+      <h2 class="section-title reveal" id="aud-title" data-i18n="aud_title">Cette formation est faite pour vous</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="aud_desc">Que vous gériez un Airbnb, une agence ou une PME, l'automatisation va transformer votre quotidien.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-card reveal"><div class="aud-icon">🏡</div><span data-i18n="aud1">Airbnb Owners</span></div>
+      <div class="aud-card reveal reveal-delay-1"><div class="aud-icon">🏨</div><span data-i18n="aud2">Hôtels</span></div>
+      <div class="aud-card reveal reveal-delay-2"><div class="aud-icon">🍽️</div><span data-i18n="aud3">Restaurants</span></div>
+      <div class="aud-card reveal"><div class="aud-icon">📣</div><span data-i18n="aud4">Agences</span></div>
+      <div class="aud-card reveal reveal-delay-1"><div class="aud-icon">💻</div><span data-i18n="aud5">Freelances</span></div>
+      <div class="aud-card reveal reveal-delay-2"><div class="aud-icon">⚖️</div><span data-i18n="aud6">Avocats</span></div>
+      <div class="aud-card reveal"><div class="aud-icon">🩺</div><span data-i18n="aud7">Médecins</span></div>
+      <div class="aud-card reveal reveal-delay-1"><div class="aud-icon">🏢</div><span data-i18n="aud8">Immobilier</span></div>
+      <div class="aud-card reveal reveal-delay-2"><div class="aud-icon">🛍️</div><span data-i18n="aud9">E-commerce</span></div>
+      <div class="aud-card reveal"><div class="aud-icon">📊</div><span data-i18n="aud10">Consultants</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== REAL EXAMPLES =================== -->
+<section class="section" id="exemples" style="background:var(--c-surface);" aria-labelledby="ex-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="ex_eyebrow">Cas réels</div>
+      <h2 class="section-title reveal" id="ex-title" data-i18n="ex_title">Des automatisations qui changent tout</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="ex_desc">Voici des exemples concrets d'automatisations que vous pourrez créer dès la fin de la formation.</p>
+    </div>
+    <div class="examples-grid">
+      <article class="ex-card reveal">
+        <div class="ex-tag" data-i18n="ext1">Lead Gen</div>
+        <h3 data-i18n="ex1_t">Qualification de leads</h3>
+        <p data-i18n="ex1_p">Un prospect remplit un formulaire. En 30 secondes, l'IA analyse sa demande, le qualifie et envoie un email personnalisé.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex1_r">-6h de travail manuel / semaine</span></div>
+      </article>
+      <article class="ex-card reveal reveal-delay-1">
+        <div class="ex-tag" data-i18n="ext2">Sales</div>
+        <h3 data-i18n="ex2_t">Devis automatique</h3>
+        <p data-i18n="ex2_p">Votre client envoie une demande sur WhatsApp. Un devis PDF est généré et envoyé en moins de 2 minutes, sans intervention humaine.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex2_r">+40% taux de conversion</span></div>
+      </article>
+      <article class="ex-card reveal reveal-delay-2">
+        <div class="ex-tag">WhatsApp AI</div>
+        <h3 data-i18n="ex3_t">Assistant WhatsApp IA</h3>
+        <p data-i18n="ex3_p">Un chatbot répond à vos clients 24h/24, répond aux questions fréquentes, prend des rendez-vous et escalade les urgences.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex3_r">Réponse en moins de 10 secondes</span></div>
+      </article>
+      <article class="ex-card reveal">
+        <div class="ex-tag">Airbnb</div>
+        <h3 data-i18n="ex4_t">Booking automation</h3>
+        <p data-i18n="ex4_p">À chaque nouvelle réservation Airbnb, le voyageur reçoit automatiquement les instructions, le code Wi-Fi et un guide de la ville.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex4_r">5 étoiles en pilote automatique</span></div>
+      </article>
+      <article class="ex-card reveal reveal-delay-1">
+        <div class="ex-tag">Sheets</div>
+        <h3 data-i18n="ex5_t">Automation Google Sheets</h3>
+        <p data-i18n="ex5_p">Vos données de vente, commandes ou leads se synchronisent automatiquement dans vos tableaux. Rapports générés chaque lundi.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex5_r">0 saisie manuelle</span></div>
+      </article>
+      <article class="ex-card reveal reveal-delay-2">
+        <div class="ex-tag" data-i18n="ext6">Finance</div>
+        <h3 data-i18n="ex6_t">Génération de factures</h3>
+        <p data-i18n="ex6_p">À la confirmation d'un paiement Stripe, une facture PDF est générée, enregistrée sur Drive et envoyée par email automatiquement.</p>
+        <div class="ex-result"><i class="fa-solid fa-circle-check"></i> <span data-i18n="ex6_r">-3h d'administration / semaine</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TOOLS =================== -->
+<section class="section" id="outils" aria-labelledby="tools-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="tools_eyebrow">L'écosystème</div>
+      <h2 class="section-title reveal" id="tools-title" data-i18n="tools_title">Vous maîtriserez ces outils</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="tools_desc">Les meilleures plateformes d'IA et d'automatisation, utilisées par les entreprises les plus performantes.</p>
+    </div>
+
+    <div class="tools-track-wrap reveal">
+      <div class="tools-track" id="tools-track" aria-label="Outils disponibles">
+        <!-- JS will duplicate for infinite scroll -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY PROBOOST =================== -->
+<section class="section" style="background:var(--c-surface);" id="proboost" aria-labelledby="pb-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="pb_eyebrow">Pourquoi ProBoost</div>
+      <h2 class="section-title reveal" id="pb-title" data-i18n="pb_title">Une formation ancrée dans le réel</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="pb_desc">Pas de théorie inutile. Que des cas pratiques, des templates opérationnels et un accompagnement personnalisé.</p>
+    </div>
+    <div class="why-pb-grid">
+      <div class="pb-card reveal">
+        <div class="pb-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <div><h3 data-i18n="pb1_t">Expérience business réelle</h3><p data-i18n="pb1_p">ProBoost Agency a automatisé des dizaines de businesses au Maroc et à l'international.</p></div>
+      </div>
+      <div class="pb-card reveal reveal-delay-1">
+        <div class="pb-icon"><i class="fa-solid fa-ban"></i></div>
+        <div><h3 data-i18n="pb2_t">Zéro théorie inutile</h3><p data-i18n="pb2_p">Chaque module débouche sur un résultat concret. Vous apprenez en faisant.</p></div>
+      </div>
+      <div class="pb-card reveal reveal-delay-2">
+        <div class="pb-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div><h3 data-i18n="pb3_t">Mentorat personnalisé</h3><p data-i18n="pb3_p">Accès direct à l'expert pendant et après la formation pour répondre à vos questions.</p></div>
+      </div>
+      <div class="pb-card reveal">
+        <div class="pb-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div><h3 data-i18n="pb4_t">Projets réels</h3><p data-i18n="pb4_p">Vous travaillez sur de vraies automatisations, pas des exercices fictifs.</p></div>
+      </div>
+      <div class="pb-card reveal reveal-delay-1">
+        <div class="pb-icon"><i class="fa-solid fa-rotate"></i></div>
+        <div><h3 data-i18n="pb5_t">Mises à jour à vie</h3><p data-i18n="pb5_p">L'IA évolue vite. Vos accès sont mis à jour en permanence avec les nouvelles pratiques.</p></div>
+      </div>
+      <div class="pb-card reveal reveal-delay-2">
+        <div class="pb-icon"><i class="fa-solid fa-file-code"></i></div>
+        <div><h3 data-i18n="pb6_t">Templates inclus</h3><p data-i18n="pb6_p">Repartez avec des dizaines de workflows prêts à l'emploi pour votre activité.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FORMAT =================== -->
+<section class="section" id="format" aria-labelledby="fmt-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="fmt_eyebrow">Format</div>
+      <h2 class="section-title reveal" id="fmt-title" data-i18n="fmt_title">Comment se passe la formation ?</h2>
+    </div>
+    <div class="format-grid">
+      <div class="fmt-card reveal"><div class="fmt-icon"><i class="fa-solid fa-globe"></i></div><span data-i18n="fmt1">100% en ligne</span></div>
+      <div class="fmt-card reveal reveal-delay-1"><div class="fmt-icon"><i class="fa-solid fa-video"></i></div><span data-i18n="fmt2">Sessions live</span></div>
+      <div class="fmt-card reveal reveal-delay-2"><div class="fmt-icon"><i class="fa-solid fa-film"></i></div><span data-i18n="fmt3">Replays inclus</span></div>
+      <div class="fmt-card reveal"><div class="fmt-icon"><i class="fa-solid fa-dumbbell"></i></div><span data-i18n="fmt4">Exercices pratiques</span></div>
+      <div class="fmt-card reveal reveal-delay-1"><div class="fmt-icon"><i class="fa-brands fa-discord"></i></div><span data-i18n="fmt5">Support privé</span></div>
+      <div class="fmt-card reveal reveal-delay-2"><div class="fmt-icon"><i class="fa-solid fa-certificate"></i></div><span data-i18n="fmt6">Certificat</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRICING =================== -->
+<section class="section" id="tarifs" style="background:var(--c-surface);" aria-labelledby="price-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow" data-i18n="price_eyebrow">Tarification</div>
+      <h2 class="section-title reveal" id="price-title" data-i18n="price_title">Un investissement, pas une dépense</h2>
+      <p class="section-desc reveal reveal-delay-1" data-i18n="price_desc">Une seule automatisation bien faite peut rentabiliser votre investissement en moins d'un mois.</p>
+    </div>
+    <div class="pricing-wrap reveal">
+      <div class="pricing-card" role="region" aria-label="Offre formation complète">
+        <div class="pricing-badge" data-i18n="price_badge">Formation complète</div>
+        <div class="pricing-name" data-i18n="price_name">AI Business Automation</div>
+        <div class="pricing-sub" data-i18n="price_sub">Accès complet · 12 modules · Communauté</div>
+        <div class="pricing-from" data-i18n="price_from">À partir de</div>
+        <div class="pricing-price">
+          <span>MAD</span>4 900
+        </div>
+        <ul class="pricing-features">
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf1">Tous les modules (12+)</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf2">Templates & workflows</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf3">Communauté privée</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf4">Support personnalisé</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf5">Replays à vie</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf6">Certificat de formation</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="pf7">Mises à jour incluses</span></li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;text-decoration:none;" data-i18n="price_cta">
+          Réserver un appel
+        </a>
+        <p class="pricing-note" data-i18n="price_note">🔒 Paiement sécurisé · Places limitées · Sans engagement</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title reveal" id="faq-title" data-i18n="faq_title">Questions fréquentes</h2>
+    </div>
+    <div class="faq-list" style="max-width:720px;margin:0 auto;" role="list">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq1_q">Faut-il savoir coder ?</button>
+        <div class="faq-a" data-i18n="faq1_a">Non, aucune compétence en programmation n'est requise. La formation est 100% no-code et accessible à tous, même sans expérience technique. Vous utiliserez des outils visuels comme n8n, Make et Zapier.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq2_q">Les débutants peuvent-ils rejoindre ?</button>
+        <div class="faq-a" data-i18n="faq2_a">Absolument. La formation est conçue pour tous les niveaux. Si vous savez utiliser un ordinateur et avez un business à automatiser, vous êtes au bon endroit. Chaque module part de zéro.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq3_q">Combien de temps dure la formation ?</button>
+        <div class="faq-a" data-i18n="faq3_a">La formation dure environ 6 à 8 semaines avec 2-3h par semaine. Vous avancez à votre rythme et avez accès aux replays à vie. Il n'y a pas de délai imposé.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq4_q">Est-ce que je reçois les enregistrements ?</button>
+        <div class="faq-a" data-i18n="faq4_a">Oui, toutes les sessions live sont enregistrées et disponibles dans votre espace membre. Vous pouvez les revoir autant de fois que vous le souhaitez, à vie.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq5_q">Puis-je automatiser mon Airbnb ?</button>
+        <div class="faq-a" data-i18n="faq5_a">Oui ! Le module 11 est entièrement dédié à l'automatisation Airbnb : messages voyageurs, gestion des avis, alertes de prix, workflows de nettoyage et bien plus. Les propriétaires Airbnb adorent ce module.</div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq6_q">Puis-je automatiser mon business ?</button>
+        <div class="faq-a" data-i18n="faq6_a">C'est exactement l'objectif. Que vous soyez restaurant, agence, consultant ou e-commerce, vous repartirez avec des automatisations opérationnelles adaptées à votre activité spécifique.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false" data-i18n="faq7_q">Vais-je bénéficier d'un suivi ?</button>
+        <div class="faq-a" data-i18n="faq7_a">Oui. Vous avez accès à notre communauté privée Discord et à des sessions de Q&R régulières. Notre équipe répond à vos questions pendant et après la formation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT / FINAL CTA =================== -->
+<section class="final-cta" id="contact" aria-labelledby="cta-title">
+  <div class="final-cta-inner">
+    <div class="hero-badge" style="margin:0 auto 28px;" aria-hidden="true">
+      <span class="dot"></span>
+      <span data-i18n="cta_badge">Places limitées</span>
+    </div>
+    <h2 id="cta-title">
+      <span class="grad-text" data-i18n="cta_h2a">Prêt à automatiser</span><br />
+      <span data-i18n="cta_h2b">votre entreprise ?</span>
+    </h2>
+    <p data-i18n="cta_desc">Réservez un appel stratégique gratuit de 30 minutes. On analyse votre business et on vous montre exactement ce que vous pouvez automatiser.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/+212767013525?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20la%20formation%20automatisation." class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span data-i18n="cta_btn1">Réserver sur WhatsApp</span>
+      </a>
+      <a href="mailto:ioublale@gmail.com" class="btn-secondary">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <span data-i18n="cta_btn2">Envoyer un email</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+         <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+           <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+         </a>
+        <p data-i18n="footer_desc">Agence digitale spécialisée en SEO, automatisation IA et développement web pour entrepreneurs et PME.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/+212767013525" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/company/proboost-agency" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:ioublale@gmail.com" class="social-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fcol1_h">Services</h4>
+        <ul>
+          <li><a href="https://proboostagency.com/seo-audit-tool.html">SEO</a></li>
+          <li><a href="https://proboostagency.com/seo-riads-marrakech-morocco.html">GEO & Local</a></li>
+          <li><a href="#" data-i18n="fcol1_4">Automatisation IA</a></li>
+          <li><a href="https://proboostagency.com/">Web Development</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fcol2_h">Formation</h4>
+        <ul>
+          <li><a href="#programme" data-i18n="fcol2_1">Programme</a></li>
+          <li><a href="#tarifs" data-i18n="fcol2_2">Tarifs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="fcol2_4">Appel gratuit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fcol3_h">Contact</h4>
+        <ul>
+          <li><a href="mailto:ioublale@gmail.com">contact@proboostagency.com</a></li>
+          <li><a href="https://proboostagency.com" data-i18n="fcol3_2">proboostagency.com</a></li>
+          <li>
+            <a href="https://wa.me/+212767013525" class="wa-cta" style="margin-top:8px;">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> ProBoost Agency · Marrakech, Maroc</span>
+      <span data-i18n="footer_copy">Tous droits réservés</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<div id="floating-cta" aria-hidden="true">
+  <a href="#contact" class="float-btn">
+    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+    <span data-i18n="float_cta">Appel gratuit</span>
+  </a>
+  <button id="back-top" aria-label="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+</div>
+
+<script>
+/* ==============================
+   TRANSLATIONS
+============================== */
+const translations = {
+  fr: {
+    nav_why: "Pourquoi", nav_prog: "Programme", nav_tools: "Outils", nav_price: "Tarifs", nav_cta: "Appel gratuit",
+    hero_badge: "Formation disponible maintenant",
+    hero_h1a: "Automatisez votre entreprise", hero_h1b: "grâce à l'IA",
+    hero_sub: "Apprenez à créer des automatisations intelligentes pour gagner du temps, augmenter votre chiffre d'affaires et éliminer les tâches répétitives.",
+    hero_cta1: "Réserver un appel gratuit", hero_cta2: "Voir le programme",
+    stat1: "Heures économisées / mois", stat2: "Entrepreneurs accompagnés", stat3: "Automatisations créées", stat4: "ROI moyen constaté",
+    why_eyebrow: "Pourquoi automatiser", why_title1: "Arrêtez de perdre", why_title2: "du temps sur des tâches répétitives",
+    why_desc: "L'automatisation n'est plus réservée aux grandes entreprises. Avec les bons outils, n'importe quel entrepreneur peut gagner des heures chaque semaine.",
+    why1_t: "Arrêtez de perdre du temps", why1_p: "Déléguez les emails, les relances, la facturation et les rapports à des automatisations intelligentes.",
+    why2_t: "Travaillez plus vite", why2_p: "Réduisez de 80% le temps consacré aux tâches manuelles. Concentrez-vous sur la croissance de votre business.",
+    why3_t: "Scalez sans embaucher", why3_p: "Gérez 10× plus de clients et de projets avec les mêmes ressources humaines.",
+    why4_t: "Améliorez l'expérience client", why4_p: "Répondez instantanément, envoyez les bonnes informations au bon moment.",
+    prog_eyebrow: "Programme complet", prog_title: "Ce que vous apprendrez", prog_desc: "12 modules complets, des cas pratiques réels et des templates prêts à l'emploi.",
+    m1_t: "Introduction à l'IA", m1_1: "Comprendre l'IA générative", m1_2: "Cas d'usage business", m1_3: "Mindset automatisation",
+    m2_t: "Les grands modèles IA", m2_1: "Prompting avancé",
+    m3_1: "Workflows no-code", m3_2: "Connexions API", m3_3: "Automatisations complexes",
+    m4_1: "Scénarios avancés", m4_2: "Intégrations SaaS", m4_3: "Gestion d'erreurs",
+    m5_1: "Automatisations rapides", m5_2: "Multi-step Zaps", m5_3: "Filtres et conditions",
+    m6_t: "WhatsApp Automation", m6_1: "Chatbot WhatsApp", m6_2: "Réponses automatiques", m6_3: "Qualification leads",
+    m7_t: "CRM Automation", m7_1: "Suivi automatique", m7_2: "Pipelines intelligents",
+    m8_t: "Email Automation", m8_1: "Séquences d'emails", m8_2: "Newsletters automatiques", m8_3: "Segmentation",
+    m9_t: "Lead Generation", m9_1: "Capture automatique", m9_2: "Qualification IA", m9_3: "Nurturing automatisé",
+    m10_t: "SEO Automation", m10_1: "Génération de contenu IA", m10_2: "Rapports automatiques", m10_3: "Monitoring",
+    m11_t: "Airbnb Automation ⭐", m11_1: "Messages voyageurs auto", m11_2: "Gestion des avis", m11_3: "Alertes prix", m11_4: "Workflows nettoyage",
+    m12_t: "Votre assistant IA", m12_1: "Créer votre propre GPT", m12_2: "Base de connaissances", m12_3: "Déploiement",
+    aud_eyebrow: "Pour qui", aud_title: "Cette formation est faite pour vous", aud_desc: "Que vous gériez un Airbnb, une agence ou une PME, l'automatisation va transformer votre quotidien.",
+    aud1: "Airbnb Owners", aud2: "Hôtels", aud3: "Restaurants", aud4: "Agences", aud5: "Freelances", aud6: "Avocats", aud7: "Médecins", aud8: "Immobilier", aud9: "E-commerce", aud10: "Consultants",
+    ex_eyebrow: "Cas réels", ex_title: "Des automatisations qui changent tout", ex_desc: "Voici des exemples concrets d'automatisations que vous pourrez créer dès la fin de la formation.",
+    ext1: "Lead Gen", ex1_t: "Qualification de leads", ex1_p: "Un prospect remplit un formulaire. En 30 secondes, l'IA analyse sa demande, le qualifie et envoie un email personnalisé.", ex1_r: "-6h de travail manuel / semaine",
+    ext2: "Sales", ex2_t: "Devis automatique", ex2_p: "Votre client envoie une demande sur WhatsApp. Un devis PDF est généré et envoyé en moins de 2 minutes.", ex2_r: "+40% taux de conversion",
+    ex3_t: "Assistant WhatsApp IA", ex3_p: "Un chatbot répond à vos clients 24h/24, répond aux questions fréquentes, prend des rendez-vous.", ex3_r: "Réponse en moins de 10 secondes",
+    ex4_t: "Booking automation", ex4_p: "À chaque nouvelle réservation Airbnb, le voyageur reçoit automatiquement les instructions, le code Wi-Fi et un guide de la ville.", ex4_r: "5 étoiles en pilote automatique",
+    ex5_t: "Automation Google Sheets", ex5_p: "Vos données de vente, commandes ou leads se synchronisent automatiquement dans vos tableaux.", ex5_r: "0 saisie manuelle",
+    ext6: "Finance", ex6_t: "Génération de factures", ex6_p: "À la confirmation d'un paiement Stripe, une facture PDF est générée, enregistrée sur Drive et envoyée par email.", ex6_r: "-3h d'administration / semaine",
+    tools_eyebrow: "L'écosystème", tools_title: "Vous maîtriserez ces outils", tools_desc: "Les meilleures plateformes d'IA et d'automatisation, utilisées par les entreprises les plus performantes.",
+    pb_eyebrow: "Pourquoi ProBoost", pb_title: "Une formation ancrée dans le réel", pb_desc: "Pas de théorie inutile. Que des cas pratiques, des templates opérationnels et un accompagnement personnalisé.",
+    pb1_t: "Expérience business réelle", pb1_p: "ProBoost Agency a automatisé des dizaines de businesses au Maroc et à l'international.",
+    pb2_t: "Zéro théorie inutile", pb2_p: "Chaque module débouche sur un résultat concret. Vous apprenez en faisant.",
+    pb3_t: "Mentorat personnalisé", pb3_p: "Accès direct à l'expert pendant et après la formation.",
+    pb4_t: "Projets réels", pb4_p: "Vous travaillez sur de vraies automatisations, pas des exercices fictifs.",
+    pb5_t: "Mises à jour à vie", pb5_p: "L'IA évolue vite. Vos accès sont mis à jour en permanence.",
+    pb6_t: "Templates inclus", pb6_p: "Repartez avec des dizaines de workflows prêts à l'emploi.",
+    fmt_eyebrow: "Format", fmt_title: "Comment se passe la formation ?",
+    fmt1: "100% en ligne", fmt2: "Sessions live", fmt3: "Replays inclus", fmt4: "Exercices pratiques", fmt5: "Support privé", fmt6: "Certificat",
+    price_eyebrow: "Tarification", price_title: "Un investissement, pas une dépense", price_desc: "Une seule automatisation bien faite peut rentabiliser votre investissement en moins d'un mois.",
+    price_badge: "Formation complète", price_name: "AI Business Automation", price_sub: "Accès complet · 12 modules · Communauté",
+    price_from: "À partir de",
+    pf1: "Tous les modules (12+)", pf2: "Templates & workflows", pf3: "Communauté privée", pf4: "Support personnalisé", pf5: "Replays à vie", pf6: "Certificat de formation", pf7: "Mises à jour incluses",
+    price_cta: "Réserver un appel", price_note: "🔒 Paiement sécurisé · Places limitées · Sans engagement",
+    faq_title: "Questions fréquentes",
+    faq1_q: "Faut-il savoir coder ?", faq1_a: "Non, aucune compétence en programmation n'est requise. La formation est 100% no-code et accessible à tous, même sans expérience technique. Vous utiliserez des outils visuels comme n8n, Make et Zapier.",
+    faq2_q: "Les débutants peuvent-ils rejoindre ?", faq2_a: "Absolument. La formation est conçue pour tous les niveaux. Chaque module part de zéro.",
+    faq3_q: "Combien de temps dure la formation ?", faq3_a: "La formation dure environ 6 à 8 semaines avec 2-3h par semaine. Vous avancez à votre rythme et avez accès aux replays à vie.",
+    faq4_q: "Est-ce que je reçois les enregistrements ?", faq4_a: "Oui, toutes les sessions live sont enregistrées et disponibles dans votre espace membre. Vous pouvez les revoir autant de fois que vous le souhaitez, à vie.",
+    faq5_q: "Puis-je automatiser mon Airbnb ?", faq5_a: "Oui ! Le module 11 est entièrement dédié à l'automatisation Airbnb : messages voyageurs, gestion des avis, alertes de prix et workflows de nettoyage.",
+    faq6_q: "Puis-je automatiser mon business ?", faq6_a: "C'est exactement l'objectif. Vous repartirez avec des automatisations opérationnelles adaptées à votre activité spécifique.",
+    faq7_q: "Vais-je bénéficier d'un suivi ?", faq7_a: "Oui. Vous avez accès à notre communauté privée Discord et à des sessions de Q&R régulières.",
+    cta_badge: "Places limitées", cta_h2a: "Prêt à automatiser", cta_h2b: "votre entreprise ?",
+    cta_desc: "Réservez un appel stratégique gratuit de 30 minutes. On analyse votre business et on vous montre exactement ce que vous pouvez automatiser.",
+    cta_btn1: "Réserver sur WhatsApp", cta_btn2: "Envoyer un email",
+    float_cta: "Appel gratuit",
+    footer_desc: "Agence digitale spécialisée en SEO, automatisation IA et développement web pour entrepreneurs et PME.",
+    fcol1_h: "Services", fcol1_4: "Automatisation IA",
+    fcol2_h: "Formation", fcol2_1: "Programme", fcol2_2: "Tarifs", fcol2_4: "Appel gratuit",
+    fcol3_h: "Contact", fcol3_2: "proboostagency.com",
+    footer_copy: "Tous droits réservés"
+  },
+  en: {
+    nav_why: "Why", nav_prog: "Curriculum", nav_tools: "Tools", nav_price: "Pricing", nav_cta: "Free Call",
+    hero_badge: "Training available now",
+    hero_h1a: "Automate Your Business", hero_h1b: "with AI",
+    hero_sub: "Learn how to build AI-powered workflows that save hours every week, generate more leads and automate your entire business.",
+    hero_cta1: "Book a Free Call", hero_cta2: "View Curriculum",
+    stat1: "Hours saved / month", stat2: "Entrepreneurs trained", stat3: "Automations built", stat4: "Average ROI",
+    why_eyebrow: "Why automate", why_title1: "Stop wasting time", why_title2: "on repetitive tasks",
+    why_desc: "Automation is no longer reserved for large companies. With the right tools, any entrepreneur can reclaim hours every week.",
+    why1_t: "Stop wasting time", why1_p: "Delegate emails, follow-ups, invoicing and reporting to smart automations.",
+    why2_t: "Work faster", why2_p: "Cut 80% of manual task time. Focus on growing your business instead.",
+    why3_t: "Scale without hiring", why3_p: "Handle 10× more clients and projects with the same team size.",
+    why4_t: "Improve customer experience", why4_p: "Respond instantly and send the right information at the right time.",
+    prog_eyebrow: "Full curriculum", prog_title: "What you will learn", prog_desc: "12 complete modules, real-world use cases and ready-to-use templates.",
+    m1_t: "Intro to AI", m1_1: "Understanding generative AI", m1_2: "Business use cases", m1_3: "Automation mindset",
+    m2_t: "AI language models", m2_1: "Advanced prompting",
+    m3_1: "No-code workflows", m3_2: "API connections", m3_3: "Complex automations",
+    m4_1: "Advanced scenarios", m4_2: "SaaS integrations", m4_3: "Error handling",
+    m5_1: "Quick automations", m5_2: "Multi-step Zaps", m5_3: "Filters & conditions",
+    m6_t: "WhatsApp Automation", m6_1: "WhatsApp chatbot", m6_2: "Auto-replies", m6_3: "Lead qualification",
+    m7_t: "CRM Automation", m7_1: "Auto follow-up", m7_2: "Smart pipelines",
+    m8_t: "Email Automation", m8_1: "Email sequences", m8_2: "Automated newsletters", m8_3: "Segmentation",
+    m9_t: "Lead Generation", m9_1: "Auto-capture", m9_2: "AI qualification", m9_3: "Automated nurturing",
+    m10_t: "SEO Automation", m10_1: "AI content generation", m10_2: "Automated reports", m10_3: "Monitoring",
+    m11_t: "Airbnb Automation ⭐", m11_1: "Auto guest messages", m11_2: "Review management", m11_3: "Price alerts", m11_4: "Cleaning workflows",
+    m12_t: "Your own AI assistant", m12_1: "Build your custom GPT", m12_2: "Knowledge base", m12_3: "Deployment",
+    aud_eyebrow: "Who is it for", aud_title: "This training is made for you", aud_desc: "Whether you manage an Airbnb, an agency or a SMB, automation will transform your daily operations.",
+    aud1: "Airbnb Owners", aud2: "Hotels", aud3: "Restaurants", aud4: "Agencies", aud5: "Freelancers", aud6: "Law Firms", aud7: "Doctors", aud8: "Real Estate", aud9: "E-commerce", aud10: "Consultants",
+    ex_eyebrow: "Real examples", ex_title: "Automations that change everything", ex_desc: "Here are concrete examples of automations you will build by the end of the training.",
+    ext1: "Lead Gen", ex1_t: "Lead qualification", ex1_p: "A prospect fills a form. In 30 seconds, AI analyzes the request, qualifies them and sends a personalized email.", ex1_r: "-6h of manual work per week",
+    ext2: "Sales", ex2_t: "Automatic quotation", ex2_p: "Your client sends a WhatsApp request. A PDF quote is generated and sent in under 2 minutes.", ex2_r: "+40% conversion rate",
+    ex3_t: "WhatsApp AI assistant", ex3_p: "A chatbot answers clients 24/7, handles FAQs, books appointments and escalates urgent cases.", ex3_r: "Response in under 10 seconds",
+    ex4_t: "Booking automation", ex4_p: "Every new Airbnb booking triggers an automatic message with check-in instructions, Wi-Fi code and city guide.", ex4_r: "5 stars on autopilot",
+    ex5_t: "Google Sheets automation", ex5_p: "Sales data, orders and leads sync automatically into your spreadsheets. Reports generated every Monday.", ex5_r: "Zero manual entry",
+    ext6: "Finance", ex6_t: "Invoice generation", ex6_p: "When a Stripe payment is confirmed, a PDF invoice is generated, saved to Drive and emailed automatically.", ex6_r: "-3h of admin work per week",
+    tools_eyebrow: "The ecosystem", tools_title: "Tools you will master", tools_desc: "The best AI and automation platforms used by the world's most productive businesses.",
+    pb_eyebrow: "Why ProBoost", pb_title: "Training grounded in reality", pb_desc: "No useless theory. Only real-world cases, operational templates and personal mentoring.",
+    pb1_t: "Real business experience", pb1_p: "ProBoost Agency has automated dozens of businesses in Morocco and internationally.",
+    pb2_t: "Zero useless theory", pb2_p: "Every module ends with a concrete deliverable. You learn by doing.",
+    pb3_t: "Personal mentoring", pb3_p: "Direct access to the expert during and after the training.",
+    pb4_t: "Real projects", pb4_p: "You work on actual automations, not fictitious exercises.",
+    pb5_t: "Lifetime updates", pb5_p: "AI evolves fast. Your access is permanently updated with new best practices.",
+    pb6_t: "Templates included", pb6_p: "Leave with dozens of ready-to-use workflows for your business.",
+    fmt_eyebrow: "Format", fmt_title: "How does the training work?",
+    fmt1: "100% online", fmt2: "Live sessions", fmt3: "Replay access", fmt4: "Practical exercises", fmt5: "Private support", fmt6: "Certificate",
+    price_eyebrow: "Pricing", price_title: "An investment, not an expense", price_desc: "A single well-built automation can pay back your investment within the first month.",
+    price_badge: "Full training", price_name: "AI Business Automation", price_sub: "Full access · 12 modules · Community",
+    price_from: "Starting at",
+    pf1: "All modules (12+)", pf2: "Templates & workflows", pf3: "Private community", pf4: "Personal support", pf5: "Lifetime replays", pf6: "Training certificate", pf7: "Updates included",
+    price_cta: "Book a Call", price_note: "🔒 Secure payment · Limited spots · No commitment",
+    faq_title: "Frequently asked questions",
+    faq1_q: "Do I need to know how to code?", faq1_a: "No coding skills required. The training is 100% no-code and accessible to everyone. You will use visual tools like n8n, Make and Zapier.",
+    faq2_q: "Can beginners join?", faq2_a: "Absolutely. The training is designed for all levels. If you know how to use a computer and have a business to automate, you're in the right place.",
+    faq3_q: "How long does the training last?", faq3_a: "About 6 to 8 weeks with 2-3 hours per week. You go at your own pace and have lifetime replay access.",
+    faq4_q: "Do I receive the recordings?", faq4_a: "Yes, all live sessions are recorded and available in your member area. You can replay them as many times as you want, forever.",
+    faq5_q: "Can I automate my Airbnb?", faq5_a: "Yes! Module 11 is entirely dedicated to Airbnb automation: guest messages, review management, price alerts and cleaning workflows.",
+    faq6_q: "Can I automate my business?", faq6_a: "That's exactly the goal. You will leave with operational automations tailored to your specific business.",
+    faq7_q: "Will I receive support?", faq7_a: "Yes. You get access to our private Discord community and regular Q&A sessions with the team.",
+    cta_badge: "Limited spots available", cta_h2a: "Ready to automate", cta_h2b: "your business?",
+    cta_desc: "Book your free 30-minute strategy call. We'll analyze your business and show you exactly what you can automate.",
+    cta_btn1: "Book on WhatsApp", cta_btn2: "Send an email",
+    float_cta: "Free call",
+    footer_desc: "Digital agency specializing in SEO, AI automation and web development for entrepreneurs and SMBs.",
+    fcol1_h: "Services", fcol1_4: "AI Automation",
+    fcol2_h: "Training", fcol2_1: "Curriculum", fcol2_2: "Pricing", fcol2_4: "Free call",
+    fcol3_h: "Contact", fcol3_2: "proboostagency.com",
+    footer_copy: "All rights reserved"
+  }
+};
+
+let currentLang = 'fr';
+
+function switchLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  // Update SEO
+  if (lang === 'fr') {
+    document.getElementById('page-title').textContent = 'Formation Automatisation IA | ProBoost Agency';
+    document.getElementById('page-desc').setAttribute('content', 'Apprenez à automatiser votre entreprise avec l\'IA, ChatGPT, Claude, n8n, Make et Zapier. Formation pratique pour entrepreneurs, Airbnb et PME.');
+  } else {
+    document.getElementById('page-title').textContent = 'AI Business Automation Training | ProBoost Agency';
+    document.getElementById('page-desc').setAttribute('content', 'Learn AI automation using ChatGPT, Claude, n8n, Make and Zapier. Practical training for entrepreneurs and Airbnb owners.');
+  }
+}
+
+/* ==============================
+   TOOLS TRACK
+============================== */
+const tools = [
+  { name: 'ChatGPT', icon: '🤖' }, { name: 'Claude', icon: '✨' }, { name: 'Gemini', icon: '💎' },
+  { name: 'n8n', icon: '⚙️' }, { name: 'Make.com', icon: '🔄' }, { name: 'Zapier', icon: '⚡' },
+  { name: 'WhatsApp', icon: '💬' }, { name: 'Gmail', icon: '📧' }, { name: 'Notion', icon: '📝' },
+  { name: 'Airtable', icon: '📊' }, { name: 'Slack', icon: '💼' }, { name: 'HubSpot', icon: '🎯' },
+  { name: 'Pipedrive', icon: '📈' }, { name: 'Stripe', icon: '💳' }, { name: 'Calendly', icon: '📅' },
+  { name: 'Google Sheets', icon: '📋' }, { name: 'Google Drive', icon: '☁️' }, { name: 'Dropbox', icon: '📦' },
+  { name: 'Discord', icon: '🎮' }, { name: 'Google Calendar', icon: '🗓️' }, { name: 'OpenAI', icon: '🧠' }, { name: 'Anthropic', icon: '🔬' }
+];
+
+function buildToolsTrack() {
+  const track = document.getElementById('tools-track');
+  if (!track) return;
+  const doubled = [...tools, ...tools];
+  track.innerHTML = doubled.map(t =>
+    `<div class="tool-pill"><span class="ti">${t.icon}</span>${t.name}</div>`
+  ).join('');
+}
+
+/* ==============================
+   PARTICLES
+============================== */
+function buildParticles() {
+  const container = document.getElementById('particles');
+  if (!container) return;
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 2;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      animation-duration:${Math.random() * 12 + 8}s;
+      animation-delay:${Math.random() * 10}s;
+      opacity:${Math.random() * 0.6 + 0.1};
+    `;
+    container.appendChild(p);
+  }
+}
+
+/* ==============================
+   ANIMATED COUNTERS
+============================== */
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-count'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 1800;
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+/* ==============================
+   SCROLL REVEALS + COUNTERS
+============================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+/* ==============================
+   NAV SCROLL
+============================== */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  const floatCta = document.getElementById('floating-cta');
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+    floatCta.classList.add('visible');
+    floatCta.removeAttribute('aria-hidden');
+  } else {
+    nav.classList.remove('scrolled');
+    floatCta.classList.remove('visible');
+    floatCta.setAttribute('aria-hidden', 'true');
+  }
+}, { passive: true });
+
+/* ==============================
+   HAMBURGER
+============================== */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
+/* ==============================
+   THEME TOGGLE
+============================== */
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+let isDark = true;
+
+themeToggle.addEventListener('click', () => {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'light');
+  themeIcon.className = isDark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+});
+
+/* ==============================
+   BACK TO TOP
+============================== */
+document.getElementById('back-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ==============================
+   FAQ ACCORDION
+============================== */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  // Add icon
+  const icon = document.createElement('span');
+  icon.className = 'faq-icon'; icon.innerHTML = '<i class="fa-solid fa-plus"></i>';
+  btn.appendChild(icon);
+
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+});
+
+/* ==============================
+   YEAR
+============================== */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ==============================
+   INIT
+============================== */
+document.addEventListener('DOMContentLoaded', () => {
+  // Loader
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 600);
+
+  buildParticles();
+  buildToolsTrack();
+
+  // Observers
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+});
+</script>
+</body>
+</html>
+
