@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Direct Booking ROI Calculator in Marrakech: A Complete Checklist | ProBoost Agency</title>
+<meta name="description" content="Free Hotel Direct Booking ROI Calculator for Marrakech riads, hotels & guesthouses. See exactly how much OTA commission is costing you and follow the 8-step checklist to recover it.">
+<meta name="keywords" content="hotel direct booking ROI calculator Marrakech, OTA commission Marrakech, riad direct bookings, hotel revenue management Morocco, booking.com commission calculator">
+<link rel="icon" href="img/favicon.png" sizes="any">
+
+<style>
+
+:root{
+  --blue:   #1AACF0;
+  --red:    #F03C2E;
+  --dark:   #080808;
+  --darker: #040404;
+  --mid:    #111111;
+  --light:  #F5F2EC;
+  --border: rgba(255,255,255,0.07);
+  --tm: #F5F2EC;
+  --ts: rgba(245,242,236,0.55);
+  --tf: rgba(245,242,236,0.27);
+  --bd: rgba(26,172,240,0.11);
+  --rd: rgba(240,60,46,0.11);
+  --gd: rgba(39,174,96,0.12);
+  --yd: rgba(255,180,0,0.1);
+  --serif: Georgia,'Times New Roman',serif;
+  --sans: 'Helvetica Neue',Arial,sans-serif;
+  --green: #27AE60;
+  --yellow: #FFB400;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--dark);
+  color:var(--tm);
+  font-family:var(--sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--blue);text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:11px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--blue);
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--blue);display:inline-block;}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-0.01em;}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(8,8,8,0.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1120px;margin:0 auto;padding:18px 28px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:0.02em;color:var(--tm);}
+.brand span{color:var(--red);}
+.nav-links{display:flex;gap:26px;flex-wrap:wrap;}
+.nav-links a{font-size:13px;color:var(--ts);transition:color .2s;}
+.nav-links a:hover{color:var(--tm);}
+.nav-cta{
+  font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--dark);background:var(--blue);padding:9px 16px;border-radius:2px;
+  white-space:nowrap;
+}
+@media (max-width:760px){.nav-links{display:none;}}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:100px 0 70px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;top:-200px;right:-160px;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(26,172,240,0.14),transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:60px;align-items:end;position:relative;}
+.hero h1{
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.06;
+  margin:22px 0 24px;
+  color:var(--tm);
+}
+.hero h1 em{font-style:italic;color:var(--blue);}
+.hero p.lede{font-size:17px;color:var(--ts);max-width:52ch;}
+.hero-stats{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--border);padding-left:28px;}
+.stat{padding:18px 0;border-bottom:1px solid var(--border);}
+.stat:last-child{border-bottom:none;}
+.stat .num{font-family:var(--serif);font-size:34px;color:var(--red);line-height:1;}
+.stat .lab{font-size:12.5px;color:var(--ts);margin-top:6px;}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;}.hero-stats{border-left:none;padding-left:0;border-top:1px solid var(--border);padding-top:22px;flex-direction:row;flex-wrap:wrap;gap:30px;}.stat{border-bottom:none;padding:0;}}
+
+/* ---------- SECTION GENERIC ---------- */
+section{padding:86px 0;border-bottom:1px solid var(--border);}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head h2{font-size:clamp(26px,3.4vw,38px);margin-top:14px;color:var(--tm);}
+.section-head p{color:var(--ts);margin-top:14px;font-size:15.5px;}
+.section-alt{background:var(--darker);}
+
+/* ---------- LEAK BAR ---------- */
+.leakbar{margin-top:10px;}
+.leak-row{display:flex;align-items:center;gap:18px;margin-bottom:14px;}
+.leak-label{width:170px;font-size:13px;color:var(--ts);flex-shrink:0;}
+.leak-track{flex:1;height:34px;background:var(--mid);border:1px solid var(--border);border-radius:2px;overflow:hidden;display:flex;}
+.leak-fill{height:100%;display:flex;align-items:center;padding-left:12px;font-size:12.5px;font-weight:700;color:var(--dark);}
+.leak-fill.ota{background:var(--red);}
+.leak-fill.net{background:var(--gd);color:var(--tm);border-left:1px solid var(--border);}
+.leak-fill.direct{background:var(--blue);}
+
+/* ---------- CALCULATOR CONSOLE ---------- */
+.console{
+  background:var(--mid);
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;
+}
+.console-top{
+  padding:22px 30px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.console-top .dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-right:8px;box-shadow:0 0 8px var(--green);}
+.console-top-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ts);}
+.console-body{display:grid;grid-template-columns:1.1fr 1fr;}
+@media (max-width:860px){.console-body{grid-template-columns:1fr;}}
+.console-inputs{padding:34px 34px 34px;border-right:1px solid var(--border);}
+@media (max-width:860px){.console-inputs{border-right:none;border-bottom:1px solid var(--border);}}
+.field{margin-bottom:24px;}
+.field label{
+  display:flex;justify-content:space-between;
+  font-size:12.5px;color:var(--ts);margin-bottom:10px;
+}
+.field label b{color:var(--tm);font-weight:700;font-variant-numeric:tabular-nums;}
+input[type="range"]{
+  -webkit-appearance:none;width:100%;height:3px;background:var(--border);border-radius:2px;outline:none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:15px;height:15px;border-radius:50%;
+  background:var(--blue);cursor:pointer;border:2px solid var(--dark);box-shadow:0 0 0 1px var(--blue);
+}
+input[type="range"]::-moz-range-thumb{
+  width:15px;height:15px;border-radius:50%;background:var(--blue);cursor:pointer;border:2px solid var(--dark);
+}
+.console-outputs{padding:34px;display:flex;flex-direction:column;gap:0;}
+.out-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border);}
+.out-row:first-child{padding-top:0;}
+.out-row .k{font-size:13px;color:var(--ts);}
+.out-row .v{font-family:var(--serif);font-size:21px;font-variant-numeric:tabular-nums;}
+.v.neg{color:var(--red);}
+.v.pos{color:var(--green);}
+.hero-out{
+  margin-top:6px;padding:20px;background:var(--gd);border:1px solid rgba(39,174,96,0.3);border-radius:3px;
+}
+.hero-out .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ts);}
+.hero-out .v{font-family:var(--serif);font-size:32px;color:var(--green);margin-top:4px;font-variant-numeric:tabular-nums;}
+.hero-out .sub{font-size:12px;color:var(--ts);margin-top:6px;}
+.console-note{padding:16px 34px;background:var(--darker);font-size:12px;color:var(--tf);border-top:1px solid var(--border);}
+
+/* ---------- CHECKLIST ---------- */
+.checklist{position:relative;}
+.checklist::before{
+  content:"";position:absolute;left:23px;top:6px;bottom:6px;width:1px;background:var(--border);
+}
+.check-item{position:relative;padding:0 0 40px 66px;}
+.check-item:last-child{padding-bottom:0;}
+.check-num{
+  position:absolute;left:0;top:0;width:47px;height:47px;border-radius:50%;
+  background:var(--mid);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:16px;color:var(--blue);
+}
+.check-item h3{font-size:20px;color:var(--tm);margin-bottom:8px;}
+.check-item p{color:var(--ts);font-size:15px;max-width:64ch;}
+.check-tag{
+  display:inline-block;margin-top:12px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+  padding:4px 9px;border-radius:2px;color:var(--tm);
+}
+.tag-quick{background:var(--bd);color:var(--blue);}
+.tag-core{background:var(--rd);color:var(--red);}
+.tag-growth{background:var(--yd);color:var(--yellow);}
+
+/* ---------- TABLE ---------- */
+.compare{width:100%;border-collapse:collapse;margin-top:10px;}
+.compare th,.compare td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--border);font-size:14.5px;}
+.compare th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ts);font-weight:700;}
+.compare td.ota{color:var(--ts);}
+.compare td.direct{color:var(--tm);}
+.compare tr td:first-child{color:var(--ts);width:220px;}
+.check-yes{color:var(--green);}
+.check-no{color:var(--red);}
+
+/* ---------- RELATED ---------- */
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+@media (max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.related-grid{grid-template-columns:1fr;}}
+.rcard{
+  background:var(--mid);border:1px solid var(--border);border-radius:3px;padding:24px 22px;
+  transition:border-color .2s, transform .2s;
+}
+.rcard:hover{border-color:var(--blue);transform:translateY(-3px);}
+.rcard .rc-eyebrow{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tf);}
+.rcard h4{font-family:var(--serif);font-size:18px;margin:10px 0 8px;color:var(--tm);}
+.rcard p{font-size:13.5px;color:var(--ts);margin-bottom:14px;}
+.rcard .go{font-size:12.5px;color:var(--blue);font-weight:700;}
+
+/* ---------- FAQ ---------- */
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item summary{
+  cursor:pointer;list-style:none;padding:22px 0;font-family:var(--serif);font-size:18px;color:var(--tm);
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:22px;color:var(--blue);flex-shrink:0;}
+.faq-item[open] summary::after{content:"–";}
+.faq-item .faq-a{padding:0 0 24px;color:var(--ts);font-size:15px;max-width:70ch;}
+
+/* ---------- CTA / FOOTER ---------- */
+.cta{
+  text-align:center;padding:100px 0;
+  background:linear-gradient(180deg,var(--darker),var(--dark));
+}
+.cta h2{font-size:clamp(28px,4vw,42px);max-width:640px;margin:16px auto 26px;}
+.cta-btn{
+  display:inline-block;background:var(--blue);color:var(--dark);font-weight:700;
+  padding:15px 30px;border-radius:2px;font-size:14px;letter-spacing:.03em;text-transform:uppercase;
+}
+footer{padding:40px 0;text-align:center;color:var(--tf);font-size:12.5px;}
+
+/* fade in */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{transition:none;opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+     <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a>
+    <div class="nav-links">
+      <a href="#leak">The Commission Leak</a>
+      <a href="#calculator">ROI Calculator</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#compare">OTA vs Direct</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/212767013525" class="nav-cta">Run the numbers</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Revenue Strategy — Marrakech Hospitality</span>
+      <h1>Hotel Direct Booking <em>ROI Calculator</em> in Marrakech: a complete checklist</h1>
+      <p class="lede">Every month, riads, guesthouses and boutique hotels across the Medina and Palmeraie hand 15–25% of every reservation to Booking.com, Expedia and Airbnb. This guide gives you a working calculator to see exactly what that costs — and an 8-step checklist to win those guests back to your own website.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">15–25%</div><div class="lab">Average OTA commission taken on a Marrakech riad booking</div></div>
+      <div class="stat"><div class="num">3–4×</div><div class="lab">More profitable, on average, than a commissioned OTA night</div></div>
+      <div class="stat"><div class="num">6–9 mo</div><div class="lab">Typical payback period on a direct booking engine + local SEO</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="leak">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Where the money goes</span>
+    <h2>The commission leak, in one glance</h2>
+    <p>Take a riad taking 60 bookings a month at 1,200 MAD/night for an average 3-night stay through OTAs. Here's how a single month of revenue splits before you change anything.</p>
+  </div>
+  <div class="wrap leakbar reveal">
+    <div class="leak-row">
+      <div class="leak-label">Total OTA revenue</div>
+      <div class="leak-track"><div class="leak-fill" style="width:100%;background:var(--mid);color:var(--tm);">216,000 MAD / month</div></div>
+    </div>
+    <div class="leak-row">
+      <div class="leak-label">Kept by riad</div>
+      <div class="leak-track">
+        <div class="leak-fill net" style="width:82%;">177,120 MAD net</div>
+        <div class="leak-fill ota" style="width:18%;">38,880 MAD lost</div>
+      </div>
+    </div>
+    <div class="leak-row">
+      <div class="leak-label">Same guest, direct</div>
+      <div class="leak-track">
+        <div class="leak-fill direct" style="width:100%;">216,000 MAD kept, minus a small fixed marketing cost</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator" class="section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The tool</span>
+      <h2>Your Hotel Direct Booking ROI Calculator</h2>
+      <p>Adjust the sliders to match your property. The console below recalculates your commission leak and the return on a direct booking push — a website booking engine, Google Hotel Ads, WhatsApp booking and local SEO — in real time.</p>
+    </div>
+
+    <div class="console reveal">
+      <div class="console-top">
+        <div><span class="dot"></span><span class="console-top-title">Live calculation</span></div>
+        <div class="console-top-title" id="propName">Marrakech Property</div>
+      </div>
+      <div class="console-body">
+        <div class="console-inputs">
+          <div class="field">
+            <label>OTA bookings per month <b id="valBookings">60</b></label>
+            <input type="range" id="bookings" min="5" max="300" value="60" step="5">
+          </div>
+          <div class="field">
+            <label>Average nightly rate (MAD) <b id="valRate">1,200</b></label>
+            <input type="range" id="rate" min="300" max="6000" value="1200" step="50">
+          </div>
+          <div class="field">
+            <label>Average length of stay (nights) <b id="valStay">3</b></label>
+            <input type="range" id="stay" min="1" max="14" value="3" step="1">
+          </div>
+          <div class="field">
+            <label>Average OTA commission <b id="valComm">18%</b></label>
+            <input type="range" id="comm" min="10" max="30" value="18" step="1">
+          </div>
+          <div class="field">
+            <label>Bookings you can realistically shift to direct <b id="valShift">30%</b></label>
+            <input type="range" id="shift" min="5" max="80" value="30" step="5">
+          </div>
+          <div class="field">
+            <label>Monthly cost of direct booking tools + local SEO (MAD) <b id="valCost">3,000</b></label>
+            <input type="range" id="cost" min="500" max="15000" value="3000" step="250">
+          </div>
+        </div>
+        <div class="console-outputs">
+          <div class="hero-out">
+            <div class="k">Net monthly gain from going direct</div>
+            <div class="v" id="outNet">0 MAD</div>
+            <div class="sub" id="outNetSub">after tool &amp; marketing cost</div>
+          </div>
+          <div class="out-row"><span class="k">Monthly commission currently lost</span><span class="v neg" id="outLost">0 MAD</span></div>
+          <div class="out-row"><span class="k">Commission recovered by shifting bookings</span><span class="v pos" id="outRecovered">0 MAD</span></div>
+          <div class="out-row"><span class="k">Return on direct-booking investment (ROI)</span><span class="v" id="outROI">0%</span></div>
+          <div class="out-row"><span class="k">Payback period</span><span class="v" id="outPayback">—</span></div>
+          <div class="out-row"><span class="k">Projected annual gain</span><span class="v pos" id="outAnnual">0 MAD</span></div>
+        </div>
+      </div>
+      <div class="console-note">Estimates for planning purposes only, based on inputs above — actual results depend on seasonality (Marrakech high season runs October–April), your riad's review score, and how well your website converts.</div>
+    </div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The complete checklist</span>
+      <h2>8 steps to turn OTA guests into direct guests</h2>
+      <p>This is the rollout order we use with hotels and riads in Marrakech — start at step one, and don't skip to remarketing before the booking engine actually works on a phone.</p>
+    </div>
+
+    <div class="checklist">
+      <div class="check-item reveal">
+        <div class="check-num">01</div>
+        <h3>A booking engine that works in French, English and Arabic</h3>
+        <p>Your website needs a real-time booking engine showing your own rates and availability — not just a contact form. If a guest from Casablanca, Paris or London can't book a room in under two minutes on their phone, they'll close the tab and open Booking.com instead.</p>
+        <span class="check-tag tag-quick">Quick win</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">02</div>
+        <h3>Price parity, minus the commission</h3>
+        <p>Match your OTA rate exactly, or beat it slightly with a "book direct" perk — free airport pickup, a welcome tea, late checkout. Guests need a concrete reason to leave the platform they already trust.</p>
+        <span class="check-tag tag-quick">Quick win</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">03</div>
+        <h3>Google Hotel Ads and Google Business Profile</h3>
+        <p>Most searches for "riad Marrakech" or "hotel near Jemaa el-Fnaa" start on Google Maps, not on an OTA. A verified Business Profile with photos, direct booking links and recent reviews puts you in the metasearch box before a guest ever sees a commission-hungry platform.</p>
+        <span class="check-tag tag-core">Core</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">04</div>
+        <h3>Local SEO around what guests actually search</h3>
+        <p>Guests booking a riad also search "<a href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html" target="_blank" rel="noopener">best places to visit in Marrakech</a>", "<a href="https://proboostagency.com/restaurant-Marrakech.html" target="_blank" rel="noopener">restaurants in Marrakech</a>" and "<a href="https://proboostagency.com/spas.html" target="_blank" rel="noopener">spas in Marrakech</a>" before they ever search your property name. Ranking for that intent, and linking those pages back to your booking engine, builds the trust and traffic an OTA listing can never give you.</p>
+        <span class="check-tag tag-core">Core</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">05</div>
+        <h3>WhatsApp booking for last-minute and returning guests</h3>
+        <p>A huge share of Marrakech bookings happen last-minute or by referral. A WhatsApp Business number on every page lets a guest confirm a room in a two-message exchange, with zero commission and zero third-party data ownership.</p>
+        <span class="check-tag tag-quick">Quick win</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">06</div>
+        <h3>A review-generation flow you own</h3>
+        <p>OTA reviews build the OTA's trust, not yours. Ask every direct and OTA guest, at checkout, to leave a Google review — this compounds your local ranking and gives future direct guests the same social proof they'd find on Booking.com.</p>
+        <span class="check-tag tag-core">Core</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">07</div>
+        <h3>Remarketing to past guests and site visitors</h3>
+        <p>Install a pixel so past guests and abandoned bookings can be retargeted with a direct offer for their next Marrakech trip — riad guests have unusually high repeat-visit and referral rates once they've experienced the property in person.</p>
+        <span class="check-tag tag-growth">Growth</span>
+      </div>
+      <div class="check-item reveal">
+        <div class="check-num">08</div>
+        <h3>Package direct-only experiences</h3>
+        <p>Bundle a spa afternoon, a guided food tour, or a day trip to the Atlas Mountains with a direct booking only. This is unmatchable on an OTA listing and turns your website into a genuinely better offer than any third-party platform.</p>
+        <span class="check-tag tag-growth">Growth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Side by side</span>
+      <h2>OTA booking vs. direct booking, for a Marrakech property</h2>
+    </div>
+    <table class="compare reveal">
+      <thead><tr><th></th><th>Booking via OTA</th><th>Booking direct</th></tr></thead>
+      <tbody>
+        <tr><td>Commission per booking</td><td class="ota">15–25%</td><td class="direct">0% (fixed tool cost only)</td></tr>
+        <tr><td>Guest contact & email</td><td class="ota">Hidden or masked</td><td class="direct">Fully owned by you</td></tr>
+        <tr><td>Upsell (spa, tours, transfers)</td><td class="ota"><span class="check-no">Rarely possible</span></td><td class="direct"><span class="check-yes">Built into the stay</span></td></tr>
+        <tr><td>Review ownership</td><td class="ota">Belongs to the platform</td><td class="direct">Feeds your Google ranking</td></tr>
+        <tr><td>Repeat guest reach</td><td class="ota"><span class="check-no">No remarketing allowed</span></td><td class="direct"><span class="check-yes">Full remarketing control</span></td></tr>
+        <tr><td>Rate control during high season</td><td class="ota">Subject to platform algorithm</td><td class="direct">Fully in your hands</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why it matters here</span>
+      <h2>What this means for tourism companies across Marrakech and Morocco</h2>
+      <p>Marrakech's accommodation market is unusually fragmented — hundreds of independent riads, boutique hotels and guesthouses competing for the same search traffic as international chains. That fragmentation is exactly why a direct-booking strategy pays off faster here than in a market dominated by a handful of large hotel groups: independent properties that rank locally and convert on their own site can out-compete OTA listings on trust alone, without ever matching an OTA's marketing budget.</p>
+    </div>
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <p>The same logic applies beyond hotels. Riads compete with the growing short-term rental market covered in our <a href="https://proboostagency.com/Airbnb-calculateur-maroc.html" target="_blank" rel="noopener">Airbnb ROI calculator for Morocco</a>, and every property — hotel, riad or apartment — benefits from being the destination guests find when they search for what to do once they land: where to eat, where to relax, and what to see. That's the exact intent behind our guides to <a href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html" target="_blank" rel="noopener">Marrakech's best places to visit in 2026</a>, the city's top <a href="https://proboostagency.com/restaurant-Marrakech.html" target="_blank" rel="noopener">restaurants</a>, and its best <a href="https://proboostagency.com/spas.html" target="_blank" rel="noopener">spas</a> — content that captures a future guest weeks before they book, and points them straight to a direct reservation instead of an OTA search box.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Keep exploring</span>
+      <h2>Related Marrakech guides</h2>
+    </div>
+    <div class="related-grid reveal">
+      <a class="rcard" href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html" target="_blank" rel="noopener">
+        <div class="rc-eyebrow">Guide</div>
+        <h4>Best Places to Visit in Marrakech, 2026</h4>
+        <p>The attractions your future guests are searching for right now — content that feeds your local SEO and your direct bookings.</p>
+        <div class="go">Read the guide →</div>
+      </a>
+      <a class="rcard" href="https://proboostagency.com/restaurant-Marrakech.html" target="_blank" rel="noopener">
+        <div class="rc-eyebrow">Guide</div>
+        <h4>Restaurants in Marrakech</h4>
+        <p>Where guests eat, and how featuring them builds the trust that gets a booking made on your own website.</p>
+        <div class="go">Read the guide →</div>
+      </a>
+      <a class="rcard" href="https://proboostagency.com/spas.html" target="_blank" rel="noopener">
+        <div class="rc-eyebrow">Guide</div>
+        <h4>Spas in Marrakech</h4>
+        <p>A high-margin upsell OTA listings can't offer — perfect for a direct-only package.</p>
+        <div class="go">Read the guide →</div>
+      </a>
+      <a class="rcard" href="https://proboostagency.com/Airbnb-calculateur-maroc.html" target="_blank" rel="noopener">
+        <div class="rc-eyebrow">Calculator</div>
+        <h4>Airbnb ROI Calculator — Morocco</h4>
+        <p>Run the same commission math for short-term rentals competing for the same Marrakech guests.</p>
+        <div class="go">Open the calculator →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>Direct booking ROI, answered</h2>
+    </div>
+    <div class="reveal">
+      <details class="faq-item" open>
+        <summary>What is a hotel direct booking ROI calculator?</summary>
+        <div class="faq-a">It's a tool that compares what you currently pay in OTA commission against the cost of running your own booking engine, local SEO and marketing — so you can see, in MAD, whether shifting bookings direct actually pays off for your specific property.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How much commission do OTAs really take in Marrakech?</summary>
+        <div class="faq-a">Most riads and boutique hotels report commissions between 15% and 20% on Booking.com and up to 25% on Expedia, with rates often higher during Marrakech's peak season from October through April.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is direct booking realistic for a small independent riad?</summary>
+        <div class="faq-a">Yes — small properties often see faster payback than large hotels because a single well-optimized page, a WhatsApp number, and consistent Google reviews can meaningfully shift a modest number of monthly bookings, which is all the calculator above requires to turn a profit.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Should I drop OTAs entirely?</summary>
+        <div class="faq-a">No — OTAs still bring first-time discovery, especially from international guests unfamiliar with Marrakech. The goal is to keep OTAs for new-guest acquisition while systematically capturing repeat guests, referrals and last-minute bookings direct.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How long until a direct booking strategy pays for itself?</summary>
+        <div class="faq-a">Based on the inputs modeled above, most Marrakech properties see a payback period of six to nine months once the booking engine, local SEO and review flow are all running together — the calculator gives you a payback estimate for your exact numbers.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;">Let's build it together</span>
+    <h2>We help Marrakech hotels and riads turn OTA guests into direct guests</h2>
+    <a href="#calculator" class="cta-btn">Run your ROI numbers</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">ProBoost Agency — Digital growth for Marrakech &amp; Morocco tourism businesses.</div>
+</footer>
+
+<script>
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+revealEls.forEach(el=>io.observe(el));
+
+// Calculator logic
+const $ = id => document.getElementById(id);
+const fmt = n => Math.round(n).toLocaleString('en-US') + ' MAD';
+
+function calc(){
+  const bookings = +$('bookings').value;
+  const rate = +$('rate').value;
+  const stay = +$('stay').value;
+  const comm = +$('comm').value;
+  const shift = +$('shift').value;
+  const cost = +$('cost').value;
+
+  $('valBookings').textContent = bookings;
+  $('valRate').textContent = rate.toLocaleString('en-US');
+  $('valStay').textContent = stay;
+  $('valComm').textContent = comm + '%';
+  $('valShift').textContent = shift + '%';
+  $('valCost').textContent = cost.toLocaleString('en-US');
+
+  const totalRevenue = bookings * rate * stay;
+  const commissionLost = totalRevenue * (comm/100);
+  const shiftedRevenue = totalRevenue * (shift/100);
+  const commissionRecovered = shiftedRevenue * (comm/100);
+  const netGain = commissionRecovered - cost;
+  const roi = cost > 0 ? (netGain / cost) * 100 : 0;
+  const payback = commissionRecovered > 0 ? (cost / commissionRecovered) : null;
+
+  $('outLost').textContent = fmt(commissionLost);
+  $('outRecovered').textContent = fmt(commissionRecovered);
+  $('outNet').textContent = (netGain>=0? '+ ':'– ') + fmt(Math.abs(netGain));
+  $('outNet').className = 'v ' + (netGain>=0 ? 'pos':'neg');
+  $('outROI').textContent = (roi>=0?'+':'') + Math.round(roi) + '%';
+  $('outROI').className = 'v ' + (roi>=0 ? 'pos':'neg');
+  $('outAnnual').textContent = fmt(netGain*12);
+  $('outPayback').textContent = payback && payback>0 && payback<36 ? (payback<1 ? '< 1 month' : Math.ceil(payback) + ' months') : (netGain>=0 ? 'Immediate' : 'Not yet profitable');
+}
+
+['bookings','rate','stay','comm','shift','cost'].forEach(id=>{
+  $(id).addEventListener('input', calc);
+});
+calc();
+</script>
+
+</body>
+</html>
