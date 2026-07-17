@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarAI — L'IA qui trouve vos voyageurs, réservation directe | ProBoost Agency</title>
+<meta name="description" content="DarAI par ProBoost Agency : l'intelligence artificielle qui trouve des voyageurs pour votre riad ou villa au Maroc et les connecte en direct — 0% de commission, prospects WhatsApp instantanés.">
+<meta property="og:title" content="DarAI — L'IA de réservation directe pour riads & villas au Maroc">
+<meta property="og:description" content="Une IA qui recherche, propose et connecte des voyageurs directement à votre riad ou villa au Maroc. Un produit ProBoost Agency.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "DarAI — AI Direct Booking Finder for Riads & Villas Morocco",
+  "provider": {"@type":"Organization","name":"ProBoost Agency","url":"https://proboostagency.com"},
+  "areaServed": "Morocco",
+  "description": "AI-powered matching engine that finds travelers for riads and villas in Morocco and connects them directly via WhatsApp, with zero OTA commission."
+}
+</script>
+<style>
+  :root{
+    --blue:#1AACF0;
+    --red:#F03C2E;
+    --dark:#080808;
+    --darker:#040404;
+    --mid:#111111;
+    --light:#F5F2EC;
+    --border: rgba(255,255,255,0.07);
+    --muted: rgba(245,242,236,0.56);
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--dark); color:var(--light);
+    font-family:'Inter', sans-serif; font-weight:300;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.disp{font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; color:var(--light);}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--blue); color:var(--darker);}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 40px;}
+  .eyebrow{
+    font-family:'Space Grotesk', sans-serif; font-size:11px; letter-spacing:0.24em;
+    text-transform:uppercase; color:var(--blue); font-weight:600; display:inline-flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:16px; height:1px; background:var(--blue);}
+  .dot{color:var(--red);}
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ===== NAV ===== */
+  header{position:fixed; top:0; left:0; right:0; z-index:200; padding:22px 0; transition:background .4s ease, padding .4s ease, border-color .4s ease; border-bottom:1px solid transparent;}
+  header.scrolled{background:rgba(8,8,8,0.86); backdrop-filter:blur(12px); padding:14px 0; border-color:var(--border);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:baseline; gap:9px; font-family:'Space Grotesk',sans-serif;}
+  .brand .b1{font-size:19px; font-weight:700;}
+  .brand .b2{font-size:11px; color:var(--muted); letter-spacing:0.08em;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{font-size:12.5px; letter-spacing:0.03em; color:var(--muted); transition:color .3s ease;}
+  .nav-links a:hover{color:var(--light);}
+  .lang-switch{display:flex; border:1px solid var(--border); border-radius:20px; overflow:hidden;}
+  .lang-switch button{
+    padding:6px 14px; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600;
+    background:transparent; color:var(--muted); border:none; cursor:pointer; letter-spacing:0.05em;
+  }
+  .lang-switch button.active{background:var(--blue); color:var(--darker);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:12px 24px;
+    font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:600; letter-spacing:0.03em;
+    border:1px solid var(--light); border-radius:30px; white-space:nowrap; transition:all .3s ease;
+  }
+  .btn:hover{background:var(--light); color:var(--darker);}
+  .btn-red{background:var(--red); border-color:var(--red); color:#fff;}
+  .btn-red:hover{background:transparent; color:var(--red);}
+  .menu-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;}
+  .menu-toggle span{width:22px; height:1px; background:var(--light);}
+
+  /* ===== HERO ===== */
+  .hero{position:relative; min-height:100vh; display:flex; align-items:center; padding:150px 0 100px; overflow:hidden;}
+  .hero-bg{position:absolute; inset:0; z-index:0;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover; opacity:0.32; filter:grayscale(0.4);}
+  .hero-bg::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,8,8,0.55) 0%, var(--dark) 88%), radial-gradient(circle at 78% 18%, rgba(26,172,240,0.16), transparent 45%);}
+  .hero .wrap{position:relative; z-index:1;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:60px; align-items:end;}
+  .hero h1{font-size:clamp(40px,5.6vw,74px); line-height:1.03; margin:20px 0 26px;}
+  .hero h1 .accent{color:var(--blue);}
+  .hero p.lead{font-size:17px; line-height:1.8; color:var(--muted); max-width:520px; margin-bottom:36px; font-weight:300;}
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:54px;}
+  .typebar{
+    border:1px solid var(--border); background:var(--mid); border-radius:14px; padding:18px 20px;
+    display:flex; align-items:center; gap:12px; max-width:520px;
+  }
+  .typebar .ai-dot{width:8px; height:8px; border-radius:50%; background:var(--blue); flex-shrink:0; animation:pulse 1.6s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(26,172,240,0.5);} 50%{opacity:0.6; box-shadow:0 0 0 6px rgba(26,172,240,0);}}
+  .typebar span{font-family:'Space Grotesk',sans-serif; font-size:14.5px; color:var(--light);}
+  .typebar .cursor{display:inline-block; width:2px; height:15px; background:var(--blue); margin-left:2px; vertical-align:middle; animation:blink 0.9s steps(1) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  .hero-stats{display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border);}
+  .hstat{display:flex; justify-content:space-between; align-items:baseline; padding:20px 0; border-bottom:1px solid var(--border);}
+  .hstat .n{font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--light);}
+  .hstat .n .u{color:var(--blue); font-size:16px; margin-left:2px;}
+  .hstat .l{font-size:12px; color:var(--muted); max-width:150px; text-align:right; line-height:1.5;}
+
+  .scroll-cue{position:absolute; bottom:30px; left:40px; z-index:1; display:flex; align-items:center; gap:10px; font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--muted);}
+  .scroll-cue .line{width:34px; height:1px; background:var(--muted); position:relative; overflow:hidden;}
+  .scroll-cue .line::after{content:''; position:absolute; left:-100%; top:0; width:100%; height:100%; background:var(--blue); animation:cueMove 2s ease-in-out infinite;}
+  @keyframes cueMove{0%{left:-100%;} 50%{left:0;} 100%{left:100%;}}
+
+  /* ===== MANIFESTO ===== */
+  .manifesto{padding:130px 0; border-top:1px solid var(--border);}
+  .manifesto .wrap{max-width:980px;}
+  .manifesto h2{font-size:clamp(26px,3.6vw,44px); line-height:1.35; font-weight:500; margin-top:22px;}
+  .manifesto h2 .hl{color:var(--blue);}
+  .manifesto h2 .hl-red{color:var(--red);}
+  .manifesto-row{display:flex; gap:60px; margin-top:60px; flex-wrap:wrap;}
+  .mstat{flex:1; min-width:180px; border-top:1px solid var(--border); padding-top:18px;}
+  .mstat .n{font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700;}
+  .mstat .n.red{color:var(--red);}
+  .mstat .n.blue{color:var(--blue);}
+  .mstat p{font-size:13px; color:var(--muted); margin-top:8px; line-height:1.6;}
+
+  /* ===== HOW IT WORKS ===== */
+  .steps{padding:0 0 130px;}
+  .section-head{max-width:640px; margin-bottom:70px;}
+  .section-head h2{font-size:clamp(28px,3.8vw,46px); margin-top:18px; font-weight:500; line-height:1.15;}
+  .section-head p{color:var(--muted); font-size:16px; margin-top:18px; line-height:1.8; font-weight:300;}
+  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border);}
+  .step{background:var(--dark); padding:44px 36px; position:relative; transition:background .35s ease;}
+  .step:hover{background:var(--mid);}
+  .step .idx{font-family:'Space Grotesk',sans-serif; font-size:13px; color:var(--blue); letter-spacing:0.1em;}
+  .step h3{font-size:22px; margin:18px 0 14px; font-weight:600;}
+  .step p{font-size:14.5px; color:var(--muted); line-height:1.75; font-weight:300;}
+
+  /* ===== DEMO ===== */
+  .demo{padding:0 0 140px;}
+  .demo-panel{
+    border:1px solid var(--border); border-radius:20px; background:var(--mid);
+    padding:50px; display:grid; grid-template-columns:0.95fr 1.05fr; gap:50px;
+  }
+  .demo-form label{display:block; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; margin-top:20px;}
+  .demo-form label:first-child{margin-top:0;}
+  .demo-form select, .demo-form input{
+    width:100%; background:var(--darker); border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; color:var(--light); font-family:'Inter',sans-serif; font-size:14px; outline:none;
+  }
+  .vibe-tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .vibe-tag{
+    padding:8px 14px; border:1px solid var(--border); border-radius:20px; font-size:12.5px; cursor:pointer;
+    color:var(--muted); transition:all .25s ease; user-select:none;
+  }
+  .vibe-tag.active{border-color:var(--blue); color:var(--blue); background:rgba(26,172,240,0.08);}
+  .demo-form button{
+    margin-top:28px; width:100%; padding:15px; border-radius:10px; border:none;
+    background:var(--blue); color:var(--darker); font-family:'Space Grotesk',sans-serif; font-weight:700;
+    font-size:13.5px; letter-spacing:0.03em; cursor:pointer; transition:opacity .3s ease;
+  }
+  .demo-form button:hover{opacity:0.85;}
+  .demo-results{display:flex; flex-direction:column; gap:14px; min-height:340px;}
+  .demo-placeholder{
+    flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    color:var(--muted); font-size:13.5px; gap:14px; border:1px dashed var(--border); border-radius:14px; padding:30px;
+  }
+  .demo-placeholder svg{width:34px; height:34px; stroke:var(--blue); fill:none; stroke-width:1.1;}
+  .thinking{display:none; align-items:center; gap:10px; font-size:13px; color:var(--blue); font-family:'Space Grotesk',sans-serif;}
+  .thinking.show{display:flex;}
+  .thinking .dots span{display:inline-block; width:5px; height:5px; border-radius:50%; background:var(--blue); margin-right:3px; animation:bounce 1.2s ease-in-out infinite;}
+  .thinking .dots span:nth-child(2){animation-delay:0.15s;}
+  .thinking .dots span:nth-child(3){animation-delay:0.3s;}
+  @keyframes bounce{0%,80%,100%{transform:translateY(0); opacity:0.4;} 40%{transform:translateY(-4px); opacity:1;}}
+  .result-card{
+    display:none; border:1px solid var(--border); border-radius:14px; padding:20px 22px; background:var(--darker);
+    justify-content:space-between; align-items:center; gap:16px; opacity:0; transform:translateY(10px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .result-card.show{display:flex; opacity:1; transform:translateY(0);}
+  .result-card .rc-name{font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:600;}
+  .result-card .rc-tag{font-size:12px; color:var(--muted); margin-top:4px;}
+  .result-card .rc-badge{font-size:10px; color:var(--blue); letter-spacing:0.08em; text-transform:uppercase; border:1px solid var(--blue); padding:3px 8px; border-radius:20px; margin-top:8px; display:inline-block;}
+  .result-card .rc-cta{
+    flex-shrink:0; width:36px; height:36px; border-radius:50%; border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; transition:all .25s ease;
+  }
+  .result-card .rc-cta:hover{background:var(--blue); border-color:var(--blue);}
+  .result-card .rc-cta svg{width:15px; height:15px; stroke:var(--light); fill:none; stroke-width:1.6;}
+  .demo-note{font-size:11.5px; color:var(--muted); text-align:center; margin-top:18px;}
+
+  /* ===== SEO / KEYWORDS ===== */
+  .pseo{padding:0 0 140px;}
+  .kw-grid{display:flex; flex-wrap:wrap; gap:12px; margin-top:20px;}
+  .kw-chip{
+    border:1px solid var(--border); border-radius:30px; padding:10px 18px; font-size:13px; color:var(--muted);
+    display:inline-flex; align-items:center; gap:8px; transition:all .3s ease;
+  }
+  .kw-chip:hover{border-color:var(--blue); color:var(--light);}
+  .kw-chip .loc{color:var(--red); font-size:9px;}
+  .pseo-foot{margin-top:36px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; border-top:1px solid var(--border); padding-top:28px;}
+  .pseo-foot p{font-size:13.5px; color:var(--muted); max-width:520px; line-height:1.7;}
+
+  /* ===== BANNER STAT STRIP ===== */
+  .strip{background:var(--mid); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:56px 0;}
+  .strip .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;}
+  .strip .item{flex:1; min-width:150px;}
+  .strip .item .n{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700;}
+  .strip .item .n.blue{color:var(--blue);} .strip .item .n.red{color:var(--red);}
+  .strip .item .l{font-size:12px; color:var(--muted); margin-top:6px;}
+
+  /* ===== FAQ ===== */
+  .faq{padding:130px 0;}
+  .faq-item{border-top:1px solid var(--border); padding:26px 0; cursor:pointer;}
+  .faq-item:last-child{border-bottom:1px solid var(--border);}
+  .faq-q{display:flex; justify-content:space-between; align-items:center; gap:20px;}
+  .faq-q h4{font-family:'Space Grotesk',sans-serif; font-size:17px; font-weight:500; color:var(--light);}
+  .faq-q .plus{font-size:20px; color:var(--blue); transition:transform .3s ease; flex-shrink:0;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .4s ease;}
+  .faq-a p{font-size:14.5px; color:var(--muted); line-height:1.8; padding-top:16px; max-width:680px; font-weight:300;}
+
+  /* ===== CTA / CONTACT ===== */
+  .cta-section{padding:130px 0; position:relative;}
+  .cta-section::before{content:''; position:absolute; top:0; left:0; right:0; height:1px; background:var(--border);}
+  .cta-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px;}
+  .cta-left h2{font-size:clamp(30px,4vw,48px); margin:18px 0 22px; line-height:1.15;}
+  .cta-left p{color:var(--muted); font-size:16px; line-height:1.8; margin-bottom:30px; font-weight:300;}
+  .cta-contact-list{display:flex; flex-direction:column; gap:16px;}
+  .cta-contact-list a{display:flex; align-items:center; gap:12px; font-family:'Space Grotesk',sans-serif; font-size:15px;}
+  .cta-contact-list svg{width:17px; height:17px; stroke:var(--blue); fill:none; stroke-width:1.4;}
+
+  form.contact-form{display:grid; grid-template-columns:1fr 1fr; gap:20px 18px;}
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);}
+  .field input, .field select, .field textarea{
+    background:transparent; border:none; border-bottom:1px solid var(--border); color:var(--light);
+    font-family:'Inter',sans-serif; font-size:15px; font-weight:300; padding:10px 2px; outline:none; transition:border-color .3s ease;
+  }
+  .field select option{color:#000;}
+  .field input::placeholder, .field textarea::placeholder{color:rgba(245,242,236,0.3);}
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--blue);}
+  .field textarea{min-height:60px; resize:none;}
+  .submit-row{grid-column:1/-1; display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:6px;}
+  .submit-row .note{font-size:12px; color:var(--muted); max-width:300px; line-height:1.6;}
+
+  /* ===== FOOTER ===== */
+  footer{border-top:1px solid var(--border); padding:60px 0 30px; background:var(--darker);}
+  .footer-top{display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:40px; border-bottom:1px solid var(--border);}
+  .footer-brand .disp{font-size:20px;}
+  .footer-brand p{color:var(--muted); font-size:13px; max-width:280px; margin-top:12px; line-height:1.7;}
+  .footer-cols{display:flex; gap:60px; flex-wrap:wrap;}
+  .footer-col .eyebrow{margin-bottom:14px;}
+  .footer-col a, .footer-col div{display:block; font-size:13.5px; color:var(--muted); margin-bottom:9px;}
+  .footer-col a:hover{color:var(--light);}
+  .footer-bottom{display:flex; justify-content:space-between; padding-top:24px; font-size:11.5px; color:var(--muted); flex-wrap:wrap; gap:10px;}
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .wa-float{
+    position:fixed; bottom:26px; right:26px; z-index:300; width:56px; height:56px; border-radius:50%;
+    background:var(--blue); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(26,172,240,0.35);
+  }
+  .wa-float::before{
+    content:''; position:absolute; inset:-6px; border-radius:50%; border:1px solid var(--blue); opacity:0.5;
+    animation:ring 2.4s ease-out infinite;
+  }
+  @keyframes ring{0%{transform:scale(0.9); opacity:0.6;} 100%{transform:scale(1.5); opacity:0;}}
+  .wa-float svg{width:26px; height:26px; fill:var(--darker);}
+
+  @media (max-width:980px){
+    .wrap{padding:0 24px;}
+    .nav-links{position:fixed; top:0; right:0; height:100vh; width:80%; max-width:320px; background:var(--darker);
+      flex-direction:column; align-items:flex-start; justify-content:center; padding:40px; gap:24px; transform:translateX(100%); transition:transform .4s ease; z-index:199;}
+    .nav-links.open{transform:translateX(0);}
+    .menu-toggle{display:flex;}
+    .hero-grid{grid-template-columns:1fr; gap:50px;}
+    .manifesto-row{gap:30px;}
+    .steps-grid{grid-template-columns:1fr;}
+    .demo-panel{grid-template-columns:1fr; padding:30px;}
+    .cta-grid{grid-template-columns:1fr; gap:50px;}
+    form.contact-form{grid-template-columns:1fr;}
+    .strip .wrap{gap:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <div class="brand"><span class="b1">Dar<span style="color:var(--blue)">AI</span></span><span class="b2">by ProBoost Agency</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#how" data-i18n="nav_how">Comment ça marche</a>
+      <a href="#demo" data-i18n="nav_demo">Démo IA</a>
+      <a href="#seo" data-i18n="nav_seo">Recherches longue traîne</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <div class="lang-switch">
+        <button id="btnFR" class="active">FR</button>
+        <button id="btnEN">EN</button>
+      </div>
+      <a href="#cta" class="btn btn-red" data-i18n="nav_cta">Demander une démo</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1553603227-2358aabe821e?w=1600&q=80&auto=format&fit=crop" alt="Riad marocain traditionnel">
+  </div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="hero_eyebrow">ProBoost Agency <span class="dot">×</span> Intelligence Artificielle</span>
+        <h1 data-i18n="hero_h1">Votre riad, trouvé par l'IA.<br>Réservé <span class="accent">en direct</span>.</h1>
+        <p class="lead" data-i18n="hero_lead">DarAI est le moteur de recherche intelligent que ProBoost Agency installe pour les riads et villas au Maroc. Il comprend ce que cherche chaque voyageur, propose votre propriété au bon moment, et livre le contact directement sur WhatsApp — sans commission d'intermédiaire.</p>
+        <div class="hero-cta">
+          <a href="#cta" class="btn btn-red" data-i18n="hero_cta1">Demander une démo pour mon riad</a>
+          <a href="#demo" class="btn" data-i18n="hero_cta2">Tester la recherche IA</a>
+        </div>
+        <div class="typebar">
+          <span class="ai-dot"></span>
+          <span id="typeText"></span><span class="cursor"></span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="n">0<span class="u">%</span></span><span class="l" data-i18n="hs1">Commission versée aux plateformes de réservation</span></div>
+        <div class="hstat"><span class="n">24<span class="u">/7</span></span><span class="l" data-i18n="hs2">L'IA répond aux voyageurs jour et nuit</span></div>
+        <div class="hstat"><span class="n">2<span class="u">langues</span></span><span class="l" data-i18n="hs3">Recherche et échanges en français et en anglais</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span data-i18n="scroll">Découvrir</span><span class="line"></span></div>
+</section>
+
+<section class="manifesto reveal" id="manifesto">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="man_eyebrow">Le constat</span>
+    <h2 data-i18n="man_h2">Les voyageurs ne tapent plus le nom de votre riad. Ils décrivent un <span class="hl">séjour</span> — piscine, vue mer, budget, ambiance — et une <span class="hl-red">IA</span> répond à leur place.</h2>
+    <div class="manifesto-row">
+      <div class="mstat"><div class="n red">15-20%</div><p data-i18n="man_s1">de commission perdue sur chaque réservation via les plateformes classiques.</p></div>
+      <div class="mstat"><div class="n blue">1000+</div><p data-i18n="man_s2">recherches longue traîne mensuelles autour des riads et villas au Maroc.</p></div>
+      <div class="mstat"><div class="n">100%</div><p data-i18n="man_s3">des prospects DarAI livrés en direct sur votre WhatsApp, sans filtre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="how_eyebrow">Comment ça marche</span>
+      <h2 data-i18n="how_h2">De la recherche du voyageur à votre WhatsApp — en trois étapes</h2>
+      <p data-i18n="how_p">DarAI ne remplace pas votre charme, il le trouve un public. Voici comment l'IA transforme une recherche floue en réservation directe.</p>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step">
+        <span class="idx">01 — <span data-i18n="s1_tag">Le voyageur cherche</span></span>
+        <h3 data-i18n="s1_h">Une envie, pas un nom</h3>
+        <p data-i18n="s1_p">"Riad calme avec piscine à Marrakech pour un couple" ou "villa vue mer près d'Essaouira pour 8 personnes" — DarAI comprend l'intention derrière chaque recherche, en français ou en anglais.</p>
+      </div>
+      <div class="step">
+        <span class="idx">02 — <span data-i18n="s2_tag">L'IA fait correspondre</span></span>
+        <h3 data-i18n="s2_h">Votre propriété, proposée au bon moment</h3>
+        <p data-i18n="s2_p">DarAI compare la demande à votre fiche — ville, style, équipements, capacité, saisonnalité — et vous propose au voyageur exactement quand il vous cherche.</p>
+      </div>
+      <div class="step">
+        <span class="idx">03 — <span data-i18n="s3_tag">Le contact est direct</span></span>
+        <h3 data-i18n="s3_h">Un lead sur votre WhatsApp</h3>
+        <p data-i18n="s3_p">Pas de messagerie tierce, pas de commission : le voyageur intéressé vous écrit directement. Vous gardez la relation, la marge et la réservation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="demo_eyebrow">Démonstration</span>
+      <h2 data-i18n="demo_h2">Essayez la recherche, comme un voyageur</h2>
+      <p data-i18n="demo_p">Un aperçu simplifié du moteur DarAI. Choisissez une destination et une ambiance : l'IA simule sa manière de proposer des correspondances.</p>
+    </div>
+    <div class="demo-panel reveal">
+      <div class="demo-form">
+        <label data-i18n="demo_city">Destination</label>
+        <select id="fCity">
+          <option data-i18n="opt_marrakech">Marrakech</option>
+          <option data-i18n="opt_essaouira">Essaouira</option>
+          <option data-i18n="opt_tetouan">Tétouan / Oued Laou</option>
+          <option data-i18n="opt_fes">Fès</option>
+          <option data-i18n="opt_chefchaouen">Chefchaouen</option>
+        </select>
+        <label data-i18n="demo_guests">Voyageurs</label>
+        <select id="fGuests">
+          <option data-i18n="opt_g1">2 personnes</option>
+          <option data-i18n="opt_g2">4-6 personnes</option>
+          <option data-i18n="opt_g3">7-10 personnes</option>
+          <option data-i18n="opt_g4">10+ personnes</option>
+        </select>
+        <label data-i18n="demo_vibe">Ambiance recherchée</label>
+        <div class="vibe-tags" id="vibeTags">
+          <span class="vibe-tag active" data-i18n="vibe1">Piscine</span>
+          <span class="vibe-tag" data-i18n="vibe2">Vue mer</span>
+          <span class="vibe-tag" data-i18n="vibe3">Romantique</span>
+          <span class="vibe-tag" data-i18n="vibe4">Familial</span>
+          <span class="vibe-tag" data-i18n="vibe5">Médina authentique</span>
+        </div>
+        <button id="searchBtn" data-i18n="demo_btn">Rechercher avec l'IA</button>
+      </div>
+      <div class="demo-results">
+        <div class="thinking" id="thinking">
+          <span data-i18n="demo_thinking">DarAI analyse votre demande</span>
+          <span class="dots"><span></span><span></span><span></span></span>
+        </div>
+        <div class="demo-placeholder" id="placeholder">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <span data-i18n="demo_empty">Lancez une recherche pour voir comment DarAI propose vos hébergements aux voyageurs.</span>
+        </div>
+        <div class="result-card" id="rc1">
+          <div><div class="rc-name" id="rc1name">—</div><div class="rc-tag" id="rc1tag">—</div><span class="rc-badge" data-i18n="rc_match">96% de correspondance</span></div>
+          <a class="rc-cta" href="#" target="_blank"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="result-card" id="rc2">
+          <div><div class="rc-name" id="rc2name">—</div><div class="rc-tag" id="rc2tag">—</div><span class="rc-badge" data-i18n="rc_match2">91% de correspondance</span></div>
+          <a class="rc-cta" href="#" target="_blank"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note reveal" data-i18n="demo_note">Démonstration illustrative — les résultats affichés sont des exemples. Votre moteur DarAI réel se connecte à vos disponibilités et vos vraies propriétés.</p>
+  </div>
+</section>
+
+<section class="pseo" id="seo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="seo_eyebrow">Stratégie SEO longue traîne</span>
+      <h2 data-i18n="seo_h2">Nous positionnons votre riad sur des centaines de recherches précises</h2>
+      <p data-i18n="seo_p">Chaque page pSEO créée par ProBoost cible une recherche réelle et précise — ville, style, équipement — pour capter les voyageurs au moment exact où ils cherchent, avant même qu'ils n'ouvrent Booking ou Airbnb.</p>
+    </div>
+    <div class="kw-grid reveal" id="kwGrid"></div>
+    <div class="pseo-foot reveal">
+      <p data-i18n="seo_foot">Ce ne sont que quelques exemples de recherches longue traîne que nous ciblons pour nos clients — chaque riad ou villa reçoit ses propres pages, générées et optimisées autour de sa ville, son style et ses équipements.</p>
+      <a href="#cta" class="btn" data-i18n="seo_cta">Voir mon potentiel SEO</a>
+    </div>
+  </div>
+</section>
+
+<section class="strip reveal">
+  <div class="wrap">
+    <div class="item"><div class="n blue">0%</div><div class="l" data-i18n="strip1">Commission plateforme</div></div>
+    <div class="item"><div class="n">FR / EN</div><div class="l" data-i18n="strip2">Recherche bilingue native</div></div>
+    <div class="item"><div class="n red">24/7</div><div class="l" data-i18n="strip3">Disponibilité de l'IA</div></div>
+    <div class="item"><div class="n blue">WhatsApp</div><div class="l" data-i18n="strip4">Livraison directe des leads</div></div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="faq_eyebrow">Questions fréquentes</span>
+      <h2 data-i18n="faq_h2">Ce que les propriétaires nous demandent</h2>
+    </div>
+    <div class="reveal" id="faqList"></div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="cta-left reveal">
+        <span class="eyebrow" data-i18n="cta_eyebrow">Prochaine étape</span>
+        <h2 data-i18n="cta_h2">Installons DarAI pour votre riad ou villa</h2>
+        <p data-i18n="cta_p">Décrivez votre propriété, nous revenons vers vous sous 24h avec une démonstration personnalisée et une estimation de votre potentiel de recherches directes.</p>
+        <div class="cta-contact-list">
+          <a href="https://wa.me/212655956626" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            WhatsApp — 06 55 95 66 26
+          </a>
+          <a href="mailto:hello@proboostagency.com">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            hello@proboostagency.com
+          </a>
+          <a href="https://proboostagency.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z"/></svg>
+            proboostagency.com
+          </a>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="ctaForm">
+        <div class="field"><label data-i18n="f_name">Nom</label><input type="text" id="cfName" placeholder="Votre nom" required></div>
+        <div class="field"><label data-i18n="f_phone">Téléphone / WhatsApp</label><input type="tel" id="cfPhone" placeholder="+212 6 00 00 00 00" required></div>
+        <div class="field"><label data-i18n="f_type">Type de propriété</label>
+          <select id="cfType" required>
+            <option value="" data-i18n="f_type0">Sélectionner</option>
+            <option data-i18n="f_type1">Riad</option>
+            <option data-i18n="f_type2">Villa</option>
+            <option data-i18n="f_type3">Maison d'hôtes</option>
+            <option data-i18n="f_type4">Boutique hôtel</option>
+          </select>
+        </div>
+        <div class="field"><label data-i18n="f_city">Ville</label><input type="text" id="cfCity" placeholder="Marrakech, Essaouira…" required></div>
+        <div class="field full"><label data-i18n="f_link">Lien existant (Airbnb, Booking, Instagram…)</label><input type="text" id="cfLink" placeholder="https://…"></div>
+        <div class="field full"><label data-i18n="f_msg">Message</label><textarea id="cfMsg" placeholder=""></textarea></div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-red" data-i18n="f_submit">Envoyer ma demande</button>
+          <span class="note" data-i18n="f_note">Votre demande est envoyée directement sur WhatsApp à ProBoost Agency.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="disp brand"><span class="b1">Dar<span style="color:var(--blue)">AI</span></span></div>
+        <p data-i18n="foot_p">Un produit ProBoost Agency — l'agence digitale pour l'économie touristique du Maroc, de Marrakech au monde entier.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="eyebrow" data-i18n="foot_c1">Produit</div>
+          <a href="#how" data-i18n="nav_how">Comment ça marche</a>
+          <a href="#demo" data-i18n="nav_demo">Démo IA</a>
+          <a href="#seo" data-i18n="nav_seo">Recherches longue traîne</a>
+        </div>
+        <div class="footer-col">
+          <div class="eyebrow" data-i18n="foot_c2">Contact</div>
+          <a href="https://wa.me/212655956626" target="_blank">WhatsApp 06 55 95 66 26</a>
+          <a href="mailto:hello@proboostagency.com">hello@proboostagency.com</a>
+        </div>
+        <div class="footer-col">
+          <div class="eyebrow" data-i18n="foot_c3">Agence</div>
+          <a href="https://proboostagency.com" target="_blank">proboostagency.com</a>
+          <div data-i18n="foot_loc">Marrakech, Maroc</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="foot_copy">© 2026 ProBoost Agency — DarAI est un produit ProBoost Agency.</span>
+      <span data-i18n="foot_tag">Réservation directe. Zéro commission.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/212655956626" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</a>
+
+<script>
+/* ============ I18N ============ */
+const i18n = {
+  fr: {
+    nav_how:"Comment ça marche", nav_demo:"Démo IA", nav_seo:"Recherches longue traîne", nav_faq:"FAQ", nav_cta:"Demander une démo",
+    hero_eyebrow:'ProBoost Agency <span class="dot">×</span> Intelligence Artificielle',
+    hero_h1:'Votre riad, trouvé par l\'IA.<br>Réservé <span class="accent">en direct</span>.',
+    hero_lead:"DarAI est le moteur de recherche intelligent que ProBoost Agency installe pour les riads et villas au Maroc. Il comprend ce que cherche chaque voyageur, propose votre propriété au bon moment, et livre le contact directement sur WhatsApp — sans commission d'intermédiaire.",
+    hero_cta1:"Demander une démo pour mon riad", hero_cta2:"Tester la recherche IA",
+    hs1:"Commission versée aux plateformes de réservation", hs2:"L'IA répond aux voyageurs jour et nuit", hs3:"Recherche et échanges en français et en anglais",
+    scroll:"Découvrir",
+    man_eyebrow:"Le constat",
+    man_h2:'Les voyageurs ne tapent plus le nom de votre riad. Ils décrivent un <span class="hl">séjour</span> — piscine, vue mer, budget, ambiance — et une <span class="hl-red">IA</span> répond à leur place.',
+    man_s1:"de commission perdue sur chaque réservation via les plateformes classiques.",
+    man_s2:"recherches longue traîne mensuelles autour des riads et villas au Maroc.",
+    man_s3:"des prospects DarAI livrés en direct sur votre WhatsApp, sans filtre.",
+    how_eyebrow:"Comment ça marche", how_h2:"De la recherche du voyageur à votre WhatsApp — en trois étapes",
+    how_p:"DarAI ne remplace pas votre charme, il lui trouve un public. Voici comment l'IA transforme une recherche floue en réservation directe.",
+    s1_tag:"Le voyageur cherche", s1_h:"Une envie, pas un nom",
+    s1_p:'"Riad calme avec piscine à Marrakech pour un couple" ou "villa vue mer près d\'Essaouira pour 8 personnes" — DarAI comprend l\'intention derrière chaque recherche, en français ou en anglais.',
+    s2_tag:"L'IA fait correspondre", s2_h:"Votre propriété, proposée au bon moment",
+    s2_p:"DarAI compare la demande à votre fiche — ville, style, équipements, capacité, saisonnalité — et vous propose au voyageur exactement quand il vous cherche.",
+    s3_tag:"Le contact est direct", s3_h:"Un lead sur votre WhatsApp",
+    s3_p:"Pas de messagerie tierce, pas de commission : le voyageur intéressé vous écrit directement. Vous gardez la relation, la marge et la réservation.",
+    demo_eyebrow:"Démonstration", demo_h2:"Essayez la recherche, comme un voyageur",
+    demo_p:"Un aperçu simplifié du moteur DarAI. Choisissez une destination et une ambiance : l'IA simule sa manière de proposer des correspondances.",
+    demo_city:"Destination", demo_guests:"Voyageurs", demo_vibe:"Ambiance recherchée", demo_btn:"Rechercher avec l'IA",
+    demo_thinking:"DarAI analyse votre demande", demo_empty:"Lancez une recherche pour voir comment DarAI propose vos hébergements aux voyageurs.",
+    demo_note:"Démonstration illustrative — les résultats affichés sont des exemples. Votre moteur DarAI réel se connecte à vos disponibilités et vos vraies propriétés.",
+    rc_match:"96% de correspondance", rc_match2:"91% de correspondance",
+    opt_marrakech:"Marrakech", opt_essaouira:"Essaouira", opt_tetouan:"Tétouan / Oued Laou", opt_fes:"Fès", opt_chefchaouen:"Chefchaouen",
+    opt_g1:"2 personnes", opt_g2:"4-6 personnes", opt_g3:"7-10 personnes", opt_g4:"10+ personnes",
+    vibe1:"Piscine", vibe2:"Vue mer", vibe3:"Romantique", vibe4:"Familial", vibe5:"Médina authentique",
+    seo_eyebrow:"Stratégie SEO longue traîne", seo_h2:"Nous positionnons votre riad sur des centaines de recherches précises",
+    seo_p:"Chaque page pSEO créée par ProBoost cible une recherche réelle et précise — ville, style, équipement — pour capter les voyageurs au moment exact où ils cherchent, avant même qu'ils n'ouvrent Booking ou Airbnb.",
+    seo_foot:"Ce ne sont que quelques exemples de recherches longue traîne que nous ciblons pour nos clients — chaque riad ou villa reçoit ses propres pages, générées et optimisées autour de sa ville, son style et ses équipements.",
+    seo_cta:"Voir mon potentiel SEO",
+    strip1:"Commission plateforme", strip2:"Recherche bilingue native", strip3:"Disponibilité de l'IA", strip4:"Livraison directe des leads",
+    faq_eyebrow:"Questions fréquentes", faq_h2:"Ce que les propriétaires nous demandent",
+    cta_eyebrow:"Prochaine étape", cta_h2:"Installons DarAI pour votre riad ou villa",
+    cta_p:"Décrivez votre propriété, nous revenons vers vous sous 24h avec une démonstration personnalisée et une estimation de votre potentiel de recherches directes.",
+    f_name:"Nom", f_phone:"Téléphone / WhatsApp", f_type:"Type de propriété", f_type0:"Sélectionner", f_type1:"Riad", f_type2:"Villa", f_type3:"Maison d'hôtes", f_type4:"Boutique hôtel",
+    f_city:"Ville", f_link:"Lien existant (Airbnb, Booking, Instagram…)", f_msg:"Message", f_submit:"Envoyer ma demande",
+    f_note:"Votre demande est envoyée directement sur WhatsApp à ProBoost Agency.",
+    foot_p:"Un produit ProBoost Agency — l'agence digitale pour l'économie touristique du Maroc, de Marrakech au monde entier.",
+    foot_c1:"Produit", foot_c2:"Contact", foot_c3:"Agence", foot_loc:"Marrakech, Maroc",
+    foot_copy:"© 2026 ProBoost Agency — DarAI est un produit ProBoost Agency.", foot_tag:"Réservation directe. Zéro commission."
+  },
+  en: {
+    nav_how:"How it works", nav_demo:"AI demo", nav_seo:"Long-tail searches", nav_faq:"FAQ", nav_cta:"Request a demo",
+    hero_eyebrow:'ProBoost Agency <span class="dot">×</span> Artificial Intelligence',
+    hero_h1:'Your riad, found by AI.<br>Booked <span class="accent">direct</span>.',
+    hero_lead:"DarAI is the intelligent search engine ProBoost Agency installs for riads and villas across Morocco. It understands what each traveler is looking for, surfaces your property at the right moment, and delivers the contact straight to WhatsApp — with zero middleman commission.",
+    hero_cta1:"Request a demo for my riad", hero_cta2:"Try the AI search",
+    hs1:"Commission paid to booking platforms", hs2:"The AI answers travelers day and night", hs3:"Search and chat in French and English",
+    scroll:"Explore",
+    man_eyebrow:"The problem",
+    man_h2:'Travelers no longer type your riad\'s name. They describe a <span class="hl">stay</span> — pool, sea view, budget, mood — and an <span class="hl-red">AI</span> answers on their behalf.',
+    man_s1:"of commission lost on every booking through classic platforms.",
+    man_s2:"monthly long-tail searches around riads and villas in Morocco.",
+    man_s3:"of DarAI leads delivered straight to your WhatsApp, unfiltered.",
+    how_eyebrow:"How it works", how_h2:"From a traveler's search to your WhatsApp — in three steps",
+    how_p:"DarAI doesn't replace your charm, it finds it an audience. Here's how the AI turns a vague search into a direct booking.",
+    s1_tag:"The traveler searches", s1_h:"A craving, not a name",
+    s1_p:'"Quiet riad with a pool in Marrakech for a couple" or "seaview villa near Essaouira for 8" — DarAI understands the intent behind every search, in French or English.',
+    s2_tag:"The AI matches", s2_h:"Your property, surfaced at the right time",
+    s2_p:"DarAI compares the request to your listing — city, style, amenities, capacity, season — and puts you in front of the traveler exactly when they're looking.",
+    s3_tag:"The contact is direct", s3_h:"A lead on your WhatsApp",
+    s3_p:"No third-party inbox, no commission: the interested traveler writes to you directly. You keep the relationship, the margin, and the booking.",
+    demo_eyebrow:"Demo", demo_h2:"Try the search, like a traveler would",
+    demo_p:"A simplified preview of the DarAI engine. Pick a destination and a mood — the AI simulates how it would surface matches.",
+    demo_city:"Destination", demo_guests:"Travelers", demo_vibe:"Mood you're after", demo_btn:"Search with AI",
+    demo_thinking:"DarAI is analysing your request", demo_empty:"Run a search to see how DarAI surfaces your property to travelers.",
+    demo_note:"Illustrative demo — results shown are examples. Your real DarAI engine connects to your actual availability and listings.",
+    rc_match:"96% match", rc_match2:"91% match",
+    opt_marrakech:"Marrakech", opt_essaouira:"Essaouira", opt_tetouan:"Tetouan / Oued Laou", opt_fes:"Fez", opt_chefchaouen:"Chefchaouen",
+    opt_g1:"2 guests", opt_g2:"4-6 guests", opt_g3:"7-10 guests", opt_g4:"10+ guests",
+    vibe1:"Pool", vibe2:"Sea view", vibe3:"Romantic", vibe4:"Family", vibe5:"Authentic medina",
+    seo_eyebrow:"Long-tail SEO strategy", seo_h2:"We rank your riad for hundreds of precise searches",
+    seo_p:"Every pSEO page ProBoost builds targets one real, specific search — city, style, amenity — to capture travelers the moment they search, before they even open Booking or Airbnb.",
+    seo_foot:"These are just a few examples of the long-tail searches we target for our clients — every riad or villa gets its own pages, generated and optimised around its city, style and amenities.",
+    seo_cta:"See my SEO potential",
+    strip1:"Platform commission", strip2:"Native bilingual search", strip3:"AI availability", strip4:"Direct lead delivery",
+    faq_eyebrow:"Frequently asked", faq_h2:"What owners ask us",
+    cta_eyebrow:"Next step", cta_h2:"Let's install DarAI for your riad or villa",
+    cta_p:"Tell us about your property — we'll get back to you within 24h with a personalised demo and an estimate of your direct-search potential.",
+    f_name:"Name", f_phone:"Phone / WhatsApp", f_type:"Property type", f_type0:"Select", f_type1:"Riad", f_type2:"Villa", f_type3:"Guesthouse", f_type4:"Boutique hotel",
+    f_city:"City", f_link:"Existing link (Airbnb, Booking, Instagram…)", f_msg:"Message", f_submit:"Send my request",
+    f_note:"Your request is sent directly to ProBoost Agency on WhatsApp.",
+    foot_p:"A ProBoost Agency product — the digital agency for Morocco's tourism economy, from Marrakech to the world.",
+    foot_c1:"Product", foot_c2:"Contact", foot_c3:"Agency", foot_loc:"Marrakech, Morocco",
+    foot_copy:"© 2026 ProBoost Agency — DarAI is a ProBoost Agency product.", foot_tag:"Direct booking. Zero commission."
+  }
+};
+
+let currentLang = 'fr';
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+  });
+  document.getElementById('btnFR').classList.toggle('active', lang==='fr');
+  document.getElementById('btnEN').classList.toggle('active', lang==='en');
+  buildKeywords(lang);
+  buildFAQ(lang);
+  runTypewriter(lang);
+}
+document.getElementById('btnFR').addEventListener('click', ()=>applyLang('fr'));
+document.getElementById('btnEN').addEventListener('click', ()=>applyLang('en'));
+
+/* ============ KEYWORD CHIPS (pSEO showcase) ============ */
+const keywords = {
+  fr: [
+    "riad avec piscine à Marrakech réservation directe",
+    "villa vue mer à Essaouira sans commission",
+    "riad romantique médina de Fès",
+    "villa avec piscine privée à Agadir",
+    "maison d'hôtes authentique à Chefchaouen",
+    "villa vue mer Aouchtam Oued Laou",
+    "riad familial 8 personnes Marrakech",
+    "location directe villa Tanger bord de mer",
+    "riad de luxe médina Marrakech pas cher",
+    "villa avec terrasse panoramique Tétouan"
+  ],
+  en: [
+    "riad with pool Marrakech direct booking",
+    "oceanview villa Essaouira no commission",
+    "romantic riad Fez medina",
+    "villa with private pool Agadir",
+    "authentic guesthouse Chefchaouen",
+    "seaview villa Aouchtam Oued Laou",
+    "family riad 8 guests Marrakech",
+    "direct rental seafront villa Tangier",
+    "affordable luxury riad Marrakech medina",
+    "villa panoramic terrace Tetouan"
+  ]
+};
+function buildKeywords(lang){
+  const grid = document.getElementById('kwGrid');
+  grid.innerHTML = '';
+  keywords[lang].forEach(k=>{
+    const el = document.createElement('span');
+    el.className = 'kw-chip';
+    el.innerHTML = `<span class="loc">●</span> ${k}`;
+    grid.appendChild(el);
+  });
+}
+
+/* ============ FAQ ============ */
+const faqs = {
+  fr: [
+    ["DarAI remplace-t-il mon site web ?","Non — DarAI s'intègre à votre présence en ligne existante (site ProBoost, Instagram, Google) comme couche intelligente qui interprète les recherches et propose votre propriété au bon voyageur."],
+    ["Dois-je gérer les disponibilités moi-même ?","Vous gardez le contrôle total de votre calendrier. DarAI s'appuie sur les informations que vous fournissez et se met à jour avec vos disponibilités réelles."],
+    ["Combien de temps avant de recevoir des leads ?","La mise en place prend en général 1 à 2 semaines, incluant la création des pages longue traîne ciblées sur votre ville et votre style de propriété."],
+    ["Est-ce que je perds une commission sur chaque réservation ?","Non. Chaque contact généré par DarAI arrive directement sur votre WhatsApp — aucune commission n'est prélevée sur vos réservations."],
+    ["DarAI fonctionne-t-il pour les riads comme pour les villas ?","Oui, DarAI est conçu pour tout hébergement touristique marocain : riads, villas, maisons d'hôtes et boutiques hôtels."]
+  ],
+  en: [
+    ["Does DarAI replace my website?","No — DarAI works alongside your existing online presence (ProBoost site, Instagram, Google) as an intelligent layer that interprets searches and surfaces your property to the right traveler."],
+    ["Do I manage availability myself?","You keep full control of your calendar. DarAI relies on the information you provide and stays in sync with your real availability."],
+    ["How soon will I start receiving leads?","Setup typically takes 1-2 weeks, including the creation of long-tail pages targeted to your city and property style."],
+    ["Do I lose a commission on every booking?","No. Every contact generated by DarAI lands directly on your WhatsApp — no commission is taken on your bookings."],
+    ["Does DarAI work for riads as well as villas?","Yes, DarAI is built for any Moroccan tourism property: riads, villas, guesthouses and boutique hotels."]
+  ]
+};
+function buildFAQ(lang){
+  const list = document.getElementById('faqList');
+  list.innerHTML = '';
+  faqs[lang].forEach((f,i)=>{
+    const item = document.createElement('div');
+    item.className = 'faq-item';
+    item.innerHTML = `<div class="faq-q"><h4>${f[0]}</h4><span class="plus">+</span></div><div class="faq-a"><p>${f[1]}</p></div>`;
+    item.addEventListener('click', ()=>{
+      const a = item.querySelector('.faq-a');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(fi=>{fi.classList.remove('open'); fi.querySelector('.faq-a').style.maxHeight=null;});
+      if(!wasOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; }
+    });
+    list.appendChild(item);
+  });
+}
+
+/* ============ TYPEWRITER ============ */
+const typeQueries = {
+  fr:["riad avec piscine à Marrakech…","villa vue mer à Essaouira…","riad romantique à Fès pour un week-end…","villa familiale à Aouchtam avec piscine…"],
+  en:["riad with a pool in Marrakech…","seaview villa in Essaouira…","romantic riad in Fez for a weekend…","family villa in Aouchtam with a pool…"]
+};
+let typeTimer;
+function runTypewriter(lang){
+  clearTimeout(typeTimer);
+  const el = document.getElementById('typeText');
+  const queries = typeQueries[lang];
+  let qi=0, ci=0, deleting=false;
+  function tick(){
+    const full = queries[qi];
+    if(!deleting){
+      ci++;
+      el.textContent = full.slice(0,ci);
+      if(ci===full.length){ deleting=true; typeTimer=setTimeout(tick,1400); return; }
+      typeTimer=setTimeout(tick,45);
+    } else {
+      ci--;
+      el.textContent = full.slice(0,ci);
+      if(ci===0){ deleting=false; qi=(qi+1)%queries.length; typeTimer=setTimeout(tick,300); return; }
+      typeTimer=setTimeout(tick,22);
+    }
+  }
+  tick();
+}
+
+/* ============ DEMO SEARCH ============ */
+const demoData = {
+  fr:{
+    Marrakech:[["Riad Zahra — Médina, Marrakech","Riad · Piscine · 6 pers."],["Dar Yasmine — Médina, Marrakech","Riad · Terrasse · 4 pers."]],
+    Essaouira:[["Villa Azraq — Front de mer, Essaouira","Villa · Vue mer · 8 pers."],["Riad Océane — Médina, Essaouira","Riad · Vue mer · 5 pers."]],
+    "Tétouan / Oued Laou":[["Villa Awchtam — Aouchtam, Oued Laou","Villa · Piscine · Vue mer"],["Villa Marina — Tétouan","Villa · Terrasse panoramique"]],
+    Fès:[["Dar Chaouen — Médina, Fès","Riad · Romantique · 2 pers."],["Riad Fassia — Médina, Fès","Riad · Authentique · 6 pers."]],
+    Chefchaouen:[["Dar Bleue — Médina, Chefchaouen","Maison d'hôtes · Vue montagne"],["Riad Azul — Chefchaouen","Riad · Terrasse · 4 pers."]]
+  }
+};
+demoData.en = demoData.fr;
+document.getElementById('searchBtn').addEventListener('click', ()=>{
+  const placeholder = document.getElementById('placeholder');
+  const thinking = document.getElementById('thinking');
+  const rc1 = document.getElementById('rc1'), rc2 = document.getElementById('rc2');
+  placeholder.style.display='none'; rc1.classList.remove('show'); rc2.classList.remove('show');
+  thinking.classList.add('show');
+  const city = document.getElementById('fCity').selectedOptions[0].textContent;
+  setTimeout(()=>{
+    thinking.classList.remove('show');
+    const list = demoData[currentLang][city] || demoData.fr.Marrakech;
+    document.getElementById('rc1name').textContent = list[0][0];
+    document.getElementById('rc1tag').textContent = list[0][1];
+    document.getElementById('rc2name').textContent = list[1][0];
+    document.getElementById('rc2tag').textContent = list[1][1];
+    rc1.querySelector('.rc-cta').href = 'https://wa.me/212655956626';
+    rc2.querySelector('.rc-cta').href = 'https://wa.me/212655956626';
+    rc1.classList.add('show');
+    setTimeout(()=>rc2.classList.add('show'),150);
+  }, 1100);
+});
+document.querySelectorAll('.vibe-tag').forEach(tag=>{
+  tag.addEventListener('click', ()=>tag.classList.toggle('active'));
+});
+
+/* ============ CONTACT FORM -> WHATSAPP ============ */
+document.getElementById('ctaForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('cfName').value;
+  const phone = document.getElementById('cfPhone').value;
+  const type = document.getElementById('cfType').value;
+  const city = document.getElementById('cfCity').value;
+  const link = document.getElementById('cfLink').value;
+  const msg = document.getElementById('cfMsg').value;
+  let text = currentLang==='fr' ? `Bonjour, je souhaite une démo DarAI.%0A` : `Hello, I'd like a DarAI demo.%0A`;
+  text += `${currentLang==='fr'?'Nom':'Name'}: ${name}%0A`;
+  text += `${currentLang==='fr'?'Téléphone':'Phone'}: ${phone}%0A`;
+  text += `${currentLang==='fr'?'Type':'Type'}: ${type}%0A`;
+  text += `${currentLang==='fr'?'Ville':'City'}: ${city}%0A`;
+  if(link) text += `Link: ${link}%0A`;
+  if(msg) text += `${currentLang==='fr'?'Message':'Message'}: ${msg}%0A`;
+  window.open(`https://wa.me/212655956626?text=${text}`, '_blank');
+});
+
+/* ============ NAV / SCROLL / MENU ============ */
+const header = document.getElementById('siteHeader');
+window.addEventListener('scroll', ()=> header.classList.toggle('scrolled', window.scrollY>60));
+const toggle = document.getElementById('menuToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', ()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>links.classList.remove('open')));
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target);} });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ============ INIT ============ */
+buildKeywords('fr');
+buildFAQ('fr');
+runTypewriter('fr');
+</script>
+</body>
+</html>
