@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airbnb Revenue Calculator Essaouira 2026 – Free Vacation Rental Income Estimator | ProBoost Agency</title>
+<meta name="description" content="Free Airbnb Revenue Calculator for Essaouira riads, surf houses and vacation rentals. Estimate your monthly and annual Airbnb income in Morocco. Built by ProBoost Agency.">
+<link rel="canonical" href="https://www.proboostagency.com/">
+<style>
+  :root{
+    --sand:#000000;
+    --ink:#1E2A30;
+    --ocean:#F03C2E;
+    --ocean-deep:#1AACF0;
+    --coral:#1AACF0;
+    --azul:#2C7C90;
+    --white:#FFFDF9;
+    --line:#000000;
+    --font-display:'Fraunces',Georgia,serif;
+    --font-body:'Inter',system-ui,sans-serif;
+  }
+  @font-face{font-family:'Fraunces';src:local('Georgia');}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--font-body);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-0.01em;margin:0 0 .4em; color:#1AACF0}
+  h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;}
+  h2{font-size:clamp(1.8rem,3.6vw,2.6rem); color:#000000}
+  h3{font-size:1.25rem;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--ocean);}
+  p{margin:0 0 1em;}
+  .btn{display:inline-block;padding:14px 28px;border-radius:3px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;}
+  .btn-primary{background:var(--coral);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(217,112,79,.35);}
+  .btn-outline{background:transparent;color:var(--ocean-deep);border:1.5px solid var(--ocean-deep);}
+  .btn-outline:hover{background:var(--ocean-deep);color:var(--white);}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(243,236,224,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1100px;margin:0 auto;}
+  .logo{font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--ocean-deep);}
+  .navlinks{display:flex;gap:26px;font-size:.92rem;font-weight:600;}
+  .navlinks a{opacity:.8;}
+  .navlinks a:hover{opacity:1;color:var(--coral);}
+  .lang-toggle{display:flex;gap:6px;border:1px solid var(--line);border-radius:20px;padding:3px;background:var(--white);}
+  .lang-toggle button{border:none;background:transparent;padding:5px 13px;border-radius:16px;font-size:.78rem;font-weight:700;cursor:pointer;color:var(--ink);}
+  .lang-toggle button.active{background:var(--ocean-deep);color:var(--white);}
+  .nav-right{display:flex;align-items:center;gap:18px;}
+
+  /* hero */
+  .hero{position:relative;padding:90px 0 60px;overflow:hidden;background:
+      radial-gradient(ellipse at top right,rgba(44,124,144,.18),transparent 55%),
+      linear-gradient(180deg,var(--sand),var(--sand));}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;}}
+  .hero-tag{display:inline-block;background:var(--white);border:1px solid var(--line);padding:6px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.06em;color:var(--ocean);margin-bottom:18px;}
+  .hero p.lead{font-size:1.15rem;max-width:46ch;color:#ffffff;}
+  .hero-cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;}
+  .wind-lines{position:absolute;inset:0;pointer-events:none;opacity:.35;}
+  .hero-photo{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px rgba(15,58,68,.25);}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .ticker{margin-top:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;}
+  .ticker-track{display:flex;white-space:nowrap;gap:40px;padding:14px 0;animation:scroll 28s linear infinite;font-family:var(--font-display);font-size:1.05rem;color:var(--ocean-deep);}
+  .ticker-track span{opacity:.55;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line);}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stat{padding:34px 20px;text-align:center;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat b{display:block;font-family:var(--font-display);font-size:2.1rem;color:var(--coral);}
+  .stat span{font-size:.8rem;color:#5b6a70;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+
+  /* calculator */
+  #calculator{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  @media(max-width:860px){.calc-grid{grid-template-columns:1fr;}}
+  .calc-card{background:var(--sand);border:1px solid var(--line);border-radius:8px;padding:32px;}
+  .field{margin-bottom:22px;}
+  .field label{display:flex;justify-content:space-between;font-weight:700;font-size:.9rem;margin-bottom:8px;}
+  .field label output{color:var(--coral);font-family:var(--font-display);font-size:1rem;}
+  input[type=range]{width:100%;accent-color:var(--coral);}
+  .rangehints{display:flex;justify-content:space-between;font-size:.72rem;color:#8b8378;margin-top:4px;}
+  .result-card{background:var(--ocean-deep);color:var(--white);border-radius:8px;padding:32px;}
+  .result-big{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px;}
+  .result-box{background:rgba(255,255,255,.07);border-radius:6px;padding:18px;}
+  .result-box b{display:block;font-family:var(--font-display);font-size:1.7rem;}
+  .result-box.full{grid-column:1/-1;}
+  .breakdown{border-top:1px solid rgba(255,255,255,.15);margin-top:10px;padding-top:16px;font-size:.9rem;}
+  .breakdown div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.12);}
+  .tip{margin-top:20px;background:rgba(217,112,79,.18);border:1px solid rgba(217,112,79,.4);padding:14px 16px;border-radius:6px;font-size:.86rem;}
+
+  /* examples */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:860px){.cards3{grid-template-columns:1fr;}}
+  .example-card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:26px;}
+  .example-card .eyebrow{margin-bottom:10px;display:block;}
+  .example-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;font-size:.82rem;}
+  .example-stats div b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--ocean-deep);}
+  .example-total{border-top:1px solid var(--line);margin-top:16px;padding-top:14px;}
+  .example-total b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--coral);}
+
+  /* benefits */
+  .cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media(max-width:700px){.cards2{grid-template-columns:1fr;}}
+  .benefit{padding:24px 0;border-top:1px solid var(--line);}
+  .benefit h3{color:var(--ocean-deep);}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:18px 0;}
+  summary{cursor:pointer;font-weight:700;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;align-items:center; color: #1AACF0;}
+  summary::-webkit-details-marker{display:none;}
+  summary:after{content:'+';font-size:1.4rem;color:var(--coral);}
+  details[open] summary:after{content:'–';}
+  details p{margin-top:12px;color:#ffffff;}
+
+  /* lead / CTA */
+  #lead{background:var(--ocean-deep);color:var(--white);}
+  #lead .eyebrow{color:#8fd1de;}
+  #lead ul{padding-left:0;list-style:none;margin:26px 0;}
+  #lead li{padding:8px 0 8px 26px;position:relative;font-size:.95rem;}
+  #lead li:before{content:'✓';position:absolute;left:0;color:var(--coral);font-weight:700;}
+  .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+  @media(max-width:860px){.lead-grid{grid-template-columns:1fr;}}
+  .form-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:28px;}
+  .form-card label{display:block;font-size:.82rem;font-weight:700;margin:16px 0 6px;}
+  .form-card select,.form-card input{width:100%;padding:10px 12px;border-radius:5px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:var(--white);font-size:.92rem;}
+  .form-card button{width:100%;margin-top:22px;}
+
+  footer{padding:60px 0 30px;font-size:.85rem;color:#5b6a70;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  @media(max-width:700px){.footer-grid{grid-template-columns:1fr;}}
+  footer h4{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:12px;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer li{margin-bottom:8px;}
+  footer li a:hover{color:var(--coral);}
+  .fine{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;text-align:center;font-size:.78rem;letter-spacing:.04em;}
+
+  [data-lang]{display:none;}
+  body.lang-fr [data-lang="fr"]{display:revert;}
+  body.lang-en [data-lang="en"]{display:revert;}
+  body.lang-fr summary[data-lang="fr"], body.lang-en summary[data-lang="en"]{display:flex;}
+</style>
+</head>
+<body class="lang-fr">
+
+<header class="site">
+  <nav class="nav">
+  <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a> 
+    <div class="navlinks">
+      <a href="#calculator" data-lang="fr">Calculateur</a><a href="#calculator" data-lang="en">Calculator</a>
+      <a href="#examples" data-lang="fr">Exemples</a><a href="#examples" data-lang="en">Examples</a>
+      <a href="#benefits" data-lang="fr">Avantages</a><a href="#benefits" data-lang="en">Benefits</a>
+      <a href="#faq" data-lang="fr">FAQ</a><a href="#faq" data-lang="en">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="btn btn-outline" href="https://proboostagency.com" data-lang="fr" style="padding:9px 18px;">Booster mon annonce</a>
+      <a class="btn btn-outline" href="https://proboostagency.com" data-lang="en" style="padding:9px 18px;">Boost My Listing</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-tag" data-lang="fr">Outil Gratuit · Essaouira, Maroc</span>
+        <span class="hero-tag" data-lang="en">Free Tool · Essaouira, Morocco</span>
+        <h1 data-lang="fr">Calculateur de Revenus Airbnb Essaouira</h1>
+        <h1 data-lang="en">Airbnb Revenue Calculator Essaouira</h1>
+        <p class="lead" data-lang="fr">Estimez vos <strong>revenus Airbnb mensuels et annuels</strong> à Essaouira instantanément. Conçu pour les propriétaires de riads, maisons de surfeurs et gestionnaires de biens dans la médina fortifiée et sur la côte atlantique.</p>
+        <p class="lead" data-lang="en">Estimate your <strong>monthly and annual Airbnb income</strong> in Essaouira instantly. Built for riad owners, surf-house hosts, and property managers in the walled medina and along the Atlantic coast.</p>
+        <div class="hero-cta">
+          <a href="#calculator" class="btn btn-primary" data-lang="fr">Calculer mes revenus</a>
+          <a href="#calculator" class="btn btn-primary" data-lang="en">Calculate My Revenue</a>
+          <a href="https://proboostagency.com" class="btn btn-outline" data-lang="fr">Booster mon annonce →</a>
+          <a href="https://proboostagency.com" class="btn btn-outline" data-lang="en">Boost My Listing →</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1527534079274-21dc9147f3d0?w=1000&q=80" alt="Essaouira medina ramparts and Atlantic ocean">
+      </div>
+    </div>
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <span data-lang="fr">Calculateur de Revenus Airbnb</span><span data-lang="en">Airbnb Revenue Calculator</span>
+        <span data-lang="fr">Revenus Locatifs Essaouira</span><span data-lang="en">Essaouira Vacation Rental Income</span>
+        <span data-lang="fr">Riad & Surf House</span><span data-lang="en">Riad & Surf House</span>
+        <span data-lang="fr">Airbnb Maroc 2026</span><span data-lang="en">Airbnb Morocco 2026</span>
+        <span data-lang="fr">Location Courte Durée Essaouira</span><span data-lang="en">Essaouira Short-Term Rental</span>
+        <span data-lang="fr">ProBoost Agency · SEO Hébergeurs</span><span data-lang="en">ProBoost Agency · SEO for Hosts</span>
+        <!-- duplicate for seamless loop -->
+        <span data-lang="fr">Calculateur de Revenus Airbnb</span><span data-lang="en">Airbnb Revenue Calculator</span>
+        <span data-lang="fr">Revenus Locatifs Essaouira</span><span data-lang="en">Essaouira Vacation Rental Income</span>
+        <span data-lang="fr">Riad & Surf House</span><span data-lang="en">Riad & Surf House</span>
+        <span data-lang="fr">Airbnb Maroc 2026</span><span data-lang="en">Airbnb Morocco 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats wrap" style="max-width:1100px;">
+    <div class="stat"><b>350+</b><span data-lang="fr">Annonces Airbnb à Essaouira</span><span data-lang="en">Airbnb Listings in Essaouira</span></div>
+    <div class="stat"><b>18,500 MAD</b><span data-lang="fr">Revenu Mensuel Moyen / Chambre</span><span data-lang="en">Avg. Monthly Revenue / Room</span></div>
+    <div class="stat"><b>72%</b><span data-lang="fr">Taux d'Occupation · Haute Saison</span><span data-lang="en">Avg. Occupancy Rate · Peak Season</span></div>
+    <div class="stat"><b>+38%</b><span data-lang="fr">Croissance de Trafic avec le SEO</span><span data-lang="en">Avg. Traffic Growth with SEO</span></div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-lang="fr">Outil Gratuit</span><span class="eyebrow" data-lang="en">Free Tool</span>
+      <h2 data-lang="fr">Calculateur de Revenus Airbnb Essaouira</h2>
+      <h2 data-lang="en">Airbnb Revenue Calculator Essaouira</h2>
+      <p data-lang="fr">Entrez les détails de votre bien et obtenez une estimation instantanée — revenu mensuel, projection annuelle et frais de ménage inclus.</p>
+      <p data-lang="en">Enter your property details and get an instant revenue estimate — monthly income, annual projections, and cleaning fees included.</p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="calc-card">
+        <h3 data-lang="fr">Détails de votre bien</h3>
+        <h3 data-lang="en">Your Property Details</h3>
+        <p style="font-size:.85rem;color:#5b6a70;" data-lang="fr">Ajustez les curseurs pour correspondre à votre annonce</p>
+        <p style="font-size:.85rem;color:#5b6a70;" data-lang="en">Adjust the sliders to match your listing</p>
+
+        <div class="field">
+          <label><span data-lang="fr">Tarif par Nuit</span><span data-lang="en">Nightly Rate</span> <output id="out-rate">500 MAD</output></label>
+          <input type="range" id="rate" min="200" max="3000" step="10" value="500" oninput="calc()">
+          <div class="rangehints"><span>200 MAD</span><span>3,000 MAD</span></div>
+        </div>
+        <div class="field">
+          <label><span data-lang="fr">Taux d'Occupation</span><span data-lang="en">Occupancy Rate</span> <output id="out-occ">62%</output></label>
+          <input type="range" id="occ" min="10" max="100" step="1" value="62" oninput="calc()">
+          <div class="rangehints"><span>10%</span><span>100%</span></div>
+        </div>
+        <div class="field">
+          <label><span data-lang="fr">Nombre de Chambres</span><span data-lang="en">Number of Rooms</span> <output id="out-rooms">3</output></label>
+          <input type="range" id="rooms" min="1" max="15" step="1" value="3" oninput="calc()">
+          <div class="rangehints"><span>1</span><span>15</span></div>
+        </div>
+        <div class="field">
+          <label><span data-lang="fr">Frais de Ménage par Réservation</span><span data-lang="en">Cleaning Fee per Booking</span> <output id="out-clean">180 MAD</output></label>
+          <input type="range" id="clean" min="0" max="800" step="10" value="180" oninput="calc()">
+          <div class="rangehints"><span>0 MAD</span><span>800 MAD</span></div>
+        </div>
+        <div class="field">
+          <label><span data-lang="fr">Réservations par Mois</span><span data-lang="en">Bookings Per Month</span> <output id="out-bookings">9</output></label>
+          <input type="range" id="bookings" min="1" max="30" step="1" value="9" oninput="calc()">
+          <div class="rangehints"><span>1</span><span>30</span></div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <h3 style="color:#fff;" data-lang="fr">Estimation des Revenus</h3>
+        <h3 style="color:#fff;" data-lang="en">Revenue Estimate</h3>
+        <p style="font-size:.85rem;opacity:.75;" data-lang="fr">Basé sur vos données — mis à jour en direct</p>
+        <p style="font-size:.85rem;opacity:.75;" data-lang="en">Based on your inputs — updated live</p>
+
+        <div class="result-big">
+          <div class="result-box full">
+            <b id="r-monthly">0 MAD</b>
+            <span data-lang="fr">Revenu Mensuel Total</span><span data-lang="en">Total Monthly Revenue</span>
+          </div>
+          <div class="result-box">
+            <b id="r-annual">0 MAD</b>
+            <span data-lang="fr">Revenu Annuel</span><span data-lang="en">Annual Revenue</span>
+          </div>
+          <div class="result-box">
+            <b id="r-clean">0 MAD</b>
+            <span data-lang="fr">Revenu de Ménage / mois</span><span data-lang="en">Cleaning Income / mo</span>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <div><span data-lang="fr">Nuits réservées / mois</span><span data-lang="en">Nights booked / month</span><span id="b-nights">—</span></div>
+          <div><span data-lang="fr">Revenu location chambres</span><span data-lang="en">Room rental income</span><span id="b-room">—</span></div>
+          <div><span data-lang="fr">Frais de ménage</span><span data-lang="en">Cleaning fees</span><span id="b-cleanfee">—</span></div>
+          <div><span data-lang="fr">Revenu par chambre</span><span data-lang="en">Revenue per room</span><span id="b-perroom">—</span></div>
+          <div><span data-lang="fr">Frais Airbnb (~15%)</span><span data-lang="en">Airbnb fee (~15%)</span><span id="b-fee">—</span></div>
+          <div><span data-lang="fr">Revenu net estimé</span><span data-lang="en">Net estimated income</span><span id="b-net">—</span></div>
+        </div>
+
+        <div class="tip">
+          <strong data-lang="fr">💡 Astuce ProBoost :</strong><strong data-lang="en">💡 ProBoost Tip:</strong>
+          <span data-lang="fr"> Les hébergeurs avec un SEO Airbnb optimisé et un site de réservation directe gagnent jusqu'à <strong>40% de plus</strong> en réduisant les commissions de la plateforme. <a href="https://proboostagency.com" style="text-decoration:underline;">Laissez ProBoost Agency booster votre annonce →</a></span>
+          <span data-lang="en"> Hosts with optimized Airbnb SEO and a direct booking website earn up to <strong>40% more</strong> by reducing platform fees. <a href="https://proboostagency.com" style="text-decoration:underline;">Let ProBoost Agency boost your listing →</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="examples">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-lang="fr">Scénarios Réels</span><span class="eyebrow" data-lang="en">Real Scenarios</span>
+      <h2 data-lang="fr">Exemples de Revenus à Essaouira</h2>
+      <h2 data-lang="en">Essaouira Revenue Examples</h2>
+      <p data-lang="fr">Basé sur des données réelles du marché Airbnb à Essaouira en 2026 — selon le type de bien et la gamme de prix.</p>
+      <p data-lang="en">Based on real market data from Essaouira Airbnb listings in 2026 — across property types and price tiers.</p>
+    </div>
+
+    <div class="cards3">
+      <div class="example-card">
+        <span class="eyebrow" data-lang="fr">Économique · Médina</span><span class="eyebrow" data-lang="en">Budget · Medina</span>
+        <h3 data-lang="fr">Petite Maison d'Hôtes · 2 Chambres</h3>
+        <h3 data-lang="en">Small Guesthouse · 2 Rooms</h3>
+        <p style="font-size:.85rem;" data-lang="fr">Une maison bleue et blanche typique dans les ruelles de la médina, proche de la place Moulay Hassan et du port de pêche.</p>
+        <p style="font-size:.85rem;" data-lang="en">A typical blue-and-white house in the medina's alleyways, close to Place Moulay Hassan and the fishing port.</p>
+        <div class="example-stats">
+          <div><span data-lang="fr">Tarif/Nuit</span><span data-lang="en">Nightly Rate</span><b>350 MAD</b></div>
+          <div><span data-lang="fr">Occupation</span><span data-lang="en">Occupancy</span><b>58%</b></div>
+          <div><span data-lang="fr">Résa./mois</span><span data-lang="en">Bookings/mo</span><b>7</b></div>
+          <div><span data-lang="fr">Ménage</span><span data-lang="en">Cleaning Fee</span><b>120 MAD</b></div>
+        </div>
+        <div class="example-total"><b>18,340 MAD</b><span data-lang="fr">Revenu Mensuel Estimé</span><span data-lang="en">Estimated Monthly Revenue</span></div>
+      </div>
+
+      <div class="example-card">
+        <span class="eyebrow" data-lang="fr">Milieu de Gamme · Médina/Sqala</span><span class="eyebrow" data-lang="en">Mid-Range · Medina/Sqala</span>
+        <h3 data-lang="fr">Riad Vue Mer · 5 Chambres</h3>
+        <h3 data-lang="en">Ocean-View Riad · 5 Rooms</h3>
+        <p style="font-size:.85rem;" data-lang="fr">Un riad rénové avec terrasse donnant sur l'océan Atlantique et les remparts de la Sqala, très prisé des couples et surfeurs.</p>
+        <p style="font-size:.85rem;" data-lang="en">A renovated riad with a rooftop terrace overlooking the Atlantic and the Sqala ramparts, popular with couples and surfers.</p>
+        <div class="example-stats">
+          <div><span data-lang="fr">Tarif/Nuit</span><span data-lang="en">Nightly Rate</span><b>620 MAD</b></div>
+          <div><span data-lang="fr">Occupation</span><span data-lang="en">Occupancy</span><b>68%</b></div>
+          <div><span data-lang="fr">Résa./mois</span><span data-lang="en">Bookings/mo</span><b>12</b></div>
+          <div><span data-lang="fr">Ménage</span><span data-lang="en">Cleaning Fee</span><b>200 MAD</b></div>
+        </div>
+        <div class="example-total"><b>65,300 MAD</b><span data-lang="fr">Revenu Mensuel Estimé</span><span data-lang="en">Estimated Monthly Revenue</span></div>
+      </div>
+
+      <div class="example-card">
+        <span class="eyebrow" data-lang="fr">Luxe · Diabat / Ghazoua</span><span class="eyebrow" data-lang="en">Luxury · Diabat / Ghazoua</span>
+        <h3 data-lang="fr">Villa Front de Mer · 8 Chambres</h3>
+        <h3 data-lang="en">Beachfront Villa · 8 Rooms</h3>
+        <p style="font-size:.85rem;" data-lang="fr">Une villa haut de gamme avec piscine chauffée et accès direct à la plage près de Diabat, prisée pour les mariages et retraites privées.</p>
+        <p style="font-size:.85rem;" data-lang="en">A high-end villa with heated pool and direct beach access near Diabat, popular for weddings and private retreats.</p>
+        <div class="example-stats">
+          <div><span data-lang="fr">Tarif/Nuit</span><span data-lang="en">Nightly Rate</span><b>1,400 MAD</b></div>
+          <div><span data-lang="fr">Occupation</span><span data-lang="en">Occupancy</span><b>70%</b></div>
+          <div><span data-lang="fr">Résa./mois</span><span data-lang="en">Bookings/mo</span><b>15</b></div>
+          <div><span data-lang="fr">Ménage</span><span data-lang="en">Cleaning Fee</span><b>450 MAD</b></div>
+        </div>
+        <div class="example-total"><b>242,900 MAD</b><span data-lang="fr">Revenu Mensuel Estimé</span><span data-lang="en">Estimated Monthly Revenue</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-lang="fr">Pourquoi Utiliser Cet Outil</span><span class="eyebrow" data-lang="en">Why Use This Tool</span>
+      <h2 data-lang="fr">Les Avantages de Connaître Vos Revenus</h2>
+      <h2 data-lang="en">Benefits of Knowing Your Revenue</h2>
+      <p data-lang="fr">Comprendre le potentiel de revenu de votre Airbnb change votre façon de fixer les prix, d'investir et de développer votre activité de location à Essaouira.</p>
+      <p data-lang="en">Understanding your Airbnb income potential changes how you price, invest, and grow your vacation rental business in Essaouira.</p>
+    </div>
+
+    <div class="cards2">
+      <div class="benefit">
+        <h3 data-lang="fr">Optimisez Vos Prix</h3><h3 data-lang="en">Optimize Your Pricing</h3>
+        <p data-lang="fr">Voyez comment de petits ajustements de votre tarif ou de votre occupation créent un impact démesuré sur vos revenus. Les décisions basées sur les données surpassent toujours l'instinct dans un marché concurrentiel comme Essaouira.</p>
+        <p data-lang="en">See how small changes to your nightly rate or occupancy create outsized revenue impacts. Data-driven pricing consistently outperforms gut-feeling decisions in a competitive market like Essaouira.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-lang="fr">Planifiez Votre Investissement</h3><h3 data-lang="en">Plan Your Investment</h3>
+        <p data-lang="fr">Que vous envisagiez d'acheter un riad dans la médina ou une villa sur la côte, des projections de revenus précises sont essentielles pour vos calculs de rentabilité et vos décisions de financement.</p>
+        <p data-lang="en">Whether you're considering buying a riad in the medina or a villa on the coast, accurate revenue projections are essential for ROI calculations and financing decisions.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-lang="fr">Devancez la Concurrence</h3><h3 data-lang="en">Beat the Competition</h3>
+        <p data-lang="fr">Essaouira compte plus de 350 annonces Airbnb. Comprendre le potentiel de revenu selon les gammes de prix vous aide à positionner correctement votre bien et à attirer les bons voyageurs.</p>
+        <p data-lang="en">Essaouira has 350+ Airbnb listings. Understanding the revenue potential across different price tiers helps you position your property correctly and attract the right guests.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-lang="fr">Comprenez la Saisonnalité</h3><h3 data-lang="en">Understand Seasonality</h3>
+        <p data-lang="fr">Essaouira a une saisonnalité particulière liée au vent alizé : le pic estival attire les kitesurfeurs tandis que le printemps et l'automne restent doux toute l'année, sans les chaleurs extrêmes de Marrakech.</p>
+        <p data-lang="en">Essaouira has a unique wind-driven seasonality: peak summer draws kitesurfers, while spring and autumn stay mild year-round, without Marrakech's extreme heat.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-lang="fr">Réduisez la Dépendance à la Plateforme</h3><h3 data-lang="en">Reduce Platform Dependence</h3>
+        <p data-lang="fr">Airbnb facture 15 à 20% de commission. Avec un site de réservation directe optimisé pour le SEO, vous pouvez déplacer 30 à 50% de vos réservations hors plateforme et améliorer nettement votre revenu net.</p>
+        <p data-lang="en">Airbnb charges 15–20% in fees. With a direct booking website optimized for SEO, you can shift 30–50% of bookings off-platform — dramatically improving your net income per booking.</p>
+      </div>
+      <div class="benefit">
+        <h3 data-lang="fr">Parlez à un Expert</h3><h3 data-lang="en">Talk to an Expert</h3>
+        <p data-lang="fr">Une fois votre potentiel de revenu connu, laissez <a href="https://proboostagency.com" style="text-decoration:underline;">ProBoost Agency</a> vous aider à créer un site de réservation directe et à dominer Google — gratuitement lors d'une première consultation.</p>
+        <p data-lang="en">Once you know your revenue potential, let <a href="https://proboostagency.com" style="text-decoration:underline;">ProBoost Agency</a> help you build a direct booking website and dominate Google search — free with our initial consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-lang="fr">Questions Fréquentes</span><span class="eyebrow" data-lang="en">Common Questions</span>
+      <h2 data-lang="fr">FAQ Revenus Airbnb Essaouira</h2>
+      <h2 data-lang="en">Essaouira Airbnb Revenue FAQ</h2>
+      <p data-lang="fr">Tout ce qu'il faut savoir sur les revenus Airbnb à Essaouira.</p>
+      <p data-lang="en">Everything you need to know about Airbnb income in Essaouira.</p>
+    </div>
+
+    <div data-lang="fr">
+      <details>
+        <summary>Combien puis-je gagner sur Airbnb à Essaouira ?</summary>
+        <p>Les revenus Airbnb à Essaouira varient fortement selon le type de bien et son emplacement. Une petite maison d'hôtes de 2 chambres dans la médina peut rapporter 12,000–20,000 MAD/mois, tandis qu'un riad bien situé de 5 chambres avec vue sur l'océan génère généralement 45,000–75,000 MAD/mois. Les villas de luxe en front de mer près de Diabat peuvent dépasser 200,000 MAD/mois en haute saison (juin–septembre). Utilisez notre calculateur ci-dessus pour estimer le potentiel de votre bien.</p>
+      </details>
+      <details>
+        <summary>Quel est le taux d'occupation moyen à Essaouira ?</summary>
+        <p>Essaouira suit un schéma saisonnier lié au vent et à la fraîcheur atlantique. La haute saison (juin–septembre) affiche des taux d'occupation moyens de 70–80% pour les annonces bien positionnées, portée par les surfeurs, kitesurfeurs et touristes fuyant la chaleur de l'intérieur du pays. La saison intermédiaire (avril–mai, octobre) tourne autour de 55–65%. L'hiver (novembre–février) descend à 35–50%, sauf pendant les vacances scolaires européennes. La moyenne annuelle pour une annonce bien gérée est d'environ 60–65%.</p>
+      </details>
+      <details>
+        <summary>Quel tarif par nuit dois-je fixer pour mon bien à Essaouira ?</summary>
+        <p>Les tarifs à Essaouira dépendent du type de bien, de l'emplacement et des prestations. Chambres économiques dans la médina : 250–400 MAD/nuit. Riads standards avec terrasse : 400–700 MAD/nuit par chambre. Riads vue mer ou proches des remparts : 600–1,100 MAD/nuit. Villas de luxe en front de mer : 1,200–3,500+ MAD/nuit. Ces tarifs sont par chambre pour une location de propriété entière — les tarifs de la propriété complète sont généralement 3 à 6 fois plus élevés selon le nombre de chambres.</p>
+      </details>
+      <details>
+        <summary>Quelle est la fiabilité de ce calculateur de revenus Airbnb ?</summary>
+        <p>Ce calculateur fournit des estimations basées sur vos données et reflète les moyennes générales du marché d'Essaouira en 2026. Les revenus réels varieront selon la qualité de votre annonce, vos photos, vos avis, votre taux de réponse, votre politique d'annulation et la façon dont votre bien est mis en avant. Le calculateur ne tient pas compte des charges (électricité, personnel, entretien, impôts) ni des fluctuations saisonnières — mais il vous donne une base solide pour planifier vos prix.</p>
+      </details>
+      <details>
+        <summary>Comment augmenter mes revenus Airbnb à Essaouira ?</summary>
+        <p>Les stratégies les plus efficaces sont : (1) Photographie professionnelle — les annonces avec des photos de qualité génèrent 40% de revenus en plus. (2) SEO Airbnb optimisé — le bon titre, la bonne description et les bons mots-clés déterminent votre classement dans les recherches. (3) Vélocité des avis — plus d'avis positifs améliorent votre classement et votre taux de conversion. (4) Site de réservation directe — réduit les frais Airbnb de 15–20% sur les réservations transférées. (5) Tarification dynamique selon la saison des vents et la demande touristique. ProBoost Agency est spécialisé dans toutes ces stratégies pour les hébergeurs marocains.</p>
+      </details>
+      <details>
+        <summary>Faut-il une licence pour exploiter un Airbnb à Essaouira ?</summary>
+        <p>Le Maroc dispose d'une réglementation spécifique pour les locations de courte durée. Les biens doivent être enregistrés auprès du Ministère du Tourisme et obtenir un classement. Les hébergeurs doivent enregistrer leurs clients auprès des autorités locales (fiches d'hébergement). Les revenus issus d'Airbnb sont imposables au Maroc selon le code des impôts. Nous recommandons de consulter un comptable ou un conseiller juridique marocain pour votre situation spécifique. La conformité aide aussi votre annonce — Airbnb favorise les hébergeurs agréés et vérifiés dans les résultats de recherche.</p>
+      </details>
+    </div>
+
+    <div data-lang="en">
+      <details>
+        <summary>How much can I earn on Airbnb in Essaouira?</summary>
+        <p>Airbnb revenue in Essaouira varies significantly by property type and location. A small 2-room guesthouse in the medina might earn 12,000–20,000 MAD/month, while a well-positioned 5-room ocean-view riad typically earns 45,000–75,000 MAD/month. Luxury beachfront villas near Diabat can exceed 200,000 MAD/month during peak season (June–September). Use our calculator above to estimate your specific property's potential.</p>
+      </details>
+      <details>
+        <summary>What is the average occupancy rate for Airbnb in Essaouira?</summary>
+        <p>Essaouira follows a wind- and coastal-driven seasonal pattern. Peak season (June–September) sees average occupancy of 70–80% for well-listed properties, driven by surfers, kitesurfers, and travelers escaping inland heat. Shoulder season (April–May, October) averages 55–65%. Winter (November–February) drops to 35–50%, except during European school holidays. The year-round average for a well-managed listing is roughly 60–65%.</p>
+      </details>
+      <details>
+        <summary>What nightly rate should I charge for my Essaouira property?</summary>
+        <p>Nightly rates in Essaouira depend on property type, location, and amenities. Budget rooms in the medina: 250–400 MAD/night. Standard riads with a terrace: 400–700 MAD/night per room. Ocean-view riads near the ramparts: 600–1,100 MAD/night. Luxury beachfront villas: 1,200–3,500+ MAD/night. These rates are per room for entire-property listings — whole-property rates are typically 3–6× higher depending on room count.</p>
+      </details>
+      <details>
+        <summary>How accurate is this Airbnb revenue calculator?</summary>
+        <p>This calculator provides estimates based on your inputs and reflects general market averages for Essaouira in 2026. Actual revenue will vary based on your listing quality, photos, reviews, response rate, cancellation policy, and how well your property is marketed. The calculator does not account for expenses (utilities, staff, maintenance, taxes) or seasonal fluctuations — but it gives you a solid baseline for planning and pricing decisions.</p>
+      </details>
+      <details>
+        <summary>How can I increase my Airbnb revenue in Essaouira?</summary>
+        <p>The most effective strategies are: (1) Professional photography — listings with high-quality photos earn 40% more. (2) Optimized Airbnb SEO — the right title, description, and keywords determine your search ranking. (3) Review velocity — more positive reviews boost your ranking and conversion rate. (4) Direct booking website — reduces Airbnb fees by 15–20% on shifted bookings. (5) Dynamic pricing tuned to wind season and tourist demand. ProBoost Agency specializes in all of these for Moroccan hosts.</p>
+      </details>
+      <details>
+        <summary>Do I need a license to run Airbnb in Essaouira?</summary>
+        <p>Morocco has specific regulations for short-term rentals. Properties must be registered with the Ministry of Tourism and obtain a classification. Hosts must register guests with local authorities (fiches d'hébergement). Income from Airbnb rentals is taxable in Morocco under the income tax code. We recommend consulting a Moroccan accountant or legal advisor for your specific situation. Compliance also helps your listing — Airbnb favors licensed, verified hosts in search rankings.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="lead">
+  <div class="wrap">
+    <div class="lead-grid">
+      <div>
+        <span class="eyebrow" data-lang="fr">ProBoost Agency · Essaouira</span><span class="eyebrow" data-lang="en">ProBoost Agency · Essaouira</span>
+        <h2 data-lang="fr">Envie de Gagner Plus avec Votre Annonce ?</h2>
+        <h2 data-lang="en">Want to Earn More From Your Listing?</h2>
+        <p data-lang="fr">Notre calculateur vous a montré le potentiel. Laissez maintenant <strong>ProBoost Agency</strong> vous aider à l'atteindre — avec un site de réservation directe, une optimisation SEO Airbnb et une stratégie marketing digitale conçue pour les hébergeurs marocains.</p>
+        <p data-lang="en">Our calculator showed you the potential. Now let <strong>ProBoost Agency</strong> help you reach it — with a direct booking website, Airbnb SEO optimization, and a digital marketing strategy built for Moroccan hosts.</p>
+        <ul>
+          <li data-lang="fr">Site de réservation directe (réduit les frais Airbnb de 15–20%)</li>
+          <li data-lang="en">Direct booking website (reduce Airbnb fees by 15–20%)</li>
+          <li data-lang="fr">SEO Google pour se classer sur "riad Essaouira"</li>
+          <li data-lang="en">Google SEO to rank for "riad Essaouira" keywords</li>
+          <li data-lang="fr">Optimisation Google Maps pour la découverte locale</li>
+          <li data-lang="en">Google Maps optimization for local discovery</li>
+          <li data-lang="fr">Rédaction professionnelle d'annonces en 3 langues</li>
+          <li data-lang="en">Professional listing copywriting in 3 languages</li>
+          <li data-lang="fr">Stratégie de contenu propulsée par l'IA pour votre bien</li>
+          <li data-lang="en">AI-powered content strategy for your property</li>
+          <li data-lang="fr">Rapports SEO mensuels et suivi du classement</li>
+          <li data-lang="en">Monthly SEO reports and ranking tracking</li>
+        </ul>
+        <a class="btn btn-primary" href="https://proboostagency.com" data-lang="fr">Travailler avec ProBoost Agency →</a>
+        <a class="btn btn-primary" href="https://proboostagency.com" data-lang="en">Work with ProBoost Agency →</a>
+      </div>
+
+      <div class="form-card">
+        <h3 style="color:#fff;" data-lang="fr">Obtenez une Consultation Gratuite</h3>
+        <h3 style="color:#fff;" data-lang="en">Get a Free Consultation</h3>
+        <p style="font-size:.88rem;opacity:.8;" data-lang="fr">Parlez-nous de votre bien — nous vous montrerons exactement comment développer vos revenus.</p>
+        <p style="font-size:.88rem;opacity:.8;" data-lang="en">Tell us about your property — we'll show you exactly how to grow your revenue.</p>
+
+        <label data-lang="fr">Type de Bien</label><label data-lang="en">Property Type</label>
+        <select>
+          <option data-lang="fr">Riad · Médina</option><option data-lang="en">Riad · Medina</option>
+          <option data-lang="fr">Maison d'Hôtes</option><option data-lang="en">Guesthouse</option>
+          <option data-lang="fr">Villa · Front de Mer</option><option data-lang="en">Villa · Beachfront</option>
+          <option data-lang="fr">Maison de Surf</option><option data-lang="en">Surf House</option>
+          <option data-lang="fr">Autre</option><option data-lang="en">Other</option>
+        </select>
+
+        <label data-lang="fr">Objectif de Revenu Mensuel</label><label data-lang="en">Monthly Revenue Goal</label>
+        <select>
+          <option data-lang="fr">Moins de 20,000 MAD</option><option data-lang="en">Under 20,000 MAD</option>
+          <option data-lang="fr">20,000 – 60,000 MAD</option><option data-lang="en">20,000 – 60,000 MAD</option>
+          <option data-lang="fr">60,000 – 150,000 MAD</option><option data-lang="en">60,000 – 150,000 MAD</option>
+          <option data-lang="fr">150,000+ MAD</option><option data-lang="en">150,000+ MAD</option>
+        </select>
+
+        <label data-lang="fr">Email</label><label data-lang="en">Email</label>
+        <input type="email" placeholder="you@email.com">
+
+        <button class="btn btn-primary" data-lang="fr">Obtenir Ma Consultation Gratuite →</button>
+        <button class="btn btn-primary" data-lang="en">Get My Free Consultation →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+      <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+    </a> 
+        <p style="margin-top:14px;max-width:36ch;" data-lang="fr">Agence SEO propulsée par l'IA à Marrakech, Maroc. Nous aidons les hébergeurs Airbnb, riads et entreprises touristiques à développer leurs revenus grâce au marketing digital.</p>
+        <p style="margin-top:14px;max-width:36ch;" data-lang="en">AI-powered SEO agency in Marrakech, Morocco. We help Airbnb hosts, riads, and tourism businesses grow their revenue through digital marketing.</p>
+        <p>📞 <a href="tel:+212655956626">+212 655 956 626</a><br>✉️ <a href="mailto:contact@proboostagency.com">contact@proboostagency.com</a></p>
+      </div>
+      <div>
+        <h4 data-lang="fr">Outils</h4><h4 data-lang="en">Tools</h4>
+        <ul>
+          <li><a href="#calculator" data-lang="fr">Calculateur de Revenus Airbnb</a><a href="#calculator" data-lang="en">Airbnb Revenue Calculator</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Audit SEO IA</a><a href="https://proboostagency.com" data-lang="en">AI SEO Audit</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Vérificateur Google Maps</a><a href="https://proboostagency.com" data-lang="en">Google Maps Checker</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Analyseur de Vitesse Web</a><a href="https://proboostagency.com" data-lang="en">Website Speed Analyzer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-lang="fr">Services</h4><h4 data-lang="en">Services</h4>
+        <ul>
+          <li><a href="https://proboostagency.com" data-lang="fr">SEO Airbnb Essaouira</a><a href="https://proboostagency.com" data-lang="en">Airbnb SEO Essaouira</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Sites de Réservation Directe</a><a href="https://proboostagency.com" data-lang="en">Direct Booking Websites</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Optimisation Google Maps</a><a href="https://proboostagency.com" data-lang="en">Google Maps Optimization</a></li>
+          <li><a href="https://proboostagency.com" data-lang="fr">Guide de Voyage Essaouira</a><a href="https://proboostagency.com" data-lang="en">Essaouira Travel Guide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span data-lang="fr">© 2026 ProBoost Agency · Calculateur de Revenus Airbnb Essaouira · Tous droits réservés</span>
+      <span data-lang="en">© 2026 ProBoost Agency · Airbnb Revenue Calculator Essaouira · All rights reserved</span>
+      <br>PROBOOSTAGENCY.COM
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.body.classList.remove('lang-fr','lang-en');
+  document.body.classList.add('lang-'+l);
+  document.getElementById('btn-fr').classList.toggle('active', l==='fr');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.documentElement.lang = l;
+}
+
+function fmt(n){
+  return Math.round(n).toLocaleString('en-US').replace(/,/g,' ') + ' MAD';
+}
+
+function calc(){
+  const rate = +document.getElementById('rate').value;
+  const occ = +document.getElementById('occ').value;
+  const rooms = +document.getElementById('rooms').value;
+  const clean = +document.getElementById('clean').value;
+  const bookings = +document.getElementById('bookings').value;
+
+  document.getElementById('out-rate').textContent = rate.toLocaleString('en-US').replace(/,/g,' ')+' MAD';
+  document.getElementById('out-occ').textContent = occ+'%';
+  document.getElementById('out-rooms').textContent = rooms;
+  document.getElementById('out-clean').textContent = clean.toLocaleString('en-US').replace(/,/g,' ')+' MAD';
+  document.getElementById('out-bookings').textContent = bookings;
+
+  const nightsPerMonth = Math.round(30 * (occ/100));
+  const roomIncome = rate * rooms * nightsPerMonth * (bookings/ (bookings)) ; // scaled by occupancy nights
+  // Use bookings-based model similar to original: room income from nights booked, cleaning from bookings count
+  const roomRevenue = rate * rooms * nightsPerMonth;
+  const cleaningRevenue = clean * bookings * rooms;
+  const totalMonthly = roomRevenue + cleaningRevenue;
+  const annual = totalMonthly * 12;
+  const airbnbFee = totalMonthly * 0.15;
+  const net = totalMonthly - airbnbFee;
+  const perRoom = roomRevenue / rooms;
+
+  document.getElementById('r-monthly').textContent = fmt(totalMonthly);
+  document.getElementById('r-annual').textContent = fmt(annual);
+  document.getElementById('r-clean').textContent = fmt(cleaningRevenue);
+
+  document.getElementById('b-nights').textContent = nightsPerMonth;
+  document.getElementById('b-room').textContent = fmt(roomRevenue);
+  document.getElementById('b-cleanfee').textContent = fmt(cleaningRevenue);
+  document.getElementById('b-perroom').textContent = fmt(perRoom);
+  document.getElementById('b-fee').textContent = fmt(airbnbFee);
+  document.getElementById('b-net').textContent = fmt(net);
+}
+calc();
+</script>
+</body>
+</html>
