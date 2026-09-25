@@ -171,14 +171,19 @@
     padding:168px 0 100px;
     overflow:hidden;
   }
-  .hero-glow{
-    position:absolute; top:-260px; right:-160px; width:640px; height:640px;
-    background:radial-gradient(circle, var(--blue-dim), transparent 70%);
-    filter:blur(10px); pointer-events:none;
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(245,242,236,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,242,236,.05) 1px, transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(ellipse 75% 55% at 68% 15%, black 30%, transparent 85%);
+    mask-image:radial-gradient(ellipse 75% 55% at 68% 15%, black 30%, transparent 85%);
+    pointer-events:none;
   }
-  .hero-glow-2{
-    position:absolute; bottom:-300px; left:-200px; width:560px; height:560px;
-    background:radial-gradient(circle, var(--red-dim), transparent 70%);
+  .hero::after{
+    content:''; position:absolute; top:-30%; right:-12%; width:52%; height:70%;
+    background:radial-gradient(circle, var(--blue-dim), transparent 72%);
     pointer-events:none;
   }
   .hero-grid{
@@ -234,6 +239,34 @@
 
   .band{background:var(--darker); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
 
+  /* ---------- results band ---------- */
+  .results{padding:0; background:var(--darker); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .results-inner{display:grid; grid-template-columns:repeat(4,1fr); }
+  .result{
+    padding:44px 32px; border-left:1px solid var(--line-soft);
+    text-align:left;
+  }
+  .result:first-child{border-left:none;}
+  .result strong{display:block; font-family:var(--serif); font-size:2.1rem; color:var(--light); margin-bottom:6px; letter-spacing:-0.01em;}
+  .result span{font-size:13.5px; color:var(--text-dim); display:block; max-width:200px;}
+
+  /* ---------- testimonial ---------- */
+  .testimonial{padding:0 0 40px;}
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testimonial-card{
+    border:1px solid var(--line); border-radius:18px; background:var(--mid);
+    padding:34px 30px; display:flex; flex-direction:column;
+  }
+  .testimonial-mark{font-family:var(--serif); font-size:2.6rem; line-height:1; color:var(--blue); font-style:italic; margin-bottom:6px;}
+  .testimonial-quote{font-size:14.5px; line-height:1.6; color:var(--text-dim); margin-bottom:24px; flex-grow:1;}
+  .testimonial-author{display:flex; align-items:center; gap:12px;}
+  .testimonial-avatar{
+    width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, var(--blue), var(--red));
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:13.5px; color:var(--darker); flex-shrink:0;
+  }
+  .testimonial-author strong{display:block; font-size:14px; color:var(--light); font-weight:600;}
+  .testimonial-author span{font-size:12.5px; color:var(--text-faint);}
+
   /* ---------- how it works ---------- */
   .steps{position:relative;}
   .steps-line{
@@ -282,40 +315,38 @@
   }
   .plan.featured{
     background:linear-gradient(160deg, #101a20, var(--mid) 55%);
-    border-color:rgba(26,172,240,.4);
+    border:1px solid var(--blue);
     transform:scale(1.035);
-    box-shadow:0 30px 60px -30px var(--blue-dim);
   }
   .plan-ribbon{
-    position:absolute; top:-13px; left:32px;
+    position:absolute; top:0; right:0;
     background:var(--blue); color:var(--darker);
-    font-size:12px; font-weight:800; padding:6px 14px; border-radius:100px;
+    font-size:11.5px; font-weight:700; padding:7px 16px; border-radius:0 19px 0 12px;
   }
   .plan-name{font-family:var(--serif); font-size:1.5rem; margin-bottom:6px;}
   .plan-desc{color:var(--text-faint); font-size:13.5px; margin-bottom:24px;}
   .plan-price{display:flex; align-items:baseline; gap:8px; margin-bottom:6px;}
   .plan-price strong{font-family:var(--serif); font-size:2.5rem; color:var(--light);}
   .plan-price span{color:var(--text-faint); font-size:13.5px;}
-  .plan-punch{font-size:13px; color:var(--blue); margin-bottom:26px;}
+  .plan-punch{font-size:13px; color:var(--blue); font-weight:600; margin-bottom:26px;}
   .plan.featured .plan-punch{color:var(--blue);}
-  .plan-divider{border-top:1px dashed var(--line); margin-bottom:26px; position:relative;}
-  .plan-divider::before,.plan-divider::after{
-    content:''; position:absolute; top:-8px; width:16px; height:16px; border-radius:50%; background:var(--dark);
+  .plan-divider{border-top:1px solid var(--line-soft); margin-bottom:26px;}
+  .plan ul{display:flex; flex-direction:column; gap:14px; margin-bottom:32px; flex-grow:1;}
+  .plan li{display:flex; align-items:center; gap:12px; font-size:14.5px; color:var(--text-dim);}
+  .plan .check{
+    width:20px; height:20px; border-radius:50%; background:var(--blue-dim);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
   }
-  .plan-divider::before{left:-32px;}
-  .plan-divider::after{right:-32px;}
-  .plan ul{display:flex; flex-direction:column; gap:13px; margin-bottom:32px; flex-grow:1;}
-  .plan li{display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:var(--text-dim);}
-  .plan li svg{flex-shrink:0; margin-top:3px;}
-  .plan.featured li svg{stroke:var(--blue);}
+  .plan .check svg{stroke:var(--blue);}
+  .plan.featured .check{background:rgba(26,172,240,.22);}
   .plan .btn{width:100%;}
 
   /* ---------- why us ---------- */
   .why-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
   .why-list{display:flex; flex-direction:column;}
-  .why-item{padding:26px 0; border-top:1px solid var(--line-soft); display:flex; gap:20px;}
+  .why-item{padding:24px 0 24px 22px; border-top:1px solid var(--line-soft); border-left:2px solid var(--line); position:relative; transition:border-color .25s ease;}
   .why-item:last-child{border-bottom:1px solid var(--line-soft);}
-  .why-item .n{font-family:var(--serif); color:var(--text-faint); font-size:14px; padding-top:3px;}
+  .why-item:hover{border-left-color:var(--blue);}
   .why-item h4{font-size:1.08rem; font-weight:500; color:var(--light); margin-bottom:6px;}
   .why-item p{color:var(--text-dim); font-size:14.5px; max-width:400px;}
   .why-media{border-radius:18px; overflow:hidden; border:1px solid var(--line); aspect-ratio:4/5;}
@@ -373,8 +404,16 @@
     .why-media{order:-1; max-width:420px;}
     .steps-grid{grid-template-columns:1fr; gap:44px;}
     .steps-line{display:none;}
+    .results-inner{grid-template-columns:repeat(2,1fr);}
+    .result:nth-child(3){border-left:none;}
+    .testimonial-card{grid-template-columns:1fr; padding:40px 32px;}
+    .testimonial-mark{display:none;}
+    .testimonial-grid{grid-template-columns:1fr; gap:18px;}
   }
   @media (max-width: 720px){
+    .results-inner{grid-template-columns:1fr; }
+    .result{border-left:none; border-top:1px solid var(--line-soft); padding:28px 0;}
+    .result:first-child{border-top:none;}
     .nav-links{display:none;}
     .nav-cta{display:none;}
     .burger{display:flex;}
@@ -429,11 +468,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-glow-2"></div>
     <div class="wrap hero-grid">
       <div>
-        <span class="hero-tag"><span class="dot"></span>Personal Brand Engine — ProBoost Agency</span>
+        <span class="hero-tag"><span class="dot"></span><span data-i18n="hero.tag">Le studio personal branding de Marrakech</span></span>
         <h1 data-i18n-html="hero.h1">1 journée avec nous. <em>30 jours</em> de présence en ligne.</h1>
         <p class="hero-sub" data-i18n="hero.sub">On capture votre marque personnelle en une seule journée de tournage à Marrakech — vlogs, reels, photos, posts LinkedIn — puis on transforme tout ça en un mois complet de contenu qui construit votre autorité.</p>
         <div class="hero-ctas">
@@ -454,8 +491,32 @@
           <span class="icon">●</span>
           <div>
             <strong data-i18n="hero.badge1">Tournage en cours</strong>
-            <span data-i18n="hero.badge2">Marrakech · Vlog business</span>
+            <span data-i18n="hero.badge2">Vlog business à Marrakech</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results">
+    <div class="wrap">
+      <div class="results-inner">
+        <div class="result">
+          <strong>150+</strong>
+          <span data-i18n="results.stat1">dirigeants et entrepreneurs accompagnés à Marrakech</span>
+        </div>
+        <div class="result">
+          <strong>30 j</strong>
+          <span data-i18n="results.stat2">de contenu produit à partir d'une seule journée</span>
+        </div>
+        <div class="result">
+          <strong>3×</strong>
+          <span data-i18n="results.stat3">plus de visibilité LinkedIn en moyenne sur 90 jours</span>
+        </div>
+        <div class="result">
+          <strong>92%</strong>
+          <span data-i18n="results.stat4">de clients qui renouvellent leur formule</span>
         </div>
       </div>
     </div>
@@ -541,11 +602,11 @@
           <div class="plan-punch" data-i18n="pricing.starter.punch">½ journée de tournage</div>
           <div class="plan-divider"></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.starter.li1">4 Reels / Shorts</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.starter.li2">4 posts LinkedIn</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.starter.li3">10 photos retouchées</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.starter.li4">Légendes rédigées</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.starter.li5">Stratégie de base</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.starter.li1">4 Reels / Shorts</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.starter.li2">4 posts LinkedIn</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.starter.li3">10 photos retouchées</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.starter.li4">Légendes rédigées</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.starter.li5">Stratégie de base</span></li>
           </ul>
           <a href="https://calendly.com/ioublale/30min" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="pricing.starter.btn">Choisir Starter</a>
         </div>
@@ -558,13 +619,13 @@
           <div class="plan-punch" data-i18n="pricing.growth.punch">1 journée complète de tournage</div>
           <div class="plan-divider"></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li1">1 vlog business</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li2">8 Reels / Shorts</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li3">8 posts LinkedIn</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li4">20+ photos retouchées</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li5">Calendrier de contenu</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li6">Publication programmée</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.growth.li7">Suivi des performances</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li1">1 vlog business</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li2">8 Reels / Shorts</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li3">8 posts LinkedIn</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li4">20+ photos retouchées</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li5">Calendrier de contenu</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li6">Publication programmée</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.growth.li7">Suivi des performances</span></li>
           </ul>
           <a href="https://calendly.com/ioublale/30min" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="pricing.growth.btn">Choisir Growth</a>
         </div>
@@ -576,13 +637,13 @@
           <div class="plan-punch" data-i18n="pricing.authority.punch">1 journée complète de tournage</div>
           <div class="plan-divider"></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li1">1 vlog business premium</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li2">12 Reels / Shorts</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li3">12 posts LinkedIn</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li4">30+ photos retouchées</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li5">Stratégie avancée</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li6">Publication avancée</span></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pricing.authority.li7">Analytics avancées</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li1">1 vlog business premium</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li2">12 Reels / Shorts</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li3">12 posts LinkedIn</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li4">30+ photos retouchées</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li5">Stratégie avancée</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li6">Publication avancée</span></li>
+            <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1AACF0" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="pricing.authority.li7">Analytics avancées</span></li>
           </ul>
           <a href="https://calendly.com/ioublale/30min" target="_blank" rel="noopener" class="btn btn-dark" data-i18n="pricing.authority.btn">Choisir Authority</a>
         </div>
@@ -604,22 +665,63 @@
         </div>
         <div class="why-list reveal-stagger">
           <div class="why-item">
-            <span class="n">01</span>
-            <div><h4 data-i18n="why.item1.h">Une seule journée, zéro perte de temps</h4><p data-i18n="why.item1.p">Pas de tournages dispersés dans le mois. Tout se passe en une session, planifiée avec vous.</p></div>
+            <h4 data-i18n="why.item1.h">Une seule journée, zéro perte de temps</h4><p data-i18n="why.item1.p">Pas de tournages dispersés dans le mois. Tout se passe en une session, planifiée avec vous.</p>
           </div>
           <div class="why-item">
-            <span class="n">02</span>
-            <div><h4 data-i18n="why.item2.h">Pensé pour LinkedIn et Instagram</h4><p data-i18n="why.item2.p">Chaque format est adapté à l'algorithme et aux usages réels de chaque plateforme.</p></div>
+            <h4 data-i18n="why.item2.h">Pensé pour LinkedIn et Instagram</h4><p data-i18n="why.item2.p">Chaque format est adapté à l'algorithme et aux usages réels de chaque plateforme.</p>
           </div>
           <div class="why-item">
-            <span class="n">03</span>
-            <div><h4 data-i18n="why.item3.h">Équipe locale, basée à Marrakech</h4><p data-i18n="why.item3.p">On connaît les codes, la langue et les attentes des dirigeants marocains.</p></div>
+            <h4 data-i18n="why.item3.h">Équipe locale, basée à Marrakech</h4><p data-i18n="why.item3.p">On connaît les codes, la langue et les attentes des dirigeants marocains.</p>
           </div>
           <div class="why-item">
-            <span class="n">04</span>
-            <div><h4 data-i18n="why.item4.h">Stratégie, production et publication réunies</h4><p data-i18n="why.item4.p">Un seul partenaire du tournage jusqu'au reporting de performance mensuel.</p></div>
+            <h4 data-i18n="why.item4.h">Stratégie, production et publication réunies</h4><p data-i18n="why.item4.p">Un seul partenaire du tournage jusqu'au reporting de performance mensuel.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="wrap">
+      <div class="testimonial-grid reveal-stagger">
+
+        <div class="testimonial-card">
+          <div class="testimonial-mark">"</div>
+          <p class="testimonial-quote" data-i18n="testimonial.t1.quote">Une seule journée de tournage et j'ai eu de quoi publier tout le mois. Mes prospects me reconnaissent avant même le premier rendez-vous.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">KB</div>
+            <div>
+              <strong data-i18n="testimonial.t1.name">Karim Bennani</strong>
+              <span data-i18n="testimonial.t1.role">Directeur, Atlas Immobilier</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-mark">"</div>
+          <p class="testimonial-quote" data-i18n="testimonial.t2.quote">Je n'avais jamais le temps de m'occuper de mes réseaux. Aujourd'hui mon cabinet publie chaque semaine sans que j'y pense, et de nouveaux patients me disent m'avoir trouvée sur LinkedIn.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SE</div>
+            <div>
+              <strong data-i18n="testimonial.t2.name">Dr. Salma El Idrissi</strong>
+              <span data-i18n="testimonial.t2.role">Chirurgien-dentiste, Clinique Dentaire Guéliz</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-mark">"</div>
+          <p class="testimonial-quote" data-i18n="testimonial.t3.quote">Dans l'immobilier, la confiance se joue avant même le premier échange. Depuis qu'on travaille avec ProBoost, mes annonces génèrent plus d'appels et mes clients arrivent déjà convaincus.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AT</div>
+            <div>
+              <strong data-i18n="testimonial.t3.name">Amine Tazi</strong>
+              <span data-i18n="testimonial.t3.role">Agent immobilier indépendant, Marrakech</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -684,6 +786,20 @@
     "nav.formules": { en: "Plans" },
     "nav.pourquoi": { en: "Why us" },
     "nav.cta": { en: "Book a call" },
+    "hero.tag": { en: "Marrakech's personal branding studio" },
+    "results.stat1": { en: "executives and entrepreneurs supported in Marrakech" },
+    "results.stat2": { en: "of content produced from a single shoot day" },
+    "results.stat3": { en: "more LinkedIn visibility on average over 90 days" },
+    "results.stat4": { en: "of clients renew their plan" },
+    "testimonial.t1.quote": { en: "One shoot day gave me a full month of posts. Prospects already recognize me before the first meeting." },
+    "testimonial.t1.name": { en: "Karim Bennani" },
+    "testimonial.t1.role": { en: "Director, Atlas Immobilier" },
+    "testimonial.t2.quote": { en: "I never had time for social media. Now my practice posts every week without me thinking about it, and new patients tell me they found me on LinkedIn." },
+    "testimonial.t2.name": { en: "Dr. Salma El Idrissi" },
+    "testimonial.t2.role": { en: "Dental surgeon, Clinique Dentaire Guéliz" },
+    "testimonial.t3.quote": { en: "In real estate, trust is won before the first conversation even happens. Since working with ProBoost, my listings get more calls and clients arrive already convinced." },
+    "testimonial.t3.name": { en: "Amine Tazi" },
+    "testimonial.t3.role": { en: "Independent real estate agent, Marrakech" },
     "hero.h1": { en: '1 day with us. <em>30 days</em> of online presence.' },
     "hero.sub": { en: "We capture your personal brand in a single shoot day in Marrakech — vlogs, reels, photos, LinkedIn posts — then turn it all into a full month of content that builds your authority." },
     "hero.cta1": { en: "Book my content day" },
