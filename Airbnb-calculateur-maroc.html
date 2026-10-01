@@ -476,6 +476,19 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
   .mob-menu { padding:0 24px; }
 }
 </style>
+<!-- ═══ 1) CSS: paste at the end of your <style> block ═══ -->
+<style>
+.hero-by{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.5);text-decoration:none}
+.hero-by b{color:var(--light);font-weight:500}.hero-by:hover b{color:var(--blue)}
+.hero-by img{height:26px;width:auto;background:#fff;padding:2px 6px;border-radius:3px}
+.hero-agency{margin-top:28px;padding:16px 18px;border:1px solid var(--border);border-left:3px solid var(--blue);background:rgba(17,17,17,.7);font-size:13px;color:rgba(245,242,236,.6);line-height:1.7;max-width:480px}
+.hero-agency a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(26,172,240,.35)}
+.hero-agency a:hover{color:var(--red)}
+.qs-card.qs-link{display:block;text-decoration:none;color:inherit;border-color:rgba(26,172,240,.35);background:rgba(15,27,43,.9)}
+.qs-card.qs-link .qs-val{font-size:22px;line-height:1.2}
+.qs-card.qs-link .qs-go{margin-top:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+</style>
+ 
 </head>
 <body>
 
@@ -506,6 +519,8 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
 </div>
 
 <!-- ── HERO ── -->
+
+<!-- ═══ 2) HTML: replace your whole <section id="hero"> with this ═══ -->
 <section id="hero" aria-label="Hero">
   <div class="hero-bg" role="img" aria-label="Vue aérienne de Marrakech"></div>
   <div class="hero-overlay"></div>
@@ -513,6 +528,12 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
   <div class="container">
     <div class="hero-inner">
       <div>
+        <!-- NEW: brand link to main site -->
+        <a class="hero-by" href="https://proboostagency.com/" data-track="hero_brand">
+          <!-- <img src="/img/logo-proboost-agency.png" alt="ProBoost Agency" width="80" height="26"> -->
+          <span>Outil gratuit par <b>ProBoost Agency</b> · Marrakech</span>
+        </a>
+ 
         <div class="hero-badge"><div class="hero-badge-dot"></div>Outil gratuit · Mis à jour 2026</div>
         <h1 class="hero-h1">
           Calculateur<br>
@@ -524,14 +545,25 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
         </p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn-primary">Calculer ma Rentabilité</a>
-          <a href="https://wa.me/212655956626?text=Bonjour%20ProBoost%2C%20je%20veux%20une%20estimation%20Airbnb%20Maroc" class="btn-ghost" target="_blank" rel="noopener">WhatsApp Gratuit</a>
+          <!-- NEW: main CTA to the agency -->
+          <a href="https://proboostagency.com/website-creation-morocco.html" class="btn-ghost" data-track="hero_cta_web_design">Créer mon site web</a>
+          <a href="https://wa.me/212655956626?text=Bonjour%20ProBoost%2C%20je%20veux%20une%20estimation%20Airbnb%20Maroc" class="btn-ghost" target="_blank" rel="noopener" data-track="hero_whatsapp">WhatsApp Gratuit</a>
         </div>
         <div class="hero-trust">
           <span class="trust-item">Outil 100% gratuit</span>
           <span class="trust-item">Données 2026 Maroc</span>
           <span class="trust-item">Résultats instantanés</span>
         </div>
+ 
+        <!-- NEW: keyword-rich internal links -->
+        <p class="hero-agency">
+          Vous avez un Airbnb ou un riad ? Réduisez vos commissions avec un site de réservation directe, créé par une
+          <a href="/web-design-marrakech.html" data-track="hero_link_agence">agence web à Marrakech</a>.
+          Voir aussi : <a href="/website-creation-morocco.html" data-track="hero_link_creation">création de site web Maroc</a>
+          · <a href="/travel-agency-website-morocco.html" data-track="hero_link_travel">site web agence de voyage</a>.
+        </p>
       </div>
+ 
       <div class="hero-quick-stats reveal">
         <div class="qs-card">
           <div class="qs-city">Marrakech — Revenu moyen</div>
@@ -548,10 +580,17 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
           <div class="qs-val" style="background:linear-gradient(135deg,var(--blue),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">8–18%</div>
           <div class="qs-label">vs 3–5% en location longue durée</div>
         </div>
+        <!-- NEW: agency card -->
+        <a class="qs-card qs-link" href="https://proboostagency.com/" data-track="hero_card_agency">
+          <div class="qs-city">ProBoost Agency</div>
+          <div class="qs-val">Un site qui vous apporte des réservations directes</div>
+          <div class="qs-go">Découvrir l'agence →</div>
+        </a>
       </div>
     </div>
   </div>
 </section>
+ 
 
 <!-- ── CALCULATOR ── -->
 <section id="calculator" aria-labelledby="calc-h">
