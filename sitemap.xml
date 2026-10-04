@@ -27,7 +27,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://proboostagency.com/"/>
   </url>
 
-  <!-- MONEY PAGES (bilingual FR/EN in one URL, so no hreflang pair) -->
+  <!-- SERVICE PAGES (bilingual FR/EN in one URL, so no hreflang pair) -->
   <url><loc>https://proboostagency.com/website-creation-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/prix-creation-site-web-maroc.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/travel-agency-website-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
@@ -37,17 +37,31 @@
   <url><loc>https://proboostagency.com/web-design-marrakech.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/seo-tourism-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
 
-  <!-- TOOLS (your best-performing pages) -->
+  <!-- CITY PAGES -->
+  <url><loc>https://proboostagency.com/creation-site-web-azrou.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-ifrane.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-fes.html</loc><lastmod>2026-10-03</lastmod></url>
+
+  <!-- RESTAURANT GUIDES -->
+  <url><loc>https://proboostagency.com/creation-site-web-restaurant-maroc.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-restaurant-marrakech.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-restaurant-agadir.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://proboostagency.com/restaurant-Marrakech.html</loc></url>
+
+  <!-- BLOG + TOOLS -->
+  <url><loc>https://proboostagency.com/blog.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://proboostagency.com/Airbnb-calculateur-maroc.html</loc></url>
   <url><loc>https://proboostagency.com/Airbnb-calculator-marrakech.html</loc></url>
   <url><loc>https://proboostagency.com/Direct-booking-savings-calculator.html</loc></url>
+  <url><loc>https://proboostagency.com/google-maps-ranking-checker-marrakech.html</loc></url>
+  <url><loc>https://proboostagency.com/seo-audit-tool.html</loc></url>
 
-  <!-- SECTOR PAGES, CASE STUDY, CONTENT -->
-  <url><loc>https://proboostagency.com/restaurant-Marrakech.html</loc></url>
-  <url><loc>https://proboostagency.com/spas.html</loc></url>
+  <!-- CASE STUDY + OTHER CONTENT -->
   <url><loc>https://proboostagency.com/usecase-saharatrail.html</loc></url>
-  <url><loc>https://proboostagency.com/blog.html</loc></url>
+  <url><loc>https://proboostagency.com/spas.html</loc></url>
   <url><loc>https://proboostagency.com/Best-Restaurants-Marrakech-2026.html</loc></url>
   <url><loc>https://proboostagency.com/Best-Place-Invest-Marrakech.html</loc></url>
+  <url><loc>https://proboostagency.com/best-places-to-visit-marrakech-2026.html</loc></url>
+  <url><loc>https://proboostagency.com/3-days-marrakech-itinerary.html</loc></url>
 
 </urlset>
