@@ -193,10 +193,21 @@ nav.scrolled { padding:12px 48px; }
 .mob-links a { font-family:'Bebas Neue',sans-serif; font-size:clamp(32px,7vw,52px); color:rgba(245,242,236,.4); text-decoration:none; padding:12px 0; display:block; transition:color .2s; }
 .mob-links a:hover { color:var(--light); }
 
+/* ── NEW PAGES BANNER ── */
+.promo-bar {
+  margin-top:76px; position:relative; z-index:2;
+  background:var(--blue); color:#fff;
+  text-align:center; padding:10px 28px;
+  font-size:12.5px; font-weight:500; letter-spacing:.04em; line-height:1.7;
+}
+.promo-bar a { color:#fff; font-weight:600; text-decoration:underline; text-underline-offset:3px; margin-left:6px; white-space:nowrap; transition:opacity .2s; }
+.promo-bar a:hover { opacity:.75; }
+.promo-bar .pb-sep { margin:0 8px; opacity:.55; }
+
 /* ── HERO ── */
 #hero {
   min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-  position:relative; overflow:hidden; padding-top:80px;
+  position:relative; overflow:hidden; padding-top:20px;
 }
 .hero-bg {
   position:absolute; inset:0;
@@ -348,6 +359,9 @@ input[type="range"]::-webkit-slider-thumb {
 .btn-whatsapp:hover { opacity:.9; transform:translateY(-1px); }
 .btn-whatsapp svg { flex-shrink:0; }
 .disclaimer { font-size:11px; color:rgba(245,242,236,.25); line-height:1.6; margin-top:16px; }
+.calc-next { margin-top:16px; font-size:12.5px; color:rgba(245,242,236,.5); line-height:1.7; }
+.calc-next a { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(26,172,240,.35); }
+.calc-next a:hover { color:var(--red); }
 
 /* ── CITIES GRID ── */
 .cities-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:3px; margin-top:56px; }
@@ -360,6 +374,17 @@ input[type="range"]::-webkit-slider-thumb {
 .city-stat-label { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(245,242,236,.32); margin-bottom:2px; }
 .city-stat-val { font-size:14px; font-weight:500; color:var(--light); }
 .city-roi { display:inline-block; margin-top:16px; font-family:'Bebas Neue',sans-serif; font-size:22px; padding:4px 12px; background:rgba(26,172,240,.1); border:1px solid rgba(26,172,240,.2); color:var(--blue); }
+
+/* ── NEXT STEP SERVICES (new pages) ── */
+.next-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:48px; }
+.next-card { display:block; text-decoration:none; color:inherit; background:var(--mid); border:1px solid rgba(26,172,240,.25); padding:34px 28px; position:relative; overflow:hidden; transition:border-color .25s,transform .25s,background .25s; }
+.next-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--blue),var(--red)); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+.next-card:hover { border-color:var(--blue); background:rgba(26,172,240,.07); transform:translateY(-4px); }
+.next-card:hover::after { transform:scaleX(1); }
+.next-tag { display:inline-block; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:#fff; background:var(--blue); padding:3px 10px; margin-bottom:16px; }
+.next-t { font-family:'Bebas Neue',sans-serif; font-size:26px; line-height:1.05; color:var(--light); margin-bottom:12px; }
+.next-d { font-size:13px; color:rgba(245,242,236,.5); line-height:1.75; margin-bottom:18px; }
+.next-go { font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); }
 
 /* ── SEO CONTENT ── */
 .seo-inner { max-width:760px; }
@@ -380,6 +405,8 @@ input[type="range"]::-webkit-slider-thumb {
 .step-n { font-family:'Bebas Neue',sans-serif; font-size:12px; color:var(--blue); letter-spacing:.15em; margin-bottom:16px; }
 .step-t { font-family:'Bebas Neue',sans-serif; font-size:20px; color:var(--light); margin-bottom:10px; }
 .step-d { font-size:12.5px; color:rgba(245,242,236,.45); line-height:1.75; }
+.step-d a { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(26,172,240,.3); }
+.step-d a:hover { color:var(--red); }
 
 /* ── FAQ ── */
 .faq-list { margin-top:56px; }
@@ -395,6 +422,8 @@ input[type="range"]::-webkit-slider-thumb {
 .faq-item.open .faq-icon { transform:rotate(45deg); background:rgba(26,172,240,.1); }
 .faq-body { display:none; padding:0 0 22px; font-size:14px; color:rgba(245,242,236,.5); line-height:1.85; max-width:740px; }
 .faq-body strong { color:var(--light); font-weight:500; }
+.faq-body a { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(26,172,240,.3); }
+.faq-body a:hover { color:var(--red); }
 .faq-item.open .faq-body { display:block; }
 
 /* ── LEAD CAPTURE ── */
@@ -405,6 +434,8 @@ input[type="range"]::-webkit-slider-thumb {
 .lead-copy h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,4vw,58px); line-height:.94; margin-bottom:18px; }
 .lead-copy h2 .blue { color:var(--blue); }
 .lead-copy p { font-size:14px; color:rgba(245,242,236,.5); line-height:1.85; margin-bottom:20px; }
+.lead-copy p a { color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(26,172,240,.3); }
+.lead-copy p a:hover { color:var(--red); }
 .lead-perks { list-style:none; margin-bottom:32px; }
 .lead-perks li { display:flex; align-items:center; gap:12px; font-size:13.5px; color:rgba(245,242,236,.6); padding:9px 0; border-bottom:1px solid var(--border); }
 .lead-perks li::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--blue); flex-shrink:0; }
@@ -448,15 +479,28 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
 .strategy-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
 .stag { font-size:9px; letter-spacing:.1em; text-transform:uppercase; padding:3px 9px; border:1px solid var(--border); color:rgba(245,242,236,.35); }
 
+/* ── HERO AGENCY LINKS ── */
+.hero-by{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.5);text-decoration:none}
+.hero-by b{color:var(--light);font-weight:500}.hero-by:hover b{color:var(--blue)}
+.hero-by img{height:26px;width:auto;background:#fff;padding:2px 6px;border-radius:3px}
+.hero-agency{margin-top:28px;padding:16px 18px;border:1px solid var(--border);border-left:3px solid var(--blue);background:rgba(17,17,17,.7);font-size:13px;color:rgba(245,242,236,.6);line-height:1.7;max-width:480px}
+.hero-agency a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(26,172,240,.35)}
+.hero-agency a:hover{color:var(--red)}
+.qs-card.qs-link{display:block;text-decoration:none;color:inherit;border-color:rgba(26,172,240,.35);background:rgba(15,27,43,.9)}
+.qs-card.qs-link .qs-val{font-size:22px;line-height:1.2}
+.qs-card.qs-link .qs-go{margin-top:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px) {
   nav { padding:16px 28px; }
   .nav-links,.nav-cta { display:none; }
   .hamburger { display:flex; }
+  .promo-bar { margin-top:72px; padding:10px 28px; }
   .hero-inner { grid-template-columns:1fr; gap:40px; }
   .hero-quick-stats { grid-template-columns:repeat(2,1fr); }
   .calc-wrapper { grid-template-columns:1fr; }
   .cities-grid { grid-template-columns:1fr 1fr; }
+  .next-grid { grid-template-columns:1fr; }
   .steps-grid { grid-template-columns:1fr 1fr; }
   .lead-inner { grid-template-columns:1fr; }
   .ft-top { grid-template-columns:1fr 1fr; gap:32px; }
@@ -464,7 +508,8 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
 }
 @media(max-width:640px) {
   nav { padding:14px 18px; }
-  #hero { padding-top:70px; }
+  .promo-bar { margin-top:68px; padding:10px 18px; font-size:12px; }
+  #hero { padding-top:10px; }
   .hero-inner { gap:28px; }
   .hero-quick-stats { grid-template-columns:1fr 1fr; }
   .cities-grid { grid-template-columns:1fr; }
@@ -476,19 +521,6 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
   .mob-menu { padding:0 24px; }
 }
 </style>
-<!-- ═══ 1) CSS: paste at the end of your <style> block ═══ -->
-<style>
-.hero-by{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,236,.5);text-decoration:none}
-.hero-by b{color:var(--light);font-weight:500}.hero-by:hover b{color:var(--blue)}
-.hero-by img{height:26px;width:auto;background:#fff;padding:2px 6px;border-radius:3px}
-.hero-agency{margin-top:28px;padding:16px 18px;border:1px solid var(--border);border-left:3px solid var(--blue);background:rgba(17,17,17,.7);font-size:13px;color:rgba(245,242,236,.6);line-height:1.7;max-width:480px}
-.hero-agency a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(26,172,240,.35)}
-.hero-agency a:hover{color:var(--red)}
-.qs-card.qs-link{display:block;text-decoration:none;color:inherit;border-color:rgba(26,172,240,.35);background:rgba(15,27,43,.9)}
-.qs-card.qs-link .qs-val{font-size:22px;line-height:1.2}
-.qs-card.qs-link .qs-go{margin-top:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
-</style>
- 
 </head>
 <body>
 
@@ -518,9 +550,17 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
   </ul>
 </div>
 
-<!-- ── HERO ── -->
+<!-- ── NEW PAGES BANNER ── -->
+<div class="promo-bar">
+  Nouveau :
+  <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=banner&utm_campaign=website-creation" data-track="banner_website_creation">Création de site web Maroc →</a>
+  <span class="pb-sep">|</span>
+  <a href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=banner&utm_campaign=web-design-marrakech" data-track="banner_web_design_marrakech">Web design Marrakech →</a>
+  <span class="pb-sep">|</span>
+  <a href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=banner&utm_campaign=personal-branding" data-track="banner_personal_branding">Personal branding →</a>
+</div>
 
-<!-- ═══ 2) HTML: replace your whole <section id="hero"> with this ═══ -->
+<!-- ── HERO ── -->
 <section id="hero" aria-label="Hero">
   <div class="hero-bg" role="img" aria-label="Vue aérienne de Marrakech"></div>
   <div class="hero-overlay"></div>
@@ -528,12 +568,10 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
   <div class="container">
     <div class="hero-inner">
       <div>
-        <!-- NEW: brand link to main site -->
         <a class="hero-by" href="https://proboostagency.com/" data-track="hero_brand">
-          <!-- <img src="/img/logo-proboost-agency.png" alt="ProBoost Agency" width="80" height="26"> -->
           <span>Outil gratuit par <b>ProBoost Agency</b> · Marrakech</span>
         </a>
- 
+
         <div class="hero-badge"><div class="hero-badge-dot"></div>Outil gratuit · Mis à jour 2026</div>
         <h1 class="hero-h1">
           Calculateur<br>
@@ -545,8 +583,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
         </p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn-primary">Calculer ma Rentabilité</a>
-          <!-- NEW: main CTA to the agency -->
-          <a href="https://proboostagency.com/website-creation-morocco.html" class="btn-ghost" data-track="hero_cta_web_design">Créer mon site web</a>
+          <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=hero&utm_campaign=website-creation" class="btn-ghost" data-track="hero_cta_web_design">Créer mon site web</a>
           <a href="https://wa.me/212655956626?text=Bonjour%20ProBoost%2C%20je%20veux%20une%20estimation%20Airbnb%20Maroc" class="btn-ghost" target="_blank" rel="noopener" data-track="hero_whatsapp">WhatsApp Gratuit</a>
         </div>
         <div class="hero-trust">
@@ -554,16 +591,16 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
           <span class="trust-item">Données 2026 Maroc</span>
           <span class="trust-item">Résultats instantanés</span>
         </div>
- 
-        <!-- NEW: keyword-rich internal links -->
+
+        <!-- keyword-rich internal links -->
         <p class="hero-agency">
           Vous avez un Airbnb ou un riad ? Réduisez vos commissions avec un site de réservation directe, créé par une
-          <a href="/web-design-marrakech.html" data-track="hero_link_agence">agence web à Marrakech</a>.
-          Voir aussi : <a href="/website-creation-morocco.html" data-track="hero_link_creation">création de site web Maroc</a>
-          · <a href="/travel-agency-website-morocco.html" data-track="hero_link_travel">site web agence de voyage</a>.
+          <a href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=hero&utm_campaign=web-design-marrakech" data-track="hero_link_agence">agence web à Marrakech</a>.
+          Voir aussi : <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=hero-text&utm_campaign=website-creation" data-track="hero_link_creation">création de site web Maroc</a>
+          · <a href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=hero-text&utm_campaign=personal-branding" data-track="hero_link_branding">personal branding pour hôtes et investisseurs</a>.
         </p>
       </div>
- 
+
       <div class="hero-quick-stats reveal">
         <div class="qs-card">
           <div class="qs-city">Marrakech — Revenu moyen</div>
@@ -580,17 +617,16 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
           <div class="qs-val" style="background:linear-gradient(135deg,var(--blue),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">8–18%</div>
           <div class="qs-label">vs 3–5% en location longue durée</div>
         </div>
-        <!-- NEW: agency card -->
-        <a class="qs-card qs-link" href="https://proboostagency.com/" data-track="hero_card_agency">
+        <a class="qs-card qs-link" href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=hero-card&utm_campaign=website-creation" data-track="hero_card_agency">
           <div class="qs-city">ProBoost Agency</div>
           <div class="qs-val">Un site qui vous apporte des réservations directes</div>
-          <div class="qs-go">Découvrir l'agence →</div>
+          <div class="qs-go">Créer mon site →</div>
         </a>
       </div>
     </div>
   </div>
 </section>
- 
+
 
 <!-- ── CALCULATOR ── -->
 <section id="calculator" aria-labelledby="calc-h">
@@ -725,10 +761,40 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.116 1.524 5.845L.054 23.27l5.587-1.45A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.852 0-3.587-.5-5.082-1.373l-.363-.217-3.316.861.884-3.226-.236-.374A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
             Estimation gratuite
           </a>
-          <a href="#lead" class="btn-primary">Créer mon Airbnb</a>
+          <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=calc-results&utm_campaign=website-creation" class="btn-primary" data-track="calc_cta_website">Créer mon site de réservation</a>
         </div>
+        <p class="calc-next">Votre ROI est bon ? Augmentez-le : un <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=calc-text&utm_campaign=website-creation" data-track="calc_text_website">site web de réservation directe</a> supprime les commissions des plateformes.</p>
         <p class="disclaimer">* Simulation indicative basée sur des données moyennes de marché 2026. Les résultats réels varient selon l'emplacement, la qualité du bien et la gestion. Consultez un expert avant tout investissement.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEXT STEP: NEW PAGES ── -->
+<section class="section section-dark" id="services" aria-labelledby="services-h">
+  <div class="container">
+    <div class="section-label reveal">Étape suivante</div>
+    <h2 class="section-h2 reveal" id="services-h">Passez du Calcul<br>à l'Action</h2>
+    <p class="section-sub reveal">Vous connaissez maintenant votre rentabilité. Voici comment la faire grimper avec une présence digitale qui génère des réservations directes.</p>
+    <div class="next-grid">
+      <a class="next-card reveal" href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=services&utm_campaign=website-creation" data-track="services_website_creation">
+        <span class="next-tag">Nouveau</span>
+        <div class="next-t">Création de Site Web au Maroc</div>
+        <p class="next-d">Un site rapide, optimisé SEO et pensé pour convertir : réservation directe, zéro commission, visibilité sur Google Maroc.</p>
+        <span class="next-go">Découvrir →</span>
+      </a>
+      <a class="next-card reveal" href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=services&utm_campaign=web-design-marrakech" data-track="services_web_design_marrakech">
+        <span class="next-tag">Nouveau</span>
+        <div class="next-t">Web Design à Marrakech</div>
+        <p class="next-d">Une agence web basée à Marrakech pour les riads, les hôtes Airbnb et les investisseurs : design premium et stratégie locale.</p>
+        <span class="next-go">Découvrir →</span>
+      </a>
+      <a class="next-card reveal" href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=services&utm_campaign=personal-branding" data-track="services_personal_branding">
+        <span class="next-tag">Nouveau</span>
+        <div class="next-t">Personal Branding</div>
+        <p class="next-d">Devenez la référence : une image de marque forte pour les hôtes, les investisseurs et les entrepreneurs de l'immobilier touristique.</p>
+        <span class="next-go">Découvrir →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -801,7 +867,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
       <div class="step-box reveal" data-n="4">
         <div class="step-n">ÉTAPE 04</div>
         <div class="step-t">Optimiser &amp; Scaler</div>
-        <div class="step-d">Photos pro, prix dynamique, réponses rapides et gestion des avis — les annonces optimisées génèrent 35–60% de revenus supplémentaires.</div>
+        <div class="step-d">Photos pro, prix dynamique, réponses rapides et gestion des avis — les annonces optimisées génèrent 35–60% de revenus supplémentaires. <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=guide-step&utm_campaign=website-creation" data-track="guide_step4_website">Ajoutez un site de réservation directe →</a></div>
       </div>
     </div>
 
@@ -821,6 +887,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
         <li><strong>Tarification dynamique :</strong> Utiliser des outils comme PriceLabs ou Beyond Pricing pour ajuster les tarifs en fonction de la demande locale peut augmenter les revenus de 25–35%.</li>
         <li><strong>Score de superhost :</strong> Les superhosts Airbnb bénéficient d'un meilleur positionnement dans les résultats de recherche et convertissent 60% plus de voyageurs.</li>
         <li><strong>Optimisation du titre :</strong> Un titre en français, anglais et arabe incluant les mots-clés "Marrakech Médina", "vue Atlas", "riad" ou "piscine" améliore la visibilité.</li>
+        <li><strong>Présence digitale propre :</strong> Un <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=guide-text&utm_campaign=website-creation" data-track="guide_li_website">site web de réservation directe</a> et une <a href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=guide-text&utm_campaign=personal-branding" data-track="guide_li_branding">image de marque personnelle</a> forte réduisent la dépendance aux plateformes et fidélisent vos voyageurs.</li>
       </ul>
 
       <h2>Charges à Anticiper pour un Airbnb au Maroc</h2>
@@ -840,6 +907,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
       <h2>Marrakech : La Capitale Mondiale du Airbnb au Maroc</h2>
       <p>Marrakech est sans conteste la ville la plus rentable pour Airbnb au Maroc. La demande touristique est structurellement forte tout au long de l'année, avec deux hautes saisons distinctes (octobre–décembre et mars–mai) et une basse saison estivale qui reste néanmoins active grâce au tourisme domestique et aux voyageurs européens fuyant la canicule.</p>
       <p>Les <strong>riads de la médina</strong> constituent le produit Airbnb le plus premium — certains dépassent 40 000 MAD/mois en haute saison. Les appartements modernes dans le quartier Guéliz ou Hivernage offrent quant à eux un rapport prix/revenus souvent supérieur, avec des prix d'acquisition plus accessibles. Pour un premier investissement Airbnb à Marrakech, un <strong>appartement 1–2 chambres dans un quartier touristique central</strong> avec une enveloppe de 600 000–900 000 MAD représente le meilleur point d'entrée.</p>
+      <p>Pour vous démarquer dans une ville aussi concurrentielle, faites appel à une <a href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=guide-text&utm_campaign=web-design-marrakech" data-track="guide_p_web_design">agence de web design à Marrakech</a> pour créer un site de réservation directe à l'image de votre bien.</p>
 
       <h2>Fiscalité des Revenus Airbnb au Maroc</h2>
       <p>Les revenus générés par Airbnb au Maroc sont imposables. Selon le volume d'activité, ils peuvent être déclarés en <strong>revenus fonciers</strong> (tranche marginale de 15% à 40%) ou en <strong>revenus professionnels</strong> (TVA applicable si dépassement du seuil). Il est fortement recommandé de consulter un expert-comptable marocain pour structurer votre activité de manière optimale — une bonne structure fiscale peut améliorer votre ROI net de 3 à 5 points.</p>
@@ -917,7 +985,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
           <span class="faq-q">Comment optimiser son annonce Airbnb au Maroc ?</span>
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-body">Pour optimiser son annonce Airbnb au Maroc : <strong>photos professionnelles HDR</strong> (investissement de 500–1000 MAD qui rapporte x3), titre en français + anglais incluant la ville et les atouts majeurs, description détaillée avec mots-clés locaux, <strong>réservation instantanée activée</strong>, temps de réponse &lt;1h, tarification dynamique via PriceLabs, et obtenir un minimum de 5 avis 5 étoiles dès les premiers séjours pour booster l'algorithme Airbnb.</div>
+        <div class="faq-body">Pour optimiser son annonce Airbnb au Maroc : <strong>photos professionnelles HDR</strong> (investissement de 500–1000 MAD qui rapporte x3), titre en français + anglais incluant la ville et les atouts majeurs, description détaillée avec mots-clés locaux, <strong>réservation instantanée activée</strong>, temps de réponse &lt;1h, tarification dynamique via PriceLabs, et obtenir un minimum de 5 avis 5 étoiles dès les premiers séjours pour booster l'algorithme Airbnb. Pour aller plus loin, un <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=faq&utm_campaign=website-creation" data-track="faq_website">site web de réservation directe</a> vous permet de fidéliser vos voyageurs sans commission.</div>
       </div>
 
       <div class="faq-item">
@@ -956,6 +1024,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
         <div class="section-label" style="margin-bottom:28px;">ProBoost Agency</div>
         <h2 id="lead-h"><span class="blue">Créez</span> Votre<br>Airbnb Rentable<br>au Maroc</h2>
         <p>Vous avez calculé votre rentabilité — passons à l'action. ProBoost Agency vous accompagne dans la création de votre présence digitale Airbnb : site web de réservation directe, SEO local, photos professionnelles et stratégie de croissance.</p>
+        <p>En savoir plus : <a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=lead&utm_campaign=website-creation" data-track="lead_website">création de site web au Maroc</a> · <a href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=lead&utm_campaign=web-design-marrakech" data-track="lead_web_design">web design Marrakech</a> · <a href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=lead&utm_campaign=personal-branding" data-track="lead_branding">personal branding</a></p>
         <ul class="lead-perks">
           <li>Site de réservation directe (zéro commission)</li>
           <li>Référencement SEO local Maroc &amp; Google Maps</li>
@@ -1039,7 +1108,7 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
       <div class="strategy-card reveal">
         <div class="strategy-icon">🔗</div>
         <div class="strategy-t">Internal Linking</div>
-        <div class="strategy-d">Liens internes vers : page d'accueil ProBoost, guide SEO hôtelier Maroc, page création site Airbnb, et page contact. Ancres diversifiées incluant mots-clés cibles et marque.</div>
+        <div class="strategy-d">Liens internes vers : page d'accueil ProBoost, création de site web Maroc, web design Marrakech, personal branding et page contact. Ancres diversifiées incluant mots-clés cibles et marque.</div>
         <div class="strategy-tags">
           <span class="stag">Link Juice</span><span class="stag">Topical Authority</span><span class="stag">Anchor Text</span>
         </div>
@@ -1083,8 +1152,9 @@ footer { background:var(--darker); padding:72px 0 40px; border-top:1px solid var
         <div class="ft-col-t">ProBoost Agency</div>
         <ul class="ft-links">
           <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Accueil</a></li>
-          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">SEO Maroc</a></li>
-          <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Sites Airbnb</a></li>
+          <li><a href="https://proboostagency.com/website-creation-morocco.html?utm_source=calculateur-airbnb-maroc&utm_medium=footer&utm_campaign=website-creation" data-track="footer_website">Création de site web Maroc</a></li>
+          <li><a href="https://proboostagency.com/web-design-marrakech.html?utm_source=calculateur-airbnb-maroc&utm_medium=footer&utm_campaign=web-design-marrakech" data-track="footer_web_design">Web design Marrakech</a></li>
+          <li><a href="https://proboostagency.com/personal-brading-proboost.html?utm_source=calculateur-airbnb-maroc&utm_medium=footer&utm_campaign=personal-branding" data-track="footer_branding">Personal branding</a></li>
           <li><a href="https://proboostagency.com/" target="_blank" rel="noopener">Nous contacter</a></li>
         </ul>
       </div>
