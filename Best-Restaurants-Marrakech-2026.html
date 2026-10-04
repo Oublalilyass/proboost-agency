@@ -84,6 +84,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(4,4,4,.93);backdrop-filter
 .nc:hover{opacity:.85}
 @media(max-width:700px){.nm{display:none}}
 
+/* NEW PAGES BANNER */
+.promo-bar{background:var(--blue);color:var(--dark);text-align:center;padding:10px clamp(1rem,5vw,3rem);font-size:13px;font-weight:600;letter-spacing:.02em;line-height:1.6}
+.promo-bar a{color:var(--dark);font-weight:800;text-decoration:underline;text-underline-offset:3px;margin-left:6px;white-space:nowrap;transition:opacity .2s}
+.promo-bar a:hover{opacity:.7}
+.promo-bar .pb-sep{margin:0 8px;opacity:.5}
+
 /* HERO */
 .hero{position:relative;overflow:hidden;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(5rem,12vw,9rem) clamp(1rem,5vw,3rem) clamp(4rem,9vw,7rem);border-bottom:1px solid var(--border)}
 .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1539304786093-f76fbb9cf35e?w=1600&q=80') center/cover no-repeat;filter:brightness(.22)}
@@ -175,6 +181,15 @@ a.body-link:hover{opacity:.75}
 .rel-card p{font-size:11px;color:var(--ts);margin:0;line-height:1.5}
 .rel-link{font-size:11px;color:var(--blue);font-weight:600;margin-top:.55rem;display:block;letter-spacing:.03em}
 
+/* NEW PAGES PROMO CARDS */
+.new-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:1.8rem 0}
+.np-card{border:1px solid rgba(26,172,240,.3);background:var(--bd);border-radius:3px;padding:1.5rem;text-decoration:none;display:block;position:relative;transition:border-color .2s,background .2s,transform .2s}
+.np-card:hover{border-color:var(--blue);background:rgba(26,172,240,.17);transform:translateY(-2px)}
+.np-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dark);background:var(--blue);padding:2px 8px;border-radius:2px;margin-bottom:.8rem}
+.np-card h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--tm);line-height:1.3;margin-bottom:.5rem}
+.np-card p{font-size:13px;color:var(--ts);margin:0 0 .8rem;line-height:1.6}
+.np-card .rel-link{font-size:12px;margin-top:0}
+
 /* DISH TABLE */
 .dish-table{width:100%;border-collapse:collapse;margin:1.4rem 0;font-size:13px}
 .dish-table thead tr{border-bottom:1px solid rgba(26,172,240,.25)}
@@ -236,6 +251,9 @@ a.body-link:hover{opacity:.75}
 .wa{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:13px 28px;border-radius:3px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:.03em;transition:opacity .2s;margin-right:10px}
 .wa:hover{opacity:.85}
 .wa-note{font-size:11px;color:var(--tf);margin-top:.9rem}
+.cta-links{margin-top:1.4rem;font-size:13px;color:var(--ts)}
+.cta-links a{color:var(--blue);font-weight:600;text-decoration:none;margin:0 6px}
+.cta-links a:hover{opacity:.75}
 
 /* FOOTER */
 footer{background:var(--darker);border-top:1px solid var(--border);padding:3rem clamp(1rem,5vw,3rem) 2rem}
@@ -273,6 +291,14 @@ footer a:hover{color:var(--blue)}
   </ul>
   <a href="https://wa.me/212655956626?text=Bonjour%20ProBoost%2C%20je%20veux%20un%20audit%20SEO%20pour%20mon%20restaurant%20à%20Marrakech." class="nc">Free Restaurant Audit</a>
 </nav>
+
+<!-- NEW PAGES BANNER -->
+<div class="promo-bar">
+  New: Restaurant website creation guides —
+  <a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=banner&utm_campaign=maroc">Morocco →</a>
+  <span class="pb-sep">|</span>
+  <a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=banner&utm_campaign=agadir">Agadir →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -575,6 +601,12 @@ footer a:hover{color:var(--blue)}
         </div>
 
       </div><!-- end rest-list -->
+
+      <!-- MID-PAGE PROMO: strongest placement for restaurant owners reading the list -->
+      <div class="call">
+        <div class="clb">Own a restaurant?</div>
+        <p>Want to see your restaurant listed among the best? A professional website is the first step. See our guides to <a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=inline&utm_campaign=maroc" class="body-link">restaurant website creation in Morocco</a> and <a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=inline&utm_campaign=agadir" class="body-link">in Agadir</a>.</p>
+      </div>
     </section>
 
     <!-- BY TYPE -->
@@ -735,10 +767,28 @@ footer a:hover{color:var(--blue)}
         <p>Most Marrakech restaurants are invisible to Google. They have a Google Maps pin and a TripAdvisor listing — but no website, no SEO structure, no content, no keyword strategy. They rely entirely on platforms that charge commissions, limit direct relationships, and can remove their listing at any moment. <strong>ProBoost Agency exists to change that.</strong></p>
       </div>
 
+      <!-- NEW PAGES: main redirect block -->
+      <h3>Ready to Build Your Restaurant Website?</h3>
+      <p>We just published two dedicated guides on creating a restaurant website that ranks on Google and turns visitors into reservations:</p>
+      <div class="new-pages">
+        <a class="np-card" href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=for-business&utm_campaign=maroc">
+          <span class="np-tag">New</span>
+          <h4>Restaurant Website Creation in Morocco</h4>
+          <p>Everything restaurant owners need to build a high-converting website anywhere in Morocco — design, SEO, online menu and reservations.</p>
+          <span class="rel-link">Read the guide →</span>
+        </a>
+        <a class="np-card" href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=for-business&utm_campaign=agadir">
+          <span class="np-tag">New</span>
+          <h4>Restaurant Website Creation in Agadir</h4>
+          <p>A local guide for Agadir restaurants: rank for beachfront and seafood searches and capture direct bookings from visitors.</p>
+          <span class="rel-link">Read the guide →</span>
+        </a>
+      </div>
+
       <h3>What Restaurant SEO Looks Like in Practice</h3>
       <ul>
         <li><strong>Google Business Profile optimization</strong> — categories, photos (40+), menu link, hours, description, weekly posts. The single most impactful free action for local restaurant visibility.</li>
-        <li><strong>A keyword-structured website</strong> — not just a beautiful menu page, but pages built around what people search: "rooftop restaurant Marrakech", "traditional Moroccan dinner Marrakech Medina", "restaurant near Jemaa el-Fnaa with view".</li>
+        <li><strong>A keyword-structured website</strong> — not just a beautiful menu page, but pages built around what people search: "rooftop restaurant Marrakech", "traditional Moroccan dinner Marrakech Medina", "restaurant near Jemaa el-Fnaa with view". <a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=inline&utm_campaign=maroc" class="body-link">See how we build restaurant websites →</a></li>
         <li><strong>Review generation strategy</strong> — a systematic WhatsApp follow-up to happy guests driving consistent, organic Google and TripAdvisor review flow. Restaurants with 200+ recent 4.8-star reviews dominate local pack results.</li>
         <li><strong>French-language SEO</strong> — "meilleur restaurant Marrakech", "restaurant riad Marrakech médina", "restaurant toit terrasse Marrakech" — French travelers are the single largest tourism market in Morocco and they search extensively before dining.</li>
         <li><strong>Content marketing</strong> — chef stories, dish origin narratives, seasonal menu announcements — content that earns backlinks from travel media and builds Google's understanding of your restaurant's expertise and identity.</li>
@@ -794,7 +844,7 @@ footer a:hover{color:var(--blue)}
           </div>
           <div class="seo-row">
             <h5>Internal links</h5>
-            <p>Links to spas guide, 3-day itinerary, best places 2026, Airbnb calculator, and restaurant case study — building topical authority across ProBoost's Marrakech content cluster.</p>
+            <p>Links to spas guide, 3-day itinerary, best places 2026, Airbnb calculator, restaurant case study and restaurant website creation guides — building topical authority across ProBoost's Marrakech content cluster.</p>
           </div>
         </div>
       </div>
@@ -808,6 +858,18 @@ footer a:hover{color:var(--blue)}
       <p>Restaurants are just one dimension of Marrakech. Here are the ProBoost guides that give you the full picture — from itinerary planning to spa rituals, accommodation choices, and tools for business owners.</p>
 
       <div class="related-grid">
+        <a class="rel-card" href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=related&utm_campaign=maroc">
+          <span class="rel-icon">💻</span>
+          <h4>Restaurant Website Creation — Morocco</h4>
+          <p>New guide: how to build a restaurant website that ranks on Google and fills your tables.</p>
+          <span class="rel-link">Read the Guide →</span>
+        </a>
+        <a class="rel-card" href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=related&utm_campaign=agadir">
+          <span class="rel-icon">🌊</span>
+          <h4>Restaurant Website Creation — Agadir</h4>
+          <p>New guide: website creation for Agadir restaurants, from SEO to online reservations.</p>
+          <span class="rel-link">Read the Guide →</span>
+        </a>
         <a class="rel-card" href="https://proboostagency.com/best-places-to-visit-marrakech-2026.html">
           <span class="rel-icon">🗺️</span>
           <h4>Best Places to Visit in Marrakech 2026</h4>
@@ -872,7 +934,7 @@ footer a:hover{color:var(--blue)}
 
       <div class="faq-item">
         <button class="fq" onclick="tf(this)">How can my Marrakech restaurant rank on Google for "best restaurants in Marrakech"? <span class="ft">+</span></button>
-        <div class="fa">Ranking for "best restaurants in Marrakech" requires a combination of SEO (search engine optimization) elements: a fast, mobile-optimized website with keyword-structured content, a fully optimized Google Business Profile with 40+ photos and regular posts, consistent NAP (name, address, phone) across TripAdvisor, Yelp, Google, and your website, French-language content targeting "meilleur restaurant Marrakech", and a review generation system producing consistent 5-star Google reviews. ProBoost Agency specializes in exactly this for Marrakech restaurants — <a href="https://wa.me/212655956626" class="body-link">WhatsApp us for a free audit</a>.</div>
+        <div class="fa">Ranking for "best restaurants in Marrakech" requires a combination of SEO (search engine optimization) elements: a fast, mobile-optimized website with keyword-structured content, a fully optimized Google Business Profile with 40+ photos and regular posts, consistent NAP (name, address, phone) across TripAdvisor, Yelp, Google, and your website, French-language content targeting "meilleur restaurant Marrakech", and a review generation system producing consistent 5-star Google reviews. Start with our guide to <a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=faq&utm_campaign=maroc" class="body-link">restaurant website creation in Morocco</a>, or <a href="https://wa.me/212655956626" class="body-link">WhatsApp us for a free audit</a>.</div>
       </div>
 
     </section>
@@ -896,6 +958,10 @@ footer a:hover{color:var(--blue)}
     </a>
     <a href="https://proboostagency.com/restaurant-Marrakech.html" class="bg">See MO'MA Case Study →</a>
   </div>
+  <p class="cta-links">
+    Need a website? <a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=cta&utm_campaign=maroc">Restaurant websites in Morocco →</a>
+    <a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=cta&utm_campaign=agadir">Restaurant websites in Agadir →</a>
+  </p>
   <p class="wa-note">24h reply · No commitment · EN & FR · Marrakech, Morocco</p>
 </section>
 
@@ -929,6 +995,8 @@ footer a:hover{color:var(--blue)}
       <h5>ProBoost Agency</h5>
       <ul>
         <li><a href="https://proboostagency.com/">Our Services</a></li>
+        <li><a href="https://proboostagency.com/creation-site-web-restaurant-maroc.html?utm_source=best-restaurants-marrakech&utm_medium=footer&utm_campaign=maroc">Restaurant Websites Morocco</a></li>
+        <li><a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html?utm_source=best-restaurants-marrakech&utm_medium=footer&utm_campaign=agadir">Restaurant Websites Agadir</a></li>
         <li><a href="https://proboostagency.com/usecase-saharatrail.html">Case Studies</a></li>
         <li><a href="https://www.linkedin.com/company/proboostagency">LinkedIn</a></li>
         <li><a href="https://wa.me/212655956626">WhatsApp Us</a></li>

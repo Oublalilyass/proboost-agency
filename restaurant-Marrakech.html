@@ -134,6 +134,20 @@ body::before {
 .nav-back svg { transition: transform .2s; }
 .nav-back:hover svg { transform: translateX(-3px); }
 
+/* ── NEW ARTICLE BANNER ── */
+.promo-bar {
+  position: fixed; top: 76px; left: 0; right: 0; z-index: 890;
+  background: var(--gold); color: #fff;
+  text-align: center; padding: 10px 56px;
+  font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+}
+.promo-bar a {
+  color: #fff; font-weight: 500; text-decoration: underline;
+  text-underline-offset: 3px; margin-left: 8px;
+  transition: opacity .2s;
+}
+.promo-bar a:hover { opacity: .8; }
+
 /* ── HERO ── */
 .hero {
   position: relative; width: 100%; height: 100vh; min-height: 640px;
@@ -387,6 +401,34 @@ section { padding: 100px 56px; }
 }
 .quote-author { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
 
+/* ── READ NEXT ── */
+.read-next {
+  display: block; text-decoration: none; color: var(--cream);
+  margin: 100px 56px 0; padding: 40px 48px;
+  border: 1px solid var(--border);
+  background: rgba(26,14,6,.5);
+  position: relative; overflow: hidden;
+  transition: border-color .3s, background .3s, opacity .8s ease, transform .8s ease;
+}
+.read-next::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0); transform-origin: left; transition: transform .4s ease;
+}
+.read-next:hover { border-color: rgba(26,172,240,.4); }
+.read-next:hover::after { transform: scaleX(1); }
+.read-next-label {
+  font-size: 10px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.read-next-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 300; line-height: 1.1;
+  margin-bottom: 12px;
+}
+.read-next-desc { font-size: 14px; line-height: 1.8; color: var(--muted); margin-bottom: 20px; max-width: 620px; }
+.read-next-cta { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-light); }
+
 /* ── CTA ── */
 #cta {
   padding: 100px 56px;
@@ -446,6 +488,8 @@ footer {
 /* ── RESPONSIVE ── */
 @media(max-width:1024px) {
   .top-nav, section, .brief-strip, .quote-band, #cta, footer { padding-left: 32px; padding-right: 32px; }
+  .promo-bar { padding-left: 32px; padding-right: 32px; }
+  .read-next { margin: 72px 32px 0; padding: 32px; }
   .hero { padding: 0 32px 52px; }
   .hero-side-line { left: 32px; }
   .brief-strip { grid-template-columns: 1fr; gap: 32px; padding: 44px 32px; }
@@ -460,6 +504,8 @@ footer {
 }
 @media(max-width:640px) {
   .top-nav, section, .brief-strip, .quote-band, #cta, footer { padding-left: 20px; padding-right: 20px; }
+  .promo-bar { padding: 10px 20px; font-size: 11px; top: 70px; }
+  .read-next { margin: 56px 20px 0; padding: 28px 22px; }
   .hero { padding: 0 20px 44px; }
   .hero-side-line { display: none; }
   .what-head { flex-direction: column; align-items: flex-start; }
@@ -503,6 +549,12 @@ footer {
   </div> -->
 <a href="https://proboostagency.com/#contact" class="nav-cta">Start a Project</a>
 </nav>
+
+<!-- NEW ARTICLE BANNER -->
+<div class="promo-bar">
+  New: Read our latest article on Restaurants
+  <a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html">Read now →</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -686,13 +738,21 @@ footer {
   <p class="quote-author">MO'MA Rooftop · Management Team · Marrakech</p>
 </div>
 
+<!-- READ NEXT -->
+<a href="https://proboostagency.com/creation-site-web-restaurant-agadir.html" class="read-next reveal">
+  <p class="read-next-label">New Article</p>
+  <h3 class="read-next-title">Site Web pour un Restaurant à Agadir</h3>
+  <p class="read-next-desc">[One or two sentences describing what readers will learn in the new article.]</p>
+  <span class="read-next-cta">Read the article →</span>
+</a>
+
 <!-- CTA -->
 <section id="cta">
   <div class="reveal">
     <h2 class="cta-h">Opening a<br>restaurant or<br><em>venue?</em></h2>
     <p class="cta-sub">We specialise in digital openings for hospitality — from concept to first booking. Let's build your launch together.</p>
-    <a href="#" class="btn-gold">Start Your Project</a>
-    <a href="#" class="btn-ghost">View All Cases</a>
+    <a href="https://proboostagency.com/#contact" class="btn-gold">Start Your Project</a>
+    <a href="https://proboostagency.com/NEW-ARTICLE-URL?utm_source=moma-case-study&utm_medium=cta" class="btn-ghost">Read Our New Article</a>
   </div>
   <div class="other-cases reveal" style="transition-delay:.15s">
     <p class="oc-label">More in Restaurants &amp; Rooftops</p>
