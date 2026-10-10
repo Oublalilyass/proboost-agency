@@ -14,6 +14,24 @@
 <meta property="og:locale" content="fr_MA"><meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Agence Web Marrakech | Site Web, Réseaux Sociaux &amp; Contenu – ProBoost"><meta name="twitter:description" content="Agence web à Marrakech : création de site web, gestion des réseaux sociaux et création de contenu pour riads, restaurants, spas et agences de voyage. Devis gratuit en 24h. Web agency in Marrakech."><meta name="twitter:image" content="https://proboostagency.com/img/og-cover.jpg">
 <meta name="geo.region" content="MA-RAK"><meta name="geo.placename" content="Marrakech, Morocco"><meta name="geo.position" content="31.6295;-7.9811">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://proboostagency.com/">
+<meta property="og:site_name" content="ProBoost Agency">
+<meta property="og:title" content="ProBoost Agency | Agence Web à Marrakech">
+<meta property="og:description" content="Sites web, réseaux sociaux & création de contenu pour riads, restaurants, spas et agences de voyage. Devis gratuit en 24h.">
+<meta property="og:image" content="https://proboostagency.com/img/og-cover.jpg?v=2">
+<meta property="og:image:secure_url" content="https://proboostagency.com/img/og-cover.jpg?v=2">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ProBoost Agency, agence web Marrakech">
+<meta property="og:locale" content="fr_MA">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ProBoost Agency | Agence Web à Marrakech">
+<meta name="twitter:description" content="Sites web, réseaux sociaux & création de contenu pour riads, restaurants, spas et agences de voyage.">
+<meta name="twitter:image" content="https://proboostagency.com/img/og-cover.jpg?v=2">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9M3BCLF7N"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-Q9M3BCLF7N');</script>
@@ -220,30 +238,23 @@
       border-color: var(--red);
       color: #fff
     }
-
-    .hbg {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-      background: none;
-      border: none;
-      padding: 6px;
-      cursor: none;
-      width: 36px;
-      height: 36px;
-      position: relative;
-      z-index: 1000
-    }
-
-    .hbg span {
-      width: 24px;
-      height: 1.5px;
-      background: var(--light);
-      display: block;
-      transition: transform .3s ease, opacity .3s ease;
-      transform-origin: center
-    }
+/* Clearer blue hamburger */
+.hbg{
+  width:46px;height:46px;
+  align-items:center;justify-content:center;
+  gap:5px;padding:0;
+  border:1.5px solid var(--blue);
+  border-radius:50%;
+  background:rgba(26,172,240,.12);
+  box-shadow:0 0 0 4px rgba(26,172,240,.10);
+  transition:background .25s, box-shadow .25s;
+}
+.hbg span{
+  width:22px;height:2.5px;
+  background:var(--blue);
+  border-radius:2px;
+}
+.hbg:hover,.hbg.open{background:rgba(26,172,240,.25)}
 
     .hbg.open span:nth-child(1) {
       transform: translateY(7.5px) rotate(45deg)
