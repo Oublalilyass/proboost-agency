@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X (Twitter) Video Downloader – Free, HD, No Watermark | ProBoost Agency</title>
+<meta name="description" content="Download X (Twitter) videos and GIFs in HD for free. Paste the tweet link, pick a quality, save the MP4. Free tool by ProBoost Agency. / Téléchargez des vidéos X (Twitter) en HD, gratuitement.">
+<link rel="canonical" href="https://www.proboostagency.com/x-video-downloader">
+<link rel="icon" href="img/favicon.png" sizes="any">
+<meta property="og:title" content="X (Twitter) Video Downloader – ProBoost Agency">
+<meta property="og:description" content="Paste a tweet link, download the video in HD. Free and fast.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"X Video Downloader by ProBoost Agency","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"ProBoost Agency","url":"https://www.proboostagency.com/"}}
+</script>
+<style>
+:root{
+  --bg:#EEF3F8; --surface:#FFFFFF; --ink:#10233B; --muted:#51647C; --line:#D3DDE9;
+  --blue:#2450F5; --blue-d:#1A3BC0; --hot:#FF6A2B; --ok:#0E8F5A; --err:#C42B3A;
+  --f-head:'Bricolage Grotesque',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0C1626;--surface:#13233A;--ink:#E8EFF8;--muted:#9DB0C8;--line:#243A57;--blue:#6C8CFF;--blue-d:#8BA3FF}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--hot);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:16px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-family:var(--f-head);font-weight:800;font-size:1.3rem;text-decoration:none;color:var(--ink)}
+.brand b{color:var(--hot)}
+nav{display:flex;align-items:center;gap:18px}
+nav a.link{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang button{border:0;background:none;color:var(--muted);padding:6px 14px;font:600 .85rem var(--f-body);cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+
+.hero{padding:44px 0 56px;text-align:center}
+h1{font-family:var(--f-head);font-weight:800;font-size:clamp(2.2rem,6vw,4rem);line-height:1.04;letter-spacing:-.02em;max-width:15ch;margin:0 auto 16px}
+.sub{color:var(--muted);max-width:56ch;margin:0 auto 32px;font-size:1.1rem}
+.box{background:var(--surface);border:2px solid var(--ink);border-radius:20px;padding:10px;display:flex;gap:10px;max-width:760px;margin:0 auto;box-shadow:8px 8px 0 var(--blue)}
+.box input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:500 1.05rem var(--f-body);padding:14px 14px;outline:none}
+.box input::placeholder{color:var(--muted)}
+.btn{border:0;border-radius:13px;cursor:pointer;font:700 1rem var(--f-body);padding:14px 24px;background:var(--hot);color:#fff;white-space:nowrap}
+.btn:hover{filter:brightness(.93)}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--line);padding:14px 16px}
+.msg{min-height:1.6em;margin-top:18px;font-weight:500}
+.msg.err{color:var(--err)}
+.msg.note{color:var(--muted);font-size:.92rem}
+
+#result{display:none;max-width:760px;margin:10px auto 0;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px;text-align:left}
+#result.on{display:grid;grid-template-columns:200px 1fr;gap:20px}
+#thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--line)}
+#rTitle{font-family:var(--f-head);font-size:1.15rem;font-weight:700;line-height:1.3;margin-bottom:2px}
+#rAuthor{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.vars{display:grid;gap:8px}
+.var{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:9px 9px 9px 14px}
+.var span{font-weight:600}.var small{color:var(--muted);font-weight:400;margin-left:8px}
+.var a{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:8px 16px;border-radius:9px}
+@media (prefers-color-scheme:dark){.var a{color:#0C1626}}
+
+section{padding:56px 0}
+h2{font-family:var(--f-head);font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;letter-spacing:-.01em;margin-bottom:28px;max-width:22ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);font:800 1rem var(--f-head);margin-bottom:12px}
+.steps b{display:block;font-family:var(--f-head);font-size:1.1rem;margin-bottom:4px}
+.steps p,.feat p{color:var(--muted);font-size:.97rem}
+.feats{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.feat{padding:18px 0;border-top:1.5px solid var(--line)}
+.feat b{font-family:var(--f-head);font-size:1.1rem}
+details{border-top:1.5px solid var(--line);padding:16px 0}
+details:last-child{border-bottom:1.5px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:1.05rem}
+details p{color:var(--muted);margin-top:8px;max-width:70ch}
+.faq{max-width:760px}
+
+.cta{background:var(--ink);color:var(--bg);border-radius:28px;padding:48px 36px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.cta h2{margin:0 0 10px;color:var(--bg)}
+.cta p{opacity:.85;max-width:50ch}
+.cta .go{justify-self:end;text-decoration:none;display:inline-block;background:var(--hot);color:#fff;font-weight:700;padding:16px 28px;border-radius:14px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .box{flex-direction:column;box-shadow:5px 5px 0 var(--blue)}
+  #result.on{grid-template-columns:1fr}
+  .steps,.feats,.cta{grid-template-columns:1fr}
+  .cta .go{justify-self:start}
+  nav a.link{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+<a href="/" class="ft-logo" aria-label="ProBoost Agency home">
+      <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
+  </a>    <nav>
+      <a class="link" href="#how" data-i18n="navHow">How it works</a>
+      <a class="link" href="#faq" data-i18n="navFaq">FAQ</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <h1 data-i18n="h1">Download X videos in HD</h1>
+    <p class="sub" data-i18n="sub">Paste the link of any public post, choose a quality and save the MP4. Free, no signup, nothing to install.</p>
+    <div class="box">
+      <input id="url" type="url" inputmode="url" autocomplete="off" spellcheck="false" aria-label="Post link" data-i18n-ph="ph" placeholder="https://x.com/username/status/123456789">
+      <button class="btn ghost" id="paste" type="button" data-i18n="paste">Paste</button>
+      <button class="btn" id="go" type="button" data-i18n="dl">Download</button>
+    </div>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    <div id="result">
+      <img id="thumb" alt="">
+      <div>
+        <p id="rTitle"></p><p id="rAuthor"></p>
+        <div class="vars" id="vars"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <h2 data-i18n="howT">Three steps, about ten seconds</h2>
+    <ol class="steps">
+      <li><b data-i18n="s1t">Copy the post link</b><p data-i18n="s1p">On X, tap Share on the post, then Copy link. On desktop, copy the address from the browser bar.</p></li>
+      <li><b data-i18n="s2t">Paste it above</b><p data-i18n="s2p">Paste the link in the field and press Download. We fetch every quality available for that video.</p></li>
+      <li><b data-i18n="s3t">Save the MP4</b><p data-i18n="s3p">Pick the resolution you want. The file goes straight to your phone or computer.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 data-i18n="featT">Built for everyday use</h2>
+    <div class="feats">
+      <div class="feat"><b data-i18n="f1t">Every quality</b><p data-i18n="f1p">From small mobile files up to the highest resolution the original upload offers.</p></div>
+      <div class="feat"><b data-i18n="f2t">Videos and GIFs</b><p data-i18n="f2p">X animated GIFs are stored as short videos, and they download as MP4 too.</p></div>
+      <div class="feat"><b data-i18n="f3t">Works on any device</b><p data-i18n="f3p">iPhone, Android, Windows, Mac or Linux. Any modern browser is enough.</p></div>
+      <div class="feat"><b data-i18n="f4t">Private by design</b><p data-i18n="f4p">No account, no login to X. We do not keep the links you paste.</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 data-i18n="faqT">Questions people ask</h2>
+    <div class="faq">
+      <details><summary data-i18n="q1">Is the X video downloader free?</summary><p data-i18n="a1">Yes. There is no limit and no registration.</p></details>
+      <details><summary data-i18n="q2">Where are downloaded videos saved?</summary><p data-i18n="a2">In your browser's usual Downloads folder. On iPhone, open the Files app, then Downloads.</p></details>
+      <details><summary data-i18n="q3">Can I download from a private account?</summary><p data-i18n="a3">No. Only videos from public posts can be fetched.</p></details>
+      <details><summary data-i18n="q4">Is it legal to download videos?</summary><p data-i18n="a4">Videos belong to their creators. Use downloads for personal use, and ask permission or give credit before you republish anything.</p></details>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <div>
+        <h2 data-i18n="ctaT">Want your own videos to get seen?</h2>
+        <p data-i18n="ctaP">ProBoost Agency helps brands grow on X and other social networks with content, ads and audience strategy.</p>
+      </div>
+      <a class="go" href="https://www.proboostagency.com/" target="_blank" rel="noopener" data-i18n="ctaB">Talk to ProBoost Agency</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> ProBoost Agency</span>
+    <span data-i18n="disc">Not affiliated with X Corp. X and Twitter are trademarks of their owners.</span>
+  </div>
+</footer>
+
+<script>
+/* ========= CONFIG =========
+   API_ENDPOINT: your backend URL (see README note). Must accept POST {"url": "..."} and return:
+   { "title": "...", "author": "@name", "thumbnail": "https://...",
+     "variants": [ { "quality": "720p", "size": "4.2 MB", "url": "https://...mp4" } ] }
+   Leave empty to run in demo mode (sample data, no real download). */
+const API_ENDPOINT = "";
+
+const T = {
+ en:{navHow:"How it works",navFaq:"FAQ",h1:"Download X videos in HD",sub:"Paste the link of any public post, choose a quality and save the MP4. Free, no signup, nothing to install.",ph:"https://x.com/username/status/123456789",paste:"Paste",dl:"Download",
+  howT:"Three steps, about ten seconds",s1t:"Copy the post link",s1p:"On X, tap Share on the post, then Copy link. On desktop, copy the address from the browser bar.",s2t:"Paste it above",s2p:"Paste the link in the field and press Download. We fetch every quality available for that video.",s3t:"Save the MP4",s3p:"Pick the resolution you want. The file goes straight to your phone or computer.",
+  featT:"Built for everyday use",f1t:"Every quality",f1p:"From small mobile files up to the highest resolution the original upload offers.",f2t:"Videos and GIFs",f2p:"X animated GIFs are stored as short videos, and they download as MP4 too.",f3t:"Works on any device",f3p:"iPhone, Android, Windows, Mac or Linux. Any modern browser is enough.",f4t:"Private by design",f4p:"No account, no login to X. We do not keep the links you paste.",
+  faqT:"Questions people ask",q1:"Is the X video downloader free?",a1:"Yes. There is no limit and no registration.",q2:"Where are downloaded videos saved?",a2:"In your browser's usual Downloads folder. On iPhone, open the Files app, then Downloads.",q3:"Can I download from a private account?",a3:"No. Only videos from public posts can be fetched.",q4:"Is it legal to download videos?",a4:"Videos belong to their creators. Use downloads for personal use, and ask permission or give credit before you republish anything.",
+  ctaT:"Want your own videos to get seen?",ctaP:"ProBoost Agency helps brands grow on X and other social networks with content, ads and audience strategy.",ctaB:"Talk to ProBoost Agency",disc:"Not affiliated with X Corp. X and Twitter are trademarks of their owners.",
+  empty:"Paste a post link first.",bad:"This is not an X post link. It should look like x.com/name/status/123…",load:"Fetching video…",none:"No video found in this post. Check that the post is public and contains a video.",fail:"Could not fetch the video. Try again in a moment.",demo:"Demo mode: connect your API in the code to enable real downloads.",save:"Save",pasteFail:"Your browser blocked clipboard access. Paste the link manually (Ctrl+V)."},
+ fr:{navHow:"Comment ça marche",navFaq:"FAQ",h1:"Téléchargez les vidéos X en HD",sub:"Collez le lien d'un post public, choisissez la qualité et enregistrez le MP4. Gratuit, sans inscription, rien à installer.",ph:"https://x.com/nom/status/123456789",paste:"Coller",dl:"Télécharger",
+  howT:"Trois étapes, environ dix secondes",s1t:"Copiez le lien du post",s1p:"Sur X, touchez Partager sur le post, puis Copier le lien. Sur ordinateur, copiez l'adresse dans la barre du navigateur.",s2t:"Collez-le ci-dessus",s2p:"Collez le lien dans le champ et appuyez sur Télécharger. Nous récupérons toutes les qualités disponibles.",s3t:"Enregistrez le MP4",s3p:"Choisissez la résolution voulue. Le fichier arrive directement sur votre téléphone ou ordinateur.",
+  featT:"Pensé pour un usage quotidien",f1t:"Toutes les qualités",f1p:"Des petits fichiers mobiles jusqu'à la plus haute résolution proposée par la vidéo d'origine.",f2t:"Vidéos et GIF",f2p:"Les GIF animés de X sont des vidéos courtes, ils se téléchargent aussi en MP4.",f3t:"Sur tous vos appareils",f3p:"iPhone, Android, Windows, Mac ou Linux. Un navigateur récent suffit.",f4t:"Respect de la vie privée",f4p:"Pas de compte, pas de connexion à X. Nous ne conservons pas les liens collés.",
+  faqT:"Vos questions",q1:"Le téléchargeur de vidéos X est-il gratuit ?",a1:"Oui. Aucune limite et aucune inscription.",q2:"Où sont enregistrées les vidéos ?",a2:"Dans le dossier Téléchargements de votre navigateur. Sur iPhone, ouvrez l'app Fichiers, puis Téléchargements.",q3:"Puis-je télécharger depuis un compte privé ?",a3:"Non. Seules les vidéos de posts publics peuvent être récupérées.",q4:"Est-ce légal de télécharger des vidéos ?",a4:"Les vidéos appartiennent à leurs créateurs. Gardez-les pour un usage personnel, et demandez l'accord ou citez l'auteur avant toute republication.",
+  ctaT:"Envie que vos propres vidéos soient vues ?",ctaP:"ProBoost Agency aide les marques à grandir sur X et les autres réseaux avec du contenu, de la publicité et une stratégie d'audience.",ctaB:"Parler à ProBoost Agency",disc:"Non affilié à X Corp. X et Twitter sont des marques de leurs propriétaires.",
+  empty:"Collez d'abord un lien de post.",bad:"Ce n'est pas un lien de post X. Il doit ressembler à x.com/nom/status/123…",load:"Récupération de la vidéo…",none:"Aucune vidéo trouvée dans ce post. Vérifiez que le post est public et contient une vidéo.",fail:"Impossible de récupérer la vidéo. Réessayez dans un instant.",demo:"Mode démo : branchez votre API dans le code pour activer les vrais téléchargements.",save:"Enregistrer",pasteFail:"Votre navigateur a bloqué le presse-papiers. Collez le lien manuellement (Ctrl+V)."}
+};
+
+const $ = id => document.getElementById(id);
+let lang = "en";
+try{ lang = localStorage.getItem("lang") || (navigator.language||"en").slice(0,2) }catch(e){ lang=(navigator.language||"en").slice(0,2) }
+if(!T[lang]) lang="en";
+
+function setLang(l){
+  lang=l; document.documentElement.lang=l;
+  try{localStorage.setItem("lang",l)}catch(e){}
+  document.querySelectorAll("[data-i18n]").forEach(n=>{ n.textContent=T[l][n.dataset.i18n] });
+  document.querySelectorAll("[data-i18n-ph]").forEach(n=>{ n.placeholder=T[l][n.dataset.i18nPh] });
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  document.title = l==="fr"
+    ? "Téléchargeur de vidéos X (Twitter) – Gratuit, HD | ProBoost Agency"
+    : "X (Twitter) Video Downloader – Free, HD, No Watermark | ProBoost Agency";
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+$("yr").textContent = new Date().getFullYear();
+setLang(lang);
+
+const RX = /^https?:\/\/(www\.|mobile\.)?(x|twitter)\.com\/[A-Za-z0-9_]+\/status\/\d+/i;
+function say(text,cls){ const m=$("msg"); m.textContent=text||""; m.className="msg "+(cls||""); }
+
+$("paste").addEventListener("click", async()=>{
+  try{ $("url").value = (await navigator.clipboard.readText()).trim(); $("url").focus() }
+  catch(e){ say(T[lang].pasteFail,"note") }
+});
+$("url").addEventListener("keydown",e=>{ if(e.key==="Enter") run() });
+$("go").addEventListener("click",run);
+
+async function run(){
+  const raw=$("url").value.trim(); $("result").classList.remove("on");
+  if(!raw) return say(T[lang].empty,"err");
+  if(!RX.test(raw)) return say(T[lang].bad,"err");
+  const btn=$("go"); btn.disabled=true; say(T[lang].load,"note");
+  try{
+    let data;
+    if(!API_ENDPOINT){
+      await new Promise(r=>setTimeout(r,700));
+      data={title:"Sample video",author:"@example",thumbnail:"",variants:[{quality:"1080p",size:"12.4 MB",url:"#"},{quality:"720p",size:"6.8 MB",url:"#"},{quality:"360p",size:"2.1 MB",url:"#"}]};
+      say(T[lang].demo,"note");
+    }else{
+      const r=await fetch(API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:raw})});
+      if(!r.ok) throw new Error(r.status);
+      data=await r.json(); say("");
+    }
+    if(!data.variants||!data.variants.length) return say(T[lang].none,"err");
+    render(data);
+  }catch(e){ say(T[lang].fail,"err") }
+  finally{ btn.disabled=false }
+}
+
+function render(d){
+  $("rTitle").textContent=d.title||"";
+  $("rAuthor").textContent=d.author||"";
+  const th=$("thumb"); th.style.display=d.thumbnail?"block":"none"; th.src=d.thumbnail||"";
+  const box=$("vars"); box.textContent="";
+  d.variants.forEach(v=>{
+    const row=document.createElement("div"); row.className="var";
+    const s=document.createElement("span"); s.textContent=v.quality;
+    if(v.size){ const sm=document.createElement("small"); sm.textContent="MP4 · "+v.size; s.appendChild(sm) }
+    const a=document.createElement("a"); a.href=v.url; a.textContent=T[lang].save;
+    a.setAttribute("download",""); a.target="_blank"; a.rel="noopener";
+    row.append(s,a); box.appendChild(row);
+  });
+  $("result").classList.add("on");
+}
+</script>
+</body>
+</html>
