@@ -102,7 +102,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <body>
 <header>
   <div class="wrap">
-<a href="/" class="ft-logo" aria-label="ProBoost Agency home">
+   <a href="https://proboostagency.com/" class="ft-logo" aria-label="ProBoost Agency home">
       <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" style="height:40px; width:auto;">
   </a>    <nav>
       <a class="link" href="#how" data-i18n="navHow">How it works</a>
@@ -188,8 +188,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
    API_ENDPOINT: your backend URL (see README note). Must accept POST {"url": "..."} and return:
    { "title": "...", "author": "@name", "thumbnail": "https://...",
      "variants": [ { "quality": "720p", "size": "4.2 MB", "url": "https://...mp4" } ] }
-   Leave empty to run in demo mode (sample data, no real download). */
+   Leave empty to use the built-in mode: the page itself reads the post through the public
+   FxTwitter API (api.fxtwitter.com), so no server is needed. If you set your own backend
+   (xdl-backend), it is tried first and FxTwitter is the automatic fallback. */
 const API_ENDPOINT = "";
+const FX_API = "https://api.fxtwitter.com";
+
+async function fromFx(raw){
+  const m = raw.match(/\/([A-Za-z0-9_]+)\/status\/(\d+)/);
+  const r = await fetch(FX_API+"/"+m[1]+"/status/"+m[2]);
+  if(!r.ok) throw new Error(r.status);
+  const t = (await r.json()).tweet || {};
+  const vids = (t.media && t.media.videos) || [];
+  const seen = new Set(), variants = [];
+  vids.forEach(v=>{
+    let list = (v.variants||[]).filter(x=>x.content_type==="video/mp4" && x.url).sort((a,b)=>(b.bitrate||0)-(a.bitrate||0));
+    if(!list.length && v.url) list=[{url:v.url,h:Math.min(v.width||0,v.height||0)}];
+    list.forEach(x=>{
+      const mm = x.url.match(/\/(\d{3,4})x(\d{3,4})\//);
+      const h = mm ? Math.min(+mm[1],+mm[2]) : (x.h||0);
+      const q = h ? h+"p" : "MP4";
+      if(seen.has(q)) return; seen.add(q);
+      variants.push({quality:q,url:x.url});
+    });
+  });
+  return {title:(t.text||"").slice(0,120), author:t.author?"@"+t.author.screen_name:"", thumbnail:(vids[0]&&vids[0].thumbnail_url)||"", variants};
+}
 
 const T = {
  en:{navHow:"How it works",navFaq:"FAQ",h1:"Download X videos in HD",sub:"Paste the link of any public post, choose a quality and save the MP4. Free, no signup, nothing to install.",ph:"https://x.com/username/status/123456789",paste:"Paste",dl:"Download",
@@ -242,15 +266,15 @@ async function run(){
   const btn=$("go"); btn.disabled=true; say(T[lang].load,"note");
   try{
     let data;
-    if(!API_ENDPOINT){
-      await new Promise(r=>setTimeout(r,700));
-      data={title:"Sample video",author:"@example",thumbnail:"",variants:[{quality:"1080p",size:"12.4 MB",url:"#"},{quality:"720p",size:"6.8 MB",url:"#"},{quality:"360p",size:"2.1 MB",url:"#"}]};
-      say(T[lang].demo,"note");
-    }else{
-      const r=await fetch(API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:raw})});
-      if(!r.ok) throw new Error(r.status);
-      data=await r.json(); say("");
+    if(API_ENDPOINT){
+      try{
+        const r=await fetch(API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:raw})});
+        if(!r.ok) throw new Error(r.status);
+        data=await r.json();
+      }catch(e){ data=null }
     }
+    if(!data||!data.variants||!data.variants.length) data=await fromFx(raw);
+    say("");
     if(!data.variants||!data.variants.length) return say(T[lang].none,"err");
     render(data);
   }catch(e){ say(T[lang].fail,"err") }
@@ -268,6 +292,19 @@ function render(d){
     if(v.size){ const sm=document.createElement("small"); sm.textContent="MP4 · "+v.size; s.appendChild(sm) }
     const a=document.createElement("a"); a.href=v.url; a.textContent=T[lang].save;
     a.setAttribute("download",""); a.target="_blank"; a.rel="noopener";
+    if(/video\.twimg\.com/.test(v.url)){
+      a.addEventListener("click",async e=>{
+        e.preventDefault(); const label=a.textContent; a.textContent="…";
+        try{
+          const r=await fetch(v.url); if(!r.ok) throw 0;
+          const u=URL.createObjectURL(await r.blob());
+          const l=document.createElement("a"); l.href=u; l.download="x-video-"+v.quality+".mp4";
+          document.body.appendChild(l); l.click(); l.remove();
+          setTimeout(()=>URL.revokeObjectURL(u),10000);
+        }catch(err){ window.open(v.url,"_blank","noopener") }
+        a.textContent=label;
+      });
+    }
     row.append(s,a); box.appendChild(row);
   });
   $("result").classList.add("on");
