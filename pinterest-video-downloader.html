@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pinterest Video Downloader – Videos, Images & GIFs, HD, Free | ProBoost Agency</title>
+<meta name="description" content="Download Pinterest videos, images and GIFs in HD. Free, no login, no app. Paste the pin link and save. Tool by ProBoost Agency.">
+<link rel="canonical" href="https://www.proboostagency.com/pinterest-video-downloader">
+<link rel="alternate" hreflang="en" href="https://www.proboostagency.com/pinterest-video-downloader?lang=en">
+<link rel="alternate" hreflang="fr" href="https://www.proboostagency.com/pinterest-video-downloader?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://www.proboostagency.com/pinterest-video-downloader">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website"><meta property="og:title" content="Pinterest Video Downloader – ProBoost Agency"><meta property="og:description" content="Paste a Pinterest pin link, download the video, image or GIF in HD. Free and fast.">
+<link rel="icon" href="img/favicon.png" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json" id="ld"></script>
+<style>
+:root{--bg:#EEF3F8;--surface:#fff;--ink:#10233B;--muted:#51647C;--line:#D3DDE9;--acc:#2450F5;--onacc:#fff;--hot:#FF6A2B;--err:#C42B3A}
+body[data-tool=ig]{--acc:#D6246E}body[data-tool=tt]{--acc:#078892}body[data-tool=pin]{--acc:#D0001F}
+@media(prefers-color-scheme:dark){:root{--bg:#0C1626;--surface:#13233A;--ink:#E8EFF8;--muted:#9DB0C8;--line:#243A57;--acc:#6C8CFF;--onacc:#0C1626}body[data-tool=ig]{--acc:#FF5C9A}body[data-tool=tt]{--acc:#25F4EE}body[data-tool=pin]{--acc:#FF5A6E}}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+:focus-visible{outline:3px solid var(--hot);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:16px 0}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:1.3rem;text-decoration:none;color:var(--ink)}.brand b{color:var(--hot)}
+nav{display:flex;align-items:center;gap:18px}nav a.l{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang button{border:0;background:none;color:var(--muted);padding:6px 14px;font:600 .85rem 'DM Sans',sans-serif;cursor:pointer}.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+h1,h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-.015em;line-height:1.1}
+.hero{padding:34px 0 44px;text-align:center}
+h1{font-size:clamp(2.1rem,6vw,3.8rem);max-width:18ch;margin:0 auto 16px}
+.sub{color:var(--muted);max-width:58ch;margin:0 auto 26px;font-size:1.1rem}
+.box{background:var(--surface);border:2px solid var(--ink);border-radius:20px;padding:10px;display:flex;gap:10px;max-width:760px;margin:0 auto;box-shadow:8px 8px 0 var(--acc)}
+.box input{flex:1;min-width:0;border:0;background:none;color:var(--ink);font:500 1.05rem 'DM Sans',sans-serif;padding:14px;outline:none}
+.box input::placeholder{color:var(--muted)}
+.btn{border:0;border-radius:13px;cursor:pointer;font:700 1rem 'DM Sans',sans-serif;padding:14px 24px;background:var(--hot);color:#fff;white-space:nowrap}.btn:disabled{opacity:.6;cursor:wait}
+.btn.g{background:none;color:var(--ink);border:1.5px solid var(--line);padding:14px 16px}
+.msg{min-height:1.6em;margin-top:18px;font-weight:500}.msg.err{color:var(--err)}.msg.n{color:var(--muted);font-size:.92rem}
+#result{display:none;max-width:760px;margin:10px auto 0;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:18px;text-align:left}
+#result.on{display:grid;grid-template-columns:190px 1fr;gap:20px}
+#thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--line)}
+#rT{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.1rem;line-height:1.3}#rA{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.vars{display:grid;gap:8px}.var{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:9px 9px 9px 14px}
+.var small{color:var(--muted);margin-left:8px}.var a{background:var(--acc);color:var(--onacc);text-decoration:none;font-weight:700;font-size:.92rem;padding:8px 16px;border-radius:9px}
+section{padding:44px 0}h2{font-size:clamp(1.55rem,4vw,2.2rem);margin-bottom:22px;max-width:24ch}
+.answer{background:var(--surface);border-left:6px solid var(--acc);border-radius:0 16px 16px 0;padding:22px 26px;max-width:820px}
+.answer h2{font-size:1.4rem;margin-bottom:10px}.answer p{font-size:1.08rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--bg);font:800 1rem 'Bricolage Grotesque',sans-serif;margin-bottom:12px}
+.steps h3,.cols h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.12rem;margin-bottom:6px}.steps p{color:var(--muted);font-size:.97rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px}.cols ul{padding-left:20px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;max-width:660px;background:var(--surface);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:11px 16px;border-bottom:1.5px solid var(--line)}th{width:40%;font-weight:600}td{color:var(--muted)}
+details{border-top:1.5px solid var(--line);padding:16px 0}details:last-child{border-bottom:1.5px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:1.05rem}details p{color:var(--muted);margin-top:8px;max-width:70ch}.faq{max-width:780px}
+.cta{background:var(--ink);color:var(--bg);border-radius:28px;padding:44px 34px;display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:center}
+.cta h2{margin:0 0 10px;color:var(--bg)}.cta p{opacity:.85;max-width:50ch}
+.cta a.go{justify-self:end;text-decoration:none;background:var(--hot);color:#fff;font-weight:700;padding:16px 28px;border-radius:14px}
+footer{padding:30px 0 46px;color:var(--muted);font-size:.9rem}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){.box{flex-direction:column;box-shadow:5px 5px 0 var(--acc)}#result.on,.steps,.cols,.cta{grid-template-columns:1fr}.cta a.go{justify-self:start}nav a.l{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body data-tool="pin">
+<header><div class="wrap">
+  <a href="https://proboostagency.com"  class="nav-logo" aria-label="ProBoost Agency — Home">
+     <img src="./img/logo-proboost-agency.png" alt="ProBoost Agency Logo" class="logo-img" width="100" height="40">
+  </a>
+  <nav>
+    <a class="l" href="#how" id="nHow"></a><a class="l" href="#faq" id="nFaq"></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="fr" aria-pressed="false">FR</button></div></nav>
+</div></header>
+<main><div class="wrap">
+  <div class="hero">
+    <h1 id="h1"></h1><p class="sub" id="sub"></p>
+    <div class="box"><input id="url" type="url" inputmode="url" autocomplete="off" spellcheck="false" aria-label="Pinterest link"><button class="btn g" id="paste" type="button"></button><button class="btn" id="go" type="button"></button></div>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+    <div id="result"><img id="thumb" alt="" referrerpolicy="no-referrer"><div><p id="rT"></p><p id="rA"></p><div class="vars" id="vars"></div></div></div>
+  </div>
+  <section><div class="answer"><h2 id="ansT"></h2><p id="ans"></p></div></section>
+  <section id="how"><h2 id="howT"></h2><ol class="steps" id="steps"></ol></section>
+  <section><h2 id="supT"></h2><div class="cols"><div><h3 id="yesT"></h3><ul id="yes"></ul></div><div><h3 id="noT"></h3><ul id="no"></ul></div></div></section>
+  <section><h2 id="factT"></h2><table id="facts"></table></section>
+  <section id="faq"><h2 id="faqT"></h2><div class="faq" id="faqL"></div></section>
+  <section><div class="cta"><div><h2 id="ctaT"></h2><p id="ctaP"></p></div><a class="go" id="ctaB" href="https://www.proboostagency.com/" target="_blank" rel="noopener"></a></div></section>
+</div></main>
+<footer><div class="wrap"><span>© <span id="yr"></span> ProBoost Agency</span><span id="disc"></span></div></footer>
+<script>
+/* ===== CONFIG =====
+   Pinterest cannot be read from a browser (blocked by Pinterest), so this page needs the backend
+   (xdl-backend). Set its URL below. If the page is served by the backend itself, use "/api/extract". */
+const API_ENDPOINT = "/api/extract"; // same server: page and API are deployed together
+const BASE = "https://www.proboostagency.com/pinterest-video-downloader";
+
+const T = {
+en:{title:"Pinterest Video Downloader – Videos, Images & GIFs, HD, Free | ProBoost Agency",desc:"Download Pinterest videos, images and GIFs in HD. Free, no login, no app. Paste the pin link and save. Tool by ProBoost Agency.",
+ nHow:"How it works",nFaq:"FAQ",h1:"Pinterest video downloader",sub:"Paste a Pinterest pin link, then save the video, image or GIF in the best quality. Free, no login, no app.",
+ ph:"https://www.pinterest.com/pin/1234567890123/",paste:"Paste",dl:"Download",
+ ansT:"What is a Pinterest video downloader?",ans:"A Pinterest video downloader saves a public pin as a file on your phone or computer: the video as MP4, or the picture or GIF in its original quality. With this free tool from ProBoost Agency, you copy the pin link, paste it above and press Download. You do not need a Pinterest account or an app.",
+ howT:"How to download a Pinterest video in 3 steps",steps:[["Copy the pin link","In Pinterest, open the pin, tap Share, then Copy link. On desktop, copy the address from the browser bar. pin.it short links work too."],["Paste it above","Paste the link in the field and press Download. The tool lists the files available for that pin."],["Save the file","Choose a quality and press Save. The file goes to your Downloads folder, or the Files app on iPhone."]],
+ supT:"What you can and cannot download",yesT:"Supported",yes:["Video pins (MP4)","Image pins in original quality","Animated GIF pins","Short links (pin.it)","Every Pinterest country site"],noT:"Not supported",no:["Private boards and secret pins","Pins removed by their author","Whole boards at once"],
+ factT:"Quick facts",facts:[["Output format","MP4, JPG, PNG, GIF"],["Image quality","Original size"],["Price","Free, no limit"],["Account needed","No"],["Works on","iPhone, Android, Windows, Mac, Linux"],["Languages","English, French"]],
+ faqT:"Pinterest downloader FAQ",faq:[["Is this Pinterest video downloader free?","Yes. It is free, with no registration and no download limit."],["How do I download a Pinterest video on iPhone?","Copy the pin link in the Pinterest app, open this page in Safari, paste the link, press Download, then Save. The file appears in the Files app under Downloads."],["Can I download Pinterest images in full quality?","Yes. For image pins the tool offers the original file, which is larger than the version shown on the board."],["Can I download Pinterest GIFs?","Yes. Animated pins are saved as GIF or MP4, depending on what Pinterest provides for that pin."],["Can I download without a Pinterest account?","Yes. You only need the link of a public pin. No login is asked."],["Why does the tool say no video was found?","The pin may be private, removed, or only contain an image. Check that it opens without logging in, then try again."],["Is it legal to download Pinterest content?","Pins belong to their creators. Keep downloads for personal use, such as inspiration, and ask permission or credit the author before you republish them."]],
+ ctaT:"Want your pins to drive more traffic?",ctaP:"ProBoost Agency helps brands grow on Pinterest and other social networks with content, ads and audience strategy.",ctaB:"Talk to ProBoost Agency",disc:"Not affiliated with Pinterest. Pinterest is a trademark of its owner.",
+ m:{empty:"Paste a Pinterest link first.",bad:"This is not a Pinterest pin link. It should look like pinterest.com/pin/123… or pin.it/…",load:"Fetching pin…",none:"Nothing to download found. Check that the pin is public.",fail:"Could not fetch the pin. Try again in a moment.",noapi:"The download service is not connected yet.",save:"Save"}},
+fr:{title:"Téléchargeur de vidéos Pinterest – Vidéos, images et GIF, HD, gratuit | ProBoost Agency",desc:"Téléchargez des vidéos, images et GIF Pinterest en HD. Gratuit, sans compte, sans appli. Collez le lien de l'épingle et enregistrez. Outil ProBoost Agency.",
+ nHow:"Comment ça marche",nFaq:"FAQ",h1:"Téléchargeur de vidéos Pinterest",sub:"Collez le lien d'une épingle Pinterest, puis enregistrez la vidéo, l'image ou le GIF dans la meilleure qualité. Gratuit, sans compte, sans appli.",
+ ph:"https://www.pinterest.com/pin/1234567890123/",paste:"Coller",dl:"Télécharger",
+ ansT:"Qu'est-ce qu'un téléchargeur de vidéos Pinterest ?",ans:"Un téléchargeur de vidéos Pinterest enregistre une épingle publique sous forme de fichier sur votre téléphone ou ordinateur : la vidéo en MP4, ou l'image ou le GIF en qualité d'origine. Avec cet outil gratuit de ProBoost Agency, vous copiez le lien de l'épingle, vous le collez ci-dessus et vous appuyez sur Télécharger. Pas besoin de compte Pinterest ni d'application.",
+ howT:"Comment télécharger une vidéo Pinterest en 3 étapes",steps:[["Copiez le lien de l'épingle","Dans Pinterest, ouvrez l'épingle, touchez Partager, puis Copier le lien. Sur ordinateur, copiez l'adresse dans la barre du navigateur. Les liens courts pin.it fonctionnent aussi."],["Collez-le ci-dessus","Collez le lien dans le champ et appuyez sur Télécharger. L'outil liste les fichiers disponibles pour cette épingle."],["Enregistrez le fichier","Choisissez une qualité et appuyez sur Enregistrer. Le fichier arrive dans Téléchargements, ou dans l'app Fichiers sur iPhone."]],
+ supT:"Ce que vous pouvez et ne pouvez pas télécharger",yesT:"Pris en charge",yes:["Épingles vidéo (MP4)","Épingles image en qualité d'origine","Épingles GIF animées","Liens courts (pin.it)","Tous les sites Pinterest par pays"],noT:"Non pris en charge",no:["Tableaux privés et épingles secrètes","Épingles supprimées par leur auteur","Tableaux entiers en une fois"],
+ factT:"L'essentiel",facts:[["Format de sortie","MP4, JPG, PNG, GIF"],["Qualité des images","Taille d'origine"],["Prix","Gratuit, sans limite"],["Compte nécessaire","Non"],["Compatible","iPhone, Android, Windows, Mac, Linux"],["Langues","Français, anglais"]],
+ faqT:"FAQ du téléchargeur Pinterest",faq:[["Ce téléchargeur de vidéos Pinterest est-il gratuit ?","Oui. Il est gratuit, sans inscription et sans limite de téléchargements."],["Comment télécharger une vidéo Pinterest sur iPhone ?","Copiez le lien de l'épingle dans l'app Pinterest, ouvrez cette page dans Safari, collez le lien, appuyez sur Télécharger puis Enregistrer. Le fichier apparaît dans l'app Fichiers, dossier Téléchargements."],["Peut-on télécharger les images Pinterest en pleine qualité ?","Oui. Pour les épingles image, l'outil propose le fichier d'origine, plus grand que la version affichée dans le tableau."],["Peut-on télécharger les GIF Pinterest ?","Oui. Les épingles animées sont enregistrées en GIF ou en MP4, selon ce que Pinterest fournit pour cette épingle."],["Peut-on télécharger sans compte Pinterest ?","Oui. Il suffit du lien d'une épingle publique. Aucune connexion n'est demandée."],["Pourquoi l'outil indique qu'aucune vidéo n'a été trouvée ?","L'épingle est peut-être privée, supprimée, ou ne contient qu'une image. Vérifiez qu'elle s'ouvre sans connexion, puis réessayez."],["Est-il légal de télécharger du contenu Pinterest ?","Les épingles appartiennent à leurs créateurs. Gardez-les pour un usage personnel, comme source d'inspiration, et demandez l'accord ou citez l'auteur avant toute republication."]],
+ ctaT:"Envie que vos épingles génèrent plus de trafic ?",ctaP:"ProBoost Agency aide les marques à grandir sur Pinterest et les autres réseaux avec du contenu, de la publicité et une stratégie d'audience.",ctaB:"Parler à ProBoost Agency",disc:"Non affilié à Pinterest. Pinterest est une marque de son propriétaire.",
+ m:{empty:"Collez d'abord un lien Pinterest.",bad:"Ce n'est pas un lien d'épingle Pinterest. Il doit ressembler à pinterest.com/pin/123… ou pin.it/…",load:"Récupération de l'épingle…",none:"Rien à télécharger trouvé. Vérifiez que l'épingle est publique.",fail:"Impossible de récupérer l'épingle. Réessayez dans un instant.",noapi:"Le service de téléchargement n'est pas encore connecté.",save:"Enregistrer"}}
+};
+const RX=/^https?:\/\/(([a-z0-9-]+\.)?pinterest\.[a-z.]+\/pin\/[\w-]*\d+|pin\.it\/[\w-]+)/i;
+const $=i=>document.getElementById(i);
+let lang="en";
+try{lang=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang")||(navigator.language||"en").slice(0,2)}catch(e){lang=(navigator.language||"en").slice(0,2)}
+if(!T[lang])lang="en";
+function el(tag,txt,attrs){const n=document.createElement(tag);if(txt!=null)n.textContent=txt;Object.assign(n,attrs||{});return n}
+function fill(id,items,fn){const e=$(id);e.textContent="";items.forEach(i=>e.appendChild(fn(i)))}
+function say(t,c){const m=$("msg");m.textContent=t||"";m.className="msg "+(c||"")}
+function paint(){
+  const c=T[lang];document.documentElement.lang=lang;document.title=c.title;
+  document.querySelector('meta[name=description]').content=c.desc;
+  try{localStorage.setItem("lang",lang)}catch(e){}
+  [["nHow","nHow"],["nFaq","nFaq"],["h1","h1"],["sub","sub"],["paste","paste"],["go","dl"],["ansT","ansT"],["ans","ans"],["howT","howT"],["supT","supT"],["yesT","yesT"],["noT","noT"],["factT","factT"],["faqT","faqT"],["ctaT","ctaT"],["ctaP","ctaP"],["ctaB","ctaB"],["disc","disc"]].forEach(p=>$(p[0]).textContent=c[p[1]]);
+  $("url").placeholder=c.ph;
+  fill("steps",c.steps,s=>{const li=el("li");li.append(el("h3",s[0]),el("p",s[1]));return li});
+  fill("yes",c.yes,t=>el("li",t));fill("no",c.no,t=>el("li",t));
+  fill("facts",c.facts,f=>{const tr=el("tr");tr.append(el("th",f[0],{scope:"row"}),el("td",f[1]));return tr});
+  fill("faqL",c.faq,f=>{const d=el("details");d.append(el("summary",f[0]),el("p",f[1]));return d});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
+  $("ld").textContent=JSON.stringify({"@context":"https://schema.org","@graph":[
+    {"@type":"WebApplication","name":c.h1,"url":BASE,"inLanguage":lang,"applicationCategory":"MultimediaApplication","operatingSystem":"Any","description":c.desc,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"areaServed":["FR","MA","BE","CH","CA","US","GB"],"publisher":{"@type":"Organization","name":"ProBoost Agency","url":"https://www.proboostagency.com/"}},
+    {"@type":"HowTo","name":c.howT,"step":c.steps.map((s,i)=>({"@type":"HowToStep","position":i+1,"name":s[0],"text":s[1]}))},
+    {"@type":"FAQPage","mainEntity":c.faq.map(f=>({"@type":"Question","name":f[0],"acceptedAnswer":{"@type":"Answer","text":f[1]}}))}]});
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;paint()});
+$("yr").textContent=new Date().getFullYear();
+$("paste").onclick=async()=>{try{$("url").value=(await navigator.clipboard.readText()).trim();$("url").focus()}catch(e){}};
+$("url").onkeydown=e=>{if(e.key==="Enter")run()};$("go").onclick=run;
+
+async function run(){
+  const M=T[lang].m,raw=$("url").value.trim();$("result").classList.remove("on");
+  if(!raw)return say(M.empty,"err");
+  if(!RX.test(raw))return say(M.bad,"err");
+  if(!API_ENDPOINT)return say(M.noapi,"err");
+  const b=$("go");b.disabled=true;say(M.load,"n");
+  try{
+    const r=await fetch(API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url:raw})});
+    if(!r.ok)throw 0;const d=await r.json();
+    if(!d.variants||!d.variants.length)return say(M.none,"err");
+    say("");render(d,M);
+  }catch(e){say(M.fail,"err")}finally{b.disabled=false}
+}
+function render(d,M){
+  $("rT").textContent=d.title||"";$("rA").textContent=d.author||"";
+  const th=$("thumb");th.style.display=d.thumbnail?"block":"none";th.src=d.thumbnail||"";
+  const box=$("vars");box.textContent="";
+  d.variants.forEach(v=>{
+    const row=el("div",null,{className:"var"}),s=el("span",v.quality);
+    s.appendChild(el("small",(v.fmt||"MP4")+(v.size?" · "+v.size:"")));
+    const a=el("a",M.save,{href:v.url,target:"_blank",rel:"noopener"});a.setAttribute("download","");
+    row.append(s,a);box.appendChild(row);
+  });
+  $("result").classList.add("on");
+}
+paint();
+</script>
+</body>
+</html>
