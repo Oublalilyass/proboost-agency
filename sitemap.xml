@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- HOMEPAGE (EN + FR alternates) -->
+  <!-- HOMEPAGE (FR/EN in one URL, so no hreflang pair and no /fr/ page) -->
   <url>
     <loc>https://proboostagency.com/</loc>
-    <lastmod>2026-10-03</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://proboostagency.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://proboostagency.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://proboostagency.com/"/>
+    <lastmod>2026-10-26</lastmod>
     <image:image>
-      <image:loc>https://proboostagency.com/img/og-cover.jpg</image:loc>
-      <image:title>ProBoost Agency — Web Design &amp; Digital Marketing Marrakech Morocco</image:title>
+      <image:loc>https://proboostagency.com/img/og-proboost-share.jpg</image:loc>
+      <image:title>ProBoost Agency — Agence web Marrakech : site web, réseaux sociaux, contenu</image:title>
     </image:image>
     <image:image>
       <image:loc>https://proboostagency.com/img/logo-proboost-agency.png</image:loc>
       <image:title>ProBoost Agency Logo</image:title>
     </image:image>
   </url>
-  <url>
-    <loc>https://proboostagency.com/fr/</loc>
-    <lastmod>2026-10-03</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://proboostagency.com/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://proboostagency.com/fr/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://proboostagency.com/"/>
-  </url>
 
-  <!-- SERVICE PAGES (bilingual FR/EN in one URL, so no hreflang pair) -->
+  <!-- SERVICE PAGES (bilingual FR/EN in one URL) -->
   <url><loc>https://proboostagency.com/website-creation-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/prix-creation-site-web-maroc.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/travel-agency-website-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
@@ -36,6 +25,7 @@
   <url><loc>https://proboostagency.com/hotel-website-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/web-design-marrakech.html</loc><lastmod>2026-10-02</lastmod></url>
   <url><loc>https://proboostagency.com/seo-tourism-morocco.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url><loc>https://proboostagency.com/prix-community-management-maroc.html</loc></url>
 
   <!-- CITY PAGES -->
   <url><loc>https://proboostagency.com/creation-site-web-azrou.html</loc><lastmod>2026-10-03</lastmod></url>
@@ -46,10 +36,20 @@
   <url><loc>https://proboostagency.com/creation-site-web-restaurant-maroc.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://proboostagency.com/creation-site-web-restaurant-marrakech.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://proboostagency.com/creation-site-web-restaurant-agadir.html</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-restaurant-luxe-marrakech.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://proboostagency.com/website-for-restaurant-dubai.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://proboostagency.com/restaurant-Marrakech.html</loc></url>
+  <url><loc>https://proboostagency.com/calendrier-contenu-instagram-restaurant-30-jours.html</loc></url>
 
-  <!-- BLOG + TOOLS -->
-  <url><loc>https://proboostagency.com/blog.html</loc><lastmod>2026-10-04</lastmod></url>
+  <!-- BLOG ARTICLES (website creation, prices, SEO) -->
+  <url><loc>https://proboostagency.com/blog.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-marrakech-referencement-naturel-seo.html</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://proboostagency.com/reduire-commissions-booking-riad-marrakech.html</loc></url>
+  <url><loc>https://proboostagency.com/creation-site-web-marrakech-prix-services-conseils-2027.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-internet-marrakech-presence-en-ligne.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://proboostagency.com/creation-site-web-maroc-investir-site-professionnel-marrakech.html</loc><lastmod>2026-10-19</lastmod></url>
+
+  <!-- TOOLS -->
   <url><loc>https://proboostagency.com/Airbnb-calculateur-maroc.html</loc></url>
   <url><loc>https://proboostagency.com/Airbnb-calculator-marrakech.html</loc></url>
   <url><loc>https://proboostagency.com/Direct-booking-savings-calculator.html</loc></url>
@@ -57,6 +57,7 @@
   <url><loc>https://proboostagency.com/seo-audit-tool.html</loc></url>
 
   <!-- CASE STUDY + OTHER CONTENT -->
+  <url><loc>https://proboostagency.com/moma-rooftop-case-study.html</loc></url>
   <url><loc>https://proboostagency.com/usecase-saharatrail.html</loc></url>
   <url><loc>https://proboostagency.com/spas.html</loc></url>
   <url><loc>https://proboostagency.com/Best-Restaurants-Marrakech-2026.html</loc></url>
